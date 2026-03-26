@@ -1,3 +1,4 @@
+
 // Fetch data and initialize the graph
 fetch("campus_nodes_edges.json")
   .then((response) => response.json())
@@ -137,6 +138,21 @@ fetch("campus_nodes_edges.json")
       } else {
         alert("No path found between the selected locations.");
       }
+    });
+    // ==========================================
+    // 🛠️ Dev 3 專用：顯示所有 Node 的 ID (開發完記得刪掉)
+    // ==========================================
+    data.nodes.forEach((node) => {
+      // 在每個點上畫一個藍色的小圓圈
+      L.circleMarker([node.lat, node.lng], {
+        radius: 4,        // 圓圈大小
+        color: 'blue',    // 外框顏色
+        fillColor: '#30f',// 填滿顏色
+        fillOpacity: 0.5  // 透明度
+      })
+      // 綁定一個點擊會彈出的視窗，裡面顯示 ID
+      .bindPopup(`<b>尋找這棟樓！</b><br>ID: ${node.id}`)
+      .addTo(map);
     });
   });
 
