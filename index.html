@@ -74,9 +74,9 @@ const map = L.map('map', {
   
   // 👇 鎖定地圖範圍的關鍵設定 👇
   maxBounds: campusBounds,   // 限制拖曳範圍在這個框框內
-  maxBoundsViscosity: 1.0,   // 邊界的「黏滯性」，設為 1.0 代表完全拖不出去 (像撞到牆壁)
+  maxBoundsViscosity: 0.5,   // 邊界的「黏滯性」
   minZoom: 16,               // 限制縮放下限：避免使用者縮太小看到整個縣市
-  maxZoom: 18                // 限制縮放上限：避免使用者放太大導致地圖模糊
+  maxZoom: 22                // 限制縮放上限：避免使用者放太大導致地圖模糊
 });
   // Add OpenStreetMap tile layer
   L.tileLayer(
@@ -84,12 +84,17 @@ const map = L.map('map', {
     {
       attribution:
         '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+
+      maxNativeZoom: 18,
+      maxZoom: 22,
+      tileSize: 512,
+      zoomOffset: -1
     }
   ).addTo(map);
 </script>
 
 <script>
-  // ==========================================
+// ==========================================
 // 🛠️ 開發者專用：點擊地圖獲取精準 Node JSON
 // ==========================================
 map.on('click', function(e) {
