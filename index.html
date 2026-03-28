@@ -87,3 +87,32 @@ const map = L.map('map', {
     }
   ).addTo(map);
 </script>
+
+<script>
+  // ==========================================
+// 🛠️ 開發者專用：點擊地圖獲取精準 Node JSON
+// ==========================================
+map.on('click', function(e) {
+  // 擷取經緯度，保留小數點後 6 位 (精確度大約到 11 公分，非常足夠)
+  const lat = e.latlng.lat.toFixed(6);
+  const lng = e.latlng.lng.toFixed(6);
+  
+  // 幫你自動排版成可以立刻貼上 JSON 的格式
+  const nodeJSON = `
+  { 
+    "id": 99999, 
+    "name": "請填寫名稱", 
+    "lat": ${lat}, 
+    "lng": ${lng}, 
+    "accessible": true 
+  },`;
+  
+  // 印在 Console 讓你方便複製
+  console.log("%c🎯 新節點座標已擷取！", "color: #00ff00; font-size: 14px; font-weight: bold;");
+  console.log(nodeJSON);
+  
+  // 畫面上也會彈出提示
+  alert(`已抓取座標！\n緯度: ${lat}\n經度: ${lng}\n(請按 F12 打開 Console 複製完整的 JSON 代碼)`);
+});
+
+</script>

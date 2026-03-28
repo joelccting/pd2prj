@@ -195,3 +195,47 @@ function drawPath(nodeIds) {
   // Zoom the map to the path
   map.fitBounds(currentPathLayer.getBounds());
 }
+// ==========================================
+// 🛠️ 開發者外掛：輸入雙 ID 自動計算距離與生成 Edge
+// 用法：在 F12 Console 輸入 calcDistance(ID1, ID2)
+// ==========================================
+window.calcd = function(id1, id2) {
+  // 1. 確保能找到這兩個點 (相容數字和字串格式的 ID)
+  const node1 = graph.nodes.get(Number(id1)) || graph.nodes.get(String(id1));
+  const node2 = graph.nodes.get(Number(id2)) || graph.nodes.get(String(id2));
+
+  if (!node1) {
+    console.error(`❌ 找不到起點 ID: ${id1}，請檢查 campus_nodes_edges.json 裡有沒有這個點！`);
+    return;
+  }
+  if (!node2) {
+    console.error(`❌ 找不到終點 ID: ${id2}，請檢查 campus_nodes_edges.json 裡有沒有這個點！`);
+    return;
+  }
+
+  // 2. 轉換成 Leaflet 的座標物件
+  const latlng1 = L.latLng(node1.lat, node1.lng);
+  const latlng2 = L.latLng(node2.lat, node2.lng);
+
+  // 3. 呼叫 Leaflet 內建的高精度球面測距公式
+  const distance = latlng1.distanceTo(latlng2);
+
+  // 4. 印出華麗的結果與懶人 JSON
+  console.log(`%c📏 節點 [${id1}] 到 [${id2}] 的真實物理距離:`, "color: #00aaff; font-weight: bold; font-size: 14px;");
+  console.log(`%c${distance.toFixed(2)} 公尺`, "color: #ffaa00; font-weight: bold; font-size: 18px;");
+  
+  console.log("%c🔗 請直接複製以下 Edge JSON 代碼:", "color: #00ff00; font-weight: bold;");
+  console.log(`
+    { 
+      "from": ${id1},
+      "to": ${id2}, 
+      "distance": ${distance.toFixed(8)}, 
+      "accessible": true 
+     },`);
+
+  // 5. (加碼特效) 在地圖上畫一條金色的虛線，讓你看確認有沒有連錯大樓
+  L.polyline([latlng1, latlng2], { color: "gold", weight: 4, dashArray: "5, 10" }).addTo(map);
+  
+  // 自動把視角移到這條線上
+  map.fitBounds(L.polyline([latlng1, latlng2]).getBounds(), { padding: [50, 50] });
+};
