@@ -62,7 +62,7 @@
   // 1. 定義校園的左下角 (SouthWest) 和右上角 (NorthEast) 邊界
 // (以下座標是大約值，你需要替換成你們學校真實的最南邊與最北邊)
 const corner1 = L.latLng(23.550, 120.460); // 左下角 (西南方)
-const corner2 = L.latLng(23.570, 120.480); // 右上角 (東北方)
+const corner2 = L.latLng(23.570, 120.485); // 右上角 (東北方)
 
 // 2. 將這兩個點組合成一個「邊界物件」
 const campusBounds = L.latLngBounds(corner1, corner2);
@@ -74,7 +74,7 @@ const map = L.map('map', {
   
   // 👇 鎖定地圖範圍的關鍵設定 👇
   maxBounds: campusBounds,   // 限制拖曳範圍在這個框框內
-  maxBoundsViscosity: 0.1,   // 邊界的「黏滯性」
+  maxBoundsViscosity: 0.5,   // 邊界的「黏滯性」
   minZoom: 16,               // 限制縮放下限：避免使用者縮太小看到整個縣市
   maxZoom: 22                // 限制縮放上限：避免使用者放太大導致地圖模糊
 });
