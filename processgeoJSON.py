@@ -85,7 +85,8 @@ def node_exists(lat, lon, nodes, threshold):
     return None
 
 # Load the GeoJSON data
-with open('data.geojson', 'r') as f:
+# with open('data.geojson', 'r') as f:
+with open('data/ccu.geojson', 'r', encoding="utf-8") as f:
     data = json.load(f)
 
 nodes = {}
