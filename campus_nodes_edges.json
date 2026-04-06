@@ -208,15 +208,6 @@
       "elevation": 97
     },
     {
-      "id": 667361851,
-      "name": "",
-      "lat": 23.5629504,
-      "lng": 120.4742811,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 97
-    },
-    {
       "id": 2805286919,
       "name": "",
       "lat": 23.5611613,
@@ -8002,15 +7993,6 @@
       "elevation": 89
     },
     {
-      "id": 667595430,
-      "name": "",
-      "lat": 23.5606331,
-      "lng": 120.4821084,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 111
-    },
-    {
       "id": 7600328602,
       "name": "",
       "lat": 23.5608431,
@@ -14636,6 +14618,46 @@
       "lng": 120.473946,
       "accessible": true,
       "type": "virtual_path"
+    },
+    {
+      "id": 1775446775957,
+      "name": "",
+      "lat": 23.553232987029592,
+      "lng": 120.46885907649995,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446775958,
+      "name": "",
+      "lat": 23.560992579411252,
+      "lng": 120.48210918903352,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446775959,
+      "name": "",
+      "lat": 23.561108133883316,
+      "lng": 120.48242032527925,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446775960,
+      "name": "",
+      "lat": 23.562570995540174,
+      "lng": 120.47411888837816,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446775961,
+      "name": "",
+      "lat": 23.56310081788698,
+      "lng": 120.4743978381157,
+      "accessible": true,
+      "type": "path_node"
     }
   ],
   "edges": [
@@ -14865,18 +14887,6 @@
       "from": 5909462905,
       "to": 2734317243,
       "distance": 1.0757012454201231,
-      "accessible": true
-    },
-    {
-      "from": 5909462905,
-      "to": 667361851,
-      "distance": 1.107713665546826,
-      "accessible": true
-    },
-    {
-      "from": 667361851,
-      "to": 5909462905,
-      "distance": 1.107713665546826,
       "accessible": true
     },
     {
@@ -24633,18 +24643,6 @@
       "from": 8233292304,
       "to": 5369293470,
       "distance": 20.522940217367104,
-      "accessible": true
-    },
-    {
-      "from": 667595430,
-      "to": 7600328602,
-      "distance": 40.33738742501895,
-      "accessible": true
-    },
-    {
-      "from": 7600328602,
-      "to": 667595430,
-      "distance": 40.33738742501895,
       "accessible": true
     },
     {
@@ -34452,18 +34450,6 @@
       "accessible": true
     },
     {
-      "from": 268069297,
-      "to": 667361851,
-      "distance": 39.52872147,
-      "accessible": true
-    },
-    {
-      "from": 667361851,
-      "to": 268069297,
-      "distance": 39.52872147,
-      "accessible": true
-    },
-    {
       "from": 6879156398,
       "to": 9000069,
       "distance": 48.59872831,
@@ -34581,18 +34567,6 @@
       "from": 9000072,
       "to": 268069718,
       "distance": 32.89291788,
-      "accessible": true
-    },
-    {
-      "from": 268232236,
-      "to": 5909414411,
-      "distance": 21.80884028,
-      "accessible": true
-    },
-    {
-      "from": 5909414411,
-      "to": 268232236,
-      "distance": 21.80884028,
       "accessible": true
     },
     {
@@ -35061,18 +35035,6 @@
       "from": 6293675150,
       "to": 9000086,
       "distance": 114.90829514,
-      "accessible": true
-    },
-    {
-      "from": 625885153,
-      "to": 9000086,
-      "distance": 29.47740662,
-      "accessible": true
-    },
-    {
-      "from": 9000086,
-      "to": 625885153,
-      "distance": 29.47740662,
       "accessible": true
     },
     {
@@ -36383,41 +36345,269 @@
       "distance": 67.8666157,
       "accessible": true
     },
-    { 
+    {
       "from": 4648316688,
-      "to": 4648317189, 
-      "distance": 21.80044009, 
-      "accessible": true 
-     },
-     { 
+      "to": 4648317189,
+      "distance": 21.80044009,
+      "accessible": true
+    },
+    {
       "from": 4648317189,
-      "to": 4648316688, 
-      "distance": 21.80044009, 
-      "accessible": true 
-     },
-     { 
+      "to": 4648316688,
+      "distance": 21.80044009,
+      "accessible": true
+    },
+    {
       "from": 9000072,
-      "to": 2735868717, 
-      "distance": 29.67454779, 
-      "accessible": true 
-     },
-     { 
+      "to": 2735868717,
+      "distance": 29.67454779,
+      "accessible": true
+    },
+    {
       "from": 2735868717,
-      "to": 9000072, 
-      "distance": 29.67454779, 
-      "accessible": true 
-     },
-      { 
+      "to": 9000072,
+      "distance": 29.67454779,
+      "accessible": true
+    },
+    {
       "from": 9000072,
-      "to": 2735868719, 
-      "distance": 38.03765385, 
-      "accessible": true 
-     },
-      { 
+      "to": 2735868719,
+      "distance": 38.03765385,
+      "accessible": true
+    },
+    {
       "from": 2735868719,
-      "to": 9000072, 
-      "distance": 38.03765385, 
-      "accessible": true 
-     }
+      "to": 9000072,
+      "distance": 38.03765385,
+      "accessible": true
+    },
+    {
+      "from": 8233309841,
+      "to": 2490499334,
+      "distance": 246.1238923156277,
+      "accessible": true
+    },
+    {
+      "from": 2490499334,
+      "to": 8233309841,
+      "distance": 246.1238923156277,
+      "accessible": true
+    },
+    {
+      "from": 5909462888,
+      "to": 2490499334,
+      "distance": 169.12482838977564,
+      "accessible": true
+    },
+    {
+      "from": 2490499334,
+      "to": 5909462888,
+      "distance": 169.12482838977564,
+      "accessible": true
+    },
+    {
+      "from": 664470980,
+      "to": 5909462889,
+      "distance": 167.93227418759133,
+      "accessible": true
+    },
+    {
+      "from": 5909462889,
+      "to": 664470980,
+      "distance": 167.93227418759133,
+      "accessible": true
+    },
+    {
+      "from": 10742733690,
+      "to": 664470980,
+      "distance": 65.85924163116748,
+      "accessible": true
+    },
+    {
+      "from": 664470980,
+      "to": 10742733690,
+      "distance": 65.85924163116748,
+      "accessible": true
+    },
+    {
+      "from": 5369293450,
+      "to": 1775446775957,
+      "distance": 40.27080731628669,
+      "accessible": true
+    },
+    {
+      "from": 1775446775957,
+      "to": 5369293450,
+      "distance": 40.27080731628669,
+      "accessible": true
+    },
+    {
+      "from": 1775446775957,
+      "to": 10742733690,
+      "distance": 49.123118319908585,
+      "accessible": true
+    },
+    {
+      "from": 10742733690,
+      "to": 1775446775957,
+      "distance": 49.123118319908585,
+      "accessible": true
+    },
+    {
+      "from": 625885153,
+      "to": 1775446775957,
+      "distance": 19.338240135302804,
+      "accessible": true
+    },
+    {
+      "from": 1775446775957,
+      "to": 625885153,
+      "distance": 19.338240135302804,
+      "accessible": true
+    },
+    {
+      "from": 1775446775957,
+      "to": 9000086,
+      "distance": 10.117733990547933,
+      "accessible": true
+    },
+    {
+      "from": 9000086,
+      "to": 1775446775957,
+      "distance": 10.117733990547933,
+      "accessible": true
+    },
+    {
+      "from": 7600328602,
+      "to": 1021841322,
+      "distance": 58.577937601185525,
+      "accessible": true
+    },
+    {
+      "from": 1021841322,
+      "to": 7600328602,
+      "distance": 58.577937601185525,
+      "accessible": true
+    },
+    {
+      "from": 1775446775959,
+      "to": 9052206263,
+      "distance": 32.62923930119684,
+      "accessible": true
+    },
+    {
+      "from": 9052206263,
+      "to": 1775446775959,
+      "distance": 32.62923930119684,
+      "accessible": true
+    },
+    {
+      "from": 1775446775958,
+      "to": 1775446775959,
+      "distance": 34.216774845356134,
+      "accessible": true
+    },
+    {
+      "from": 1775446775959,
+      "to": 1775446775958,
+      "distance": 34.216774845356134,
+      "accessible": true
+    },
+    {
+      "from": 9052206264,
+      "to": 1775446775958,
+      "distance": 38.677823807405524,
+      "accessible": true
+    },
+    {
+      "from": 1775446775958,
+      "to": 9052206264,
+      "distance": 38.677823807405524,
+      "accessible": true
+    },
+    {
+      "from": 1775446775958,
+      "to": 9052206266,
+      "distance": 72.5369131517846,
+      "accessible": true
+    },
+    {
+      "from": 9052206266,
+      "to": 1775446775958,
+      "distance": 72.5369131517846,
+      "accessible": true
+    },
+    {
+      "from": 6843926737,
+      "to": 1775446775959,
+      "distance": 72.55444373835836,
+      "accessible": true
+    },
+    {
+      "from": 1775446775959,
+      "to": 6843926737,
+      "distance": 72.55444373835836,
+      "accessible": true
+    },
+    {
+      "from": 7600328616,
+      "to": 7600328617,
+      "distance": 39.28042555582451,
+      "accessible": true
+    },
+    {
+      "from": 7600328617,
+      "to": 7600328616,
+      "distance": 39.28042555582451,
+      "accessible": true
+    },
+    {
+      "from": 1775446775961,
+      "to": 667361857,
+      "distance": 28.891252172865798,
+      "accessible": true
+    },
+    {
+      "from": 667361857,
+      "to": 1775446775961,
+      "distance": 28.891252172865798,
+      "accessible": true
+    },
+    {
+      "from": 5909462905,
+      "to": 1775446775961,
+      "distance": 20.453516909913077,
+      "accessible": true
+    },
+    {
+      "from": 1775446775961,
+      "to": 5909462905,
+      "distance": 20.453516909913077,
+      "accessible": true
+    },
+    {
+      "from": 268069297,
+      "to": 1775446775961,
+      "distance": 33.652905379537344,
+      "accessible": true
+    },
+    {
+      "from": 1775446775961,
+      "to": 268069297,
+      "distance": 33.652905379537344,
+      "accessible": true
+    },
+    {
+      "from": 268232236,
+      "to": 9000073,
+      "distance": 24.83097786110335,
+      "accessible": true
+    },
+    {
+      "from": 9000073,
+      "to": 268232236,
+      "distance": 24.83097786110335,
+      "accessible": true
+    }
   ]
 }

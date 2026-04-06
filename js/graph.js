@@ -23,10 +23,19 @@ class Graph {
       accessible: edge.accessible,
     });
   }
+  removeNode(id) {
+    this.nodes.delete(id);
+    this.adjacencyList.delete(id);
+    // 清除其他節點連向此節點的路線
+    for (const [nodeId, edges] of this.adjacencyList.entries()) {
+      this.adjacencyList.set(nodeId, edges.filter(edge => edge.to !== id));
+    }
+  }
+  removeEdge(from, to) {
+    if (this.adjacencyList.has(from)) {
+      this.adjacencyList.set(from, this.adjacencyList.get(from).filter(edge => edge.to !== to));
+    }
+  }
 }
 
 const graph = new Graph(); // Create an instance of the Graph
-graph.nodes.forEach((node, nodeId) => {
-  const edges = graph.adjacencyList.get(nodeId);
-  console.log(`Node ID=${nodeId}, Edges:`, edges);
-});

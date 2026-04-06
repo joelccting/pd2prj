@@ -103,7 +103,6 @@ function dijkstra(
   graph,
   startId,
   endId,
-  criteria = "distance",
   accessibility = true
 ) {
   const distances = {};

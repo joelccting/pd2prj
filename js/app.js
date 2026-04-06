@@ -1,4 +1,36 @@
+// 1. 定義校園的左下角 (SouthWest) 和右上角 (NorthEast) 邊界
+// (以下座標是大約值，你需要替換成你們學校真實的最南邊與最北邊)
+const corner1 = L.latLng(23.550, 120.460); // 左下角 (西南方)
+const corner2 = L.latLng(23.570, 120.485); // 右上角 (東北方)
 
+// 2. 將這兩個點組合成一個「邊界物件」
+const campusBounds = L.latLngBounds(corner1, corner2);
+
+// 3. 初始化地圖，並把限制條件塞進去
+const map = L.map('map', {
+  center: [23.560, 120.470], // 地圖一開始的中心點 (學校正中央)
+  zoom: 16,                  // 預設縮放大小
+  
+  // 👇 鎖定地圖範圍的關鍵設定 👇
+  maxBounds: campusBounds,   // 限制拖曳範圍在這個框框內
+  maxBoundsViscosity: 0.5,   // 邊界的「黏滯性」
+  minZoom: 16,               // 限制縮放下限：避免使用者縮太小看到整個縣市
+  maxZoom: 22                // 限制縮放上限：避免使用者放太大導致地圖模糊
+});
+  // Add OpenStreetMap tile layer
+  L.tileLayer(
+    "https://tile.openstreetmap.org/{z}/{x}/{y}.png", 
+    {
+      attribution:
+        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+
+      maxNativeZoom: 18,
+      maxZoom: 22,
+      tileSize: 512,
+      zoomOffset: -1
+      
+    }
+  ).addTo(map);
 // Fetch data and initialize the graph
 fetch("campus_nodes_edges.json")
   .then((response) => response.json())
@@ -71,17 +103,77 @@ fetch("campus_nodes_edges.json")
     });
 
     // ---------------------------
-    // (Optional) Draw edges on map
+    // 🎨 準備一個記憶體陣列，用來記住所有畫在地圖上的線
     // ---------------------------
+    const activePolylines = [];
+
+    function createEditableEdge(nodeA, nodeB, isNew = false) {
+      const lineColor = isNew ? "#ff0044" : "gray";
+      const polyline = L.polyline(
+        [[nodeA.lat, nodeA.lng], [nodeB.lat, nodeB.lng]], 
+        { color: lineColor, weight: 5, opacity: 0.7 } 
+      ).addTo(map);
+
+      // 🌟 神奇魔法：偷偷把起點和終點的資料綁在這條線上！
+      polyline._nodeA = nodeA;
+      polyline._nodeB = nodeB;
+      
+      // 把這條線收編進我們的記憶體陣列裡
+      activePolylines.push(polyline);
+
+      polyline.on('mouseover', function () {
+        this.setStyle({ color: '#ff9900', weight: 8 });
+      });
+      polyline.on('mouseout', function () {
+        this.setStyle({ color: lineColor, weight: 5 });
+      });
+
+      polyline.on('contextmenu', function (e) {
+        L.DomEvent.stopPropagation(e); 
+        if (confirm(`確定要剪斷 [${nodeA.id}] 和 [${nodeB.id}] 之間的連線嗎？`)) {
+          map.removeLayer(polyline);
+          
+          // 🧹 從記憶體陣列中把這條線剔除
+          const index = activePolylines.indexOf(polyline);
+          if (index > -1) activePolylines.splice(index, 1);
+
+          data.edges = data.edges.filter(edge => 
+            !(edge.from === nodeA.id && edge.to === nodeB.id) &&
+            !(edge.from === nodeB.id && edge.to === nodeA.id)
+          );
+          if (typeof graph.removeEdge === 'function') {
+            graph.removeEdge(nodeA.id, nodeB.id);
+            graph.removeEdge(nodeB.id, nodeA.id);
+          }
+        }
+      });
+
+      return polyline;
+    }
+
+    // ---------------------------
+    // 畫出初始的所有路線，並賦予超能力
+    // ---------------------------
+    const drawnEdges = new Set(); // 用來記錄畫過的線，避免雙向線條重複畫兩次疊在一起
+    
     data.edges.forEach((edge) => {
       const fromNode = graph.nodes.get(edge.from);
       const toNode = graph.nodes.get(edge.to);
+      
+      // 🛡️ 護城河：過濾幽靈座標
+      if (!fromNode || !toNode) return;
+      const lat1 = Number(fromNode.lat); const lng1 = Number(fromNode.lng);
+      const lat2 = Number(toNode.lat); const lng2 = Number(toNode.lng);
+      if (isNaN(lat1) || isNaN(lng1) || isNaN(lat2) || isNaN(lng2) || Math.abs(lat1) > 90) return;
 
-      const latlngs = [
-        [fromNode.lat, fromNode.lng],
-        [toNode.lat, toNode.lng],
-      ];
-      L.polyline(latlngs, { color: "gray" }).addTo(map);
+      // 產生唯一的路線 ID (不管 A到B 還是 B到A 都算同一條)
+      const edgeKey = edge.from < edge.to ? `${edge.from}-${edge.to}` : `${edge.to}-${edge.from}`;
+      
+      // 如果這條線還沒畫過，就畫出來並賦予超能力
+      if (!drawnEdges.has(edgeKey)) {
+        createEditableEdge(fromNode, toNode, false);
+        drawnEdges.add(edgeKey);
+      }
     });
 
     // -------------------------
@@ -117,7 +209,7 @@ fetch("campus_nodes_edges.json")
               path = dfs(graph, startId, endId);
               break;
             case "dijkstra":
-              path = dijkstra(graph, startId, endId, "distance", accessibility);
+              path = dijkstra(graph, startId, endId, accessibility);
               break;
           }
 
@@ -143,6 +235,7 @@ fetch("campus_nodes_edges.json")
     // 🛠️ Dev 3 專用：顯示所有 Node 的 ID (開發完記得刪掉)
     // ==========================================
     data.nodes.forEach((node) => {
+      if (!node.lat || !node.lng) return;
       // 在每個點上畫一個藍色的小圓圈
       L.circleMarker([node.lat, node.lng], {
         radius: 4,        // 圓圈大小
@@ -154,6 +247,161 @@ fetch("campus_nodes_edges.json")
       .bindPopup(`<b>尋找這棟樓！</b><br>ID: ${node.id}`)
       .addTo(map);
     });
+    // ==========================================
+    // 🛠️ 上帝模式 PRO：視覺化路網編輯器 (拖拉/刪除/新增點/新增線)
+    // ==========================================
+    
+    const customIcon = L.divIcon({
+      className: 'custom-div-icon',
+      html: "<div style='background-color:#0055ff; width:12px; height:12px; border-radius:50%; border:2px solid white; box-shadow: 0 0 4px rgba(0,0,0,0.5);'></div>",
+      iconSize: [12, 12],
+      iconAnchor: [6, 6]
+    });
+
+    // 距離計算公式 (用來自動算出新增連線的距離)
+    function getDistance(lat1, lon1, lat2, lon2) {
+      const R = 6371000;
+      const dLat = (lat2 - lat1) * Math.PI / 180;
+      const dLon = (lon2 - lon1) * Math.PI / 180;
+      const a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+                Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+                Math.sin(dLon/2) * Math.sin(dLon/2);
+      return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)));
+    }
+
+    let selectedNodeForEdge = null; // 用來記錄你選了哪個點準備連線
+
+    // 封裝函數：賦予每一個點超能力 (拖拉、刪除、連線)
+    function createEditableMarker(node) {
+      const marker = L.marker([node.lat, node.lng], {
+        icon: customIcon,
+        draggable: true,
+        title: `ID: ${node.id}\n(左鍵點擊連線 / 右鍵點擊刪除)`
+      }).addTo(map);
+
+      // 📌 1. 拖拉中 (drag)：實時橡皮筋效果
+      marker.on('drag', function (e) {
+        const newPos = e.target.getLatLng();
+        node.lat = newPos.lat;
+        node.lng = newPos.lng;
+
+        // 掃描所有畫在地圖上的線，如果起點或終點是我這顆節點，馬上把線拉過去！
+        activePolylines.forEach(polyline => {
+          if (polyline._nodeA.id === node.id || polyline._nodeB.id === node.id) {
+            polyline.setLatLngs([
+              [polyline._nodeA.lat, polyline._nodeA.lng],
+              [polyline._nodeB.lat, polyline._nodeB.lng]
+            ]);
+          }
+        });
+      });
+
+      // 📌 2. 拖拉結束 (dragend)：重新計算所有牽連道路的物理距離！
+      marker.on('dragend', function (e) {
+        // 更新資料庫裡的邊的距離 (不然線拉長了，Dijkstra 演算法還是會以為很短)
+        data.edges.forEach(edge => {
+          if (edge.from === node.id || edge.to === node.id) {
+            // 找出線的另一端是誰
+            const otherNodeId = edge.from === node.id ? edge.to : edge.from;
+            const otherNode = data.nodes.find(n => n.id === otherNodeId);
+            
+            if (otherNode) {
+              // 呼叫我們之前寫好的球面測距公式
+              const newDist = getDistance(node.lat, node.lng, otherNode.lat, otherNode.lng);
+              edge.distance = newDist;
+            }
+          }
+        });
+        console.log(`📏 節點 ${node.id} 已定位，相連的道路距離已重新校正！`);
+      });
+
+      // ✂️ 右鍵刪除點與線
+      marker.on('contextmenu', function () {
+        if (confirm(`確定要刪除節點 ${node.id} 嗎？`)) {
+          map.removeLayer(marker);
+          data.nodes = data.nodes.filter(n => n.id !== node.id);
+          data.edges = data.edges.filter(e => e.from !== node.id && e.to !== node.id);
+          graph.removeNode(node.id);
+        }
+      });
+
+      // 🔗 左鍵點擊：建立連線 (Edge)
+      marker.on('click', function (e) {
+        L.DomEvent.stopPropagation(e); // 防止點擊事件穿透到地圖上變成「新增節點」
+        
+        if (!selectedNodeForEdge) {
+          // 狀況 1：這是我點的「第一下」，記住這個起點
+          selectedNodeForEdge = node;
+          alert(`📍 已選取起點 (ID: ${node.id})\n👉 現在請點擊另一個節點來建立連線！`);
+        } else {
+          // 狀況 2：這是我點的「第二下」，準備把兩點連起來
+          if (selectedNodeForEdge.id === node.id) {
+            selectedNodeForEdge = null; // 點擊同一個點等於取消選取
+            return;
+          }
+          
+          const nodeA = selectedNodeForEdge;
+          const nodeB = node;
+          const dist = getDistance(nodeA.lat, nodeA.lng, nodeB.lat, nodeB.lng);
+
+          // 新增雙向 Edge 進資料庫
+          data.edges.push(
+            { from: nodeA.id, to: nodeB.id, distance: dist, accessible: true },
+            { from: nodeB.id, to: nodeA.id, distance: dist, accessible: true }
+          );
+          graph.addEdge({ from: nodeA.id, to: nodeB.id, distance: dist, accessible: true });
+          graph.addEdge({ from: nodeB.id, to: nodeA.id, distance: dist, accessible: true });
+          // 畫一條粗粗的紅線在畫面上，讓你知道連線成功了
+          createEditableEdge(nodeA, nodeB, true);
+          console.log(`✅ 連線成功！${nodeA.id} <--> ${nodeB.id}`);
+          
+          selectedNodeForEdge = null; // 連線完畢，清空狀態
+        }
+      });
+    }
+
+    // 1. 先把原本 JSON 裡的點都畫出來並賦予超能力
+    data.nodes.forEach(node => createEditableMarker(node));
+
+    // 2. ✨ 新增節點功能：點擊地圖空白處
+    map.on('click', function(e) {
+      if (selectedNodeForEdge) {
+        selectedNodeForEdge = null; // 如果點到地圖，取消連線狀態
+        return;
+      }
+      
+      // 產生一個隨機不重複的 ID (用當前毫秒時間戳)
+      const currentMaxId = data.nodes.reduce((max, node) => Math.max(max, Number(node.id)), 0);
+      const newNodeId = currentMaxId + 1;
+      const newNode = {
+        id: newNodeId,
+        name: "", // 如果是路徑節點不用名字，需要的話你可以自己手動加
+        lat: e.latlng.lat,
+        lng: e.latlng.lng,
+        accessible: true,
+        type: "path_node"
+      };
+
+      // 存進記憶體，並馬上畫到畫面上
+      data.nodes.push(newNode);
+      graph.addNode(newNode);
+      createEditableMarker(newNode);
+      console.log(`✨ 在座標 (${newNode.lat.toFixed(6)}, ${newNode.lng.toFixed(6)}) 建立新節點！`);
+    });
+
+    // (你之前寫好的 exportBtn 匯出按鈕不用改，繼續留著)
+    // 💾 功能 3：點擊按鈕，打包下載成新的 campus_nodes_edges.json
+    document.getElementById('exportBtn').addEventListener('click', () => {
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
+      const downloadAnchorNode = document.createElement('a');
+      downloadAnchorNode.setAttribute("href", dataStr);
+      downloadAnchorNode.setAttribute("download", "campus_nodes_edges.json");
+      document.body.appendChild(downloadAnchorNode);
+      downloadAnchorNode.click();
+      downloadAnchorNode.remove();
+      alert("✅ 下載完成！\n請把載下來的新檔案覆蓋原本的 JSON，然後重整網頁！");
+    });
+
   });
 
 function calculatePathDistance(path) {
@@ -163,7 +411,7 @@ function calculatePathDistance(path) {
     const fromNodeId = path[i];
     const toNodeId = path[i + 1];
 
-    const edges = graph.adjacencyList.get(fromNodeId);
+    const edges = graph.adjacencyList.get(fromNodeId) || [];
 
     const edge = edges.find((e) => e.to === toNodeId);
     if (edge) {
