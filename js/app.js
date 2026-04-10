@@ -88,20 +88,123 @@ fetch("campus_nodes_edges.json")
         .addTo(map);
     });
 
+    
     // ----------------------------------------------------
-    // Populate the start and end select elements uniquely
+    // 🗂️ 將地標依照「學校、住宿、飲食」分類並塞入下拉選單
     // ----------------------------------------------------
     const startSelect = document.getElementById("start");
     const endSelect = document.getElementById("end");
 
-    locationMarkers.forEach((location) => {
-      const option = document.createElement("option");
-      option.value = location.name; // Use the location name as the value
-      option.text = location.name;
-      startSelect.add(option.cloneNode(true));
-      endSelect.add(option);
+    // 1. 智慧分類小幫手：利用關鍵字判斷大樓屬於哪一類
+    // 1. 智慧分類小幫手：利用關鍵字判斷大樓屬於哪一類
+    function getCategory(name) {
+      
+      // 🌟 終極解法：強制指定分類的「例外字典」
+      // 如果有被分錯的，直接把它加進這裡！
+      const overrides = {
+        "嘉農小館": "dining",
+        "康乃爾學院": "housing",
+        "苗園":"housing",
+        
+      };
+
+      // 第一關：如果在例外名單裡有明確規定，直接放行！
+      if (overrides[name]) {
+        return overrides[name];
+      }
+
+      // 第二關：攔截連鎖店與明確的飲食
+      if (name.includes("全家") || name.includes("7-Eleven") || name.includes("萊爾富") || name.includes("蝦皮") || name.includes("早餐")) return "dining";
+      
+      // 第三關：住宿區關鍵字與特定名稱
+      const housingNames = ["伯爵", "陶潛", "現代首席", "京采", "墨香苑", "陶居", "木菊苑", "書香門第", "常春藤", "鼎泰", "柏克萊", "彬彬", "夏都", "深白舍", "橙舍", "節能宿舍"];
+      if (name.includes("宿舍") || name.includes("學苑") || name.includes("會館") || name.includes("凱格鹿") || housingNames.some(h => name.includes(h))) return "housing";
+      
+      // 第四關：學校建築關鍵字與特定名稱
+      const schoolNames = ["禮堂", "實習工廠", "苗圃", "動物實驗室", "變電所", "納米運動", "三興國小"];
+      if (name.includes("大樓") || name.includes("學院") || name.includes("教室") || name.includes("系") || name.includes("館") || name.includes("活動中心") || name.includes("環安中心") || schoolNames.some(s => name.includes(s))) return "school";
+      
+      // 第五關：其他沒抓到的全部預設歸類為飲食與生活商圈
+      return "dining"; 
+    }
+
+    // 2. 準備三個分類資料夾 (OptGroup)
+    const optGroups = {
+      "school": { zh: "🏫 學校建築", en: "🏫 School Buildings", el_start: document.createElement("optgroup"), el_end: document.createElement("optgroup") },
+      "housing": { zh: "🛏️ 住宿區", en: "🛏️ Accommodation", el_start: document.createElement("optgroup"), el_end: document.createElement("optgroup") },
+      "dining": { zh: "🍔 飲食與生活", en: "🍔 Dining & Life", el_start: document.createElement("optgroup"), el_end: document.createElement("optgroup") }
+    };
+
+    // 初始化資料夾標題與翻譯標籤
+    Object.keys(optGroups).forEach(key => {
+      optGroups[key].el_start.label = optGroups[key].zh;
+      optGroups[key].el_start.dataset.i18nCat = key;
+      optGroups[key].el_end.label = optGroups[key].zh;
+      optGroups[key].el_end.dataset.i18nCat = key;
     });
 
+    // 3. 掃描所有地標，放進對應的資料夾
+    locationMarkers.forEach((location) => {
+      const cat = getCategory(location.name);
+      
+      const option1 = document.createElement("option");
+      option1.value = location.name; option1.text = location.name;
+      
+      const option2 = document.createElement("option");
+      option2.value = location.name; option2.text = location.name;
+
+      optGroups[cat].el_start.appendChild(option1);
+      optGroups[cat].el_end.appendChild(option2);
+    });
+
+    // 4. 把裝滿選項的資料夾放進 HTML 下拉選單中
+    Object.keys(optGroups).forEach(key => {
+      startSelect.appendChild(optGroups[key].el_start);
+      endSelect.appendChild(optGroups[key].el_end);
+    });
+
+    // ==========================================
+    // 🌟 定義語言切換功能 (升級版：連分類標題一起翻譯)
+    // ==========================================
+    function updateDropdownLanguage(currentLang) {
+      function translateOptions(selectElement) {
+        // A. 翻譯分類標題 (OptGroup)
+        selectElement.querySelectorAll("optgroup").forEach(group => {
+          const catKey = group.dataset.i18nCat;
+          if (optGroups[catKey] && optGroups[catKey][currentLang]) {
+            group.label = optGroups[catKey][currentLang];
+          }
+        });
+
+        // B. 翻譯大樓選項 (Option)
+        Array.from(selectElement.options).forEach(option => {
+          if (option.value === "") return; 
+          if (typeof buildingTranslations !== 'undefined') {
+            const translation = buildingTranslations[option.value];
+            if (translation && translation[currentLang]) {
+              option.text = translation[currentLang];
+            } else {
+              option.text = option.value; 
+            }
+          }
+        });
+      }
+
+      translateOptions(startSelect);
+      translateOptions(endSelect);
+    }
+
+    // ==========================================
+    // 🌟 綁定語言切換事件與初始載入
+    // ==========================================
+    const langSelectElement = document.getElementById("language-selector");
+    if (langSelectElement) {
+      langSelectElement.addEventListener("change", (e) => {
+        updateDropdownLanguage(e.target.value);
+      });
+      // 網頁開啟時先手動翻譯一次
+      updateDropdownLanguage(langSelectElement.value);
+    }
     // ---------------------------
     // 🎨 準備一個記憶體陣列，用來記住所有畫在地圖上的線
     // ---------------------------
