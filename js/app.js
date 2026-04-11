@@ -114,7 +114,7 @@ fetch("campus_nodes_edges.json")
       }
 
       // 第二關：攔截連鎖店與明確的飲食
-      if (name.includes("全家") || name.includes("7-Eleven") || name.includes("萊爾富") || name.includes("蝦皮") || name.includes("早餐")) return "dining";
+      if (name.includes("全家") || name.includes("7-ELEVEN") || name.includes("萊爾富") || name.includes("蝦皮") || name.includes("早餐")) return "dining";
       
       // 第三關：住宿區關鍵字與特定名稱
       const housingNames = ["伯爵", "陶潛", "現代首席", "京采", "墨香苑", "陶居", "木菊苑", "書香門第", "常春藤", "鼎泰", "柏克萊", "彬彬", "夏都", "深白舍", "橙舍", "節能宿舍"];
