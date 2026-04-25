@@ -68,7 +68,6 @@ const buildingTranslations = {
   "丼飽處": { "zh": "丼飽處", "en": "Donburi Eatery" },
   "味芳早餐": { "zh": "味芳早餐", "en": "Wei Fang Breakfast" },
   "泰麻吉": { "zh": "泰麻吉", "en": "Thai Machi" },
-  "小羚火鍋": { "zh": "小羚火鍋", "en": "Xiao Ling Hot Pot" },
   "全方味便當、咖哩飯、炒泡麵": { "zh": "全方味便當、咖哩飯、炒泡麵", "en": "Quan Fang Wei Bento, Curry, Fried Instant Noodles" },
   "阿梅簡餐便當": { "zh": "阿梅簡餐便當", "en": "A-Mei Bento & Set Meals" },
   "二口食堂": { "zh": "二口食堂", "en": "Er Kou Diner" },
