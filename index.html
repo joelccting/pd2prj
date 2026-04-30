@@ -47,16 +47,20 @@
         <input type="checkbox" id="accessibility" />
         Accessible Route
       </label>
+        <button id="toggleEditModeBtn" data-i18n="god_mode_enable_btn" style="background-color: #f0ad4e; color: white; border: none; padding: 5px 10px; cursor: pointer;">
+          🛠️ 開啟上帝模式
+        </button>
       <button id="findRoute" data-i18n="find_route_btn">Find Route</button>
     </div>
-    <button id="exportBtn" style="position: absolute; top: 20px; right: 20px; z-index: 1000; padding: 15px; font-weight: bold; background-color: #ff3333; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
-  💾 儲存並下載修改後的路網
+        <!-- 將 index.html 裡的 exportBtn 改成這樣： -->
+    <button id="exportBtn" data-i18n="export_btn" style="display: none; position: absolute; top: 20px; right: 20px; z-index: 1000; padding: 15px; font-weight: bold; background-color: #ff3333; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+        💾 儲存並下載修改後的路網
     </button>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="js/graph.js"></script>
     <script src="js/algorithms.js"></script>
     <script src="js/lang.js"></script>
-    <script src="js/app.js"></script>
+    <script type="module" src="js/app.js"></script>
   </body>
 </html>
 

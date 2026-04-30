@@ -11,7 +11,10 @@ const translations = {
             "algorithm_select_label": "Choose an algorithm",
             "algorithm_bfs_label": "BFS",
             "algorithm_dfs_label": "DFS",
-            "algorithm_dik_label": "Dijkstra's Algorithm"
+            "algorithm_dik_label": "Dijkstra's Algorithm",
+            "god_mode_enable_btn": "🛠️ Enable God Mode",
+            "god_mode_disable_btn": "🔴 Disable God Mode",
+            "export_btn": "💾 Save & Download Edited Network"
         }
     },
     zh: {
@@ -26,7 +29,10 @@ const translations = {
             "algorithm_select_label": "選擇一個演算法：",
             "algorithm_bfs_label": "廣度優先走訪",
             "algorithm_dfs_label": "深度優先走訪",
-            "algorithm_dik_label": "戴克斯特拉演算法"
+            "algorithm_dik_label": "戴克斯特拉演算法",
+            "god_mode_enable_btn": "🛠️ 開啟上帝模式",
+            "god_mode_disable_btn": "🔴 關閉上帝模式",
+            "export_btn": "💾 儲存並下載修改後的路網"
         }
     }
 };
