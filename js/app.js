@@ -33,7 +33,7 @@ const map = L.map('map', {
     }
   ).addTo(map);
 // Fetch data and initialize the graph
-fetch("campus_nodes_edges.json")
+fetch('http://localhost:8000/api/graph') // ⬅️ 改為向後端數據庫請求
   .then((response) => response.json())
   .then((data) => {
     // Add nodes to the graph
@@ -212,61 +212,71 @@ fetch("campus_nodes_edges.json")
     const activePolylines = []
     initEditorMode(map, data, graph);
     // -------------------------
-    // Event listener for routing
+    // Event listener for routing (串接 C++ 後端 API 版本)
     // -------------------------
-    document.getElementById("findRoute").addEventListener("click", () => {
+    document.getElementById("findRoute").addEventListener("click", async () => {
       const startName = document.getElementById("start").value;
       const endName = document.getElementById("end").value;
-      const algorithm = document.getElementById("algorithm").value;
-      const accessibility = document.getElementById("accessibility").checked;
+
+      if (startName === endName) {
+        alert("Start and end locations cannot be the same.");
+        return;
+      }
 
       const startNodeIds = nodesByName[startName].map((node) => node.id);
       const endNodeIds = nodesByName[endName].map((node) => node.id);
 
-      let shortestPath = null;
-      let shortestDistance = Infinity;
-
-      if (startName === endName) {
-        alert(
-          "Start and end locations cannot be the same. Please select different locations."
-        );
+      if (!startNodeIds.length || !endNodeIds.length) {
+        alert("Invalid location selected.");
         return;
       }
-      // For each combination of start and end nodes
+
+      console.log(`正在並行搜尋所有出入口組合...`);
+      console.log("尋路起點 IDs:", startNodeIds);
+      console.log("尋路終點 IDs:", endNodeIds);
+
+      // 1. 建立一個陣列，裝滿所有要發送給後端的 API 請求 (Promises)
+      const fetchPromises = [];
       for (const startId of startNodeIds) {
         for (const endId of endNodeIds) {
-          let path = [];
-          switch (algorithm) {
-            case "bfs":
-              path = bfs(graph, startId, endId);
-              break;
-            case "dfs":
-              path = dfs(graph, startId, endId);
-              break;
-            case "dijkstra":
-              path = dijkstra(graph, startId, endId, accessibility);
-              break;
-          }
+          const request = fetch(`http://localhost:8000/route?start=${startId}&end=${endId}`)
+            .then(res => res.json())
+            .then(result => {
+              // 如果成功找到路徑，我們利用前端原本的函數算出這條路的總距離
+              if (result.status === "success" && result.path.length > 0) {
+                const totalDist = calculatePathDistance(result.path);
+                return { path: result.path, distance: totalDist };
+              }
+              return null; // 找不到路徑就回傳 null
+            })
+            .catch(err => null); // 忽略單一 API 失敗
 
-          if (path.length > 0) {
-            // Calculate total distance of the path
-            const totalDistance = calculatePathDistance(path);
-
-            if (totalDistance < shortestDistance) {
-              shortestDistance = totalDistance;
-              shortestPath = path;
-            }
-          }
+          fetchPromises.push(request);
         }
       }
 
+      // 2. Promise.all 會「同時」等所有 API 請求跑完，極度高效！
+      const results = await Promise.all(fetchPromises);
+
+      // 3. 從所有成功的結果中，挑出距離最短的那一條
+      let shortestPath = null;
+      let shortestDistance = Infinity;
+
+      for (const res of results) {
+        if (res && res.distance < shortestDistance) {
+          shortestDistance = res.distance;
+          shortestPath = res.path;
+        }
+      }
+
+      // 4. 畫出路線或報錯
       if (shortestPath) {
+        console.log("尋路成功！最短路徑為：", shortestPath);
         drawPath(shortestPath);
       } else {
         alert("No path found between the selected locations.");
       }
     });
-
 
   });
 
