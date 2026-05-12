@@ -1,19 +1,152 @@
-#controls {
+/* --- 現代化懸浮面板 --- */
+.modern-panel {
   position: absolute;
-  top: 10px;
-  left: 100px;
-  background: white;
-  padding: 10px;
-  z-index: 1000;
-  width: 240px;
-  font-size: 24px;
+  top: 15px;
+  left: 15px;
+  z-index: 1000; /* 確保在地圖之上 */
+  width: 320px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  padding: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-#controls select,
-#controls button {
-  display: block;
-  margin-bottom: 5px;
-  width: 240px;
-  height: 40px;
-  font-size: 18px;
+/* --- 下拉選單樣式 --- */
+.modern-select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.modern-select:focus { border-color: #4A90E2; }
+.modern-select.minimal { padding: 6px 10px; font-size: 13px; }
+
+/* --- 路線起終點的 UI 設計 --- */
+.route-section { position: relative; padding-left: 8px; }
+.input-group { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.input-group:last-child { margin-bottom: 0; }
+.icon-dot { width: 10px; height: 10px; border-radius: 50%; }
+.start-dot { background-color: #4CAF50; } /* 綠色起點 */
+.end-dot { background-color: #F44336; }   /* 紅色終點 */
+.route-line {
+  position: absolute;
+  left: 12px; top: 18px; bottom: 18px;
+  width: 2px;
+  background-color: #ddd;
+}
+
+/* --- 選項區 (演算法、無障礙) --- */
+.options-section {
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid #eee; border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+.checkbox-label { display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; }
+
+/* --- 按鈕樣式 --- */
+.btn-primary {
+  width: 100%; padding: 10px;
+  background-color: #4A90E2; color: white;
+  border: none; border-radius: 6px; font-size: 15px; font-weight: bold;
+  cursor: pointer; transition: background 0.2s;
+}
+.btn-primary:hover { background-color: #357ABD; }
+.btn-warning {
+  width: 100%; padding: 8px;
+  background-color: #FFB300; color: #333;
+  border: none; border-radius: 6px; font-size: 13px; font-weight: bold;
+  cursor: pointer; transition: background 0.2s;
+}
+.btn-warning:hover { background-color: #FFA000; }
+
+/* --- 時間結果網格 (重點！) --- */
+.time-results-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 切成兩欄 */
+  gap: 8px;
+  margin-top: 4px;
+}
+.time-card {
+  background: #f1f3f5;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+}
+.time-card .icon { font-size: 16px; margin-right: 6px; }
+.time-card .time-text { font-weight: bold; color: #333; }
+.warning-banner {
+  grid-column: span 2; /* 警告佔滿兩欄 */
+  background: #FFCDD2; color: #C62828;
+  padding: 8px; border-radius: 6px; font-size: 12px; font-weight: bold;
+  text-align: center;
+}
+/* 頂部導航條容器 */
+.top-nav-bar {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%); /* 居中 */
+  z-index: 1100; /* 高於地圖與側欄 */
+  width: auto;
+  min-width: 60%;
+  max-width: 90%;
+}
+
+/* 橫向網格系統 */
+.horizontal-time-grid {
+  display: flex;
+  flex-direction: row; /* 強制橫向 */
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  padding: 12px 20px;
+  border-radius: 50px; /* 膠囊狀設計 */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* 單個時間卡片樣式 */
+.time-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-right: 1px solid #eee; /* 分隔線 */
+  white-space: nowrap; /* 預防文字斷行 */
+}
+
+.time-card:last-child {
+  border-right: none;
+}
+
+.time-card .icon { font-size: 1.2rem; }
+.time-card .label { font-size: 0.85rem; color: #666; margin-right: 4px; }
+.time-card .time-text { font-size: 1rem; font-weight: bold; color: #222; }
+
+/* 警告標語 (懸浮在條狀下方) */
+.warning-banner-top {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 5px;
+  background: #C62828;
+  color: white;
+  padding: 2px 12px;
+  border-radius: 4px;
+  font-size: 11px;
 }

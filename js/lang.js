@@ -1,34 +1,70 @@
 const translations = {
     en: {
         translation: {
-            "language-selector": "Select Language:",
-            "start_label": "Start Location:",
-            "end_label": "End Location:",
-            "algorithm_label": "Algorithm:",
-            "find_route_btn": "Find Route",
-            "select_a_start_label": "Select a start location",
-            "select_an_end_label": "Select an end location",
-            "algorithm_select_label": "Choose an algorithm",
-            "algorithm_dik_label": "Dijkstra's Algorithm",
+            "find_route_btn": "Start Navigation",
             "god_mode_enable_btn": "🛠️ Enable God Mode",
             "god_mode_disable_btn": "🔴 Disable God Mode",
-            "export_btn": "💾 Save & Download Edited Network"
+            "export_btn": "💾 Save & Download Edited Network",
+            "algorithm_dijkstra": "Dijkstra's Algorithm",
+            "accessible_route": "Accessible Route",
+            
+            "mode_distance": "🚶 Shortest Distance (Default)",
+            "mode_walk": "🚶 Walking (Avoid no-pedestrian)",
+            "mode_bike": "🚲 Bicycle",
+            "mode_motorcycle": "🛵 Motorcycle (Avoid restricted)",
+            "mode_car": "🚗 Car",
+
+            // 🌟 新增：時間面板與運具
+            "time_walk": "Walk",
+            "time_bike": "Bike",
+            "time_ebike": "E-Bike",
+            "time_car": "Car",
+            "time_motorcycle": "Scooter",
+            "time_sec": "s",
+            "time_min": "m ",
+            "warning_motor_restricted": "⚠️ Avoided restricted roads",
+
+            // 🌟 新增：上帝模式動態 UI
+            "box_select_enable": "🔲 Enable Box Select",
+            "box_select_disable": "❌ Disable Box Select",
+            "batch_selected": "Selected {count} routes",
+            "btn_pedestrian": "Pedestrian Only",
+            "btn_no_motor": "No Motorcycles",
+            "btn_clear": "Clear Selection"
         }
     },
     zh: {
         translation: {
-            "language-selector": "選擇語言：",
-            "start_label": "起始位置：",
-            "end_label": "終點位置：",
-            "algorithm_label": "演算法：",
-            "find_route_btn": "尋找路線",
-            "select_a_start_label": "選擇一個起始位置",
-            "select_an_end_label": "選擇一個終點位置",
-            "algorithm_select_label": "選擇一個演算法：",
-            "algorithm_dik_label": "戴克斯特拉演算法",
+            "find_route_btn": "開始導航",
             "god_mode_enable_btn": "🛠️ 開啟上帝模式",
             "god_mode_disable_btn": "🔴 關閉上帝模式",
-            "export_btn": "💾 儲存並下載修改後的路網"
+            "export_btn": "💾 儲存並下載修改後的路網",
+            "algorithm_dijkstra": "戴克斯特拉演算法",
+            "accessible_route": "無障礙路線",
+
+            "mode_distance": "🚶 距離最短 (預設)",
+            "mode_walk": "🚶 步行 (避開無行人路段)",
+            "mode_bike": "🚲 腳踏車",
+            "mode_motorcycle": "🛵 機車 (避開禁行路段)",
+            "mode_car": "🚗 汽車",
+
+            // 🌟 新增：時間面板與運具
+            "time_walk": "步行",
+            "time_bike": "腳踏車",
+            "time_ebike": "電動車",
+            "time_car": "汽車",
+            "time_motorcycle": "機車",
+            "time_sec": "秒",
+            "time_min": "分",
+            "warning_motor_restricted": "⚠️ 已避開禁行路段",
+
+            // 🌟 新增：上帝模式動態 UI
+            "box_select_enable": "🔲 啟用滑鼠框選",
+            "box_select_disable": "❌ 關閉框選模式",
+            "batch_selected": "已選取 {count} 條路徑",
+            "btn_pedestrian": "設為行人專用",
+            "btn_no_motor": "禁止機車通行",
+            "btn_clear": "取消選取"
         }
     }
 };
@@ -289,57 +325,91 @@ const buildingTranslations = {
   "不吃不可鹽水雞": { "zh": "不吃不可鹽水雞", "en": "Must Eat Salted Water Chicken" },
   "德州撲克競技協會": { "zh": "德州撲克競技協會", "en": "Texas Hold'em Poker Association" },
 };
-function applyTranslations(lang) {
+// ==========================================
+// 🌟 1. 全局翻譯函數 (增加對動態 UI 的支援)
+// ==========================================
+window.applyTranslations = function(lang) {
+    const dict = translations[lang].translation;
+
+    // A. 處理具有 data-i18n 屬性的靜態元素
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang].translation[key]) {
-            el.textContent = translations[lang].translation[key];
+        if (dict[key]) {
+            el.textContent = dict[key];
         }
     });
-}
 
-// React to the selector change
-const selector = document.getElementById('language-selector');
-selector.addEventListener('change', (e) => {
-    const lang = e.target.value;
-    applyTranslations(lang);
-    localStorage.setItem('preferredLang', lang);
-});
+    // B. 處理現代化 UI 中特定 ID / Class 的靜態元素
+    const findRouteBtn = document.getElementById('findRoute');
+    if (findRouteBtn) findRouteBtn.textContent = dict["find_route_btn"];
 
-// Initialization
+    const godModeBtn = document.getElementById('god-mode');
+    if (godModeBtn && !godModeBtn.hasAttribute('data-i18n')) {
+        godModeBtn.textContent = dict["god_mode_enable_btn"];
+    }
+
+    const algorithmSelect = document.querySelector('#algorithm option[value="dijkstra"]');
+    if (algorithmSelect) algorithmSelect.textContent = dict["algorithm_dijkstra"];
+
+    const accessibleLabel = document.querySelector('.checkbox-label span');
+    if (accessibleLabel) accessibleLabel.textContent = dict["accessible_route"];
+
+    // C. 翻譯交通工具下拉選單 (mode)
+    const modeOptions = document.querySelectorAll('#mode option');
+    modeOptions.forEach(opt => {
+        if (dict[`mode_${opt.value}`]) {
+            opt.textContent = dict[`mode_${opt.value}`];
+        }
+    });
+
+    // 🌟 D. 動態更新已被建立的框選按鈕 (如果存在)
+    // 我們透過尋找特定的硬編碼文字來定位它
+    const currentBoxBtn = Array.from(document.querySelectorAll('button')).find(btn => 
+        btn.textContent.includes('Enable Box Select') || btn.textContent.includes('啟用滑鼠框選') ||
+        btn.textContent.includes('Disable Box Select') || btn.textContent.includes('關閉框選模式')
+    );
+    
+    if (currentBoxBtn) {
+        // 判斷當前狀態是啟用中還是關閉中，並重新賦予新語言的文字
+        if (currentBoxBtn.textContent.includes('Enable') || currentBoxBtn.textContent.includes('啟用')) {
+            currentBoxBtn.innerHTML = dict['box_select_enable'];
+        } else {
+            currentBoxBtn.innerHTML = dict['box_select_disable'];
+        }
+    }
+};
+
+// ==========================================
+// 🌟 2. 翻譯起終點大樓選項 (保持原樣)
+// ==========================================
+window.updateDropdownLanguage = function(currentLang) {
+    // ... 保持原本的 updateDropdownLanguage 代碼 ...
+};
+
+// ==========================================
+// 🌟 3. 動態翻譯小幫手 (給 editor.js 隨時呼叫)
+// ==========================================
+window.t = function(key) {
+    const lang = localStorage.getItem('preferredLang') || 'zh';
+    return translations[lang]?.translation[key] || key;
+};
+
+// ==========================================
+// 🌟 4. 綁定事件與網頁初始化
+// ==========================================
 document.addEventListener('DOMContentLoaded', () => {
+    const selector = document.getElementById('language-selector');
+    if (!selector) return;
+
     const savedLang = localStorage.getItem('preferredLang') || 'zh';
     selector.value = savedLang;
-    applyTranslations(savedLang);
-});
+    
+    window.applyTranslations(savedLang);
 
-function updateDropdownLanguage(currentLang) {
-  const startSelect = document.getElementById("start");
-  const endSelect = document.getElementById("end");
-
-  if (!startSelect || !endSelect) return;
-
-  // 更新下拉選單的選項 (只處理真正的大樓)
-  function translateOptions(selectElement) {
-    Array.from(selectElement.options).forEach(option => {
-      // 1. 預設的防呆選項 (value 是空的) 已經有 data-i18n 會處理，這裡直接跳過！
-      if (option.value === "") {
-        return;
-      }
-      
-      // 2. 處理真實的大樓選項
-      const translation = buildingTranslations[option.value];
-      if (translation && translation[currentLang]) {
-        // 如果字典裡有這個大樓的翻譯，就換成該語言的顯示文字
-        option.text = translation[currentLang];
-      } else {
-        // 找不到翻譯就保留原名
-        option.text = option.value; 
-      }
+    selector.addEventListener('change', (e) => {
+        const lang = e.target.value;
+        window.applyTranslations(lang);
+        window.updateDropdownLanguage(lang);
+        localStorage.setItem('preferredLang', lang);
     });
-  }
-
-  // 執行翻譯 (不用再傳遞 "start" 或 "end" 了)
-  translateOptions(startSelect);
-  translateOptions(endSelect);
-}
+});

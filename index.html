@@ -20,36 +20,50 @@
   </head>
   <body>
     <div id="map"></div>
-    <div id="controls">
-      <label for="language-selector" data-i18n="language-selector">Select Language:</label>
-      <select id="language-selector">
-        <option value="zh">繁體中文</option>
-        <option value="en">English</option>
-      </select>
-      <label for="start" data-i18n="start_label">Start Location:</label>
-      <select id="start">
-        <option value="" data-i18n="select_a_start_label">Select a start location</option>
-      </select>
-  
-      <label for="end" data-i18n="end_label">End Location:</label>
-      <select id="end">
-        <option value="" data-i18n="select_an_end_label">Select an end location</option>
-      </select>
+      <div id="top-info-bar" class="top-nav-bar" style="display: none;">
+        <div id="time-results" class="horizontal-time-grid">
+          </div>
+      </div>
+      <div id="nav-panel" class="modern-panel">
+        
+        <div class="panel-header">
+          <select id="language-selector" class="modern-select minimal">
+            <option value="zh">繁體中文</option>
+            <option value="en">English</option>
+          </select>
+        </div>
 
-      <label for="algorithm" data-i18n="algorithm_label">Algorithm:</label>
-      <select id="algorithm" data-i18n="select_algorithm_label">
-        <option value="" data-i18n="algorithm_select_label">Choose an algorithm:</option>
-        <option value="dijkstra" data-i18n="algorithm_dik_label">Dijkstra's Algorithm</option>
-      </select>
-      <label>
-        <input type="checkbox" id="accessibility" />
-        Accessible Route
-      </label>
-        <button id="toggleEditModeBtn" data-i18n="god_mode_enable_btn" style="background-color: #f0ad4e; color: white; border: none; padding: 5px 10px; cursor: pointer;">
-          🛠️ 開啟上帝模式
-        </button>
-      <button id="findRoute" data-i18n="find_route_btn">Find Route</button>
-    </div>
+        <div class="route-section">
+          <div class="input-group">
+            <div class="icon-dot start-dot"></div>
+            <select id="start" class="modern-select"></select>
+          </div>
+          <div class="route-line"></div>
+          <div class="input-group">
+            <div class="icon-dot end-dot"></div>
+            <select id="end" class="modern-select"></select>
+          </div>
+        </div>
+
+        <div class="options-section">
+          <select id="algorithm" class="modern-select minimal">
+            <option value="dijkstra">戴克斯特拉演算法</option>
+          </select>
+          <label class="checkbox-label">
+            <input type="checkbox" id="accessible">
+            <span>Accessible Route</span>
+          </label>
+        </div>
+
+        <div class="action-section">
+          <button id="findRoute" class="btn-primary">開始導航</button>
+        </div>
+
+        <div class="admin-section">
+          <button id="god-mode" class="btn-warning">🛠️ 開啟上帝模式</button>
+        </div>
+
+  </div>
         <!-- 將 index.html 裡的 exportBtn 改成這樣： -->
     <button id="exportBtn" data-i18n="export_btn" style="display: none; position: absolute; top: 20px; right: 20px; z-index: 1000; padding: 15px; font-weight: bold; background-color: #ff3333; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
         💾 儲存並下載修改後的路網

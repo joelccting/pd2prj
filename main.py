@@ -1,9 +1,12 @@
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 import subprocess
 import sys
 import os
 import json
+
+
 
 app = FastAPI()
 
@@ -18,6 +21,46 @@ app.add_middleware(
 # 定義資料庫檔案路徑
 DATA_FILE = "campus_nodes_edges.json"
 TXT_FILE = "graph.txt"
+
+# 建立接收前端資料的模型
+# 建立接收前端資料的模型
+class RouteRequest(BaseModel):
+    starts: list[int]
+    ends: list[int]
+    # 前端可傳入 "distance" (預設), "car", "motorcycle", "bike", "walk" 等
+    mode: str = "distance" 
+
+# ==========================================
+# 🚀 終極效能版：批次尋路 API
+# ==========================================
+@app.post("/api/route/batch")
+async def get_route_batch(req: RouteRequest):
+    exe_name = "dijkstra.exe" if sys.platform == "win32" else "./dijkstra"
+    
+    # 將 [1, 2, 3] 轉成字串 "1,2,3" 餵給 C++
+    starts_str = ",".join(map(str, req.starts))
+    ends_str = ",".join(map(str, req.ends))
+
+    try:
+        # 只啟動「一次」C++ 引擎
+        # 將 req.mode 作為第 4 個參數傳遞給 C++ (即 argv[3])
+        # 若 req.mode 為 "car" 或 "motorcycle"，C++ 內部已實作會自動處理路權過濾並改用 "distance" 尋路
+        result = subprocess.run(
+            [exe_name, starts_str, ends_str, req.mode],
+            capture_output=True, text=True, check=True
+        )
+        
+        output = result.stdout.strip()
+        if output == "NONE":
+            return {"status": "success", "path": []}
+            
+        path_list = [int(node) for node in output.split()]
+        return {"status": "success", "path": path_list}
+        
+    except subprocess.CalledProcessError as e:
+        return {"status": "error", "message": "C++ 引擎執行失敗", "details": e.stderr.strip()}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
 
 # 🛠️ 核心功能：將 JSON 數據庫轉換為 C++ 引擎看得懂的 graph.txt (包含權重)
 # 🛠️ 終極動態轉換：自動抓取邊的所有數字與布林屬性
