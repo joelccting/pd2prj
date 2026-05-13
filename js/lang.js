@@ -8,13 +8,22 @@ const translations = {
             "algorithm_dijkstra": "Dijkstra's Algorithm",
             "accessible_route": "Accessible Route",
             
+            // 🌟 巡航模式 UI 翻譯
+            "nav_mode_title": "Navigation Mode",
+            "mode_single": "Single Destination (Shortest Path)",
+            "mode_ordered": "Multi-Dest (Ordered Cruise)",
+            "mode_optimized": "Multi-Dest (Auto Optimize-TSP)",
+            "add_waypoint": "+ Add Destination",
+            "start_cruise": "Start Cruise Navigation",
+
             "mode_distance": "🚶 Shortest Distance (Default)",
+            "route_pref_title": "Route Preference",
+            "mode_lazy": "🚶 Lazy Mode (Min. Turns)",
             "mode_walk": "🚶 Walking (Avoid no-pedestrian)",
             "mode_bike": "🚲 Bicycle",
             "mode_motorcycle": "🛵 Motorcycle (Avoid restricted)",
             "mode_car": "🚗 Car",
 
-            // 🌟 新增：時間面板與運具
             "time_walk": "Walk",
             "time_bike": "Bike",
             "time_ebike": "E-Bike",
@@ -24,13 +33,13 @@ const translations = {
             "time_min": "m ",
             "warning_motor_restricted": "⚠️ Avoided restricted roads",
 
-            // 🌟 新增：上帝模式動態 UI
             "box_select_enable": "🔲 Enable Box Select",
             "box_select_disable": "❌ Disable Box Select",
             "batch_selected": "Selected {count} routes",
             "btn_pedestrian": "Pedestrian Only",
             "btn_no_motor": "No Motorcycles",
-            "btn_clear": "Clear Selection"
+            "btn_clear": "Clear Selection",
+            "btn_custom_attr": "➕ Add/Edit Custom Attribute"  // 👈 加這行
         }
     },
     zh: {
@@ -42,13 +51,22 @@ const translations = {
             "algorithm_dijkstra": "戴克斯特拉演算法",
             "accessible_route": "無障礙路線",
 
+            // 🌟 巡航模式 UI 翻譯
+            "nav_mode_title": "導航模式",
+            "mode_single": "單一目的地 (最短路徑)",
+            "mode_ordered": "多目的地 (依順序巡航)",
+            "mode_optimized": "多目的地 (自動優化順序-TSP)",
+            "add_waypoint": "+ 增加目的地",
+            "start_cruise": "開始巡航導航",
+
             "mode_distance": "🚶 距離最短 (預設)",
+            "route_pref_title": "路線偏好",
+            "mode_lazy": "🚶 無腦直走 (最少轉彎)",
             "mode_walk": "🚶 步行 (避開無行人路段)",
             "mode_bike": "🚲 腳踏車",
             "mode_motorcycle": "🛵 機車 (避開禁行路段)",
             "mode_car": "🚗 汽車",
 
-            // 🌟 新增：時間面板與運具
             "time_walk": "步行",
             "time_bike": "腳踏車",
             "time_ebike": "電動車",
@@ -58,13 +76,13 @@ const translations = {
             "time_min": "分",
             "warning_motor_restricted": "⚠️ 已避開禁行路段",
 
-            // 🌟 新增：上帝模式動態 UI
             "box_select_enable": "🔲 啟用滑鼠框選",
             "box_select_disable": "❌ 關閉框選模式",
             "batch_selected": "已選取 {count} 條路徑",
             "btn_pedestrian": "設為行人專用",
             "btn_no_motor": "禁止機車通行",
-            "btn_clear": "取消選取"
+            "btn_clear": "取消選取",
+            "btn_custom_attr": "➕ 自由新增/修改屬性"  // 👈 加這行
         }
     }
 };

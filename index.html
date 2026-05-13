@@ -4,75 +4,85 @@
     <meta charset="UTF-8" />
     <title>Smart Campus Navigation System</title>
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- Leaflet CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
     <style>
-      #map {
-        height: 100vh;
-        width: 100%;
-      }
+      #map { height: 100vh; width: 100%; }
     </style>
   </head>
   <body>
     <div id="map"></div>
-      <div id="top-info-bar" class="top-nav-bar" style="display: none;">
-        <div id="time-results" class="horizontal-time-grid">
-          </div>
+    <div id="top-info-bar" class="top-nav-bar" style="display: none;">
+      <div id="time-results" class="horizontal-time-grid"></div>
+    </div>
+    
+    <div id="nav-panel" class="modern-panel">
+      <div class="panel-header">
+        <select id="language-selector" class="modern-select minimal">
+          <option value="zh">繁體中文</option>
+          <option value="en">English</option>
+        </select>
       </div>
-      <div id="nav-panel" class="modern-panel">
+
+      <div class="options-section" style="display: flex; flex-direction: column; gap: 15px;">
         
-        <div class="panel-header">
-          <select id="language-selector" class="modern-select minimal">
-            <option value="zh">繁體中文</option>
-            <option value="en">English</option>
+        <div class="option-group">
+          <h4 data-i18n="nav_mode_title" style="margin: 0 0 8px 0; color: #333; font-size: 14px; white-space: nowrap;">巡航策略</h4>
+          <select id="cruise-mode" class="modern-select" style="width: 100%; box-sizing: border-box;">
+            <option value="single" data-i18n="mode_single">單一目的地 (最短路徑)</option>
+            <option value="ordered" data-i18n="mode_ordered">多目的地 (依順序巡航)</option>
+            <option value="optimized" data-i18n="mode_optimized">多目的地 (自動優化順序-TSP)</option>
           </select>
         </div>
 
-        <div class="route-section">
-          <div class="input-group">
-            <div class="icon-dot start-dot"></div>
-            <select id="start" class="modern-select"></select>
-          </div>
-          <div class="route-line"></div>
-          <div class="input-group">
+        <div class="option-group">
+          <h4 data-i18n="route_pref_title" style="margin: 0 0 8px 0; color: #333; font-size: 14px; white-space: nowrap;">路線偏好</h4>
+          <select id="route-weight" class="modern-select" style="width: 100%; box-sizing: border-box;">
+            <option value="distance" data-i18n="mode_distance">🚶 距離最短 (預設)</option>
+            <option value="lazy" data-i18n="mode_lazy">🚶 無腦直走 (最少轉彎)</option>
+          </select>
+        </div>
+        
+      </div>
+
+      <div class="route-section">
+        <div class="input-group">
+          <div class="icon-dot start-dot"></div>
+          <select id="start" class="modern-select"></select>
+        </div>
+        
+        <div class="route-line"></div>
+
+        <div id="waypoint-container">
+          <div class="input-group waypoint-item">
             <div class="icon-dot end-dot"></div>
-            <select id="end" class="modern-select"></select>
+            <select class="modern-select waypoint-select"></select>
+            <button class="btn-remove-waypoint" style="display:none;">×</button>
           </div>
         </div>
 
-        <div class="options-section">
-          <select id="algorithm" class="modern-select minimal">
-            <option value="dijkstra">戴克斯特拉演算法</option>
-          </select>
-          <label class="checkbox-label">
-            <input type="checkbox" id="accessible">
-            <span>Accessible Route</span>
-          </label>
-        </div>
+        <button id="add-waypoint" class="btn-secondary" data-i18n="add_waypoint" style="width: 100%; margin-top: 10px;">
+          + 增加目的地
+        </button>
+      </div>
 
-        <div class="action-section">
-          <button id="findRoute" class="btn-primary">開始導航</button>
-        </div>
+      <div class="action-section">
+        <button id="findRoute" class="btn-primary" data-i18n="start_cruise">開始巡航導航</button>
+      </div>
+    </div>
 
-        <div class="admin-section">
-          <button id="god-mode" class="btn-warning">🛠️ 開啟上帝模式</button>
-        </div>
-
-  </div>
-        <!-- 將 index.html 裡的 exportBtn 改成這樣： -->
-    <button id="exportBtn" data-i18n="export_btn" style="display: none; position: absolute; top: 20px; right: 20px; z-index: 1000; padding: 15px; font-weight: bold; background-color: #ff3333; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+    <button id="god-mode" data-i18n="god_mode_enable_btn" style="position: fixed; bottom: 20px; right: 20px; z-index: 2000; padding: 12px 20px; font-weight: bold; background-color: #f0ad4e; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
+        🛠️ 開啟上帝模式
+    </button>
+    <button id="exportBtn" data-i18n="export_btn" style="display: none; position: fixed; bottom: 70px; right: 20px; z-index: 2000; padding: 12px 20px; font-weight: bold; background-color: #ff3333; color: white; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
         💾 儲存並下載修改後的路網
     </button>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    
+    <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
+
     <script src="js/graph.js"></script>
-    <script src="js/algorithms.js"></script>
     <script src="js/lang.js"></script>
     <script type="module" src="js/app.js"></script>
   </body>
 </html>
-

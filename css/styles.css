@@ -150,3 +150,98 @@
   border-radius: 4px;
   font-size: 11px;
 }
+.waypoint-item {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.btn-remove-waypoint {
+    position: absolute;
+    right: -25px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #ff4444;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #f0f0f0;
+    border: 1px dashed #ccc;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #e0e0e0;
+}
+
+.icon-dot.end-dot {
+    background-color: #ff4444; /* 目的地用紅色 */
+}
+/* =========================================
+   巡航面板：時間線與點的對齊優化
+   ========================================= */
+.route-section {
+    position: relative;
+    padding-left: 25px; /* 把選單往右推，給點和線留空間 */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* 畫那條貫穿上下的灰線 */
+.route-section::before {
+    content: '';
+    position: absolute;
+    left: 8px; /* 對齊圓點中心 */
+    top: 15px;
+    bottom: 50px; /* 底部留白，不要畫到新增按鈕 */
+    width: 2px;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    z-index: 2; /* 讓點點蓋在線上 */
+}
+
+/* 圓點的絕對定位 */
+.icon-dot {
+    position: absolute;
+    left: -22px; /* 向左推到灰線上 */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 2px rgba(0,0,0,0.3);
+}
+
+.start-dot { background-color: #4CAF50; }
+.end-dot { background-color: #F44336; }
+
+/* 讓下拉選單填滿剩下的空間 */
+.waypoint-select, #start {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.btn-remove-waypoint {
+    background: none;
+    border: none;
+    color: #ff4444;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 0 0 0 8px;
+}
+
+/* 隱藏多餘的元素 */
+.route-line { display: none; }

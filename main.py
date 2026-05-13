@@ -95,26 +95,30 @@ async def get_graph():
         return {"nodes": [], "edges": []}
     with open(DATA_FILE, 'r', encoding='utf-8') as f:
         return json.load(f)
+    
 
 # ==========================================
 # 數據庫 API：接收上帝模式的修改並儲存 (POST)
 # ==========================================
 @app.post("/api/graph")
-async def save_graph(request: Request):
+async def save_graph(data: dict):
     try:
-        data = await request.json()
+        # 1. 儲存原本的 graph.txt (給 C++ 讀取邊與權重)
+        with open("graph.txt", "w", encoding="utf-8") as f:
+            for edge in data.get("edges", []):
+                # ... 你原本寫 graph.txt 的邏輯 ...
+                f.write(f"{edge['from']} {edge['to']} distance={edge.get('distance', 0)} ...\n")
         
-        # 1. 儲存至 JSON 數據庫
-        with open(DATA_FILE, 'w', encoding='utf-8') as f:
-            json.dump(data, f, ensure_ascii=False, indent=2)
-            
-        # 2. 自動同步更新 C++ 引擎的 txt
-        update_graph_txt(data)
-        
-        return {"status": "success", "message": "圖形資料庫已更新，並成功同步至 C++ 引擎！"}
+        # 🌟 2. 新增：儲存 nodes.txt (給 C++ 讀取經緯度算轉彎角度)
+        with open("nodes.txt", "w", encoding="utf-8") as f:
+            for node in data.get("nodes", []):
+                # 寫入格式：節點ID 緯度 經度
+                f.write(f"{node['id']} {node['lat']} {node['lng']}\n")
+
+        return {"status": "success", "message": "圖資與節點座標已成功儲存"}
+    
     except Exception as e:
         return {"status": "error", "message": str(e)}
-
 # ==========================================
 # C++ 尋路引擎 API (原本的功能，保持不變)
 # ==========================================

@@ -8,8 +8,13 @@
 #include <algorithm>
 #include <string>
 #include <sstream>
+#include <cmath>
+#include <tuple>
 
 using namespace std;
+
+constexpr double DEG_TO_RAD = 0.017453292519943295; // M_PI / 180.0
+constexpr double RAD_TO_DEG = 57.29577951308232;    // 180.0 / M_PI
 
 struct Edge {
     long long to; 
@@ -27,6 +32,42 @@ vector<long long> parseList(const string& str) {
     return res;
 }
 
+inline double calculateTurnAngle(double latA, double lonA, double latB, double lonB, double latC, double lonC) {
+    // 1. 取得經緯度差值
+    double dLat1 = latB - latA;
+    double dLon1 = lonB - lonA;
+    double dLat2 = latC - latB;
+    double dLon2 = lonC - lonB;
+
+    // 2. 計算經度投影修正係數 (以轉折點 B 的緯度為基準)
+    double cosLat = std::cos(latB * DEG_TO_RAD);
+    
+    // 3. 套用投影修正 (將經度差轉換為與緯度差等比例的平面向量 dx, dy)
+    double dx1 = dLon1 * cosLat;
+    double dy1 = dLat1;
+    double dx2 = dLon2 * cosLat;
+    double dy2 = dLat2;
+
+    // 4. 計算內積與向量長度平方
+    double dotProduct = dx1 * dx2 + dy1 * dy2;
+    double magSq1 = dx1 * dx1 + dy1 * dy1;
+    double magSq2 = dx2 * dx2 + dy2 * dy2;
+
+    // 避免除以零的情況 (若 A=B 或 B=C，代表原地未動，視為無轉彎 0 度)
+    if (magSq1 == 0.0 || magSq2 == 0.0) {
+        return 0.0; 
+    }
+
+    // 5. 透過內積公式計算 cos(θ)
+    double cosTheta = dotProduct / std::sqrt(magSq1 * magSq2);
+
+    // 6. 修正浮點數運算誤差
+    cosTheta = std::max(-1.0, std::min(1.0, cosTheta));
+
+    // 7. 將弧度轉換回度數
+    return std::acos(cosTheta) * RAD_TO_DEG;
+}
+
 int main(int argc, char* argv[]) {
     if (argc < 3 || argc > 4) return 1;
 
@@ -36,6 +77,26 @@ int main(int argc, char* argv[]) {
 
     // 將終點放入 Hash Set 加速查詢
     unordered_set<long long> end_set(ends.begin(), ends.end());
+
+    // 🚀 修復：宣告並實際載入 coords
+    unordered_map<long long, pair<double, double>> coords;
+    
+    // 讀取 nodes.txt 以獲取真實的經緯度供夾角運算
+    ifstream node_file("nodes.txt");
+    if (node_file.is_open()) {
+        string nline;
+        while (getline(node_file, nline)) {
+            if (nline.empty()) continue;
+            istringstream niss(nline);
+            long long nid;
+            double lat, lon;
+            // 預期格式：節點ID 緯度 經度 (例如：12345 23.560 120.470)
+            if (niss >> nid >> lat >> lon) {
+                coords[nid] = {lat, lon};
+            }
+        }
+        node_file.close();
+    }
 
     unordered_map<long long, vector<Edge>> graph;
     ifstream file("graph.txt");
@@ -59,87 +120,104 @@ int main(int argc, char* argv[]) {
     }
     file.close();
 
-    // 🚀 新增：決定尋路時要看哪一個數值當作成本 (Cost)
-    // 如果傳入的是交通工具模式，則尋路權重預設使用 "distance" 來找最短物理距離
-    // 如果前端傳入其他字串 (例如 "time" 或 "accessible")，則以該字串作為權重
     string cost_key = "distance";
-    if (weight_type != "car" && weight_type != "motorcycle" && weight_type != "bike" && weight_type != "walk") {
+    if (weight_type != "car" && weight_type != "motorcycle" && weight_type != "bike" && weight_type != "walk" && weight_type != "lazy") {
         cost_key = weight_type;
     }
 
-    unordered_map<long long, double> dist;
-    unordered_map<long long, long long> parent;
-    for (const auto& pair : graph) dist[pair.first] = numeric_limits<double>::infinity();
+    // ==========================================
+    // 🚀 狀態空間擴充定義區
+    // ==========================================
+    constexpr double TURN_PENALTY_COST = 50.0;
+    using State = std::tuple<double, long long, long long>; // {累積權重, 目前節點, 前驅節點}
+    priority_queue<State, vector<State>, greater<State>> pq;
+    
+    // dist[目前節點][前驅節點] = 最小成本
+    unordered_map<long long, unordered_map<long long, double>> dist;
+    // parent[目前節點][前驅節點] = 前驅的前驅
+    unordered_map<long long, unordered_map<long long, long long>> parent;
 
-    using pdi = pair<double, long long>;
-    priority_queue<pdi, vector<pdi>, greater<pdi>> pq;
-
-    // 🚀 核心優化：將所有起點同時放入 Queue，距離為 0
     for (long long s : starts) {
         if (graph.count(s)) {
-            dist[s] = 0.0;
-            pq.push({0.0, s});
-            parent[s] = s; // 自己是自己的起點
+            dist[s][s] = 0.0;
+            pq.push({0.0, s, s});
+            parent[s][s] = s; 
         }
     }
 
-    long long final_end = -1; // 記錄最先碰到的終點
+    long long final_end = -1;
+    long long final_prev = -1; 
 
+    // ==========================================
+    // 🚀 Dijkstra 核心迴圈
+    // ==========================================
     while (!pq.empty()) {
-        auto [current_dist, current_node] = pq.top();
+        auto [current_dist, current_node, previous_node] = pq.top();
         pq.pop();
 
-        if (current_dist > dist[current_node]) continue;
+        if (current_dist > dist[current_node][previous_node]) continue;
 
-        // 🚀 核心優化：只要碰到「任何一個」終點，就代表找到了全局最短路徑！
         if (end_set.count(current_node)) {
             final_end = current_node;
+            final_prev = previous_node;
             break;
         }
 
         for (const auto& edge : graph[current_node]) {
-            // ==========================================
-            // 🚀 新增：多交通工具通行限制過濾邏輯
-            // ==========================================
+            long long next_node = edge.to;
+
             if (weight_type == "car" || weight_type == "motorcycle") {
-                // 如果是汽車或機車，檢查是否有 pedestrian_only 屬性，若有且為 1 則不可通行
-                if (edge.weights.count("pedestrian_only") && edge.weights.at("pedestrian_only") == 1.0) {
-                    continue;
-                }
+                if (edge.weights.count("pedestrian_only") && edge.weights.at("pedestrian_only") == 1.0) continue;
             }
-
             if (weight_type == "motorcycle") {
-                // 如果是機車，檢查是否有 motor_vehicle_allowed 屬性，若有且為 0 則不可通行
-                if (edge.weights.count("motor_vehicle_allowed") && edge.weights.at("motor_vehicle_allowed") == 0.0) {
-                    continue;
-                }
+                if (edge.weights.count("motor_vehicle_allowed") && edge.weights.at("motor_vehicle_allowed") == 0.0) continue;
             }
-            // ==========================================
 
-            // 決定此邊的實際權重：使用 cost_key，若無則退回找 "distance"，再找不到則給予極大值
             double next_weight = edge.weights.count(cost_key) ? edge.weights.at(cost_key) : 
                                  (edge.weights.count("distance") ? edge.weights.at("distance") : 99999.0);
             
-            // 保留原有的 accessible 特殊邏輯
             if (cost_key == "accessible" && next_weight == 0) continue;
 
-            if (dist[current_node] + next_weight < dist[edge.to]) {
-                dist[edge.to] = dist[current_node] + next_weight;
-                parent[edge.to] = current_node;
-                pq.push({dist[edge.to], edge.to});
+            double penalty = 0.0;
+            if (weight_type == "lazy" && previous_node != current_node) {
+                // 確保三個點的座標都有成功讀取，否則不計算懲罰
+                if (coords.count(previous_node) && coords.count(current_node) && coords.count(next_node)) {
+                    double angle = calculateTurnAngle(
+                        coords[previous_node].first, coords[previous_node].second,
+                        coords[current_node].first,  coords[current_node].second,
+                        coords[next_node].first,     coords[next_node].second
+                    );
+                    
+                    if (angle > 45.0) {
+                        penalty = TURN_PENALTY_COST;
+                    }
+                }
+            }
+
+            double new_dist = current_dist + next_weight + penalty;
+
+            if (dist[next_node].find(current_node) == dist[next_node].end() || 
+                new_dist < dist[next_node][current_node]) {
+                
+                dist[next_node][current_node] = new_dist;
+                parent[next_node][current_node] = previous_node; 
+                pq.push({new_dist, next_node, current_node});
             }
         }
-    }
+    } 
 
-    // 回推路徑
     if (final_end == -1) {
         cout << "NONE\n";
     } else {
         vector<long long> path;
         long long curr = final_end;
-        while (parent[curr] != curr) { // 追溯到最原始的起點
+        long long prev = final_prev;
+        
+        while (curr != prev) { 
             path.push_back(curr);
-            curr = parent[curr];
+            long long next_prev = parent[curr][prev];
+            curr = prev;
+            prev = next_prev;
         }
         path.push_back(curr);
         reverse(path.begin(), path.end());

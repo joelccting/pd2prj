@@ -43,7 +43,7 @@ export function initEditorMode(map, data, graph) {
     iconAnchor: [6, 6]
   });
 
-  // --- 批量操作 UI 邏輯 ---
+ // --- 批量操作 UI 邏輯 ---
   function updateBatchUI() {
     let batchDiv = document.getElementById('batch-edit-panel');
     if (!batchDiv) {
@@ -55,16 +55,36 @@ export function initEditorMode(map, data, graph) {
 
     if (selectedEdges.size > 0) {
       batchDiv.style.display = 'block';
+      // 🌟 新增了一個藍色的「自訂屬性」按鈕
       batchDiv.innerHTML = `
         <h4 style="margin:0 0 10px 0;">${window.t('batch_selected').replace('{count}', selectedEdges.size)}</h4>
         <button id="btnPedestrian" style="margin-bottom:5px; width:100%; padding:5px; background:#4CAF50; color:white; border:none; cursor:pointer;">${window.t('btn_pedestrian')}</button><br>
         <button id="btnNoMotor" style="margin-bottom:5px; width:100%; padding:5px; background:#f44336; color:white; border:none; cursor:pointer;">${window.t('btn_no_motor')}</button><br>
+        <button id="btnCustomAttr" style="margin-bottom:5px; width:100%; padding:5px; background:#007bff; color:white; border:none; cursor:pointer; font-weight:bold;">${window.t('btn_custom_attr')}</button><br>
         <button id="btnClear" style="width:100%; padding:5px; background:#ccc; border:none; cursor:pointer;">${window.t('btn_clear')}</button>
       `;
       
       document.getElementById('btnPedestrian').onclick = () => { applyBatch('pedestrian_only', 1); };
       document.getElementById('btnNoMotor').onclick = () => { applyBatch('motor_vehicle_allowed', 0); };
       document.getElementById('btnClear').onclick = () => { clearSelection(); };
+
+      // 🌟 綁定自訂屬性按鈕的點擊事件 (與單點修改邏輯相同)
+      document.getElementById('btnCustomAttr').onclick = () => {
+        let key = prompt("請輸入要批量新增/修改的『屬性名稱』\n(例如: lit, sheltered, night_safety):");
+        if (!key || key.trim() === "") return;
+        
+        key = key.trim();
+        
+        let valStr = prompt(`請輸入『${key}』的數值\n(例如: 1, 0, 99.5):`);
+        if (!valStr || valStr.trim() === "") return;
+        
+        // 自動判斷輸入的是數字還是文字
+        let val = isNaN(Number(valStr)) ? valStr.trim() : Number(valStr);
+        
+        // 呼叫原本寫好的批量應用函數
+        applyBatch(key, val);
+      };
+
     } else {
       batchDiv.style.display = 'none';
     }
