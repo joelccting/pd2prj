@@ -31418,7 +31418,8 @@
       "distance": 46.79202766707232,
       "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 267041157,
@@ -31492,7 +31493,8 @@
       "distance": 19.387878320145305,
       "accessible": true,
       "slope": 0.05157861956256106,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 1775446776473,
@@ -31537,7 +31539,8 @@
       "distance": 46.612589187695825,
       "accessible": true,
       "slope": 0.02145343173221467,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 1775446776485,
@@ -31567,7 +31570,8 @@
       "distance": 26.442188046905645,
       "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 2971105201,
@@ -31582,7 +31586,8 @@
       "distance": 18.335809437187677,
       "accessible": true,
       "slope": 0.05453808861973964,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 1775446776473,
@@ -31642,7 +31647,8 @@
       "distance": 38.90281657174471,
       "accessible": true,
       "slope": 0.025705079686346013,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 1775446776502,
@@ -31657,7 +31663,8 @@
       "distance": 38.79180670016446,
       "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 1775446776485,
@@ -31672,7 +31679,8 @@
       "distance": 20.087870426197263,
       "accessible": true,
       "slope": 0.049781284864117134,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 1775446776504,
@@ -31702,7 +31710,8 @@
       "distance": 38.94706533273219,
       "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 1775446776507,
@@ -33396,7 +33405,8 @@
       "distance": 9.707368243059413,
       "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 1775446776625,
@@ -33411,7 +33421,8 @@
       "distance": 10.503831353064953,
       "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "motor_vehicle_allowed": 0,
+      "pedestrian_only": 1
     },
     {
       "from": 1775446776497,
