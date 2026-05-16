@@ -1,0 +1,11 @@
+# 忽略所有 C++ 編譯出來的執行檔
+*.exe
+dijkstra
+main
+
+# 忽略動態產生的地圖快取檔案
+graph.txt
+nodes.txt
+
+# 忽略 Python 產生的快取資料夾
+__pycache__/
