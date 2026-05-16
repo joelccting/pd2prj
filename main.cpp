@@ -69,11 +69,12 @@ inline double calculateTurnAngle(double latA, double lonA, double latB, double l
 }
 
 int main(int argc, char* argv[]) {
-    if (argc < 3 || argc > 4) return 1;
+    if (argc < 3 || argc > 5) return 1;
 
     vector<long long> starts = parseList(argv[1]);
     vector<long long> ends = parseList(argv[2]);
     string weight_type = (argc == 4) ? argv[3] : "distance";
+    string vehicle_type = (argc == 5) ? argv[4] : "walk";
 
     // 將終點放入 Hash Set 加速查詢
     unordered_set<long long> end_set(ends.begin(), ends.end());
@@ -101,6 +102,11 @@ int main(int argc, char* argv[]) {
     unordered_map<long long, vector<Edge>> graph;
     ifstream file("graph.txt");
     string line;
+    string current_mode = "distance"; 
+    if (argc > 3) {
+        current_mode = argv[3];
+    }
+
     while (getline(file, line)) {
         if (line.empty()) continue;
         istringstream iss(line);
@@ -115,7 +121,9 @@ int main(int argc, char* argv[]) {
                 edge_weights[kv.substr(0, pos)] = stod(kv.substr(pos + 1));
             }
         }
-        // 順向 (u -> v) 絕對可以走，直接加入
+        if (edge_weights.count(current_mode) > 0 && edge_weights[current_mode] == 0.0) {
+            continue; 
+        }
         graph[u].push_back({v, edge_weights});
     }
     file.close();
@@ -166,11 +174,9 @@ int main(int argc, char* argv[]) {
         for (const auto& edge : graph[current_node]) {
             long long next_node = edge.to;
 
-            if (weight_type == "car" || weight_type == "motorcycle") {
-                if (edge.weights.count("pedestrian_only") && edge.weights.at("pedestrian_only") == 1.0) continue;
-            }
-            if (weight_type == "motorcycle") {
-                if (edge.weights.count("motor_vehicle_allowed") && edge.weights.at("motor_vehicle_allowed") == 0.0) continue;
+            double penalty_multiplier = 1.0;
+            if (edge.weights.count(vehicle_type) && edge.weights.at(vehicle_type) == 0.0) {
+                penalty_multiplier = 5.0; 
             }
 
             double next_weight = edge.weights.count(cost_key) ? edge.weights.at(cost_key) : 
@@ -178,9 +184,10 @@ int main(int argc, char* argv[]) {
             
             if (cost_key == "accessible" && next_weight == 0) continue;
 
+            next_weight *= penalty_multiplier; // 🌟 套用懲罰權重
+
             double penalty = 0.0;
             if (weight_type == "lazy" && previous_node != current_node) {
-                // 確保三個點的座標都有成功讀取，否則不計算懲罰
                 if (coords.count(previous_node) && coords.count(current_node) && coords.count(next_node)) {
                     double angle = calculateTurnAngle(
                         coords[previous_node].first, coords[previous_node].second,

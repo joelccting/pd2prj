@@ -25,6 +25,7 @@ class RouteRequest(BaseModel):
     starts: list[int]
     ends: list[int]
     mode: str = "distance" 
+    vehicle: str = "walk" 
 
 # ==========================================
 # 🌟 解決 GitHub Pull 問題：伺服器啟動時自動產生 txt 檔案！
@@ -75,7 +76,7 @@ async def get_route_batch(req: RouteRequest):
 
     try:
         result = subprocess.run(
-            [exe_name, starts_str, ends_str, req.mode],
+            [exe_name, starts_str, ends_str, req.mode, req.vehicle],
             capture_output=True, text=True, check=True
         )
         

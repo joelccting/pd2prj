@@ -41,6 +41,8 @@
             <option value="lazy" data-i18n="mode_lazy">🚶 無腦直走 (最少轉彎)</option>
           </select>
         </div>
+
+      
         
       </div>
 
@@ -64,7 +66,16 @@
           + 增加目的地
         </button>
       </div>
-
+        <div class="option-group">
+          <h4 data-i18n="transport_mode_title" style="margin: 0 0 8px 0; color: #333; font-size: 14px; white-space: nowrap;">交通工具</h4>
+          <select id="transport-mode" class="modern-select" style="width: 100%; box-sizing: border-box;">
+            <option value="walk" selected>🚶 步行</option>
+            <option value="bike">🚲 腳踏車</option>
+            <option value="ebike">⚡ 電動車</option>
+            <option value="motorcycle">🛵 機車</option>
+            <option value="car">🚗 汽車</option>
+          </select>
+        </div>
       <div class="action-section">
         <button id="findRoute" class="btn-primary" data-i18n="start_cruise">開始巡航導航</button>
       </div>

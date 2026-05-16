@@ -44,52 +44,147 @@ export function initEditorMode(map, data, graph) {
   });
 
  // --- 批量操作 UI 邏輯 ---
+// --- 批量操作 UI 邏輯 ---
   function updateBatchUI() {
     let batchDiv = document.getElementById('batch-edit-panel');
     if (!batchDiv) {
       batchDiv = document.createElement('div');
       batchDiv.id = 'batch-edit-panel';
-      batchDiv.style = "position:fixed; bottom:20px; left:20px; background:white; padding:15px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.3); z-index:1001; display:none;";
+      batchDiv.style = "position:fixed; bottom:20px; left:20px; background:white; padding:15px; border-radius:8px; box-shadow:0 0 15px rgba(0,0,0,0.3); z-index:1001; display:none; min-width: 220px;";
       document.body.appendChild(batchDiv);
     }
 
     if (selectedEdges.size > 0) {
       batchDiv.style.display = 'block';
-      // 🌟 新增了一個藍色的「自訂屬性」按鈕
-      batchDiv.innerHTML = `
-        <h4 style="margin:0 0 10px 0;">${window.t('batch_selected').replace('{count}', selectedEdges.size)}</h4>
-        <button id="btnPedestrian" style="margin-bottom:5px; width:100%; padding:5px; background:#4CAF50; color:white; border:none; cursor:pointer;">${window.t('btn_pedestrian')}</button><br>
-        <button id="btnNoMotor" style="margin-bottom:5px; width:100%; padding:5px; background:#f44336; color:white; border:none; cursor:pointer;">${window.t('btn_no_motor')}</button><br>
-        <button id="btnCustomAttr" style="margin-bottom:5px; width:100%; padding:5px; background:#007bff; color:white; border:none; cursor:pointer; font-weight:bold;">${window.t('btn_custom_attr')}</button><br>
-        <button id="btnClear" style="width:100%; padding:5px; background:#ccc; border:none; cursor:pointer;">${window.t('btn_clear')}</button>
-      `;
-      
-      document.getElementById('btnPedestrian').onclick = () => { applyBatch('pedestrian_only', 1); };
-      document.getElementById('btnNoMotor').onclick = () => { applyBatch('motor_vehicle_allowed', 0); };
-      document.getElementById('btnClear').onclick = () => { clearSelection(); };
 
-      // 🌟 綁定自訂屬性按鈕的點擊事件 (與單點修改邏輯相同)
-      document.getElementById('btnCustomAttr').onclick = () => {
-        let key = prompt("請輸入要批量新增/修改的『屬性名稱』\n(例如: lit, sheltered, night_safety):");
-        if (!key || key.trim() === "") return;
+      // 🌟 1. 蒐集當前選取路段的所有狀態
+      let states = { walk: new Set(), bike: new Set(), ebike: new Set(), motorcycle: new Set(), car: new Set() };
+      
+      selectedEdges.forEach(edge => {
+        // 若無屬性，預設帶入 (原本不可過就是0，否則預設為1)
+        const def = (edge.accessible === false) ? 0 : 1;
+        states.walk.add(edge.walk !== undefined ? edge.walk : def);
+        states.bike.add(edge.bike !== undefined ? edge.bike : def);
+        states.ebike.add(edge.ebike !== undefined ? edge.ebike : def);
+        states.motorcycle.add(edge.motorcycle !== undefined ? edge.motorcycle : def);
+        states.car.add(edge.car !== undefined ? edge.car : def);
+      });
+
+      // 🌟 2. 判斷 Checkbox 的 HTML 屬性
+      const getProps = (stateSet) => {
+        if (stateSet.size === 1) {
+          // 如果全部路段狀態一致，有1就打勾，沒1就不打勾
+          return stateSet.has(1) ? "checked" : "";
+        }
+        // 如果有不同的狀態 (有的可過、有的不可過)，標記為 mixed
+        return "data-mixed='true'"; 
+      };
+      
+      const titleText = window.t && window.t('batch_selected') ? window.t('batch_selected').replace('{count}', selectedEdges.size) : `批次編輯: 已選 ${selectedEdges.size} 條路`;
+      const customBtnText = window.t && window.t('btn_custom_attr') ? window.t('btn_custom_attr') : '✏️ 自訂其他屬性';
+      const clearBtnText = window.t && window.t('btn_clear') ? window.t('btn_clear') : '❌ 取消選取';
+
+      batchDiv.innerHTML = `
+        <h4 style="margin:0 0 10px 0; color:#333;">${titleText}</h4>
+        <hr style="margin:8px 0; border:0; border-top:1px solid #ccc;">
+        <p style="margin:4px 0 8px 0; font-size:13px; font-weight:bold; color:#0056b3;">✅ 批次設定路權 (方塊[-]代表狀態不一)：</p>
         
+        <div style="font-size: 14px; line-height: 1.8; margin-bottom: 8px;">
+            <label><input type="checkbox" id="batch-walk" ${getProps(states.walk)}> 🚶 步行</label><br>
+            <label><input type="checkbox" id="batch-bike" ${getProps(states.bike)}> 🚲 腳踏車</label><br>
+            <label><input type="checkbox" id="batch-ebike" ${getProps(states.ebike)}> ⚡ 電動車</label><br>
+            <label><input type="checkbox" id="batch-motorcycle" ${getProps(states.motorcycle)}> 🛵 機車</label><br>
+            <label><input type="checkbox" id="batch-car" ${getProps(states.car)}> 🚗 汽車</label>
+        </div>
+
+        <button id="btnApplyBatch" style="margin-bottom:8px; width:100%; padding:8px; background:#4CAF50; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">💾 套用至所選路段</button>
+        <button id="btnCustomAttr" style="margin-bottom:8px; width:100%; padding:6px; background:#007bff; color:white; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">${customBtnText}</button>
+        <button id="btnClear" style="width:100%; padding:6px; background:#ccc; color:#333; border:none; border-radius:4px; cursor:pointer; font-weight:bold;">${clearBtnText}</button>
+      `;
+
+      // 🌟 3. 處理「混合狀態 (Indeterminate)」的視覺效果
+      ['walk', 'bike', 'ebike', 'motorcycle', 'car'].forEach(type => {
+        let el = document.getElementById(`batch-${type}`);
+        if (el.getAttribute('data-mixed') === 'true') {
+          el.indeterminate = true; // 讓它呈現 "-" 半選取狀態
+        }
+        // 當使用者主動點擊時，取消 indeterminate 狀態
+        el.addEventListener('click', function() {
+           this.indeterminate = false; 
+        });
+      });
+
+      // 🌟 4. 綁定「套用批次路權」按鈕邏輯
+      document.getElementById('btnApplyBatch').onclick = () => {
+        // 取得 Checkbox 值，如果是 indeterminate (代表使用者沒修改)，就回傳 null 表示不覆寫
+        const getVal = (id) => {
+          const el = document.getElementById(id);
+          return el.indeterminate ? null : (el.checked ? 1 : 0);
+        };
+
+        const vals = {
+          walk: getVal('batch-walk'),
+          bike: getVal('batch-bike'),
+          ebike: getVal('batch-ebike'),
+          motorcycle: getVal('batch-motorcycle'),
+          car: getVal('batch-car')
+        };
+
+        // 迴圈更新所有被選取的 Edge
+        selectedEdges.forEach(edge => {
+          const def = (edge.accessible === false) ? 0 : 1;
+          
+          ['walk', 'bike', 'ebike', 'motorcycle', 'car'].forEach(type => {
+             // 如果原本沒有該屬性，就先補上預設值
+             if (edge[type] === undefined) edge[type] = def;
+             
+             // 只有在使用者「有明確修改」該項目的時候 (不是 null)，才進行覆寫
+             if (vals[type] !== null) {
+                edge[type] = vals[type];
+             }
+          });
+
+          // 清理舊的無用屬性
+          delete edge.accessible;
+          delete edge.pedestrian_only;
+          delete edge.motor_vehicle_allowed;
+        });
+
+        alert(`✅ 成功更新了 ${selectedEdges.size} 條路段的路權設定！\n(請記得點擊畫面上的「儲存路網」按鈕寫入資料庫)`);
+        
+        if (typeof clearSelection === 'function') {
+          clearSelection();
+        }
+      };
+
+      // 清除選取按鈕
+      document.getElementById('btnClear').onclick = () => { 
+        if (typeof clearSelection === 'function') clearSelection(); 
+      };
+
+      // 自訂屬性按鈕
+      document.getElementById('btnCustomAttr').onclick = () => {
+        let key = prompt("請輸入要批量新增/修改的『屬性名稱』\n(例如: lit, sheltered):");
+        if (!key || key.trim() === "") return;
         key = key.trim();
         
-        let valStr = prompt(`請輸入『${key}』的數值\n(例如: 1, 0, 99.5):`);
+        let valStr = prompt(`請輸入『${key}』的數值\n(例如: 1, 0):`);
         if (!valStr || valStr.trim() === "") return;
         
-        // 自動判斷輸入的是數字還是文字
         let val = isNaN(Number(valStr)) ? valStr.trim() : Number(valStr);
         
-        // 呼叫原本寫好的批量應用函數
-        applyBatch(key, val);
+        if (typeof applyBatch === 'function') {
+          applyBatch(key, val);
+        } else {
+          selectedEdges.forEach(edge => edge[key] = val);
+          alert(`✅ 成功更新了 ${selectedEdges.size} 條路段的 ${key} 屬性！`);
+        }
       };
 
     } else {
       batchDiv.style.display = 'none';
     }
   }
-
   function applyBatch(key, value) {
     selectedEdges.forEach(edge => { edge[key] = value; });
     alert(`✅ 已將 ${selectedEdges.size} 條路徑設定為 ${key}=${value}`);
@@ -249,8 +344,8 @@ export function initEditorMode(map, data, graph) {
         let slope = dist > 0 ? Math.abs(elevA - elevB) / dist : 0;
 
         data.edges.push(
-          { from: nodeA.id, to: nodeB.id, distance: dist, slope: slope, accessible: true },
-          { from: nodeB.id, to: nodeA.id, distance: dist, slope: slope, accessible: true }
+          { from: nodeA.id, to: nodeB.id, distance: dist, slope: slope, walk: 1, bike: 1, ebike: 1, motorcycle: 1, car: 1 },
+          { from: nodeB.id, to: nodeA.id, distance: dist, slope: slope, walk: 1, bike: 1, ebike: 1, motorcycle: 1, car: 1 }
         );
         createEditableEdge(nodeA, nodeB, true);
         selectedNodeForEdge = null;

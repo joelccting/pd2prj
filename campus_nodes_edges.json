@@ -13463,6 +13463,24 @@
       "elevation": 0,
       "accessible": true,
       "type": "path_node"
+    },
+    {
+      "id": 1775446776995,
+      "name": "",
+      "lat": 23.561985405809896,
+      "lng": 120.47618204892431,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446776996,
+      "name": "",
+      "lat": 23.560637755569424,
+      "lng": 120.47659013671408,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
     }
   ],
   "edges": [
@@ -13470,9 +13488,12 @@
       "from": 664411067,
       "to": 664411066,
       "distance": 11.90990300855662,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411066,
@@ -13569,9 +13590,12 @@
       "from": 664411067,
       "to": 664411064,
       "distance": 13.46612620409459,
-      "accessible": true,
       "slope": 7.648821824399746,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411064,
@@ -13584,9 +13608,12 @@
       "from": 667361824,
       "to": 667361822,
       "distance": 20.74396284981174,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361822,
@@ -13599,9 +13626,12 @@
       "from": 667361822,
       "to": 667361820,
       "distance": 13.468357191847648,
-      "accessible": true,
       "slope": 0.07424810507738068,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361820,
@@ -13614,9 +13644,12 @@
       "from": 667361820,
       "to": 667361825,
       "distance": 13.456711167597044,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361825,
@@ -14266,128 +14299,199 @@
       "from": 12343037169,
       "to": 667354370,
       "distance": 6.669316418205489,
-      "accessible": true,
-      "slope": 14.244338406358237
+      "slope": 14.244338406358237,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361831,
       "to": 12343037169,
       "distance": 6.0493103750686865,
-      "accessible": true,
-      "slope": 15.86957752996927
+      "slope": 15.86957752996927,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354373,
       "to": 667361831,
       "distance": 5.337173611540035,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 12343037170,
       "to": 667354373,
       "distance": 5.330395755290438,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354374,
       "to": 12343037170,
       "distance": 5.339631794285028,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354371,
       "to": 667354374,
       "distance": 5.221903189181032,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 12343037171,
       "to": 667354371,
       "distance": 5.221810601621029,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361818,
       "to": 12343037171,
       "distance": 5.218078123767748,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 12343037172,
       "to": 667361818,
       "distance": 5.394719991597506,
-      "accessible": true,
-      "slope": 17.79517753461234
+      "slope": 17.79517753461234,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354369,
       "to": 12343037172,
       "distance": 5.7899284484050195,
-      "accessible": true,
-      "slope": 16.580515779334995
+      "slope": 16.580515779334995,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354372,
       "to": 667361840,
       "distance": 4.0793421051067,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 12343037174,
       "to": 667354372,
       "distance": 4.086131430400885,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361835,
       "to": 12343037174,
       "distance": 4.076955845505678,
-      "accessible": true,
-      "slope": 0.24528104740265266
+      "slope": 0.24528104740265266,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354375,
       "to": 667361835,
       "distance": 4.185087492136789,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 12343037175,
       "to": 667354375,
       "distance": 4.1847848202956435,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361829,
       "to": 12343037175,
       "distance": 4.181343639195853,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354376,
       "to": 667361829,
       "distance": 4.142660811666493,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354369,
       "to": 667361822,
       "distance": 15.24575174457872,
-      "accessible": true,
       "slope": 0.06559204273778056,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361822,
@@ -14442,9 +14546,12 @@
       "from": 664411064,
       "to": 667595408,
       "distance": 31.039615063828773,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595408,
@@ -14457,32 +14564,45 @@
       "from": 667361849,
       "to": 667361837,
       "distance": 17.18518484941126,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361859,
       "to": 667361844,
       "distance": 13.15115348447925,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361840,
       "to": 667361820,
       "distance": 19.64702628794136,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595404,
       "to": 667361842,
       "distance": 18.138384042946356,
-      "accessible": true,
       "slope": 0.05513170289218126,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361842,
@@ -14495,9 +14615,12 @@
       "from": 667361842,
       "to": 667354370,
       "distance": 12.66222981967111,
-      "accessible": true,
       "slope": 0.0789750315893393,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354370,
@@ -14510,73 +14633,111 @@
       "from": 667361824,
       "to": 667361818,
       "distance": 20.24095604366427,
-      "accessible": true,
       "slope": 0.04940478097194502,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361831,
       "to": 667361848,
       "distance": 17.01128183534551,
-      "accessible": true,
-      "slope": 0.05878451780877742
+      "slope": 0.05878451780877742,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361827,
       "to": 667361829,
       "distance": 9.692627738037457,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144789,
       "to": 667361827,
       "distance": 4.956746981037613,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361844,
       "to": 13283144789,
       "distance": 4.679193524329475,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144790,
       "to": 667361846,
       "distance": 5.89391778383763,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361833,
       "to": 13283144790,
       "distance": 6.334345123319762,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361835,
       "to": 667361833,
       "distance": 10.50973117760152,
-      "accessible": true,
-      "slope": 0.09514991231471395
+      "slope": 0.09514991231471395,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361846,
       "to": 667361825,
       "distance": 9.787078781033006,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595408,
       "to": 667595387,
       "distance": 75.07566440741826,
-      "accessible": true,
       "slope": 0.0665994772003103,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595387,
@@ -14589,9 +14750,12 @@
       "from": 667595387,
       "to": 667354374,
       "distance": 68.42278008762975,
-      "accessible": true,
       "slope": 0.029230031247467286,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354374,
@@ -14604,9 +14768,12 @@
       "from": 667595408,
       "to": 2805280201,
       "distance": 28.930263976677132,
-      "accessible": true,
       "slope": 0.03456587885980492,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2805280201,
@@ -14619,8 +14786,12 @@
       "from": 2805280201,
       "to": 11694354870,
       "distance": 9.280122229193909,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11694354870,
@@ -14633,8 +14804,12 @@
       "from": 11694354870,
       "to": 667361861,
       "distance": 17.104969536729122,
-      "accessible": true,
-      "slope": 0.05846254200293793
+      "slope": 0.05846254200293793,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361861,
@@ -14647,9 +14822,12 @@
       "from": 667595381,
       "to": 664411066,
       "distance": 9.462620417732465,
-      "accessible": true,
       "slope": 10.779255163702565,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411066,
@@ -14732,9 +14910,12 @@
       "from": 667595385,
       "to": 667595387,
       "distance": 31.040755696872722,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595387,
@@ -14747,9 +14928,12 @@
       "from": 667595387,
       "to": 667595396,
       "distance": 28.7018050885456,
-      "accessible": true,
       "slope": 3.4144193961901763,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595396,
@@ -15015,7 +15199,12 @@
       "to": 2734322161,
       "distance": 124.11782586724668,
       "accessible": true,
-      "slope": 0.04028430215453399
+      "slope": 0.04028430215453399,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2734322161,
@@ -15042,9 +15231,12 @@
       "from": 2734317232,
       "to": 7600328588,
       "distance": 51.91699630767511,
-      "accessible": true,
       "slope": 0.11556908963766446,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 7600328588,
@@ -15085,8 +15277,12 @@
       "from": 2736005253,
       "to": 2734317237,
       "distance": 42.55427925003079,
-      "accessible": true,
-      "slope": 0.11749699649762914
+      "slope": 0.11749699649762914,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2734317237,
@@ -15099,8 +15295,12 @@
       "from": 2734317239,
       "to": 11694354905,
       "distance": 60.852547795825515,
-      "accessible": true,
-      "slope": 0.06573266272138567
+      "slope": 0.06573266272138567,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11694354905,
@@ -15113,8 +15313,12 @@
       "from": 11694354905,
       "to": 11224950408,
       "distance": 13.223420210900873,
-      "accessible": true,
-      "slope": 0.07562340030422983
+      "slope": 0.07562340030422983,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11224950408,
@@ -15127,8 +15331,12 @@
       "from": 11224950408,
       "to": 2734317241,
       "distance": 5.352968566653499,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2734317241,
@@ -15141,8 +15349,12 @@
       "from": 2734317285,
       "to": 2734317287,
       "distance": 34.31241203406809,
-      "accessible": true,
-      "slope": 0.11657589084755925
+      "slope": 0.11657589084755925,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2734317287,
@@ -15155,9 +15367,12 @@
       "from": 2734317067,
       "to": 664411037,
       "distance": 24.817984598609662,
-      "accessible": true,
       "slope": 0.16117344194919378,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411037,
@@ -15170,8 +15385,12 @@
       "from": 4648316674,
       "to": 13283144782,
       "distance": 10.763838586938743,
-      "accessible": true,
-      "slope": 0.09290365996508333
+      "slope": 0.09290365996508333,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144782,
@@ -15184,8 +15403,12 @@
       "from": 13283144782,
       "to": 2735868743,
       "distance": 8.77315214048523,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2735868743,
@@ -16304,8 +16527,12 @@
       "from": 13279987098,
       "to": 13279987099,
       "distance": 8.413394692483447,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13279987099,
@@ -16318,8 +16545,12 @@
       "from": 13279987099,
       "to": 2805245705,
       "distance": 6.203244706958512,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2805245705,
@@ -16332,8 +16563,12 @@
       "from": 2805245705,
       "to": 13279987100,
       "distance": 6.4991096145053024,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13279987100,
@@ -16346,8 +16581,12 @@
       "from": 13279987100,
       "to": 667361861,
       "distance": 5.9313026638595465,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361861,
@@ -16584,9 +16823,12 @@
       "from": 2805280201,
       "to": 667595396,
       "distance": 75.28924869761923,
-      "accessible": true,
       "slope": 1.354775107527742,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595396,
@@ -16599,9 +16841,12 @@
       "from": 667361842,
       "to": 667361849,
       "distance": 12.994750413834653,
-      "accessible": true,
       "slope": 0.07695415211171475,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361849,
@@ -16614,9 +16859,12 @@
       "from": 667361849,
       "to": 667361859,
       "distance": 12.942145882923175,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361859,
@@ -18113,8 +18361,12 @@
       "from": 5274531363,
       "to": 5274531365,
       "distance": 66.79711743791974,
-      "accessible": true,
-      "slope": 0.08982423538824579
+      "slope": 0.08982423538824579,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5274531365,
@@ -18127,8 +18379,12 @@
       "from": 5274531365,
       "to": 5274531366,
       "distance": 25.728191073014514,
-      "accessible": true,
-      "slope": 0.15547148218265036
+      "slope": 0.15547148218265036,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5274531366,
@@ -18141,8 +18397,12 @@
       "from": 5274531366,
       "to": 2734317241,
       "distance": 35.94123871915189,
-      "accessible": true,
-      "slope": 0.05564638480126358
+      "slope": 0.05564638480126358,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2734317241,
@@ -18484,9 +18744,12 @@
       "from": 667595366,
       "to": 667595370,
       "distance": 20.567457515333277,
-      "accessible": true,
       "slope": 4.521706191962104,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595370,
@@ -18499,9 +18762,12 @@
       "from": 667595370,
       "to": 664411037,
       "distance": 21.818775666312135,
-      "accessible": true,
       "slope": 0.09166417174763707,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411037,
@@ -18514,8 +18780,12 @@
       "from": 7600277780,
       "to": 5909461078,
       "distance": 5.080064061646909,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5909461078,
@@ -18696,8 +18966,12 @@
       "from": 4648316674,
       "to": 5909461077,
       "distance": 26.55762102350576,
-      "accessible": true,
-      "slope": 0.03765397507234984
+      "slope": 0.03765397507234984,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5909461077,
@@ -18710,8 +18984,12 @@
       "from": 13283144779,
       "to": 5909461079,
       "distance": 5.651857040598071,
-      "accessible": true,
-      "slope": 0.17693299614920577
+      "slope": 0.17693299614920577,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5909461079,
@@ -18724,8 +19002,12 @@
       "from": 5909461079,
       "to": 5909461078,
       "distance": 30.721538583180983,
-      "accessible": true,
-      "slope": 0.03255045307357968
+      "slope": 0.03255045307357968,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5909461078,
@@ -18850,9 +19132,12 @@
       "from": 5909462905,
       "to": 11224950406,
       "distance": 14.422891761232306,
-      "accessible": false,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11224950406,
@@ -18865,8 +19150,12 @@
       "from": 4648316677,
       "to": 4648316676,
       "distance": 13.841592031143712,
-      "accessible": true,
-      "slope": 0.07224602471666486
+      "slope": 0.07224602471666486,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 4648316676,
@@ -18879,8 +19168,12 @@
       "from": 4648316676,
       "to": 13283144783,
       "distance": 16.705040662432044,
-      "accessible": true,
-      "slope": 0.059862170958308376
+      "slope": 0.059862170958308376,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144783,
@@ -18893,8 +19186,12 @@
       "from": 13283144783,
       "to": 4648316675,
       "distance": 11.070287630395686,
-      "accessible": false,
-      "slope": 0.18066377918750734
+      "slope": 0.18066377918750734,
+      "walk": 0,
+      "bike": 0,
+      "ebike": 0,
+      "motorcycle": 0,
+      "car": 0
     },
     {
       "from": 4648316675,
@@ -18907,8 +19204,12 @@
       "from": 4648316675,
       "to": 13283144782,
       "distance": 19.93036121748998,
-      "accessible": false,
-      "slope": 0.05017470526938796
+      "slope": 0.05017470526938796,
+      "walk": 0,
+      "bike": 0,
+      "ebike": 0,
+      "motorcycle": 0,
+      "car": 0
     },
     {
       "from": 13283144782,
@@ -19502,8 +19803,12 @@
       "from": 7600277781,
       "to": 7600277780,
       "distance": 32.115706050627296,
-      "accessible": true,
-      "slope": 0.03113741290394167
+      "slope": 0.03113741290394167,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 7600277780,
@@ -19516,8 +19821,12 @@
       "from": 7600277782,
       "to": 7600277783,
       "distance": 33.466232771358534,
-      "accessible": true,
-      "slope": 0.02988086549304802
+      "slope": 0.02988086549304802,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 7600277783,
@@ -19530,8 +19839,12 @@
       "from": 13279987082,
       "to": 7600277784,
       "distance": 13.169021484729955,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 7600277784,
@@ -19544,9 +19857,12 @@
       "from": 7600328587,
       "to": 7600328588,
       "distance": 60.407342094190824,
-      "accessible": true,
       "slope": 0.09932567452884175,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 7600328588,
@@ -21078,8 +21394,12 @@
       "from": 667361857,
       "to": 11224950405,
       "distance": 14.334350384026209,
-      "accessible": false,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11224950405,
@@ -21092,9 +21412,12 @@
       "from": 11224950406,
       "to": 5909462904,
       "distance": 23.676488113257015,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5909462904,
@@ -21107,8 +21430,12 @@
       "from": 11224950405,
       "to": 11224950408,
       "distance": 26.6230473822642,
-      "accessible": true,
-      "slope": 3.418091050712045
+      "slope": 3.418091050712045,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11224950408,
@@ -21219,8 +21546,12 @@
       "from": 11225131791,
       "to": 11225131792,
       "distance": 55.93310991939284,
-      "accessible": true,
-      "slope": 0.10727098866211461
+      "slope": 0.10727098866211461,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11225131792,
@@ -21233,8 +21564,12 @@
       "from": 11225131793,
       "to": 11225131794,
       "distance": 23.695752675748455,
-      "accessible": true,
-      "slope": 0.08440331173978326
+      "slope": 0.08440331173978326,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11225131794,
@@ -21247,8 +21582,12 @@
       "from": 11225131795,
       "to": 11225131796,
       "distance": 22.181094197916785,
-      "accessible": true,
-      "slope": 0.18033375469708227
+      "slope": 0.18033375469708227,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11225131796,
@@ -21429,8 +21768,12 @@
       "from": 11694354905,
       "to": 11694354906,
       "distance": 91.78059611731672,
-      "accessible": true,
-      "slope": 0.03268664758033724
+      "slope": 0.03268664758033724,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11694354906,
@@ -21723,8 +22066,12 @@
       "from": 11780817544,
       "to": 13283144779,
       "distance": 6.342805838633916,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144779,
@@ -21752,8 +22099,12 @@
       "from": 13283144785,
       "to": 13283144786,
       "distance": 17.498055424416098,
-      "accessible": true,
-      "slope": 0.05714920748305777
+      "slope": 0.05714920748305777,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144786,
@@ -23076,9 +23427,12 @@
       "from": 1775446775961,
       "to": 667361857,
       "distance": 15.969185319058505,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361857,
@@ -23091,9 +23445,12 @@
       "from": 5909462905,
       "to": 1775446775961,
       "distance": 17.9957722382232,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446775961,
@@ -23106,9 +23463,12 @@
       "from": 268069297,
       "to": 1775446775961,
       "distance": 32.56579533844835,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446775961,
@@ -27440,8 +27800,12 @@
       "from": 293502298,
       "to": 1775446776308,
       "distance": 16.089240212869772,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776308,
@@ -27454,8 +27818,12 @@
       "from": 5275427435,
       "to": 1775446776308,
       "distance": 52.57048766077194,
-      "accessible": true,
-      "slope": 0.0760883183319754
+      "slope": 0.0760883183319754,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776308,
@@ -27468,8 +27836,12 @@
       "from": 1775446776309,
       "to": 293502297,
       "distance": 21.990394877116422,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 293502297,
@@ -27482,8 +27854,12 @@
       "from": 1775446776308,
       "to": 1775446776309,
       "distance": 14.06244705031317,
-      "accessible": true,
-      "slope": 0.0711113788675727
+      "slope": 0.0711113788675727,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776309,
@@ -27496,8 +27872,12 @@
       "from": 1775446776309,
       "to": 2735868743,
       "distance": 41.995542127001,
-      "accessible": true,
-      "slope": 0.047624102433341406
+      "slope": 0.047624102433341406,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2735868743,
@@ -27510,8 +27890,12 @@
       "from": 1775446776311,
       "to": 293502299,
       "distance": 11.01097353969035,
-      "accessible": true,
-      "slope": 0.09081849088051863
+      "slope": 0.09081849088051863,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 293502299,
@@ -27524,8 +27908,12 @@
       "from": 1775446776312,
       "to": 4648316675,
       "distance": 7.860809597592543,
-      "accessible": true,
-      "slope": 0.12721335984352816
+      "slope": 0.12721335984352816,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 4648316675,
@@ -27538,8 +27926,12 @@
       "from": 1775446776311,
       "to": 1775446776312,
       "distance": 18.380577427789408,
-      "accessible": true,
-      "slope": 0.1632157646725685
+      "slope": 0.1632157646725685,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776312,
@@ -27552,8 +27944,12 @@
       "from": 1775446776312,
       "to": 2735868743,
       "distance": 18.93534650389261,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2735868743,
@@ -27566,8 +27962,12 @@
       "from": 1775446776314,
       "to": 2734317296,
       "distance": 4.4585642095137406,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2734317296,
@@ -27580,8 +27980,12 @@
       "from": 4648316674,
       "to": 1775446776314,
       "distance": 2.4362999980444404,
-      "accessible": false,
-      "slope": 0
+      "slope": 0,
+      "walk": 0,
+      "bike": 0,
+      "ebike": 0,
+      "motorcycle": 0,
+      "car": 0
     },
     {
       "from": 1775446776314,
@@ -27594,8 +27998,12 @@
       "from": 1775446776315,
       "to": 1775446776314,
       "distance": 26.58643232552068,
-      "accessible": true,
-      "slope": 0.037613170046892165
+      "slope": 0.037613170046892165,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776314,
@@ -27608,8 +28016,12 @@
       "from": 5909461077,
       "to": 1775446776315,
       "distance": 2.345235285216123,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776315,
@@ -27622,8 +28034,12 @@
       "from": 1775446776315,
       "to": 13283144779,
       "distance": 11.599368895937346,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144779,
@@ -27636,8 +28052,12 @@
       "from": 1775446776317,
       "to": 268069317,
       "distance": 4.321700238237808,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 268069317,
@@ -27650,8 +28070,12 @@
       "from": 1775446776314,
       "to": 1775446776316,
       "distance": 12.598693830176648,
-      "accessible": true,
-      "slope": 0.07937330754119762
+      "slope": 0.07937330754119762,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776316,
@@ -27664,8 +28088,12 @@
       "from": 1775446776316,
       "to": 1775446776317,
       "distance": 1.291809307284222,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776317,
@@ -27678,8 +28106,12 @@
       "from": 12311446001,
       "to": 1775446776318,
       "distance": 11.09349733850721,
-      "accessible": true,
-      "slope": 0.09014289808578656
+      "slope": 0.09014289808578656,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776318,
@@ -27692,8 +28124,12 @@
       "from": 1775446776317,
       "to": 1775446776318,
       "distance": 6.373586606443794,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776318,
@@ -27706,8 +28142,12 @@
       "from": 1775446776318,
       "to": 2734317285,
       "distance": 5.391156325125048,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2734317285,
@@ -27720,8 +28160,12 @@
       "from": 11780817544,
       "to": 1775446776316,
       "distance": 19.94821044356787,
-      "accessible": true,
-      "slope": 0.10025962006255468
+      "slope": 0.10025962006255468,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776316,
@@ -27734,8 +28178,12 @@
       "from": 1775446776323,
       "to": 5909461079,
       "distance": 9.075944062908974,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5909461079,
@@ -27748,8 +28196,12 @@
       "from": 7600277780,
       "to": 1775446776323,
       "distance": 23.394310075412875,
-      "accessible": true,
-      "slope": 0.04274543667996379
+      "slope": 0.04274543667996379,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776323,
@@ -27762,8 +28214,12 @@
       "from": 1775446776326,
       "to": 13279987082,
       "distance": 17.61855809715291,
-      "accessible": true,
-      "slope": 0.056758333711860114
+      "slope": 0.056758333711860114,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13279987082,
@@ -27776,8 +28232,12 @@
       "from": 7600277781,
       "to": 1775446776326,
       "distance": 15.448518924040467,
-      "accessible": true,
-      "slope": 0.12946224876532772
+      "slope": 0.12946224876532772,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776326,
@@ -27790,8 +28250,12 @@
       "from": 1775446776326,
       "to": 7600277782,
       "distance": 39.69405694014903,
-      "accessible": true,
-      "slope": 0.10077075281146564
+      "slope": 0.10077075281146564,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 7600277782,
@@ -28000,8 +28464,12 @@
       "from": 2971091057,
       "to": 1775446776311,
       "distance": 36.541893551494496,
-      "accessible": true,
-      "slope": 0.02736585061173169
+      "slope": 0.02736585061173169,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776311,
@@ -28084,8 +28552,12 @@
       "from": 1775446776341,
       "to": 7600277784,
       "distance": 34.504858514675924,
-      "accessible": true,
-      "slope": 0.028981425893245462
+      "slope": 0.028981425893245462,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 7600277784,
@@ -28098,9 +28570,12 @@
       "from": 1775446776341,
       "to": 7600328587,
       "distance": 84.1580032561827,
-      "accessible": true,
       "slope": 0.0475296447780935,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 7600328587,
@@ -28981,8 +29456,12 @@
       "from": 1775446776405,
       "to": 1775446776403,
       "distance": 19.16259434091619,
-      "accessible": true,
-      "slope": 0.05218500074725209
+      "slope": 0.05218500074725209,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776403,
@@ -29037,8 +29516,12 @@
       "from": 1775446776408,
       "to": 1775446776403,
       "distance": 54.57142235560789,
-      "accessible": true,
-      "slope": 0.036649218834122525
+      "slope": 0.036649218834122525,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776403,
@@ -29079,8 +29562,12 @@
       "from": 2734317299,
       "to": 5909461078,
       "distance": 150.01988171871088,
-      "accessible": true,
-      "slope": 0.07998939782195101
+      "slope": 0.07998939782195101,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5909461078,
@@ -29135,9 +29622,12 @@
       "from": 1775446776424,
       "to": 1775446776423,
       "distance": 38.08863225468591,
-      "accessible": true,
       "slope": 0.10501821050578401,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776423,
@@ -29164,8 +29654,12 @@
       "from": 667361861,
       "to": 1775446776426,
       "distance": 21.97719812928871,
-      "accessible": true,
-      "slope": 0.045501705636776045
+      "slope": 0.045501705636776045,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776426,
@@ -29251,9 +29745,12 @@
       "from": 7600328588,
       "to": 5909462904,
       "distance": 29.19363523911428,
-      "accessible": true,
       "slope": 3.2541339652253,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5909462904,
@@ -29266,9 +29763,12 @@
       "from": 1775446776455,
       "to": 667595381,
       "distance": 8.789312127038794,
-      "accessible": true,
       "slope": 11.605003727904336,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595381,
@@ -29310,9 +29810,12 @@
       "from": 1775446776459,
       "to": 1775446776460,
       "distance": 64.29962872930402,
-      "accessible": true,
       "slope": 1.6018755012353378,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776460,
@@ -29325,9 +29828,12 @@
       "from": 664411048,
       "to": 1775446776459,
       "distance": 48.06771558789499,
-      "accessible": true,
       "slope": 0.020803984291107698,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776459,
@@ -29396,8 +29902,12 @@
       "from": 1775446776468,
       "to": 13279987098,
       "distance": 14.000972393554463,
-      "accessible": true,
-      "slope": 7.213784668734632
+      "slope": 7.213784668734632,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13279987098,
@@ -29410,8 +29920,12 @@
       "from": 1775446776468,
       "to": 1775446776432,
       "distance": 26.690707117947742,
-      "accessible": true,
-      "slope": 3.67168990941051
+      "slope": 3.67168990941051,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776432,
@@ -29424,10 +29938,12 @@
       "from": 1775446776473,
       "to": 267041157,
       "distance": 49.631641589640374,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0,
-      "pedestrian_only": 1
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 267041157,
@@ -29440,9 +29956,12 @@
       "from": 1775446776476,
       "to": 1775446776473,
       "distance": 38.860872179169796,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776473,
@@ -29455,8 +29974,12 @@
       "from": 5274531363,
       "to": 1775446776476,
       "distance": 32.089407954230566,
-      "accessible": true,
-      "slope": 3.0851301507713904
+      "slope": 3.0851301507713904,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776476,
@@ -29469,9 +29992,12 @@
       "from": 1775446776476,
       "to": 667595404,
       "distance": 33.62082559757018,
-      "accessible": true,
       "slope": 2.8851165394049785,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595404,
@@ -29484,9 +30010,12 @@
       "from": 667361822,
       "to": 1775446776478,
       "distance": 9.919015711903551,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776478,
@@ -29499,9 +30028,12 @@
       "from": 267041157,
       "to": 1775446776485,
       "distance": 30.26969079939652,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776485,
@@ -29514,9 +30046,12 @@
       "from": 1775446776497,
       "to": 267041157,
       "distance": 23.02537433625879,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 267041157,
@@ -29529,9 +30064,12 @@
       "from": 1775446776500,
       "to": 9000060,
       "distance": 12.78742355705617,
-      "accessible": true,
       "slope": 7.741981764995284,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 9000060,
@@ -29544,9 +30082,12 @@
       "from": 1775446776502,
       "to": 1775446776468,
       "distance": 17.06015100613354,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776468,
@@ -29559,10 +30100,12 @@
       "from": 267041157,
       "to": 1775446776502,
       "distance": 40.14957364984343,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0,
-      "pedestrian_only": 1
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776502,
@@ -29589,9 +30132,12 @@
       "from": 667361853,
       "to": 1775446776513,
       "distance": 32.77494798036127,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776513,
@@ -29604,9 +30150,12 @@
       "from": 1775446776513,
       "to": 667361859,
       "distance": 15.275445513381728,
-      "accessible": true,
       "slope": 0.06546453909471717,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361859,
@@ -29619,9 +30168,12 @@
       "from": 667361816,
       "to": 1775446776514,
       "distance": 35.152231583238894,
-      "accessible": true,
       "slope": 0.02844769606254002,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776514,
@@ -29634,9 +30186,12 @@
       "from": 1775446776514,
       "to": 667361825,
       "distance": 13.62320593734795,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361825,
@@ -29649,9 +30204,12 @@
       "from": 1775446776517,
       "to": 1775446776514,
       "distance": 29.577159128164993,
-      "accessible": true,
       "slope": 3.245747828045579,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776514,
@@ -29664,9 +30222,12 @@
       "from": 1775446776513,
       "to": 1775446776517,
       "distance": 30.360517922566558,
-      "accessible": true,
       "slope": 3.0961263651609543,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776517,
@@ -29679,9 +30240,12 @@
       "from": 1775446776517,
       "to": 667354375,
       "distance": 28.622605405545357,
-      "accessible": true,
       "slope": 3.319054944648563,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667354375,
@@ -29694,9 +30258,12 @@
       "from": 1775446776521,
       "to": 1775446776448,
       "distance": 27.616241200265833,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776448,
@@ -29709,9 +30276,12 @@
       "from": 5909462904,
       "to": 1775446776521,
       "distance": 6.503212081733618,
-      "accessible": true,
       "slope": 14.454395584611106,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776521,
@@ -29724,9 +30294,12 @@
       "from": 1775446776523,
       "to": 1775446776517,
       "distance": 34.03808731890381,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776517,
@@ -29739,9 +30312,12 @@
       "from": 1775446775961,
       "to": 1775446776523,
       "distance": 20.587434940137843,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776523,
@@ -29754,9 +30330,12 @@
       "from": 1775446776523,
       "to": 667361816,
       "distance": 29.492621165624282,
-      "accessible": true,
       "slope": 3.2211446879034664,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361816,
@@ -29769,9 +30348,12 @@
       "from": 667361853,
       "to": 1775446776523,
       "distance": 30.424509942866987,
-      "accessible": true,
       "slope": 3.0896142674612994,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776523,
@@ -29826,9 +30408,12 @@
       "from": 5274531363,
       "to": 1775446776500,
       "distance": 62.42245698775631,
-      "accessible": true,
       "slope": 1.5859676913937895,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776500,
@@ -29883,9 +30468,12 @@
       "from": 9000060,
       "to": 1775446776538,
       "distance": 29.687179408437874,
-      "accessible": true,
       "slope": 0.03368457428177814,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776538,
@@ -29975,8 +30563,12 @@
       "from": 1775446776552,
       "to": 5274531363,
       "distance": 32.295994392084,
-      "accessible": true,
-      "slope": 0.06192718439690514
+      "slope": 0.06192718439690514,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5274531363,
@@ -30031,9 +30623,12 @@
       "from": 1775446776564,
       "to": 667595366,
       "distance": 35.74380652525411,
-      "accessible": true,
       "slope": 2.7417337303110108,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595366,
@@ -30046,9 +30641,12 @@
       "from": 1775446776440,
       "to": 1775446776564,
       "distance": 22.510759620731722,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776564,
@@ -30075,9 +30673,12 @@
       "from": 1775446776582,
       "to": 664411066,
       "distance": 62.85416585062368,
-      "accessible": true,
       "slope": 1.670533664380149,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411066,
@@ -30090,9 +30691,12 @@
       "from": 16391790,
       "to": 1775446776589,
       "distance": 17.857540524765863,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776589,
@@ -30105,9 +30709,12 @@
       "from": 1775446776589,
       "to": 1775446776440,
       "distance": 27.707874806084522,
-      "accessible": true,
       "slope": 3.53690063513928,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776440,
@@ -30120,9 +30727,12 @@
       "from": 1775446776590,
       "to": 1775446776586,
       "distance": 27.628348821654836,
-      "accessible": true,
       "slope": 3.5108866123759204,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776586,
@@ -30135,9 +30745,12 @@
       "from": 1775446776590,
       "to": 1775446776440,
       "distance": 47.33757132489148,
-      "accessible": true,
       "slope": 0.021124869147525756,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776440,
@@ -30150,9 +30763,12 @@
       "from": 664411058,
       "to": 1775446776590,
       "distance": 49.4733155434288,
-      "accessible": true,
       "slope": 0.04042583315937972,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776590,
@@ -30165,9 +30781,12 @@
       "from": 1775446776594,
       "to": 1775446776595,
       "distance": 48.28198009494441,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776595,
@@ -30180,9 +30799,12 @@
       "from": 1775446776601,
       "to": 667595366,
       "distance": 45.860310766727686,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595366,
@@ -30195,8 +30817,12 @@
       "from": 7600277783,
       "to": 1775446776602,
       "distance": 27.40807142844984,
-      "accessible": true,
-      "slope": 0.07297120504159153
+      "slope": 0.07297120504159153,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776602,
@@ -30209,8 +30835,12 @@
       "from": 1775446776603,
       "to": 13283144785,
       "distance": 14.665707774196807,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144785,
@@ -30223,8 +30853,12 @@
       "from": 1775446776602,
       "to": 1775446776603,
       "distance": 23.32463129836766,
-      "accessible": true,
-      "slope": 0.042873132149788086
+      "slope": 0.042873132149788086,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776603,
@@ -30237,8 +30871,12 @@
       "from": 1775446776604,
       "to": 1775446776606,
       "distance": 6.1995537205839,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776606,
@@ -30251,8 +30889,12 @@
       "from": 13283144786,
       "to": 1775446776606,
       "distance": 10.89756839777319,
-      "accessible": true,
-      "slope": 0.27529077042664124
+      "slope": 0.27529077042664124,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776606,
@@ -30265,8 +30907,12 @@
       "from": 1775446776606,
       "to": 13283144788,
       "distance": 3.0195452457946805,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144788,
@@ -30279,8 +30925,12 @@
       "from": 1775446776609,
       "to": 268069277,
       "distance": 10.550064097010983,
-      "accessible": true,
-      "slope": 0.09478615398017509
+      "slope": 0.09478615398017509,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 268069277,
@@ -30293,8 +30943,12 @@
       "from": 1775446776610,
       "to": 5909462902,
       "distance": 4.503867289858588,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5909462902,
@@ -30307,8 +30961,12 @@
       "from": 13283144785,
       "to": 1775446776610,
       "distance": 12.074661132735212,
-      "accessible": true,
-      "slope": 0.08281805915769622
+      "slope": 0.08281805915769622,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776610,
@@ -30321,8 +30979,12 @@
       "from": 1775446776610,
       "to": 1775446776609,
       "distance": 7.863125517024776,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776609,
@@ -30335,8 +30997,12 @@
       "from": 1775446776611,
       "to": 1775446776612,
       "distance": 7.054377977038716,
-      "accessible": true,
-      "slope": 0.14175594265786415
+      "slope": 0.14175594265786415,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776612,
@@ -30349,8 +31015,12 @@
       "from": 1775446776613,
       "to": 1775446776609,
       "distance": 5.37709845316952,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776609,
@@ -30363,8 +31033,12 @@
       "from": 1775446776609,
       "to": 1775446776612,
       "distance": 13.688986526425628,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776612,
@@ -30377,9 +31051,12 @@
       "from": 1775446776612,
       "to": 13283144784,
       "distance": 23.188159199787876,
-      "accessible": true,
       "slope": 0.04312545861808418,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144784,
@@ -30392,8 +31069,12 @@
       "from": 1775446776615,
       "to": 13283144786,
       "distance": 5.1828242874742765,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 13283144786,
@@ -30406,8 +31087,12 @@
       "from": 2734317287,
       "to": 1775446776615,
       "distance": 41.53982708758837,
-      "accessible": true,
-      "slope": 0.09629313072406011
+      "slope": 0.09629313072406011,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776615,
@@ -30420,8 +31105,12 @@
       "from": 1775446776614,
       "to": 1775446776615,
       "distance": 8.130961719620514,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776615,
@@ -30434,8 +31123,12 @@
       "from": 1775446776616,
       "to": 5909461079,
       "distance": 6.2831715357097835,
-      "accessible": true,
-      "slope": 0.15915529192806516
+      "slope": 0.15915529192806516,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5909461079,
@@ -30448,8 +31141,12 @@
       "from": 1775446776616,
       "to": 11780817544,
       "distance": 5.900998833346141,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11780817544,
@@ -30462,8 +31159,12 @@
       "from": 1775446776617,
       "to": 1775446776616,
       "distance": 4.871137372863699,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776616,
@@ -30574,9 +31275,12 @@
       "from": 1775446776624,
       "to": 1775446776497,
       "distance": 11.791427041969573,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776497,
@@ -30589,9 +31293,12 @@
       "from": 1775446776624,
       "to": 5274531361,
       "distance": 57.913776979981684,
-      "accessible": true,
       "slope": 1.6921707598845506,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 5274531361,
@@ -30604,9 +31311,12 @@
       "from": 9000060,
       "to": 1775446776624,
       "distance": 12.514417201648302,
-      "accessible": true,
       "slope": 7.910875784687799,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776624,
@@ -30619,9 +31329,12 @@
       "from": 1775446776625,
       "to": 1775446776500,
       "distance": 10.539353714925706,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776500,
@@ -30634,10 +31347,12 @@
       "from": 2971105201,
       "to": 1775446776625,
       "distance": 25.097647901910648,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0,
-      "pedestrian_only": 1
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776625,
@@ -30650,10 +31365,12 @@
       "from": 1775446776625,
       "to": 1775446776497,
       "distance": 25.13975577469895,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0,
-      "pedestrian_only": 1
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776497,
@@ -30834,8 +31551,12 @@
       "from": 1775446776424,
       "to": 7600277784,
       "distance": 14.29043763883618,
-      "accessible": true,
-      "slope": 0.13995372643905124
+      "slope": 0.13995372643905124,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 7600277784,
@@ -30939,8 +31660,12 @@
       "from": 1775446776645,
       "to": 11225131794,
       "distance": 29.40430023566888,
-      "accessible": true,
-      "slope": 0.10202589335422614
+      "slope": 0.10202589335422614,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11225131794,
@@ -32648,9 +33373,12 @@
       "from": 1775446776774,
       "to": 1775446776778,
       "distance": 52.7931945421913,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776778,
@@ -32663,9 +33391,12 @@
       "from": 16391790,
       "to": 1775446776778,
       "distance": 40.25602323354688,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776778,
@@ -32678,8 +33409,12 @@
       "from": 2734317237,
       "to": 2734317230,
       "distance": 56.54084374258298,
-      "accessible": true,
-      "slope": 0.03537265926036627
+      "slope": 0.03537265926036627,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2734317230,
@@ -32692,8 +33427,12 @@
       "from": 2734317230,
       "to": 2734317232,
       "distance": 71.46329163174019,
-      "accessible": true,
-      "slope": 0.19590477405020545
+      "slope": 0.19590477405020545,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2734317232,
@@ -32706,9 +33445,12 @@
       "from": 1775446776779,
       "to": 1775446776594,
       "distance": 25.838006272600467,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776594,
@@ -32721,9 +33463,12 @@
       "from": 1775446776779,
       "to": 1775446776782,
       "distance": 27.961487670527795,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776782,
@@ -32736,9 +33481,12 @@
       "from": 1775446776783,
       "to": 1775446776782,
       "distance": 41.69564124499695,
-      "accessible": true,
       "slope": 2.2784156128405635,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776782,
@@ -32751,9 +33499,12 @@
       "from": 1775446776448,
       "to": 1775446776783,
       "distance": 9.859317048084236,
-      "accessible": true,
       "slope": 0.10142690362050077,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776783,
@@ -32766,9 +33517,12 @@
       "from": 1775446776783,
       "to": 664411058,
       "distance": 78.10678397101923,
-      "accessible": true,
       "slope": 0.05121194084094106,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411058,
@@ -32781,9 +33535,12 @@
       "from": 1775446776478,
       "to": 1775446776798,
       "distance": 24.192814199105317,
-      "accessible": true,
       "slope": 4.0094550060069984,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776798,
@@ -32796,8 +33553,12 @@
       "from": 2734317237,
       "to": 2734317239,
       "distance": 75.41297315862126,
-      "accessible": true,
-      "slope": 0.1458634972110561
+      "slope": 0.1458634972110561,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 2734317239,
@@ -32852,8 +33613,12 @@
       "from": 11694354906,
       "to": 1775446776845,
       "distance": 16.60511988340544,
-      "accessible": true,
-      "slope": 0.12044477932367885
+      "slope": 0.12044477932367885,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776845,
@@ -32866,8 +33631,12 @@
       "from": 1775446776845,
       "to": 1775446776846,
       "distance": 22.322875938237676,
-      "accessible": false,
-      "slope": 0.17918838106107343
+      "slope": 0.17918838106107343,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776846,
@@ -32880,8 +33649,12 @@
       "from": 1775446776847,
       "to": 1775446776552,
       "distance": 29.689579665332445,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776552,
@@ -32894,8 +33667,12 @@
       "from": 1775446776847,
       "to": 1775446776551,
       "distance": 31.39763681513948,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776551,
@@ -32908,8 +33685,12 @@
       "from": 1775446776846,
       "to": 1775446776847,
       "distance": 16.50507924357959,
-      "accessible": true,
-      "slope": 0.12117481961063543
+      "slope": 0.12117481961063543,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776847,
@@ -32922,8 +33703,12 @@
       "from": 11225131795,
       "to": 1775446776846,
       "distance": 13.518574454854287,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776846,
@@ -32978,8 +33763,12 @@
       "from": 1775446776853,
       "to": 1775446776852,
       "distance": 29.856988078218507,
-      "accessible": true,
-      "slope": 0.06698599318727179
+      "slope": 0.06698599318727179,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776852,
@@ -33090,8 +33879,12 @@
       "from": 1775446776870,
       "to": 1775446776852,
       "distance": 12.41850314972424,
-      "accessible": true,
-      "slope": 0.08052500272725747
+      "slope": 0.08052500272725747,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776852,
@@ -33104,8 +33897,12 @@
       "from": 1775446776852,
       "to": 1775446776869,
       "distance": 10.616333088932961,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776869,
@@ -33118,8 +33915,12 @@
       "from": 1775446776872,
       "to": 1775446776873,
       "distance": 23.621768494833667,
-      "accessible": true,
-      "slope": 0.042333832888875815
+      "slope": 0.042333832888875815,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776873,
@@ -33132,8 +33933,12 @@
       "from": 11225131791,
       "to": 1775446776848,
       "distance": 6.507026532940843,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776848,
@@ -33146,8 +33951,12 @@
       "from": 1775446776876,
       "to": 11694354906,
       "distance": 33.78375288688449,
-      "accessible": true,
-      "slope": 0.08880008121195612
+      "slope": 0.08880008121195612,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11694354906,
@@ -33160,8 +33969,12 @@
       "from": 1101621009,
       "to": 1775446776848,
       "distance": 8.930844188016131,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776848,
@@ -33174,8 +33987,12 @@
       "from": 1101621009,
       "to": 1775446776876,
       "distance": 11.82768323635382,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776876,
@@ -33188,8 +34005,12 @@
       "from": 1775446776863,
       "to": 1775446776876,
       "distance": 19.155063391683964,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776876,
@@ -33202,8 +34023,12 @@
       "from": 1775446776868,
       "to": 1775446776867,
       "distance": 23.239418848713488,
-      "accessible": true,
-      "slope": 0.08606067187048949
+      "slope": 0.08606067187048949,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776867,
@@ -33230,8 +34055,12 @@
       "from": 1775446776868,
       "to": 1775446776848,
       "distance": 11.640233362705594,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776848,
@@ -33286,8 +34115,12 @@
       "from": 1775446776879,
       "to": 1775446776863,
       "distance": 43.157459176163506,
-      "accessible": true,
-      "slope": 0.11585482777358619
+      "slope": 0.11585482777358619,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776863,
@@ -33328,8 +34161,12 @@
       "from": 1775446776863,
       "to": 1775446776882,
       "distance": 32.03818448981626,
-      "accessible": true,
-      "slope": 0.031212754902446568
+      "slope": 0.031212754902446568,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776882,
@@ -33412,8 +34249,12 @@
       "from": 11225131796,
       "to": 1101621009,
       "distance": 50.81605661900208,
-      "accessible": true,
-      "slope": 0.09839409691877404
+      "slope": 0.09839409691877404,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1101621009,
@@ -33426,8 +34267,12 @@
       "from": 1775446776887,
       "to": 11225131795,
       "distance": 17.25062519049573,
-      "accessible": true,
-      "slope": 0.05796891352963557
+      "slope": 0.05796891352963557,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 11225131795,
@@ -33440,8 +34285,12 @@
       "from": 1775446776887,
       "to": 1775446776551,
       "distance": 16.494615826109214,
-      "accessible": true,
-      "slope": 0.06062584364148129
+      "slope": 0.06062584364148129,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776551,
@@ -33482,8 +34331,12 @@
       "from": 1775446776888,
       "to": 1775446776887,
       "distance": 26.298339957581977,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776887,
@@ -33524,8 +34377,12 @@
       "from": 1775446776867,
       "to": 1775446776872,
       "distance": 40.64439537558246,
-      "accessible": true,
-      "slope": 0.1230181911625582
+      "slope": 0.1230181911625582,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776872,
@@ -33538,8 +34395,12 @@
       "from": 1775446776868,
       "to": 1775446776873,
       "distance": 39.74191708874711,
-      "accessible": true,
-      "slope": 0.15097409585454788
+      "slope": 0.15097409585454788,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776873,
@@ -33636,8 +34497,12 @@
       "from": 1775446776872,
       "to": 1775446776869,
       "distance": 20.14930442770192,
-      "accessible": false,
-      "slope": 0.0992590095194718
+      "slope": 0.0992590095194718,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776869,
@@ -33650,8 +34515,12 @@
       "from": 1775446776873,
       "to": 1775446776870,
       "distance": 20.73946625640097,
-      "accessible": false,
-      "slope": 0.09643449716950771
+      "slope": 0.09643449716950771,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776870,
@@ -33664,8 +34533,12 @@
       "from": 1775446776882,
       "to": 1775446776868,
       "distance": 19.07099494991846,
-      "accessible": false,
-      "slope": 0.05243564914290303
+      "slope": 0.05243564914290303,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776868,
@@ -33930,8 +34803,12 @@
       "from": 1775446776912,
       "to": 4648316677,
       "distance": 20.632994262750657,
-      "accessible": false,
-      "slope": 0.048466063008863865
+      "slope": 0.048466063008863865,
+      "walk": 0,
+      "bike": 0,
+      "ebike": 0,
+      "motorcycle": 0,
+      "car": 0
     },
     {
       "from": 4648316677,
@@ -33944,8 +34821,12 @@
       "from": 1775446776913,
       "to": 1775446776912,
       "distance": 13.735319091905902,
-      "accessible": false,
-      "slope": 0.14561001361654435
+      "slope": 0.14561001361654435,
+      "walk": 0,
+      "bike": 0,
+      "ebike": 0,
+      "motorcycle": 0,
+      "car": 0
     },
     {
       "from": 1775446776912,
@@ -34028,8 +34909,12 @@
       "from": 1775446776917,
       "to": 1775446776913,
       "distance": 95.68495395758109,
-      "accessible": true,
-      "slope": 0.031352891713047754
+      "slope": 0.031352891713047754,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776913,
@@ -34042,8 +34927,12 @@
       "from": 4648316677,
       "to": 1775446776919,
       "distance": 53.51658538789966,
-      "accessible": true,
-      "slope": 0.01868579605278973
+      "slope": 0.01868579605278973,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776919,
@@ -34056,8 +34945,12 @@
       "from": 1775446776919,
       "to": 1775446776918,
       "distance": 18.125858010887377,
-      "accessible": true,
-      "slope": 0.05516980213567521
+      "slope": 0.05516980213567521,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776918,
@@ -34070,8 +34963,12 @@
       "from": 1775446776918,
       "to": 1775446776920,
       "distance": 9.160252822414032,
-      "accessible": true,
-      "slope": 0.21833458516627857
+      "slope": 0.21833458516627857,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776920,
@@ -34098,8 +34995,12 @@
       "from": 1775446776913,
       "to": 1775446776923,
       "distance": 29.16172024517837,
-      "accessible": true,
-      "slope": 0.03429152984091675
+      "slope": 0.03429152984091675,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776923,
@@ -34126,8 +35027,12 @@
       "from": 1775446776925,
       "to": 1775446776923,
       "distance": 74.63397107288897,
-      "accessible": true,
-      "slope": 0.013398724275616808
+      "slope": 0.013398724275616808,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776923,
@@ -34252,8 +35157,12 @@
       "from": 13283144788,
       "to": 1775446776771,
       "distance": 41.25017628933816,
-      "accessible": true,
-      "slope": 0.04848464127696191
+      "slope": 0.04848464127696191,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776771,
@@ -34525,9 +35434,12 @@
       "from": 1775446776423,
       "to": 1775446776774,
       "distance": 41.96733553453827,
-      "accessible": true,
       "slope": 2.14452499434785,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776774,
@@ -34540,9 +35452,12 @@
       "from": 1775446776595,
       "to": 1775446776774,
       "distance": 38.79561433952795,
-      "accessible": true,
       "slope": 0,
-      "motor_vehicle_allowed": 0
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776774,
@@ -34793,8 +35708,12 @@
       "from": 1775446776959,
       "to": 1775446776958,
       "distance": 22.788024276602677,
-      "accessible": true,
-      "slope": 0
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776958,
@@ -34807,8 +35726,12 @@
       "from": 2734317287,
       "to": 1775446776960,
       "distance": 7.7541687331111735,
-      "accessible": false,
-      "slope": 0.12896288879166215
+      "slope": 0.12896288879166215,
+      "walk": 0,
+      "bike": 0,
+      "ebike": 0,
+      "motorcycle": 0,
+      "car": 0
     },
     {
       "from": 1775446776960,
@@ -34821,8 +35744,12 @@
       "from": 1775446776960,
       "to": 1775446776961,
       "distance": 2.9423144098173104,
-      "accessible": false,
-      "slope": 0
+      "slope": 0,
+      "walk": 0,
+      "bike": 0,
+      "ebike": 0,
+      "motorcycle": 0,
+      "car": 0
     },
     {
       "from": 1775446776961,
@@ -34835,8 +35762,12 @@
       "from": 1775446776961,
       "to": 1775446776919,
       "distance": 25.907019224422843,
-      "accessible": true,
-      "slope": 0.1929978882050021
+      "slope": 0.1929978882050021,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776919,
@@ -34849,8 +35780,12 @@
       "from": 1775446776958,
       "to": 1775446776961,
       "distance": 40.16556975950027,
-      "accessible": true,
-      "slope": 0.09958778187265448
+      "slope": 0.09958778187265448,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776961,
@@ -34863,8 +35798,12 @@
       "from": 1775446776323,
       "to": 1775446776958,
       "distance": 37.89794474358233,
-      "accessible": true,
-      "slope": 0.10554662072215311
+      "slope": 0.10554662072215311,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776958,
@@ -34877,8 +35816,12 @@
       "from": 1775446776958,
       "to": 1775446776603,
       "distance": 44.027845356446015,
-      "accessible": true,
-      "slope": 0.04542579778338357
+      "slope": 0.04542579778338357,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776603,
@@ -34891,8 +35834,12 @@
       "from": 7600277780,
       "to": 1775446776959,
       "distance": 37.998342944012535,
-      "accessible": true,
-      "slope": 0.07895081120827442
+      "slope": 0.07895081120827442,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776959,
@@ -34905,8 +35852,12 @@
       "from": 1775446776959,
       "to": 7600277783,
       "distance": 16.724235708530554,
-      "accessible": true,
-      "slope": 0.059793464851127916
+      "slope": 0.059793464851127916,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 7600277783,
@@ -35411,7 +36362,11 @@
       "to": 1775446776459,
       "distance": 71.75711654234195,
       "slope": 1.4353976993936548,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776459,
@@ -35467,7 +36422,11 @@
       "to": 16391790,
       "distance": 46.95427612006782,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 16391790,
@@ -35481,7 +36440,11 @@
       "to": 1775446776985,
       "distance": 54.471499281545654,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776985,
@@ -35495,7 +36458,11 @@
       "to": 1775446776586,
       "distance": 18.235356599776956,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776586,
@@ -35509,7 +36476,11 @@
       "to": 1775446776778,
       "distance": 18.467279409305856,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776778,
@@ -35523,7 +36494,11 @@
       "to": 1775446776601,
       "distance": 22.390822679107572,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776601,
@@ -35537,7 +36512,11 @@
       "to": 1775446776987,
       "distance": 71.13873457842544,
       "slope": 1.2370194735891205,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776987,
@@ -35551,7 +36530,11 @@
       "to": 664411037,
       "distance": 25.820534569892303,
       "slope": 3.6792421838846634,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411037,
@@ -35565,7 +36548,11 @@
       "to": 1775446776521,
       "distance": 56.4626352387649,
       "slope": 1.6648177968049125,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776521,
@@ -35579,7 +36566,11 @@
       "to": 1775446776988,
       "distance": 57.041598567067716,
       "slope": 1.5953269593769372,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776988,
@@ -35593,7 +36584,11 @@
       "to": 1775446775961,
       "distance": 5.61805103611444,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446775961,
@@ -35607,7 +36602,11 @@
       "to": 664411058,
       "distance": 43.8090448683962,
       "slope": 2.2598073137042642,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411058,
@@ -35621,7 +36620,11 @@
       "to": 664411048,
       "distance": 43.346491427102144,
       "slope": 2.353131629385466,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411048,
@@ -35635,28 +36638,44 @@
       "to": 667361837,
       "distance": 6.7631663176899455,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361837,
       "to": 667354376,
       "distance": 4.7568438308189185,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361840,
       "to": 667354369,
       "distance": 4.48489761866032,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361842,
       "to": 667361848,
       "distance": 20.834354981209753,
       "slope": 0.047997646238719056,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667361848,
@@ -35670,7 +36689,11 @@
       "to": 664411064,
       "distance": 75.50644033520659,
       "slope": 0.06621951687568348,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411064,
@@ -35684,7 +36707,11 @@
       "to": 664411048,
       "distance": 66.27694914182136,
       "slope": 1.5389966092394718,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 664411048,
@@ -35698,7 +36725,11 @@
       "to": 1775446776826,
       "distance": 85.80143922816478,
       "slope": 1.1538267993003866,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776826,
@@ -35712,7 +36743,11 @@
       "to": 667595385,
       "distance": 66.24638121707426,
       "slope": 0.015095164167884558,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595385,
@@ -35726,7 +36761,11 @@
       "to": 52143619,
       "distance": 33.75699627446625,
       "slope": 2.9031018993276683,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 52143619,
@@ -35740,7 +36779,11 @@
       "to": 1775446776826,
       "distance": 43.82384587803838,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776826,
@@ -35754,7 +36797,11 @@
       "to": 667595396,
       "distance": 67.52090868520891,
       "slope": 1.4365920407295816,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595396,
@@ -35768,7 +36815,11 @@
       "to": 667595396,
       "distance": 24.33125990157326,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 667595396,
@@ -35782,7 +36833,11 @@
       "to": 1775446776473,
       "distance": 22.936968159046135,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776473,
@@ -35866,7 +36921,11 @@
       "to": 268069275,
       "distance": 61.88363901995399,
       "slope": 0.09695615989979739,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 268069275,
@@ -35922,7 +36981,11 @@
       "to": 1775446776460,
       "distance": 46.71916483634538,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776460,
@@ -35936,7 +36999,11 @@
       "to": 1775446776558,
       "distance": 63.40755522819929,
       "slope": 1.6086411096108222,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776558,
@@ -35950,7 +37017,11 @@
       "to": 1775446776563,
       "distance": 69.91077868927385,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776563,
@@ -35964,7 +37035,11 @@
       "to": 1775446776455,
       "distance": 65.84484421191586,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776455,
@@ -35978,7 +37053,11 @@
       "to": 52143619,
       "distance": 86.47816387649364,
       "slope": 0,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 52143619,
@@ -35992,7 +37071,11 @@
       "to": 52155377,
       "distance": 78.31317476412941,
       "slope": 0.038307730583463984,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 52155377,
@@ -36300,7 +37383,11 @@
       "to": 1775446776855,
       "distance": 83.80828959088454,
       "slope": 0.03579598169399101,
-      "accessible": true
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 0,
+      "car": 1
     },
     {
       "from": 1775446776855,

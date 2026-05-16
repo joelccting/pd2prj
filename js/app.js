@@ -156,7 +156,7 @@ addBtn.addEventListener('click', () => {
   waypointContainer.appendChild(newItem);
 });
 
-async function fetchSegment(startsNames, endsNames, mode = "distance") {
+async function fetchSegment(startsNames, endsNames, mode = "distance", vehicle = "walk") {
   const startIds = [];
   startsNames.forEach(name => startIds.push(...nodesByName[name].map(n => n.id)));
   const endIds = [];
@@ -165,7 +165,7 @@ async function fetchSegment(startsNames, endsNames, mode = "distance") {
   const response = await fetch(`http://localhost:8000/api/route/batch`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ starts: startIds, ends: endIds, mode: mode })
+    body: JSON.stringify({ starts: startIds, ends: endIds, mode: mode, vehicle: vehicle }) // 🌟 傳出 vehicle
   });
   const result = await response.json();
   return result.path || [];
@@ -179,8 +179,9 @@ function getLinearDist(name1, name2) {
 
   document.getElementById("findRoute").addEventListener("click", async () => {
   const cruiseMode = document.getElementById("cruise-mode").value;
-  const routeWeight = document.getElementById("route-weight").value; // 🌟 新增：取得路線偏好 (lazy 或 distance)
+  const routeWeight = document.getElementById("route-weight").value; 
   const startName = document.getElementById("start").value;
+  const selectedTransport = document.getElementById("transport-mode").value; // 🌟 取得當前交通工具
   const waypointSelects = document.querySelectorAll(".waypoint-select");
   let destinations = Array.from(waypointSelects).map(s => s.value).filter(v => v !== "");
 
@@ -193,15 +194,13 @@ function getLinearDist(name1, name2) {
     let visitOrder = [startName];
 
     if (cruiseMode === "single") {
-      // 🌟 將 routeWeight 傳給 fetchSegment
-      fullPath = await fetchSegment([startName], [destinations[0]], routeWeight);
+      fullPath = await fetchSegment([startName], [destinations[0]], routeWeight, selectedTransport); 
       visitOrder.push(destinations[0]);
     } 
     else if (cruiseMode === "ordered") {
       let currentLoc = startName;
       for (let dest of destinations) {
-        // 🌟 將 routeWeight 傳給 fetchSegment
-        const segment = await fetchSegment([currentLoc], [dest], routeWeight);
+        const segment = await fetchSegment([currentLoc], [dest], routeWeight, selectedTransport); 
         if (segment.length > 0) {
           fullPath = fullPath.length === 0 ? segment : fullPath.concat(segment.slice(1));
           currentLoc = dest;
@@ -222,7 +221,7 @@ function getLinearDist(name1, name2) {
         }
         const nextDest = remaining.splice(nearestIdx, 1)[0];
         // 🌟 將 routeWeight 傳給 fetchSegment
-        const segment = await fetchSegment([currentLoc], [nextDest], routeWeight);
+        const segment = await fetchSegment([startName], [destinations[0]], routeWeight, selectedTransport);
         fullPath = fullPath.length === 0 ? segment : fullPath.concat(segment.slice(1));
         currentLoc = nextDest;
         visitOrder.push(nextDest);
@@ -230,21 +229,58 @@ function getLinearDist(name1, name2) {
     }
 
     if (fullPath.length > 0) {
-      drawPath(fullPath, visitOrder); // 🌟 將拜訪順序傳給畫圖函數
-      totalDist = calculatePathDistance(fullPath);
+      drawPath(fullPath, visitOrder); 
+      totalDist = calculatePathDistance(fullPath); // 依然保留，給 UI 顯示總距離用
       
-      let avgSlope = 0;
+      const selectedTransport = document.getElementById("transport-mode").value;
+      
+      // 🌟 新增：分開計算主要交通時間與步行(牽車)時間
+      let totalMainSeconds = 0;
+      let totalWalkSeconds = 0;
+
       if (globalData) {
-        let totalSlope = 0;
-        let edgeCount = 0;
         for (let i = 0; i < fullPath.length - 1; i++) {
           const u = fullPath[i], v = fullPath[i+1];
           const edge = globalData.edges.find(e => (e.from===u&&e.to===v)||(e.from===v&&e.to===u));
-          if (edge && edge.slope) { totalSlope += edge.slope; edgeCount++; }
+          
+          let edgeDist = edge ? edge.distance : 0;
+          if (!edge) {
+             const edges = graph.adjacencyList.get(u) || [];
+             const adjEdge = edges.find(e => e.to === v);
+             edgeDist = adjEdge ? adjEdge.weight : 0;
+          }
+
+          let edgeSlope = (edge && edge.slope) ? parseFloat(edge.slope) : 0;
+          edgeSlope = Math.abs(edgeSlope);
+          if (edgeSlope > 0.15) edgeSlope = 0; 
+
+          // 🌟 判斷這一段是否需要牽車 (該交通工具屬性為0，或是原本就選步行)
+          const isWalkRequired = (edge && edge[selectedTransport] === 0) || selectedTransport === "walk";
+          
+          let speed = 1.2; 
+          if (isWalkRequired) {
+              // 牽車/步行速度
+              speed = 1.2 / (1 + edgeSlope * 10);
+              if (speed <= 0.5 || !isFinite(speed)) speed = 1.2; 
+              totalWalkSeconds += (edgeDist / speed);
+          } else {
+              // 騎乘/駕駛速度
+              if (selectedTransport === "bike") {
+                  speed = edgeSlope > 0.08 ? 1.2 : 4.2 / (1 + edgeSlope * 5);
+              } else if (selectedTransport === "ebike") {
+                  speed = 5.5;
+              } else if (selectedTransport === "car" || selectedTransport === "motorcycle") {
+                  speed = 8.3;
+              }
+              if (speed <= 0.5 || !isFinite(speed)) speed = 1.2; 
+              totalMainSeconds += (edgeDist / speed);
+          }
         }
-        avgSlope = edgeCount > 0 ? totalSlope / edgeCount : 0;
       }
-      displayTravelTimes(totalDist, avgSlope);
+
+      // 🌟 將分開計算的時間傳給 UI 介面
+      displayTravelTimes(totalMainSeconds, totalWalkSeconds, selectedTransport);
+      
     } else {
       alert("無法找到完整巡航路徑！請確認是否有獨立未連通的地點。");
     }
@@ -265,41 +301,133 @@ function calculatePathDistance(path) {
   return totalDistance;
 }
 
-// ==========================================
-// 🌟 終極版畫線函數：支援方向箭頭與順序標記
-// ==========================================
+
+// 🌟 接收精準的總秒數與使用者選擇的交通工具
+// 🌟 更新：接收主交通時間與牽車時間，並動態產生 UI
+function displayTravelTimes(mainSeconds, walkSeconds, selectedMode) {
+  const bar = document.getElementById("top-info-bar");
+  const container = document.getElementById("time-results");
+  if (!container || !bar) return;
+  
+  bar.style.display = "block"; // 確保時間條顯示出來
+
+  const modeData = {
+    "walk": { icon: "🚶", label: "步行" },
+    "bike": { icon: "🚲", label: "腳踏車" },
+    "ebike": { icon: "⚡", label: "電動車" },
+    "car": { icon: "🚗", label: "汽車" },
+    "motorcycle": { icon: "🛵", label: "機車" }
+  };
+
+  const formatTime = (seconds) => {
+    if (!isFinite(seconds) || seconds <= 0) return `0 秒`;
+    const m = Math.floor(seconds / 60);
+    const s = Math.round(seconds % 60);
+    return m === 0 ? `${s} 秒` : `${m} 分 ${s} 秒`;
+  };
+
+  const currentData = modeData[selectedMode] || modeData["walk"];
+  
+  let html = "";
+
+  // 1. 顯示主要交通工具的時間 (如果有真的騎乘到)
+  if (selectedMode !== "walk" && mainSeconds > 0) {
+    html += `
+      <div class="time-card highlight-card">
+        <span class="icon">${currentData.icon}</span>
+        <span class="label">${currentData.label}</span>
+        <span class="time-text">${formatTime(mainSeconds)}</span>
+      </div>
+    `;
+  }
+
+  // 2. 顯示步行或牽車的時間
+  if (walkSeconds > 0 || selectedMode === "walk") {
+    const walkLabel = (selectedMode !== "walk") ? "牽車路段" : "步行";
+    // 如果是牽車狀態，套用橘色警示視覺效果以作區分
+    const style = selectedMode !== "walk" ? "background: #fff3e0; border: 1px solid #ff9800; color: #e65100;" : "";
+    html += `
+      <div class="time-card highlight-card" style="${style}">
+        <span class="icon">🚶</span>
+        <span class="label">${walkLabel}</span>
+        <span class="time-text">${formatTime(walkSeconds)}</span>
+      </div>
+    `;
+  }
+
+  // 3. 如果是混合路段 (有騎車也有牽車)，額外顯示一個總時間
+  if (selectedMode !== "walk" && mainSeconds > 0 && walkSeconds > 0) {
+    const total = mainSeconds + walkSeconds;
+    html += `
+      <div class="time-card highlight-card" style="background: #e3f2fd; border: 1px solid #2196f3; color: #0d47a1;">
+        <span class="icon">⏱️</span>
+        <span class="label">預估總時間</span>
+        <span class="time-text">${formatTime(total)}</span>
+      </div>
+    `;
+  }
+
+  container.innerHTML = html;
+}
+
 let currentPathLayerGroup = null; // 改用 LayerGroup 來打包線條、箭頭和標記
 
 function drawPath(nodeIds, visitOrder = []) {
-  // 1. 清除舊的圖層
-  if (currentPathLayerGroup) {
-    map.removeLayer(currentPathLayerGroup);
-  }
+  if (currentPathLayerGroup) map.removeLayer(currentPathLayerGroup);
   currentPathLayerGroup = L.layerGroup().addTo(map);
 
-  // 2. 準備座標點
-  const latlngs = nodeIds.map((nodeId) => {
-    const node = graph.nodes.get(nodeId);
-    return [node.lat, node.lng];
-  });
+  const selectedTransport = document.getElementById("transport-mode").value; // 🌟 取得交通工具
+  let currentSegmentLatLngs = [];
+  let currentIsWalk = false;
 
-  // 3. 畫出半透明的底線 (改成藍色，視覺上比較清爽)
-  const polyline = L.polyline(latlngs, { 
-    color: "#0066ff", 
-    weight: 6, 
-    opacity: 0.6 
-  }).addTo(currentPathLayerGroup);
+  // 🌟 分段繪製邏輯：遇到牽車路段切換為橘色虛線
+  for (let i = 0; i < nodeIds.length - 1; i++) {
+    const u = nodeIds[i], v = nodeIds[i+1];
+    const nodeU = graph.nodes.get(u), nodeV = graph.nodes.get(v);
+    const edge = globalData.edges.find(e => (e.from===u&&e.to===v)||(e.from===v&&e.to===u));
+    
+    // 判斷此小段是否需要牽車
+    const isWalkRequired = edge && edge[selectedTransport] === 0;
 
-  // 4. 畫出方向箭頭 (每 80px 畫一個實心小箭頭)
+    if (i === 0) {
+        currentIsWalk = isWalkRequired;
+        currentSegmentLatLngs.push([nodeU.lat, nodeU.lng]);
+    } else if (currentIsWalk !== isWalkRequired) {
+        // 狀態改變，把累積的點畫出來
+        currentSegmentLatLngs.push([nodeU.lat, nodeU.lng]);
+        L.polyline(currentSegmentLatLngs, {
+            color: currentIsWalk ? "#ff9900" : "#0066ff", // 牽車橘色，一般藍色
+            weight: 6,
+            opacity: 0.8,
+            dashArray: currentIsWalk ? "10, 10" : null // 牽車套用虛線
+        }).addTo(currentPathLayerGroup);
+        // 重置為下一段的起點
+        currentSegmentLatLngs = [[nodeU.lat, nodeU.lng]];
+        currentIsWalk = isWalkRequired;
+    }
+    currentSegmentLatLngs.push([nodeV.lat, nodeV.lng]);
+  }
+
+  // 畫出最後剩餘的線段
+  if (currentSegmentLatLngs.length > 1) {
+      L.polyline(currentSegmentLatLngs, {
+          color: currentIsWalk ? "#ff9900" : "#0066ff", 
+          weight: 6, opacity: 0.8,
+          dashArray: currentIsWalk ? "10, 10" : null
+      }).addTo(currentPathLayerGroup);
+  }
+
+  // 為了讓箭頭連續，我們再畫一條透明的底線來附著箭頭
+  const fullLatlngs = nodeIds.map(id => [graph.nodes.get(id).lat, graph.nodes.get(id).lng]);
+  const invisibleLine = L.polyline(fullLatlngs, { color: 'transparent' }).addTo(currentPathLayerGroup);
+
   try {
-    L.polylineDecorator(polyline, {
+    L.polylineDecorator(invisibleLine, {
       patterns: [
         {
-          offset: 20,    // 縮短起始距離，確保短路徑也能出現箭頭
-          repeat: 70,    // 稍微增加箭頭密度
+          offset: 20, repeat: 70,
           symbol: L.Symbol.arrowHead({
-            pixelSize: 14, 
-            polygon: true, 
+            pixelSize: 14, polygon: true, 
             pathOptions: { stroke: true, color: '#ffffff', fillColor: '#ff0044', fillOpacity: 1, weight: 2 }
           })
         }
@@ -331,39 +459,7 @@ function drawPath(nodeIds, visitOrder = []) {
     }
   });
 
-  // 6. 視角縮放
-  map.fitBounds(polyline.getBounds(), { padding: [50, 50] });
-}
-
-function displayTravelTimes(totalDistance, averageSlope) {
-  const bar = document.getElementById("top-info-bar");
-  const container = document.getElementById("time-results");
-  if (!container || !bar) return;
-  bar.style.display = "block";
-
-  const walkSpeed = 1.2 / (1 + averageSlope * 10);
-  let bikeSpeed = 4.2 / (1 + averageSlope * 5);
-  if (averageSlope > 0.08) bikeSpeed = 1.2; 
-  const eBikeSpeed = 5.5; const carSpeed = 8.3; const motoSpeed = 8.3;
-
-  const formatTime = (totalSeconds) => {
-    if (!isFinite(totalSeconds) || totalSeconds <= 0) return `0 ${window.t("time_sec")}`;
-    const minutes = Math.floor(totalSeconds / 60);
-    const seconds = Math.round(totalSeconds % 60);
-    return minutes === 0 ? `${seconds} ${window.t("time_sec")}` : `${minutes} ${window.t("time_min")} ${seconds} ${window.t("time_sec")}`;
-  };
-
-  const times = [
-    { icon: "🚶", label: window.t("time_walk"), sec: totalDistance / walkSpeed },
-    { icon: "🚲", label: window.t("time_bike"), sec: totalDistance / bikeSpeed },
-    { icon: "⚡", label: window.t("time_ebike"), sec: totalDistance / eBikeSpeed },
-    { icon: "🚗", label: window.t("time_car"), sec: totalDistance / carSpeed },
-    { icon: "🛵", label: window.t("time_motorcycle"), sec: totalDistance / motoSpeed }
-  ];
-
-  let html = "";
-  times.forEach(item => {
-    html += `<div class="time-card"><span class="icon">${item.icon}</span><span class="label">${item.label}</span><span class="time-text">${formatTime(item.sec)}</span></div>`;
-  });
-  container.innerHTML = html;
-}
+    if (invisibleLine) {
+        map.fitBounds(invisibleLine.getBounds(), { padding: [50, 50] });
+    }
+  }
