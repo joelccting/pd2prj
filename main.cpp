@@ -115,16 +115,8 @@ int main(int argc, char* argv[]) {
                 edge_weights[kv.substr(0, pos)] = stod(kv.substr(pos + 1));
             }
         }
-        // 🌟 檢查這條邊是否有被標記為單行道 (假設屬性名為 "oneway" 且值為 1.0)
-        bool is_oneway = (edge_weights.count("oneway") && edge_weights.at("oneway") == 1.0);
-
         // 順向 (u -> v) 絕對可以走，直接加入
         graph[u].push_back({v, edge_weights});
-
-        // 🌟 只有在「不是單行道」的情況下，才允許逆向 (v -> u) 走回來
-        if (!is_oneway) {
-            graph[v].push_back({u, edge_weights});
-        }
     }
     file.close();
 
