@@ -200,6 +200,19 @@ int main(int argc, char* argv[]) {
                     }
                 }
             }
+            else if (weight_type == "elegant") {
+                // 檢查圖資中這條 Edge 有沒有包含 slope（坡度）屬性
+                if (edge.weights.count("slope")) {
+                    double slope = edge.weights.at("slope");
+                    
+                    // 閾值設定為 0.08 (相當於坡度 8%，通常校園內大於此坡度多為陡坡或連續階梯)
+                    if (slope > 0.08) {
+                        // 權重瘋狂疊加：給予一個極大的基礎懲罰值（如 1000），並隨坡度越陡線性加重
+                        // 這會迫使 Dijkstra 演算法在非必要情況下絕對不走這條路，寧可選擇繞遠路
+                        penalty = 1000.0 + (slope * 5000.0);
+                    }
+                }
+            }
 
             double new_dist = current_dist + next_weight + penalty;
 

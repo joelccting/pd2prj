@@ -18,7 +18,8 @@ const translations = {
 
             "mode_distance": "🚶 Shortest Distance (Default)",
             "route_pref_title": "Route Preference",
-            "mode_lazy": "🚶 Lazy Mode (Min. Turns)",
+            "mode_lazy": "Min. Turns",
+            "mode_elegant": "Sweat-Free Route",
             "mode_walk": "🚶 Walking (Avoid no-pedestrian)",
             "mode_bike": "🚲 Bicycle",
             "mode_motorcycle": "🛵 Motorcycle (Avoid restricted)",
@@ -61,7 +62,8 @@ const translations = {
 
             "mode_distance": "🚶 距離最短 (預設)",
             "route_pref_title": "路線偏好",
-            "mode_lazy": "🚶 無腦直走 (最少轉彎)",
+            "mode_lazy": "最少轉彎",
+            "mode_elegant": "約會面試必備不流汗",
             "mode_walk": "🚶 步行 (避開無行人路段)",
             "mode_bike": "🚲 腳踏車",
             "mode_motorcycle": "🛵 機車 (避開禁行路段)",
