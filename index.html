@@ -40,11 +40,10 @@
             <option value="distance" data-i18n="mode_distance">🚶 距離最短 (預設)</option>
             <option value="lazy" data-i18n="mode_lazy">最少轉彎</option>
             <option value="elegant" data-i18n="mode_elegant">不流汗路線</option>
+            <option value="shade" data-i18n="mode_shade">🌳 避暑/林蔭模式</option>
           </select>
         </div>
 
-      
-        
       </div>
 
       <div class="route-section">
@@ -79,7 +78,21 @@
         </div>
       <div class="action-section">
         <button id="findRoute" class="btn-primary" data-i18n="start_cruise">開始巡航導航</button>
+        <div class="layer-toggles" style="margin-top: 15px; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e0e0e0;">
+        <h4 style="margin: 0 0 10px 0; font-size: 14px; color: #333; display: flex; align-items: center; gap: 6px;">🕶️ 地圖遮陽圖層</h4>
+        
+        <label style="display: flex; align-items: center; margin-bottom: 8px; cursor: pointer; font-size: 13px; user-select: none;">
+          <input type="checkbox" id="toggle-tree-shade" style="margin-right: 8px; width: 16px; height: 16px; cursor: pointer;">
+          <span style="color: #2E7D32; font-weight: 600;">🌳 顯示校園林蔭路段</span>
+        </label>
+        
+        <label style="display: flex; align-items: center; cursor: pointer; font-size: 13px; user-select: none;">
+          <input type="checkbox" id="toggle-building-shadow" style="margin-right: 8px; width: 16px; height: 16px; cursor: pointer;">
+          <span style="color: #37474F; font-weight: 600;">🏢 顯示即時建築陰影</span>
+        </label>
       </div>
+      </div>
+      
     </div>
 
     <button id="god-mode" data-i18n="god_mode_enable_btn" style="position: fixed; bottom: 20px; right: 20px; z-index: 2000; padding: 12px 20px; font-weight: bold; background-color: #f0ad4e; border: none; border-radius: 8px; cursor: pointer; box-shadow: 0 4px 6px rgba(0,0,0,0.3);">
@@ -90,7 +103,6 @@
     </button>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-    
     <script src="https://unpkg.com/leaflet-polylinedecorator@1.6.0/dist/leaflet.polylineDecorator.js"></script>
 
     <script src="js/graph.js"></script>
