@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import cv2
 import numpy as np
 import json
@@ -10,10 +11,25 @@ import os
 IMAGE_PATH = "ccu_orthophoto.png" 
 JSON_INPUT_PATH = "campus_nodes_edges.json"
 JSON_OUTPUT_PATH = "campus_nodes_edges_updated.json"
+=======
+import json
+import os
+
+import cv2
+import numpy as np
+
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+IMAGE_PATH = os.path.join(BASE_DIR, "ccu_orthophoto.png")
+JSON_INPUT_PATH = os.path.join(BASE_DIR, "campus_nodes_edges.json")
+JSON_OUTPUT_PATH = os.path.join(BASE_DIR, "campus_nodes_edges.json")
+DEBUG_MASK_PATH = os.path.join(BASE_DIR, "debug_tree_mask.png")
+>>>>>>> d051507623590f3f0ec46ec6ca1494522c447b6a
 
 MIN_LON, MIN_LAT = 120.460, 23.550
 MAX_LON, MAX_LAT = 120.485, 23.570
 
+<<<<<<< HEAD
 # ==========================================
 # 2. 核心分析函數
 # ==========================================
@@ -99,6 +115,50 @@ def get_bresenham_line(x1, y1, x2, y2):
     使用 Bresenham 演算法，直接計算出線段經過的像素座標。
     (比繪製空白 Mask 後尋找非零像素快上非常多)
     """
+=======
+
+def get_tree_mask(image_path):
+    img = cv2.imread(image_path)
+    if img is None:
+        raise FileNotFoundError(f"Could not read image: {image_path}")
+
+    hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+    b, g, r = cv2.split(img.astype(np.int16))
+
+    # Vegetation should be green-dominant, not merely dark. The old broad HSV
+    # range was accepting farm plots, roads, and shadowed roofs as tree pixels.
+    exg = 2 * g - r - b
+    green_dominance = (g > r + 4) & (g > b + 4) & (exg > 10)
+    hsv_green = cv2.inRange(hsv, np.array([10, 15, 20]), np.array([90, 255, 175])) > 0
+
+    tree_mask = np.where(green_dominance & hsv_green, 255, 0).astype(np.uint8)
+
+    kernel = np.ones((3, 3), np.uint8)
+    tree_mask = cv2.morphologyEx(tree_mask, cv2.MORPH_OPEN, kernel, iterations=1)
+    tree_mask = cv2.morphologyEx(tree_mask, cv2.MORPH_CLOSE, kernel, iterations=2)
+
+    num_labels, labels, stats, _ = cv2.connectedComponentsWithStats(tree_mask, connectivity=8)
+    cleaned = np.zeros_like(tree_mask)
+    for label in range(1, num_labels):
+        if stats[label, cv2.CC_STAT_AREA] >= 25:
+            cleaned[labels == label] = 255
+
+    cv2.imwrite(DEBUG_MASK_PATH, cleaned)
+    print(f"Wrote tree mask: {DEBUG_MASK_PATH}")
+    return cleaned
+
+
+def coord_to_pixel(lat, lng, img_width, img_height):
+    if not (MIN_LON <= lng <= MAX_LON and MIN_LAT <= lat <= MAX_LAT):
+        return None, None
+
+    x = int((lng - MIN_LON) / (MAX_LON - MIN_LON) * img_width)
+    y = int((MAX_LAT - lat) / (MAX_LAT - MIN_LAT) * img_height)
+    return max(0, min(x, img_width - 1)), max(0, min(y, img_height - 1))
+
+
+def get_bresenham_line(x1, y1, x2, y2):
+>>>>>>> d051507623590f3f0ec46ec6ca1494522c447b6a
     pixels = []
     dx = abs(x2 - x1)
     dy = abs(y2 - y1)
@@ -115,7 +175,10 @@ def get_bresenham_line(x1, y1, x2, y2):
                 y += sy
                 err += dx
             x += sx
+<<<<<<< HEAD
         pixels.append((x, y))
+=======
+>>>>>>> d051507623590f3f0ec46ec6ca1494522c447b6a
     else:
         err = dy / 2.0
         while y != y2:
@@ -125,6 +188,7 @@ def get_bresenham_line(x1, y1, x2, y2):
                 x += sx
                 err += dy
             y += sy
+<<<<<<< HEAD
         pixels.append((x, y))
         
     return pixels
@@ -213,3 +277,57 @@ def main():
 
 if __name__ == "__main__":
     main()
+=======
+
+    pixels.append((x, y))
+    return pixels
+
+
+def main():
+    tree_mask = get_tree_mask(IMAGE_PATH)
+    img_height, img_width = tree_mask.shape
+
+    if not os.path.exists(JSON_INPUT_PATH):
+        raise FileNotFoundError(f"Could not find JSON file: {JSON_INPUT_PATH}")
+
+    with open(JSON_INPUT_PATH, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    node_dict = {node["id"]: node for node in data["nodes"]}
+    valid_edges_count = 0
+    shaded_edges_count = 0
+
+    for edge in data["edges"]:
+        node_a = node_dict.get(edge.get("from"))
+        node_b = node_dict.get(edge.get("to"))
+        if not node_a or not node_b:
+            continue
+
+        x1, y1 = coord_to_pixel(node_a["lat"], node_a["lng"], img_width, img_height)
+        x2, y2 = coord_to_pixel(node_b["lat"], node_b["lng"], img_width, img_height)
+        if x1 is None or x2 is None:
+            edge["tree_shade"] = 0
+            continue
+
+        valid_edges_count += 1
+        line_pixels = get_bresenham_line(x1, y1, x2, y2)
+        tree_pixel_count = sum(1 for px, py in line_pixels if tree_mask[py, px] == 255)
+        coverage_ratio = tree_pixel_count / len(line_pixels)
+
+        edge["tree_shade"] = 1 if coverage_ratio > 0.5 else 0
+        shaded_edges_count += edge["tree_shade"]
+
+    with open(JSON_OUTPUT_PATH, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+    print("=" * 40)
+    print("Analysis complete.")
+    print(f"- Valid edges: {valid_edges_count}")
+    print(f"- Tree-shaded edges: {shaded_edges_count}")
+    print(f"- Output: {JSON_OUTPUT_PATH}")
+    print("=" * 40)
+
+
+if __name__ == "__main__":
+    main()
+>>>>>>> d051507623590f3f0ec46ec6ca1494522c447b6a

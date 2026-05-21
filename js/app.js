@@ -21,57 +21,105 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   zoomOffset: -1
 }).addTo(map);
 
-// 🌟 將變數提昇到外層，讓下方尋路邏輯讀得到
+let currentFullPath = [];
 let nodesByName = {};
 let locationMarkers = [];
 let globalData = null;
 const activePolylines = [];
+const treeShadeLayer = L.layerGroup().addTo(map);
+const buildingShadowLayer = L.layerGroup().addTo(map);
+
+// 使變數全局可訪問（用於調試）
+window.nodesByName = nodesByName;
+window.locationMarkers = locationMarkers;
 
 fetch('http://localhost:8000/api/graph')
-  .then((response) => response.json())
+  .then((response) => {
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+    return response.json();
+  })
   .then((data) => {
+    console.log('✅ Graph data loaded:', data);
+    console.log('📊 Data structure:', {
+      hasNodes: !!data.nodes,
+      nodesCount: data.nodes?.length || 0,
+      hasEdges: !!data.edges,
+      edgesCount: data.edges?.length || 0,
+      firstNode: data.nodes?.[0]
+    });
+    
+    if (!data.nodes || data.nodes.length === 0) {
+      console.error('❌ ERROR: API 返回空的 nodes 數組！');
+      console.error('可能原因：');
+      console.error('1. campus_nodes_edges_updated.json 不存在');
+      console.error('2. campus_nodes_edges.json 不存在');
+      console.error('3. Python 伺服器未正確啟動');
+      alert('❌ 錯誤：無法加載校園數據！\n\n請檢查:\n1. Python 伺服器是否運行\n2. JSON 數據文件是否存在');
+      return;
+    }
+    
     globalData = data;
+    window.globalData = data; // 全局可訪問
+    
     data.nodes.forEach(node => graph.addNode(node));
     data.edges.forEach(edge => graph.addEdge(edge));
 
+    // 嘗試多種可能的名稱屬性
     data.nodes.forEach((node) => {
-      if (node.name && node.name.trim() !== "") {
-        const name = node.name.trim();
+      let nodeName = node.name || node.building_name || node.location || node.title;
+      
+      if (nodeName && typeof nodeName === 'string' && nodeName.trim() !== "") {
+        const name = nodeName.trim();
         if (!nodesByName[name]) nodesByName[name] = [];
         nodesByName[name].push(node);
       }
     });
 
+    console.log('🏢 Nodes with names found:', Object.keys(nodesByName).length);
+    console.log('🏢 Sample locations:', Object.keys(nodesByName).slice(0, 5));
+
     for (const name in nodesByName) {
       const nodes = nodesByName[name];
-      const avgLat = nodes.reduce((sum, node) => sum + node.lat, 0) / nodes.length;
-      const avgLng = nodes.reduce((sum, node) => sum + node.lng, 0) / nodes.length;
-      locationMarkers.push({ name: name, lat: avgLat, lng: avgLng });
+      const avgLat = nodes.reduce((sum, node) => sum + (node.lat || 0), 0) / nodes.length;
+      const avgLng = nodes.reduce((sum, node) => sum + (node.lng || 0), 0) / nodes.length;
+      
+      // 只在有效座標時添加
+      if (!isNaN(avgLat) && !isNaN(avgLng)) {
+        locationMarkers.push({ name: name, lat: avgLat, lng: avgLng });
+      }
     }
+
+    console.log('📍 Location markers created:', locationMarkers.length);
+    
+    // 更新全局引用
+    window.nodesByName = nodesByName;
+    window.locationMarkers = locationMarkers;
 
     locationMarkers.forEach((location) => {
       L.marker([location.lat, location.lng]).bindPopup(location.name).addTo(map);
     });
 
-    // 初始化第一個起點與終點選單
     populateDropdown(document.getElementById("start"));
     populateDropdown(document.querySelector(".waypoint-select"));
     
-    // 初始化語言
     const langSelectElement = document.getElementById("language-selector");
     if (langSelectElement) {
-      window.updateDropdownLanguage(langSelectElement.value);
+      console.log('🌐 Language selector value:', langSelectElement.value);
+      if (window.updateDropdownLanguage) {
+        window.updateDropdownLanguage(langSelectElement.value);
+      }
     }
 
     initEditorMode(map, data, graph);
+  })
+  .catch((error) => {
+    console.error('❌ Failed to load graph data:', error);
+    alert('⚠️ 無法連接到後端API！\n請確保已啟動 Python 伺服器\n\nhttp://localhost:8000/api/graph');
   });
 
-// ==========================================
-// 🌟 獨立封裝：產生下拉選單選項
-// ==========================================
 function populateDropdown(selectElement) {
   if (!selectElement) return;
-  selectElement.innerHTML = ""; // 清空
+  selectElement.innerHTML = ""; 
 
   const optGroups = {
     "school": { zh: "🏫 學校建築", en: "🏫 School Buildings", el: document.createElement("optgroup") },
@@ -105,7 +153,6 @@ function populateDropdown(selectElement) {
   Object.keys(optGroups).forEach(key => selectElement.appendChild(optGroups[key].el));
 }
 
-// 覆寫全局翻譯大樓的函數 (讓所有 waypoint-select 都能被翻譯)
 window.updateDropdownLanguage = function(currentLang) {
   document.querySelectorAll(".modern-select").forEach(selectElement => {
     if (selectElement.id === "language-selector" || selectElement.id === "cruise-mode") return;
@@ -136,18 +183,14 @@ window.updateDropdownLanguage = function(currentLang) {
   });
 };
 
-// ==========================================
-// 🌟 巡航導航邏輯
-// ==========================================
 const waypointContainer = document.getElementById('waypoint-container');
 const addBtn = document.getElementById('add-waypoint');
 
 addBtn.addEventListener('click', () => {
   const newItem = waypointContainer.firstElementChild.cloneNode(true);
   const newSelect = newItem.querySelector('.waypoint-select');
-  populateDropdown(newSelect); // 重新填入選項
+  populateDropdown(newSelect); 
   
-  // 套用當前語言
   const currentLang = document.getElementById("language-selector").value;
   window.updateDropdownLanguage(currentLang);
 
@@ -158,17 +201,55 @@ addBtn.addEventListener('click', () => {
 
 async function fetchSegment(startsNames, endsNames, mode = "distance", vehicle = "walk") {
   const startIds = [];
-  startsNames.forEach(name => startIds.push(...nodesByName[name].map(n => n.id)));
-  const endIds = [];
-  endsNames.forEach(name => endIds.push(...nodesByName[name].map(n => n.id)));
-
-  const response = await fetch(`http://localhost:8000/api/route/batch`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ starts: startIds, ends: endIds, mode: mode, vehicle: vehicle }) // 🌟 傳出 vehicle
+  startsNames.forEach(name => {
+    if (nodesByName[name]) {
+      startIds.push(...nodesByName[name].map(n => n.id));
+    }
   });
-  const result = await response.json();
-  return result.path || [];
+  
+  const endIds = [];
+  endsNames.forEach(name => {
+    if (nodesByName[name]) {
+      endIds.push(...nodesByName[name].map(n => n.id));
+    }
+  });
+
+  if (startIds.length === 0 || endIds.length === 0) {
+    console.warn('⚠️ 無效的起終點位置');
+    return [];
+  }
+
+  try {
+    const response = await fetch(`http://localhost:8000/api/route`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ 
+        starts: startIds, 
+        ends: endIds, 
+        mode: mode, 
+        vehicle: vehicle 
+      }) 
+    });
+    
+    if (!response.ok) {
+      throw new Error(`API error: ${response.status}`);
+    }
+    
+    const result = await response.json();
+    console.log('📍 Route response:', result);
+
+    // 加上這段來捕捉真實後端錯誤
+    if (result.status === "error") {
+      console.error("❌ 後端錯誤:", result.message, result.details);
+      alert(`路徑計算失敗：${result.message}`);
+      return [];
+    }
+
+    return result.path || [];
+  } catch (error) {
+    console.error('❌ Failed to fetch route:', error);
+    return [];
+  }
 }
 
 function getLinearDist(name1, name2) {
@@ -177,11 +258,11 @@ function getLinearDist(name1, name2) {
     return Math.sqrt(Math.pow(n1.lat - n2.lat, 2) + Math.pow(n1.lng - n2.lng, 2));
 }
 
-  document.getElementById("findRoute").addEventListener("click", async () => {
+document.getElementById("findRoute").addEventListener("click", async () => {
   const cruiseMode = document.getElementById("cruise-mode").value;
-  const routeWeight = document.getElementById("route-weight").value; 
+  const routeWeight = document.getElementById("route-weight").value; // 包含 shade 模式
   const startName = document.getElementById("start").value;
-  const selectedTransport = document.getElementById("transport-mode").value; // 🌟 取得當前交通工具
+  const selectedTransport = document.getElementById("transport-mode").value; 
   const waypointSelects = document.querySelectorAll(".waypoint-select");
   let destinations = Array.from(waypointSelects).map(s => s.value).filter(v => v !== "");
 
@@ -220,8 +301,7 @@ function getLinearDist(name1, name2) {
             if(d < minDist) { minDist = d; nearestIdx = i; }
         }
         const nextDest = remaining.splice(nearestIdx, 1)[0];
-        // 🌟 將 routeWeight 傳給 fetchSegment
-        const segment = await fetchSegment([startName], [destinations[0]], routeWeight, selectedTransport);
+        const segment = await fetchSegment([startName], [nextDest], routeWeight, selectedTransport);
         fullPath = fullPath.length === 0 ? segment : fullPath.concat(segment.slice(1));
         currentLoc = nextDest;
         visitOrder.push(nextDest);
@@ -229,12 +309,10 @@ function getLinearDist(name1, name2) {
     }
 
     if (fullPath.length > 0) {
-      drawPath(fullPath, visitOrder); 
-      totalDist = calculatePathDistance(fullPath); // 依然保留，給 UI 顯示總距離用
+      currentFullPath = fullPath;
+      drawPath(fullPath, visitOrder, routeWeight); 
+      totalDist = calculatePathDistance(fullPath);
       
-      const selectedTransport = document.getElementById("transport-mode").value;
-      
-      // 🌟 新增：分開計算主要交通時間與步行(牽車)時間
       let totalMainSeconds = 0;
       let totalWalkSeconds = 0;
 
@@ -254,17 +332,14 @@ function getLinearDist(name1, name2) {
           edgeSlope = Math.abs(edgeSlope);
           if (edgeSlope > 0.15) edgeSlope = 0; 
 
-          // 🌟 判斷這一段是否需要牽車 (該交通工具屬性為0，或是原本就選步行)
           const isWalkRequired = (edge && edge[selectedTransport] === 0) || selectedTransport === "walk";
           
           let speed = 1.2; 
           if (isWalkRequired) {
-              // 牽車/步行速度
               speed = 1.2 / (1 + edgeSlope * 10);
               if (speed <= 0.5 || !isFinite(speed)) speed = 1.2; 
               totalWalkSeconds += (edgeDist / speed);
           } else {
-              // 騎乘/駕駛速度
               if (selectedTransport === "bike") {
                   speed = edgeSlope > 0.08 ? 1.2 : 4.2 / (1 + edgeSlope * 5);
               } else if (selectedTransport === "ebike") {
@@ -278,7 +353,6 @@ function getLinearDist(name1, name2) {
         }
       }
 
-      // 🌟 將分開計算的時間傳給 UI 介面
       displayTravelTimes(totalMainSeconds, totalWalkSeconds, selectedTransport);
       
     } else {
@@ -301,15 +375,12 @@ function calculatePathDistance(path) {
   return totalDistance;
 }
 
-
-// 🌟 接收精準的總秒數與使用者選擇的交通工具
-// 🌟 更新：接收主交通時間與牽車時間，並動態產生 UI
 function displayTravelTimes(mainSeconds, walkSeconds, selectedMode) {
   const bar = document.getElementById("top-info-bar");
   const container = document.getElementById("time-results");
   if (!container || !bar) return;
   
-  bar.style.display = "block"; // 確保時間條顯示出來
+  bar.style.display = "block";
 
   const modeData = {
     "walk": { icon: "🚶", label: "步行" },
@@ -327,10 +398,8 @@ function displayTravelTimes(mainSeconds, walkSeconds, selectedMode) {
   };
 
   const currentData = modeData[selectedMode] || modeData["walk"];
-  
   let html = "";
 
-  // 1. 顯示主要交通工具的時間 (如果有真的騎乘到)
   if (selectedMode !== "walk" && mainSeconds > 0) {
     html += `
       <div class="time-card highlight-card">
@@ -341,10 +410,8 @@ function displayTravelTimes(mainSeconds, walkSeconds, selectedMode) {
     `;
   }
 
-  // 2. 顯示步行或牽車的時間
   if (walkSeconds > 0 || selectedMode === "walk") {
     const walkLabel = (selectedMode !== "walk") ? "牽車路段" : "步行";
-    // 如果是牽車狀態，套用橘色警示視覺效果以作區分
     const style = selectedMode !== "walk" ? "background: #fff3e0; border: 1px solid #ff9800; color: #e65100;" : "";
     html += `
       <div class="time-card highlight-card" style="${style}">
@@ -355,7 +422,6 @@ function displayTravelTimes(mainSeconds, walkSeconds, selectedMode) {
     `;
   }
 
-  // 3. 如果是混合路段 (有騎車也有牽車)，額外顯示一個總時間
   if (selectedMode !== "walk" && mainSeconds > 0 && walkSeconds > 0) {
     const total = mainSeconds + walkSeconds;
     html += `
@@ -370,54 +436,54 @@ function displayTravelTimes(mainSeconds, walkSeconds, selectedMode) {
   container.innerHTML = html;
 }
 
-let currentPathLayerGroup = null; // 改用 LayerGroup 來打包線條、箭頭和標記
+let currentPathLayerGroup = null;
 
-function drawPath(nodeIds, visitOrder = []) {
+// 👇 接收 mode 參數，並根據 mode 決定路線基礎顏色
+function drawPath(nodeIds, visitOrder = [], mode = "distance") {
   if (currentPathLayerGroup) map.removeLayer(currentPathLayerGroup);
   currentPathLayerGroup = L.layerGroup().addTo(map);
 
-  const selectedTransport = document.getElementById("transport-mode").value; // 🌟 取得交通工具
+  const selectedTransport = document.getElementById("transport-mode").value; 
   let currentSegmentLatLngs = [];
   let currentIsWalk = false;
 
-  // 🌟 分段繪製邏輯：遇到牽車路段切換為橘色虛線
+  // 判斷是否為避暑模式：是的話用深綠色，並且線條加粗
+  let baseColor = (mode === "shade") ? "#2E7D32" : "#0066ff";
+  let baseWeight = (mode === "shade") ? 8 : 6;
+
   for (let i = 0; i < nodeIds.length - 1; i++) {
     const u = nodeIds[i], v = nodeIds[i+1];
     const nodeU = graph.nodes.get(u), nodeV = graph.nodes.get(v);
     const edge = globalData.edges.find(e => (e.from===u&&e.to===v)||(e.from===v&&e.to===u));
     
-    // 判斷此小段是否需要牽車
     const isWalkRequired = edge && edge[selectedTransport] === 0;
 
     if (i === 0) {
         currentIsWalk = isWalkRequired;
         currentSegmentLatLngs.push([nodeU.lat, nodeU.lng]);
     } else if (currentIsWalk !== isWalkRequired) {
-        // 狀態改變，把累積的點畫出來
         currentSegmentLatLngs.push([nodeU.lat, nodeU.lng]);
         L.polyline(currentSegmentLatLngs, {
-            color: currentIsWalk ? "#ff9900" : "#0066ff", // 牽車橘色，一般藍色
-            weight: 6,
+            color: currentIsWalk ? "#ff9900" : baseColor, // 牽車維持橘色警告
+            weight: baseWeight,
             opacity: 0.8,
-            dashArray: currentIsWalk ? "10, 10" : null // 牽車套用虛線
+            dashArray: currentIsWalk ? "10, 10" : null 
         }).addTo(currentPathLayerGroup);
-        // 重置為下一段的起點
+        
         currentSegmentLatLngs = [[nodeU.lat, nodeU.lng]];
         currentIsWalk = isWalkRequired;
     }
     currentSegmentLatLngs.push([nodeV.lat, nodeV.lng]);
   }
 
-  // 畫出最後剩餘的線段
   if (currentSegmentLatLngs.length > 1) {
       L.polyline(currentSegmentLatLngs, {
-          color: currentIsWalk ? "#ff9900" : "#0066ff", 
-          weight: 6, opacity: 0.8,
+          color: currentIsWalk ? "#ff9900" : baseColor, 
+          weight: baseWeight, opacity: 0.8,
           dashArray: currentIsWalk ? "10, 10" : null
       }).addTo(currentPathLayerGroup);
   }
 
-  // 為了讓箭頭連續，我們再畫一條透明的底線來附著箭頭
   const fullLatlngs = nodeIds.map(id => [graph.nodes.get(id).lat, graph.nodes.get(id).lng]);
   const invisibleLine = L.polyline(fullLatlngs, { color: 'transparent' }).addTo(currentPathLayerGroup);
 
@@ -437,20 +503,17 @@ function drawPath(nodeIds, visitOrder = []) {
     console.error("🚨 箭頭套件發生錯誤或未載入：", error);
   }
 
-  // 5. 在目的地畫上「數字順序標記」 (1, 2, 3...)
   visitOrder.forEach((name, index) => {
     const loc = locationMarkers.find(m => m.name === name);
     if (loc) {
       const isStart = index === 0;
       const isEnd = index === visitOrder.length - 1;
-      
-      // 起點綠色、終點紅色、中間停靠站橘色
       let bgColor = isStart ? '#4CAF50' : (isEnd ? '#F44336' : '#FF9800');
       
       const icon = L.divIcon({
         className: 'sequence-marker',
         html: `<div style="background:${bgColor}; color:white; width:26px; height:26px; border-radius:50%; text-align:center; line-height:26px; font-weight:bold; border:2px solid white; box-shadow:0 0 6px rgba(0,0,0,0.5); font-size:14px; position:relative; top:-13px; left:-13px;">${index + 1}</div>`,
-        iconSize: [0, 0] // 將基準點設在中心
+        iconSize: [0, 0] 
       });
       
       L.marker([loc.lat, loc.lng], { icon: icon, zIndexOffset: 1000 })
@@ -459,7 +522,94 @@ function drawPath(nodeIds, visitOrder = []) {
     }
   });
 
-    if (invisibleLine) {
-        map.fitBounds(invisibleLine.getBounds(), { padding: [50, 50] });
+  if (invisibleLine) {
+      map.fitBounds(invisibleLine.getBounds(), { padding: [50, 50] });
+  }
+}
+//  新增：在地圖上繪製特定環境路段的輔助函數
+function drawEdgesOnLayer(edgesToDraw, layerGroup, color, weight, opacity, dashArray = null) {
+  layerGroup.clearLayers(); // 先清空舊有的繪製線條
+  
+  edgesToDraw.forEach(edge => {
+    // 從載入的全局節點資料中找出起終點座標
+    const nodeU = globalData.nodes.find(n => n.id === edge.from);
+    const nodeV = globalData.nodes.find(n => n.id === edge.to);
+    
+    if (nodeU && nodeV) {
+      L.polyline([[nodeU.lat, nodeU.lng], [nodeV.lat, nodeV.lng]], {
+        color: color,
+        weight: weight,
+        opacity: opacity,
+        dashArray: dashArray,
+        lineCap: 'round'
+      }).addTo(layerGroup);
+    }
+  });
+}
+
+// 建立一個專屬的圖層群組來放所有的真實陰影與樹蔭
+const realtimeShadowLayer = L.layerGroup().addTo(map);
+
+document.getElementById('toggle-realtime-shadow').addEventListener('change', async function(e) {
+  realtimeShadowLayer.clearLayers(); // 每次切換前先清空
+
+  if (e.target.checked) {
+    // 防呆：如果還沒有產生路徑
+    if (!currentFullPath || currentFullPath.length === 0) {
+      alert("請先開始巡航導航，再開啟陰影顯示！");
+      e.target.checked = false;
+      return;
+    }
+
+    try {
+      // 1. 篩選出「當前導航路徑」上的所有 Edges
+      const pathEdges = [];
+      for (let i = 0; i < currentFullPath.length - 1; i++) {
+        const u = currentFullPath[i], v = currentFullPath[i+1];
+        const edge = globalData.edges.find(e => (e.from===u&&e.to===v) || (e.from===v&&e.to===u));
+        if (edge) pathEdges.push(edge);
+      }
+
+      // 2. 處理樹蔭 (僅針對當前路徑)
+      const treeShadedEdges = pathEdges.filter(edge => edge.tree_shade > 0.5);
+      
+      // 繪製路徑上的樹蔭 (疊加深色透明線條)
+      if (treeShadedEdges.length > 0) {
+        drawEdgesOnLayer(treeShadedEdges, realtimeShadowLayer, '#1a1a1a', 8, 0.6);
+      }
+
+      // 3. 處理建築物即時陰影 (配合 shadow_calculator.py)
+      // 由於不需要畫出全圖 Polygon 蓋住畫面，若你的後端有將 building_shade 寫入 Edge，可以直接像樹蔭一樣濾出：
+      const buildingShadedEdges = pathEdges.filter(edge => edge.building_shade > 0.5);
+      if (buildingShadedEdges.length > 0) {
+        drawEdgesOnLayer(buildingShadedEdges, realtimeShadowLayer, '#1a1a1a', 8, 0.6);
+      } 
+
+    } catch (error) {
+      console.error("❌ 獲取即時陰影失敗:", error);
+      alert("無法套用陰影圖層，請檢查資料或 API。");
+      e.target.checked = false;
     }
   }
+});
+const routeWeightSelect = document.getElementById("route-weight");
+const shadowToggle = document.getElementById("toggle-realtime-shadow");
+
+function updateShadowToggleState() {
+  const isShadeMode = routeWeightSelect.value === "shade";
+  
+  shadowToggle.disabled = !isShadeMode;
+  shadowToggle.parentElement.style.opacity = isShadeMode ? "1" : "0.5";
+  shadowToggle.parentElement.style.cursor = isShadeMode ? "pointer" : "not-allowed";
+  
+  // 如果切換回非 shade 模式，強制取消勾選並清除陰影圖層
+  if (!isShadeMode) {
+    shadowToggle.checked = false;
+    realtimeShadowLayer.clearLayers();
+  }
+}
+
+// 監聽下拉選單變化
+routeWeightSelect.addEventListener("change", updateShadowToggleState);
+// 初始執行一次以設定正確狀態
+updateShadowToggleState();

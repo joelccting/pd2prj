@@ -349,6 +349,11 @@ const buildingTranslations = {
 // 🌟 1. 全局翻譯函數 (增加對動態 UI 的支援)
 // ==========================================
 window.applyTranslations = function(lang) {
+
+    if (!translations[lang]) {
+        lang = 'zh';
+    }
+
     const dict = translations[lang].translation;
 
     // A. 處理具有 data-i18n 屬性的靜態元素
@@ -400,10 +405,32 @@ window.applyTranslations = function(lang) {
 };
 
 // ==========================================
-// 🌟 2. 翻譯起終點大樓選項 (保持原樣)
+// 🌟 2. 翻譯起終點大樓選項
 // ==========================================
 window.updateDropdownLanguage = function(currentLang) {
-    // ... 保持原本的 updateDropdownLanguage 代碼 ...
+    // 確保語言有效
+    if (!translations[currentLang]) {
+        currentLang = 'zh';
+    }
+
+    // 獲取所有下拉菜單
+    const dropdowns = document.querySelectorAll('select.modern-select');
+    
+    dropdowns.forEach(selectEl => {
+        // 遍歷該下拉菜單中的所有選項
+        Array.from(selectEl.options).forEach(option => {
+            // 如果是 optgroup，跳過
+            if (!option.value) return;
+            
+            // 查找建築物翻譯
+            if (buildingTranslations[option.value]) {
+                const translated = buildingTranslations[option.value][currentLang];
+                if (translated) {
+                    option.textContent = translated;
+                }
+            }
+        });
+    });
 };
 
 // ==========================================
@@ -421,10 +448,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const selector = document.getElementById('language-selector');
     if (!selector) return;
 
-    const savedLang = localStorage.getItem('preferredLang') || 'zh';
+    let savedLang = localStorage.getItem('preferredLang') || 'zh';
+    if (savedLang !== 'en' && savedLang !== 'zh') {
+        savedLang = 'zh';  // 无效值时重设为中文
+        localStorage.setItem('preferredLang', 'zh');
+    }
+
     selector.value = savedLang;
     
     window.applyTranslations(savedLang);
+    window.updateDropdownLanguage(savedLang);
 
     selector.addEventListener('change', (e) => {
         const lang = e.target.value;

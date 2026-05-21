@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+pytz
+pysolar
+geopandas
+shapely
+pandas
+opencv-python
+numpy
+pyproj
+requests
+urllib3

@@ -50,7 +50,7 @@ echo ✅ C++ 編譯成功 [dijkstra.exe 已產出]。
 :: 3. 安裝後端必要套件
 echo.
 echo [3/4] 檢查並安裝 Python 後端套件...
-pip install fastapi uvicorn >nul 2>&1
+pip install -r requirements.txt
 echo ✅ 套件準備就緒。
 
 :: 4. 啟動伺服器
