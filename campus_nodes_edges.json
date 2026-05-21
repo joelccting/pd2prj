@@ -4098,56 +4098,56 @@
     {
       "id": 2805249573,
       "name": "",
-      "lat": 23.557299699999785,
-      "lng": 120.47337390669537,
+      "lat": 23.55729847097257,
+      "lng": 120.47337323418292,
       "accessible": true,
       "type": "path_node",
-      "elevation": 92
+      "elevation": 0
     },
     {
       "id": 2805249577,
       "name": "",
-      "lat": 23.556683799294355,
-      "lng": 120.47337725918933,
+      "lat": 23.556682570882934,
+      "lng": 120.47338195109492,
       "accessible": true,
       "type": "path_node",
-      "elevation": 90
+      "elevation": 0
     },
     {
       "id": 8233309968,
       "name": "",
-      "lat": 23.55604699862379,
-      "lng": 120.47338396364269,
+      "lat": 23.556047613143264,
+      "lng": 120.4733879869562,
       "accessible": true,
       "type": "path_node",
-      "elevation": 90
+      "elevation": 0
     },
     {
       "id": 3128972858,
       "name": "",
-      "lat": 23.555241771791234,
-      "lng": 120.47339469123133,
+      "lat": 23.55524177210201,
+      "lng": 120.47340206899902,
       "accessible": true,
       "type": "path_node",
-      "elevation": 87
+      "elevation": 0
     },
     {
       "id": 2805249591,
       "name": "",
-      "lat": 23.5543368,
-      "lng": 120.4734087,
+      "lat": 23.55433511801428,
+      "lng": 120.47341715526642,
       "accessible": true,
       "type": "path_node",
-      "elevation": 89
+      "elevation": 0
     },
     {
       "id": 2805249583,
       "name": "",
-      "lat": 23.5537741,
-      "lng": 120.4734231,
+      "lat": 23.5537693012259,
+      "lng": 120.47342184917676,
       "accessible": true,
       "type": "path_node",
-      "elevation": 88
+      "elevation": 0
     },
     {
       "id": 2490499334,
@@ -4161,11 +4161,11 @@
     {
       "id": 6293657526,
       "name": "",
-      "lat": 23.5531619,
-      "lng": 120.473424,
+      "lat": 23.553161990545032,
+      "lng": 120.47342486692921,
       "accessible": true,
       "type": "path_node",
-      "elevation": 89
+      "elevation": 0
     },
     {
       "id": 2805238633,
@@ -4233,20 +4233,20 @@
     {
       "id": 2490499371,
       "name": "",
-      "lat": 23.555523,
-      "lng": 120.4644093,
+      "lat": 23.55552329460719,
+      "lng": 120.46441532707094,
       "accessible": true,
       "type": "path_node",
-      "elevation": 55
+      "elevation": 0
     },
     {
       "id": 8233309626,
       "name": "",
-      "lat": 23.5555229,
-      "lng": 120.4643008,
+      "lat": 23.555523601790455,
+      "lng": 120.4642983153017,
       "accessible": true,
       "type": "path_node",
-      "elevation": 55
+      "elevation": 0
     },
     {
       "id": 2490499344,
@@ -4262,24 +4262,6 @@
       "name": "",
       "lat": 23.5559811,
       "lng": 120.478178,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 105
-    },
-    {
-      "id": 2491744941,
-      "name": "",
-      "lat": 23.5549081,
-      "lng": 120.478016,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 104
-    },
-    {
-      "id": 2491744939,
-      "name": "",
-      "lat": 23.5543564,
-      "lng": 120.4779268,
       "accessible": true,
       "type": "path_node",
       "elevation": 105
@@ -5142,11 +5124,11 @@
     {
       "id": 6293656913,
       "name": "",
-      "lat": 23.5531334,
-      "lng": 120.4669824,
+      "lat": 23.553133714800463,
+      "lng": 120.4669822006527,
       "accessible": true,
       "type": "path_node",
-      "elevation": 65
+      "elevation": 0
     },
     {
       "id": 2805249592,
@@ -5466,20 +5448,20 @@
     {
       "id": 6293631965,
       "name": "",
-      "lat": 23.5552987,
-      "lng": 120.4758434,
+      "lat": 23.55529832252264,
+      "lng": 120.4758355010785,
       "accessible": true,
       "type": "path_node",
-      "elevation": 98
+      "elevation": 0
     },
     {
       "id": 2490499361,
       "name": "",
-      "lat": 23.5552994,
-      "lng": 120.4759306,
+      "lat": 23.555299551879337,
+      "lng": 120.4759414508294,
       "accessible": true,
       "type": "path_node",
-      "elevation": 98
+      "elevation": 0
     },
     {
       "id": 2805249578,
@@ -5520,11 +5502,11 @@
     {
       "id": 2805249582,
       "name": "",
-      "lat": 23.553783,
-      "lng": 120.4740822,
+      "lat": 23.553766536384217,
+      "lng": 120.47408536049817,
       "accessible": true,
       "type": "path_node",
-      "elevation": 89
+      "elevation": 0
     },
     {
       "id": 2805249585,
@@ -5538,20 +5520,20 @@
     {
       "id": 6293631967,
       "name": "",
-      "lat": 23.553767,
-      "lng": 120.4758397,
+      "lat": 23.5537656135013,
+      "lng": 120.4758405313787,
       "accessible": true,
       "type": "path_node",
-      "elevation": 97
+      "elevation": 0
     },
     {
       "id": 2805249584,
       "name": "",
-      "lat": 23.5537642,
-      "lng": 120.4759485,
+      "lat": 23.553765306236222,
+      "lng": 120.47594815492631,
       "accessible": true,
       "type": "path_node",
-      "elevation": 97
+      "elevation": 0
     },
     {
       "id": 2805249589,
@@ -6744,11 +6726,11 @@
     {
       "id": 5369293450,
       "name": "",
-      "lat": 23.5532341,
-      "lng": 120.468464,
+      "lat": 23.553232679452485,
+      "lng": 120.46846747402834,
       "accessible": true,
       "type": "path_node",
-      "elevation": 74
+      "elevation": 0
     },
     {
       "id": 5909461082,
@@ -6996,20 +6978,20 @@
     {
       "id": 6293675150,
       "name": "",
-      "lat": 23.5531467,
-      "lng": 120.4699873,
+      "lat": 23.553146623335522,
+      "lng": 120.46998929245727,
       "accessible": true,
       "type": "path_node",
-      "elevation": 76
+      "elevation": 0
     },
     {
       "id": 664470980,
       "name": "",
-      "lat": 23.5532378,
-      "lng": 120.4699871,
+      "lat": 23.553237904533592,
+      "lng": 120.46998862199409,
       "accessible": true,
       "type": "path_node",
-      "elevation": 75
+      "elevation": 0
     },
     {
       "id": 2805238632,
@@ -7212,38 +7194,29 @@
     {
       "id": 6293661091,
       "name": "",
-      "lat": 23.5531546,
-      "lng": 120.4717647,
+      "lat": 23.553155228895378,
+      "lng": 120.4717679320875,
       "accessible": true,
       "type": "path_node",
-      "elevation": 84
+      "elevation": 0
     },
     {
       "id": 5909462888,
       "name": "",
-      "lat": 23.5532423,
-      "lng": 120.4717647,
+      "lat": 23.553239134220345,
+      "lng": 120.4717679319093,
       "accessible": true,
       "type": "path_node",
-      "elevation": 83
-    },
-    {
-      "id": 8233309639,
-      "name": "",
-      "lat": 23.5533894,
-      "lng": 120.4717647,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 83
+      "elevation": 0
     },
     {
       "id": 8233309905,
       "name": "",
-      "lat": 23.5537435,
-      "lng": 120.4717648,
+      "lat": 23.553803399950983,
+      "lng": 120.47182090562644,
       "accessible": true,
       "type": "path_node",
-      "elevation": 82
+      "elevation": 0
     },
     {
       "id": 5909462887,
@@ -7437,11 +7410,11 @@
     {
       "id": 8233309841,
       "name": "",
-      "lat": 23.5532523,
-      "lng": 120.4758385,
+      "lat": 23.553252656889125,
+      "lng": 120.47584086692211,
       "accessible": true,
       "type": "path_node",
-      "elevation": 97
+      "elevation": 0
     },
     {
       "id": 2490499336,
@@ -7518,38 +7491,29 @@
     {
       "id": 8233309904,
       "name": "",
-      "lat": 23.5537426,
-      "lng": 120.4716369,
+      "lat": 23.55380310884657,
+      "lng": 120.47157581904499,
       "accessible": true,
       "type": "path_node",
-      "elevation": 82
-    },
-    {
-      "id": 8233309638,
-      "name": "",
-      "lat": 23.5533917,
-      "lng": 120.4716353,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 83
+      "elevation": 0
     },
     {
       "id": 5909462889,
       "name": "",
-      "lat": 23.553242,
-      "lng": 120.4716346,
+      "lat": 23.553238519221583,
+      "lng": 120.47163583391725,
       "accessible": true,
       "type": "path_node",
-      "elevation": 83
+      "elevation": 0
     },
     {
       "id": 6293658338,
       "name": "",
-      "lat": 23.553154,
-      "lng": 120.4716342,
+      "lat": 23.553153692252124,
+      "lng": 120.47163650406854,
       "accessible": true,
       "type": "path_node",
-      "elevation": 84
+      "elevation": 0
     },
     {
       "id": 7503776686,
@@ -7626,101 +7590,74 @@
     {
       "id": 6293678838,
       "name": "",
-      "lat": 23.5545789,
-      "lng": 120.4643063,
+      "lat": 23.554518922977554,
+      "lng": 120.46430200267088,
       "accessible": true,
       "type": "path_node",
-      "elevation": 56
-    },
-    {
-      "id": 6293678843,
-      "name": "",
-      "lat": 23.5544247,
-      "lng": 120.4643171,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 56
+      "elevation": 0
     },
     {
       "id": 6293678844,
       "name": "",
-      "lat": 23.5542723,
-      "lng": 120.4643492,
+      "lat": 23.554221414689138,
+      "lng": 120.46435833084215,
       "accessible": true,
       "type": "path_node",
-      "elevation": 56
-    },
-    {
-      "id": 6293678849,
-      "name": "",
-      "lat": 23.5540788,
-      "lng": 120.4644191,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 56
+      "elevation": 0
     },
     {
       "id": 6293678839,
       "name": "",
-      "lat": 23.5538789,
-      "lng": 120.4645371,
+      "lat": 23.553954012691506,
+      "lng": 120.46448774680341,
       "accessible": true,
       "type": "path_node",
-      "elevation": 56
+      "elevation": 0
     },
     {
       "id": 6293678846,
       "name": "",
-      "lat": 23.5537116,
-      "lng": 120.4646711,
+      "lat": 23.553711213588333,
+      "lng": 120.46467281904727,
       "accessible": true,
       "type": "path_node",
-      "elevation": 58
+      "elevation": 0
     },
     {
       "id": 6293678847,
       "name": "",
-      "lat": 23.5535199,
-      "lng": 120.4648787,
+      "lat": 23.553508982123393,
+      "lng": 120.4648967838564,
       "accessible": true,
       "type": "path_node",
-      "elevation": 59
-    },
-    {
-      "id": 6293678842,
-      "name": "",
-      "lat": 23.5533935,
-      "lng": 120.4650607,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 60
+      "elevation": 0
     },
     {
       "id": 6293678848,
       "name": "",
-      "lat": 23.5532739,
-      "lng": 120.4652753,
+      "lat": 23.553339943010947,
+      "lng": 120.4651415351617,
       "accessible": true,
       "type": "path_node",
-      "elevation": 61
+      "elevation": 0
     },
     {
       "id": 6293678841,
       "name": "",
-      "lat": 23.5531955,
-      "lng": 120.4655064,
+      "lat": 23.55319917840763,
+      "lng": 120.46547010701343,
       "accessible": true,
       "type": "path_node",
-      "elevation": 62
+      "elevation": 0
     },
     {
       "id": 6293678845,
       "name": "",
-      "lat": 23.5531365,
-      "lng": 120.4657388,
+      "lat": 23.55313586504468,
+      "lng": 120.46586573123933,
       "accessible": true,
       "type": "path_node",
-      "elevation": 62
+      "elevation": 0
     },
     {
       "id": 3128972856,
@@ -7779,11 +7716,11 @@
     {
       "id": 2805254122,
       "name": "",
-      "lat": 23.5538085,
-      "lng": 120.4728006,
+      "lat": 23.553801573920193,
+      "lng": 120.47280058264732,
       "accessible": true,
       "type": "path_node",
-      "elevation": 86
+      "elevation": 0
     },
     {
       "id": 2805254123,
@@ -8238,20 +8175,20 @@
     {
       "id": 2805266337,
       "name": "",
-      "lat": 23.5532276,
-      "lng": 120.4658625,
+      "lat": 23.55322745483737,
+      "lng": 120.46586573168481,
       "accessible": true,
       "type": "path_node",
-      "elevation": 62
+      "elevation": 0
     },
     {
       "id": 2805266342,
       "name": "",
-      "lat": 23.5532866,
-      "lng": 120.4654956,
+      "lat": 23.55328585034338,
+      "lng": 120.46549659235731,
       "accessible": true,
       "type": "path_node",
-      "elevation": 62
+      "elevation": 0
     },
     {
       "id": 2490499339,
@@ -8274,11 +8211,11 @@
     {
       "id": 2805266336,
       "name": "",
-      "lat": 23.5537581,
-      "lng": 120.4647556,
+      "lat": 23.553765918435506,
+      "lng": 120.46474255452148,
       "accessible": true,
       "type": "path_node",
-      "elevation": 58
+      "elevation": 0
     },
     {
       "id": 2805266340,
@@ -8292,20 +8229,20 @@
     {
       "id": 2490499346,
       "name": "",
-      "lat": 23.5542649,
-      "lng": 120.4644733,
+      "lat": 23.554253368276587,
+      "lng": 120.46447634732601,
       "accessible": true,
       "type": "path_node",
-      "elevation": 56
+      "elevation": 0
     },
     {
       "id": 2805266339,
       "name": "",
-      "lat": 23.5545573,
-      "lng": 120.4644249,
+      "lat": 23.55454104096117,
+      "lng": 120.46442806756376,
       "accessible": true,
       "type": "path_node",
-      "elevation": 56
+      "elevation": 0
     },
     {
       "id": 8233309723,
@@ -8850,11 +8787,11 @@
     {
       "id": 10742733690,
       "name": "",
-      "lat": 23.5532338,
-      "lng": 120.469341,
+      "lat": 23.553233908983913,
+      "lng": 120.46934254480854,
       "accessible": true,
       "type": "path_node",
-      "elevation": 75
+      "elevation": 0
     },
     {
       "id": 11224950396,
@@ -9534,20 +9471,11 @@
     {
       "id": 9000083,
       "name": "",
-      "lat": 23.553774,
-      "lng": 120.474704,
+      "lat": 23.55376407888526,
+      "lng": 120.47470696306107,
       "accessible": true,
       "type": "path_node",
-      "elevation": 95
-    },
-    {
-      "id": 9000086,
-      "name": "",
-      "lat": 23.553142,
-      "lng": 120.46886,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 74
+      "elevation": 0
     },
     {
       "id": 9000087,
@@ -9588,11 +9516,11 @@
     {
       "id": 9000092,
       "name": "",
-      "lat": 23.553807,
-      "lng": 120.472391,
+      "lat": 23.553802186585465,
+      "lng": 120.4723908752203,
       "accessible": true,
       "type": "path_node",
-      "elevation": 85
+      "elevation": 0
     },
     {
       "id": 9000093,
@@ -9606,20 +9534,20 @@
     {
       "id": 9000094,
       "name": "",
-      "lat": 23.55378,
-      "lng": 120.474306,
+      "lat": 23.553765307168582,
+      "lng": 120.47430731365056,
       "accessible": true,
       "type": "path_node",
-      "elevation": 92
+      "elevation": 0
     },
     {
       "id": 9000096,
       "name": "",
-      "lat": 23.553773,
-      "lng": 120.474781,
+      "lat": 23.553764693260003,
+      "lng": 120.47477804088717,
       "accessible": true,
       "type": "path_node",
-      "elevation": 95
+      "elevation": 0
     },
     {
       "id": 9000097,
@@ -9678,11 +9606,11 @@
     {
       "id": 9000114,
       "name": "",
-      "lat": 23.553153,
-      "lng": 120.471366,
+      "lat": 23.553154306629708,
+      "lng": 120.47136694183979,
       "accessible": true,
       "type": "path_node",
-      "elevation": 83
+      "elevation": 0
     },
     {
       "id": 9000115,
@@ -9705,20 +9633,20 @@
     {
       "id": 9000117,
       "name": "",
-      "lat": 23.553231,
-      "lng": 120.467426,
+      "lat": 23.55323237241927,
+      "lng": 120.46742543546965,
       "accessible": true,
       "type": "path_node",
-      "elevation": 68
+      "elevation": 0
     },
     {
       "id": 9000118,
       "name": "",
-      "lat": 23.553231,
-      "lng": 120.46717,
+      "lat": 23.553232372030795,
+      "lng": 120.46717096124577,
       "accessible": true,
       "type": "path_node",
-      "elevation": 66
+      "elevation": 0
     },
     {
       "id": 9000119,
@@ -9741,11 +9669,11 @@
     {
       "id": 9000121,
       "name": "",
-      "lat": 23.55358,
-      "lng": 120.469986,
+      "lat": 23.553580285297556,
+      "lng": 120.46998828676253,
       "accessible": true,
       "type": "path_node",
-      "elevation": 74
+      "elevation": 0
     },
     {
       "id": 9000122,
@@ -9777,11 +9705,11 @@
     {
       "id": 1775446775957,
       "name": "",
-      "lat": 23.553232987029592,
-      "lng": 120.46885907649995,
+      "lat": 23.553233294295907,
+      "lng": 120.46886008246199,
       "accessible": true,
       "type": "path_node",
-      "elevation": 75
+      "elevation": 0
     },
     {
       "id": 1775446775958,
@@ -9948,20 +9876,20 @@
     {
       "id": 1775446775985,
       "name": "",
-      "lat": 23.55377177801189,
-      "lng": 120.47487003342438,
+      "lat": 23.553764692949226,
+      "lng": 120.4748719188264,
       "accessible": true,
       "type": "path_node",
-      "elevation": 94
+      "elevation": 0
     },
     {
       "id": 1775446775987,
       "name": "",
-      "lat": 23.553781610493157,
-      "lng": 120.47450788709331,
+      "lat": 23.5537653099656,
+      "lng": 120.47450512611991,
       "accessible": true,
       "type": "path_node",
-      "elevation": 94
+      "elevation": 0
     },
     {
       "id": 1775446775988,
@@ -10090,15 +10018,6 @@
       "elevation": 87
     },
     {
-      "id": 1775446776023,
-      "name": "",
-      "lat": 23.553165507142403,
-      "lng": 120.47584100128496,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 96
-    },
-    {
       "id": 1775446776024,
       "name": "",
       "lat": 23.55316482532527,
@@ -10110,11 +10029,11 @@
     {
       "id": 1775446776025,
       "name": "",
-      "lat": 23.553249016311074,
-      "lng": 120.47613064083274,
+      "lat": 23.553245896254158,
+      "lng": 120.47613121578068,
       "accessible": true,
       "type": "path_node",
-      "elevation": 97
+      "elevation": 0
     },
     {
       "id": 1775446776028,
@@ -10200,11 +10119,11 @@
     {
       "id": 1775446776052,
       "name": "",
-      "lat": 23.553233437662552,
-      "lng": 120.46756111685839,
+      "lat": 23.553232987107275,
+      "lng": 120.46756289921625,
       "accessible": true,
       "type": "path_node",
-      "elevation": 69
+      "elevation": 0
     },
     {
       "id": 1775446776054,
@@ -10218,11 +10137,11 @@
     {
       "id": 1775446776059,
       "name": "",
-      "lat": 23.55342493022315,
-      "lng": 120.46934075683737,
+      "lat": 23.553421696890766,
+      "lng": 120.46934120365947,
       "accessible": true,
       "type": "path_node",
-      "elevation": 75
+      "elevation": 0
     },
     {
       "id": 1775446776062,
@@ -10335,20 +10254,20 @@
     {
       "id": 1775446776098,
       "name": "",
-      "lat": 23.553238510557218,
-      "lng": 120.47249384357879,
+      "lat": 23.553241592661468,
+      "lng": 120.47249648733393,
       "accessible": true,
       "type": "path_node",
-      "elevation": 86
+      "elevation": 0
     },
     {
       "id": 1775446776104,
       "name": "",
-      "lat": 23.55371784510769,
-      "lng": 120.47285867247525,
+      "lat": 23.553717974976305,
+      "lng": 120.4728636151829,
       "accessible": true,
       "type": "path_node",
-      "elevation": 85
+      "elevation": 0
     },
     {
       "id": 1775446776105,
@@ -10407,56 +10326,56 @@
     {
       "id": 1775446776116,
       "name": "",
-      "lat": 23.553803766205238,
-      "lng": 120.4722708463669,
+      "lat": 23.553801572210887,
+      "lng": 120.47227185206162,
       "accessible": true,
       "type": "path_node",
-      "elevation": 84
+      "elevation": 0
     },
     {
       "id": 1775446776117,
       "name": "",
-      "lat": 23.55367090459941,
-      "lng": 120.4734241962433,
+      "lat": 23.553673716818345,
+      "lng": 120.47342218431923,
       "accessible": true,
       "type": "path_node",
-      "elevation": 87
+      "elevation": 0
     },
     {
       "id": 1775446776118,
       "name": "",
-      "lat": 23.553567663422456,
-      "lng": 120.4734241962433,
+      "lat": 23.553571678600115,
+      "lng": 120.47342285513878,
       "accessible": true,
       "type": "path_node",
-      "elevation": 87
+      "elevation": 0
     },
     {
       "id": 1775446776119,
       "name": "",
-      "lat": 23.5538847554711,
-      "lng": 120.4734241962433,
+      "lat": 23.553887320867343,
+      "lng": 120.47342117857995,
       "accessible": true,
       "type": "path_node",
-      "elevation": 88
+      "elevation": 0
     },
     {
       "id": 1775446776120,
       "name": "",
-      "lat": 23.554179729335598,
-      "lng": 120.47341078519823,
+      "lat": 23.55418144674387,
+      "lng": 120.47341816122845,
       "accessible": true,
       "type": "path_node",
-      "elevation": 89
+      "elevation": 0
     },
     {
       "id": 1775446776122,
       "name": "",
-      "lat": 23.553774242037104,
-      "lng": 120.47371923923492,
+      "lat": 23.553767151691297,
+      "lng": 120.47372460436577,
       "accessible": true,
       "type": "path_node",
-      "elevation": 87
+      "elevation": 0
     },
     {
       "id": 1775446776126,
@@ -10549,15 +10468,6 @@
       "elevation": 102
     },
     {
-      "id": 1775446776143,
-      "name": "",
-      "lat": 23.555773085192673,
-      "lng": 120.47546803951263,
-      "accessible": true,
-      "type": "path_node",
-      "elevation": 97
-    },
-    {
       "id": 1775446776144,
       "name": "",
       "lat": 23.55682268243301,
@@ -10623,11 +10533,11 @@
     {
       "id": 1775446776158,
       "name": "",
-      "lat": 23.556157639428857,
-      "lng": 120.47338262253818,
+      "lat": 23.5561579473099,
+      "lng": 120.47338765181375,
       "accessible": true,
       "type": "path_node",
-      "elevation": 90
+      "elevation": 0
     },
     {
       "id": 1775446776165,
@@ -12522,11 +12432,11 @@
     {
       "id": 1775446776751,
       "name": "",
-      "lat": 23.55380223366863,
-      "lng": 120.46900331874203,
+      "lat": 23.553796040664164,
+      "lng": 120.46900257468226,
       "accessible": true,
       "type": "path_node",
-      "elevation": 73
+      "elevation": 0
     },
     {
       "id": 1775446776764,
@@ -13478,6 +13388,402 @@
       "name": "",
       "lat": 23.560637755569424,
       "lng": 120.47659013671408,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446776997,
+      "name": "",
+      "lat": 23.55552329460719,
+      "lng": 120.46449914610263,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446776998,
+      "name": "",
+      "lat": 23.554554559611244,
+      "lng": 120.4645068576763,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446776999,
+      "name": "",
+      "lat": 23.55427825968227,
+      "lng": 120.46455513703766,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777000,
+      "name": "",
+      "lat": 23.554039454916417,
+      "lng": 120.46465940800219,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777001,
+      "name": "",
+      "lat": 23.553820012148627,
+      "lng": 120.46480961170704,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777002,
+      "name": "",
+      "lat": 23.55363191824474,
+      "lng": 120.46502083499867,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777003,
+      "name": "",
+      "lat": 23.553485929737732,
+      "lng": 120.46522401299981,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777004,
+      "name": "",
+      "lat": 23.553362071215645,
+      "lng": 120.46552006226534,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777005,
+      "name": "",
+      "lat": 23.553306748948764,
+      "lng": 120.46586573052655,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777006,
+      "name": "",
+      "lat": 23.55330674918186,
+      "lng": 120.46698052440571,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777007,
+      "name": "",
+      "lat": 23.553307978479502,
+      "lng": 120.46717029064895,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777008,
+      "name": "",
+      "lat": 23.553310437463193,
+      "lng": 120.46742543555875,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777009,
+      "name": "",
+      "lat": 23.553311666683115,
+      "lng": 120.46756256367281,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777010,
+      "name": "",
+      "lat": 23.55331535403197,
+      "lng": 120.46846713870767,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777011,
+      "name": "",
+      "lat": 23.555524523961775,
+      "lng": 120.46421818453017,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777012,
+      "name": "",
+      "lat": 23.554506921682997,
+      "lng": 120.46421885526058,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777013,
+      "name": "",
+      "lat": 23.554195891884802,
+      "lng": 120.4642825576356,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777014,
+      "name": "",
+      "lat": 23.55391713036481,
+      "lng": 120.46441532609083,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777015,
+      "name": "",
+      "lat": 23.553661424341865,
+      "lng": 120.46460844540722,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777016,
+      "name": "",
+      "lat": 23.553450893438434,
+      "lng": 120.46483408668607,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777017,
+      "name": "",
+      "lat": 23.553276627695737,
+      "lng": 120.4651013019374,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777018,
+      "name": "",
+      "lat": 23.55313094738146,
+      "lng": 120.46544931846799,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777019,
+      "name": "",
+      "lat": 23.55305687794152,
+      "lng": 120.46586573123933,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777020,
+      "name": "",
+      "lat": 23.553055955519785,
+      "lng": 120.46698287129404,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777021,
+      "name": "",
+      "lat": 23.55305995185182,
+      "lng": 120.4679846763611,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777022,
+      "name": "",
+      "lat": 23.55307040194985,
+      "lng": 120.46998996305409,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777024,
+      "name": "",
+      "lat": 23.553315046998932,
+      "lng": 120.46885941177608,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777025,
+      "name": "",
+      "lat": 23.55331719832791,
+      "lng": 120.4693412034813,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777026,
+      "name": "",
+      "lat": 23.553316275985704,
+      "lng": 120.46998862177134,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777027,
+      "name": "",
+      "lat": 23.553072860471826,
+      "lng": 120.47136727720502,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777030,
+      "name": "",
+      "lat": 23.553078699471065,
+      "lng": 120.47342520207168,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777032,
+      "name": "",
+      "lat": 23.5537646917061,
+      "lng": 120.47603264451028,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777033,
+      "name": "",
+      "lat": 23.55376592076637,
+      "lng": 120.47575168258138,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777034,
+      "name": "",
+      "lat": 23.55333195253922,
+      "lng": 120.47575268889979,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777036,
+      "name": "",
+      "lat": 23.553331030896366,
+      "lng": 120.47603566195085,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777038,
+      "name": "",
+      "lat": 23.553089764644746,
+      "lng": 120.47575302404226,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777039,
+      "name": "",
+      "lat": 23.553331337074717,
+      "lng": 120.47342352613653,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777041,
+      "name": "",
+      "lat": 23.55332518911132,
+      "lng": 120.47286327928306,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777042,
+      "name": "",
+      "lat": 23.553324268167692,
+      "lng": 120.47249514622942,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777043,
+      "name": "",
+      "lat": 23.553317507614107,
+      "lng": 120.47157481308298,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777044,
+      "name": "",
+      "lat": 23.553074397659895,
+      "lng": 120.47157514849275,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777045,
+      "name": "",
+      "lat": 23.55307531876068,
+      "lng": 120.47182358792458,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777046,
+      "name": "",
+      "lat": 23.553320272232146,
+      "lng": 120.47182258218528,
+      "elevation": 0,
+      "accessible": true,
+      "type": "path_node"
+    },
+    {
+      "id": 1775446777047,
+      "name": "",
+      "lat": 23.5532959929242,
+      "lng": 120.4760359973161,
       "elevation": 0,
       "accessible": true,
       "type": "path_node"
@@ -15057,44 +15363,44 @@
     {
       "from": 8233309968,
       "to": 3128972858,
-      "distance": 89.54381514289037,
+      "distance": 89.61693122038159,
       "accessible": true,
-      "slope": 0.03350315144840235
+      "slope": 0
     },
     {
       "from": 3128972858,
       "to": 8233309968,
-      "distance": 89.54381514289037,
+      "distance": 89.61693122038159,
       "accessible": true,
-      "slope": 0.03350315144840235
+      "slope": 0
     },
     {
       "from": 3128972858,
       "to": 2805249591,
-      "distance": 100.63840246644732,
+      "distance": 100.8270617429599,
       "accessible": true,
-      "slope": 0.019873129451421855
+      "slope": 0
     },
     {
       "from": 2805249591,
       "to": 3128972858,
-      "distance": 100.63840246644732,
+      "distance": 100.8270617429599,
       "accessible": true,
-      "slope": 0.019873129451421855
+      "slope": 0
     },
     {
       "from": 2490499334,
       "to": 6293657526,
-      "distance": 9.395976830393387,
+      "distance": 9.38642062377653,
       "accessible": true,
-      "slope": 0
+      "slope": 9.481782626974558
     },
     {
       "from": 6293657526,
       "to": 2490499334,
-      "distance": 9.395976830393387,
+      "distance": 9.38642062377653,
       "accessible": true,
-      "slope": 0
+      "slope": 9.481782626974558
     },
     {
       "from": 8233310070,
@@ -15155,14 +15461,14 @@
     {
       "from": 2490499371,
       "to": 8233309626,
-      "distance": 11.059346886412271,
+      "distance": 11.926989802988432,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 8233309626,
       "to": 2490499371,
-      "distance": 11.059346886412271,
+      "distance": 11.926989802988432,
       "accessible": true,
       "slope": 0
     },
@@ -15179,20 +15485,6 @@
       "distance": 57.51061441822865,
       "accessible": true,
       "slope": 0.017388094530303586
-    },
-    {
-      "from": 2491744941,
-      "to": 2491744939,
-      "distance": 62.016358788206205,
-      "accessible": true,
-      "slope": 0.016124777712524657
-    },
-    {
-      "from": 2491744939,
-      "to": 2491744941,
-      "distance": 62.016358788206205,
-      "accessible": true,
-      "slope": 0.016124777712524657
     },
     {
       "from": 2734317228,
@@ -16232,16 +16524,16 @@
     {
       "from": 2490499331,
       "to": 6293656913,
-      "distance": 10.77537176887072,
+      "distance": 10.740176547308263,
       "accessible": true,
-      "slope": 0
+      "slope": 6.052042041738178
     },
     {
       "from": 6293656913,
       "to": 2490499331,
-      "distance": 10.77537176887072,
+      "distance": 10.740176547308263,
       "accessible": true,
-      "slope": 0
+      "slope": 6.052042041738178
     },
     {
       "from": 2805238624,
@@ -16612,44 +16904,44 @@
     {
       "from": 3128972858,
       "to": 3128972859,
-      "distance": 66.67606300633429,
+      "distance": 65.92419971027572,
       "accessible": true,
-      "slope": 0.07498943060757794
+      "slope": 1.3955421590906292
     },
     {
       "from": 3128972859,
       "to": 3128972858,
-      "distance": 66.67606300633429,
+      "distance": 65.92419971027572,
       "accessible": true,
-      "slope": 0.07498943060757794
+      "slope": 1.3955421590906292
     },
     {
       "from": 6293631965,
       "to": 2490499361,
-      "distance": 8.88860075359849,
+      "distance": 10.800279433598487,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 2490499361,
       "to": 6293631965,
-      "distance": 8.88860075359849,
+      "distance": 10.800279433598487,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 2805249577,
       "to": 2805249578,
-      "distance": 67.36046345882978,
+      "distance": 66.88133369752414,
       "accessible": true,
-      "slope": 0.029691007117585898
+      "slope": 1.375570654976423
     },
     {
       "from": 2805249578,
       "to": 2805249577,
-      "distance": 67.36046345882978,
+      "distance": 66.88133369752414,
       "accessible": true,
-      "slope": 0.029691007117585898
+      "slope": 1.375570654976423
     },
     {
       "from": 2805249578,
@@ -16682,28 +16974,28 @@
     {
       "from": 2805249588,
       "to": 2805249582,
-      "distance": 54.575292211759496,
+      "distance": 56.4130148511785,
       "accessible": true,
-      "slope": 0.018323310045136636
+      "slope": 1.59537653212519
     },
     {
       "from": 2805249582,
       "to": 2805249588,
-      "distance": 54.575292211759496,
+      "distance": 56.4130148511785,
       "accessible": true,
-      "slope": 0.018323310045136636
+      "slope": 1.59537653212519
     },
     {
       "from": 6293631967,
       "to": 2805249584,
-      "distance": 11.094437952727786,
+      "distance": 10.970204919812696,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 2805249584,
       "to": 6293631967,
-      "distance": 11.094437952727786,
+      "distance": 10.970204919812696,
       "accessible": true,
       "slope": 0
     },
@@ -18482,20 +18774,6 @@
       "slope": 0.015517198762479685
     },
     {
-      "from": 5369293449,
-      "to": 5369293450,
-      "distance": 62.703423112201655,
-      "accessible": true,
-      "slope": 0.04784427788945099
-    },
-    {
-      "from": 5369293450,
-      "to": 5369293449,
-      "distance": 62.703423112201655,
-      "accessible": true,
-      "slope": 0.04784427788945099
-    },
-    {
       "from": 5909461082,
       "to": 8233292302,
       "distance": 26.55489403443758,
@@ -18673,16 +18951,16 @@
     {
       "from": 6293675150,
       "to": 664470980,
-      "distance": 10.12987833112219,
+      "distance": 10.150236195112548,
       "accessible": true,
-      "slope": 0.09871786879489793
+      "slope": 0
     },
     {
       "from": 664470980,
       "to": 6293675150,
-      "distance": 10.12987833112219,
+      "distance": 10.150236195112548,
       "accessible": true,
-      "slope": 0.09871786879489793
+      "slope": 0
     },
     {
       "from": 2805249569,
@@ -19017,34 +19295,6 @@
       "slope": 0.03255045307357968
     },
     {
-      "from": 6293661091,
-      "to": 5909462888,
-      "distance": 9.751795066915632,
-      "accessible": true,
-      "slope": 0.10254522302182538
-    },
-    {
-      "from": 5909462888,
-      "to": 8233309639,
-      "distance": 16.356773709360272,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 8233309639,
-      "to": 8233309905,
-      "distance": 39.37412484412593,
-      "accessible": true,
-      "slope": 0.02539738988380807
-    },
-    {
-      "from": 8233309905,
-      "to": 5909462887,
-      "distance": 6.693934584009748,
-      "accessible": true,
-      "slope": 0
-    },
-    {
       "from": 5909462887,
       "to": 8233309907,
       "distance": 8.072751674318473,
@@ -19228,23 +19478,23 @@
     {
       "from": 6293631963,
       "to": 6293631965,
-      "distance": 16.172370063459727,
+      "distance": 16.2696279398387,
       "accessible": true,
-      "slope": 0
+      "slope": 6.023493614136796
     },
     {
       "from": 2490499336,
       "to": 2805249584,
-      "distance": 56.898885865758274,
+      "distance": 57.022041942738284,
       "accessible": true,
-      "slope": 0
+      "slope": 1.701096570645571
     },
     {
       "from": 2805249584,
       "to": 2490499361,
-      "distance": 170.71620171488036,
+      "distance": 170.60170033456416,
       "accessible": true,
-      "slope": 0.00585767484254446
+      "slope": 0
     },
     {
       "from": 8233292292,
@@ -19287,27 +19537,6 @@
       "distance": 7.950541800883713,
       "accessible": true,
       "slope": 0
-    },
-    {
-      "from": 5909462890,
-      "to": 8233309904,
-      "distance": 6.716243183589046,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 8233309638,
-      "to": 5909462889,
-      "distance": 16.64603344080199,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 5909462889,
-      "to": 6293658338,
-      "distance": 9.785238489328131,
-      "accessible": true,
-      "slope": 0.10219474988684323
     },
     {
       "from": 5909461082,
@@ -19443,79 +19672,37 @@
       "slope": 0
     },
     {
-      "from": 6293678838,
-      "to": 6293678843,
-      "distance": 17.181560322314034,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 6293678843,
-      "to": 6293678844,
-      "distance": 17.259092699330584,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 6293678844,
-      "to": 6293678849,
-      "distance": 22.665224596529843,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 6293678849,
-      "to": 6293678839,
-      "distance": 25.273430353502686,
-      "accessible": true,
-      "slope": 0
-    },
-    {
       "from": 6293678839,
       "to": 6293678846,
-      "distance": 23.078755644850933,
+      "distance": 32.93576633215675,
       "accessible": true,
-      "slope": 0.08665978490249396
+      "slope": 0
     },
     {
       "from": 6293678846,
       "to": 6293678847,
-      "distance": 30.035919136114668,
+      "distance": 32.0441954717165,
       "accessible": true,
-      "slope": 0.033293470909555666
-    },
-    {
-      "from": 6293678847,
-      "to": 6293678842,
-      "distance": 23.274454185140836,
-      "accessible": true,
-      "slope": 0.04296556181491175
-    },
-    {
-      "from": 6293678842,
-      "to": 6293678848,
-      "distance": 25.599827819586125,
-      "accessible": true,
-      "slope": 0.03906276272822866
+      "slope": 0
     },
     {
       "from": 6293678848,
       "to": 6293678841,
-      "distance": 25.117665748832554,
+      "distance": 36.968763151360726,
       "accessible": true,
-      "slope": 0.03981261674550626
+      "slope": 0
     },
     {
       "from": 6293678841,
       "to": 6293678845,
-      "distance": 24.580487774062355,
+      "distance": 40.936381853578546,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 6293658338,
       "to": 6293661091,
-      "distance": 13.302195418156403,
+      "distance": 13.397711839640355,
       "accessible": true,
       "slope": 0
     },
@@ -20294,16 +20481,16 @@
     {
       "from": 2805266337,
       "to": 2805266342,
-      "distance": 37.96961201480113,
+      "distance": 38.182968664861505,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 2805266342,
       "to": 2490499339,
-      "distance": 34.882590759339564,
+      "distance": 35.00938500422297,
       "accessible": true,
-      "slope": 0.057335190892164864
+      "slope": 1.7138261638347136
     },
     {
       "from": 2490499339,
@@ -20315,28 +20502,28 @@
     {
       "from": 2805266341,
       "to": 2805266336,
-      "distance": 29.48086762447484,
+      "distance": 31.039795781500786,
       "accessible": true,
-      "slope": 0.0339203042711608
+      "slope": 1.9007857015336114
     },
     {
       "from": 2805266336,
       "to": 2805266340,
-      "distance": 32.1461025105695,
+      "distance": 30.707066128024262,
       "accessible": true,
-      "slope": 0.06221594046564148
+      "slope": 1.8236844824746246
     },
     {
       "from": 2805266340,
       "to": 2490499346,
-      "distance": 31.40815062011763,
+      "distance": 30.10218547782443,
       "accessible": true,
-      "slope": 0
+      "slope": 1.8603300428553229
     },
     {
       "from": 2490499346,
       "to": 2805266339,
-      "distance": 32.88555367703251,
+      "distance": 32.36407916126802,
       "accessible": true,
       "slope": 0
     },
@@ -22535,46 +22722,18 @@
       "slope": 0.03149827867381209
     },
     {
-      "from": 369329442,
-      "to": 9000082,
-      "distance": 63.20375194326798,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 9000082,
-      "to": 369329442,
-      "distance": 63.20375194326798,
-      "accessible": true,
-      "slope": 0
-    },
-    {
       "from": 469717210,
       "to": 9000083,
-      "distance": 15.613378164839428,
+      "distance": 16.71512629051134,
       "accessible": true,
-      "slope": 0
+      "slope": 5.6834748567785915
     },
     {
       "from": 9000083,
       "to": 469717210,
-      "distance": 15.613378164839428,
+      "distance": 16.71512629051134,
       "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 9000082,
-      "to": 9000086,
-      "distance": 89.29289236403791,
-      "accessible": true,
-      "slope": 0.03359729896271373
-    },
-    {
-      "from": 9000086,
-      "to": 6293675150,
-      "distance": 114.9082951449431,
-      "accessible": true,
-      "slope": 0.01740518382486868
+      "slope": 5.6834748567785915
     },
     {
       "from": 9000087,
@@ -22691,30 +22850,30 @@
     {
       "from": 9000092,
       "to": 2805254122,
-      "distance": 41.751165539453936,
+      "distance": 41.761839924871104,
       "accessible": true,
-      "slope": 0.0239514271536928
+      "slope": 0
     },
     {
       "from": 2805254122,
       "to": 9000092,
-      "distance": 41.751165539453936,
+      "distance": 41.761839924871104,
       "accessible": true,
-      "slope": 0.0239514271536928
+      "slope": 0
     },
     {
       "from": 625885195,
       "to": 9000092,
-      "distance": 14.088633196771603,
+      "distance": 14.62378644438814,
       "accessible": true,
-      "slope": 0
+      "slope": 5.812448118224446
     },
     {
       "from": 9000092,
       "to": 625885195,
-      "distance": 14.088633196771603,
+      "distance": 14.62378644438814,
       "accessible": true,
-      "slope": 0
+      "slope": 5.812448118224446
     },
     {
       "from": 625885197,
@@ -22733,58 +22892,58 @@
     {
       "from": 2805249582,
       "to": 9000094,
-      "distance": 22.814543763370224,
+      "distance": 22.624269840155367,
       "accessible": true,
-      "slope": 0.13149506872088473
+      "slope": 0
     },
     {
       "from": 9000094,
       "to": 2805249582,
-      "distance": 22.814543763370224,
+      "distance": 22.624269840155367,
       "accessible": true,
-      "slope": 0.13149506872088473
+      "slope": 0
     },
     {
       "from": 625890361,
       "to": 9000094,
-      "distance": 15.524019851685761,
+      "distance": 17.156684173802873,
       "accessible": true,
-      "slope": 0
+      "slope": 5.36234152637011
     },
     {
       "from": 9000094,
       "to": 625890361,
-      "distance": 15.524019851685761,
+      "distance": 17.156684173802873,
       "accessible": true,
-      "slope": 0
+      "slope": 5.36234152637011
     },
     {
       "from": 9000083,
       "to": 9000096,
-      "distance": 7.849456893490373,
+      "distance": 7.245340099381221,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 9000096,
       "to": 9000083,
-      "distance": 7.849456893490373,
+      "distance": 7.245340099381221,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 625890372,
       "to": 9000096,
-      "distance": 19.137960725588673,
+      "distance": 18.213143896613747,
       "accessible": true,
-      "slope": 0.05225217118681492
+      "slope": 5.1611078534045305
     },
     {
       "from": 9000096,
       "to": 625890372,
-      "distance": 19.137960725588673,
+      "distance": 18.213143896613747,
       "accessible": true,
-      "slope": 0.05225217118681492
+      "slope": 5.1611078534045305
     },
     {
       "from": 625890375,
@@ -22887,16 +23046,16 @@
     {
       "from": 9000105,
       "to": 6293631965,
-      "distance": 72.01691055979006,
+      "distance": 71.21111337929734,
       "accessible": true,
-      "slope": 0.041656882761019476
+      "slope": 1.3340614335573444
     },
     {
       "from": 6293631965,
       "to": 9000105,
-      "distance": 72.01691055979006,
+      "distance": 71.21111337929734,
       "accessible": true,
-      "slope": 0.041656882761019476
+      "slope": 1.3340614335573444
     },
     {
       "from": 625890983,
@@ -22957,16 +23116,16 @@
     {
       "from": 2805254122,
       "to": 9000113,
-      "distance": 11.731135614506606,
+      "distance": 12.50128207937013,
       "accessible": true,
-      "slope": 0
+      "slope": 6.879294415883868
     },
     {
       "from": 9000113,
       "to": 2805254122,
-      "distance": 11.731135614506606,
+      "distance": 12.50128207937013,
       "accessible": true,
-      "slope": 0
+      "slope": 6.879294415883868
     },
     {
       "from": 1257174520,
@@ -22985,23 +23144,9 @@
     {
       "from": 6293675150,
       "to": 9000114,
-      "distance": 140.5343649456304,
+      "distance": 140.4281264152143,
       "accessible": true,
-      "slope": 0.049809881040186466
-    },
-    {
-      "from": 1257174522,
-      "to": 9000114,
-      "distance": 25.730960297072944,
-      "accessible": true,
-      "slope": 0.03886368749765457
-    },
-    {
-      "from": 9000114,
-      "to": 1257174522,
-      "distance": 25.730960297072944,
-      "accessible": true,
-      "slope": 0.03886368749765457
+      "slope": 0
     },
     {
       "from": 2491744943,
@@ -23016,20 +23161,6 @@
       "distance": 60.63520652116304,
       "accessible": true,
       "slope": 0
-    },
-    {
-      "from": 9000115,
-      "to": 2491744941,
-      "distance": 59.81421957770504,
-      "accessible": true,
-      "slope": 0.016718432624551652
-    },
-    {
-      "from": 2491744941,
-      "to": 9000115,
-      "distance": 59.81421957770504,
-      "accessible": true,
-      "slope": 0.016718432624551652
     },
     {
       "from": 1257174524,
@@ -23088,37 +23219,9 @@
       "slope": 0
     },
     {
-      "from": 1257174527,
-      "to": 9000117,
-      "distance": 20.137411534269436,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 9000117,
-      "to": 1257174527,
-      "distance": 20.137411534269436,
-      "accessible": true,
-      "slope": 0
-    },
-    {
       "from": 9000117,
       "to": 9000118,
-      "distance": 26.09438474094389,
-      "accessible": true,
-      "slope": 0.07664484217027205
-    },
-    {
-      "from": 1257174528,
-      "to": 9000118,
-      "distance": 18.81428099112038,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 9000118,
-      "to": 1257174528,
-      "distance": 18.81428099112038,
+      "distance": 25.93886029321053,
       "accessible": true,
       "slope": 0
     },
@@ -23165,46 +23268,32 @@
       "slope": 0
     },
     {
-      "from": 664470980,
-      "to": 9000121,
-      "distance": 38.05106909473238,
-      "accessible": true,
-      "slope": 0.026280470530549053
-    },
-    {
-      "from": 9000121,
-      "to": 664470980,
-      "distance": 38.05106909473238,
-      "accessible": true,
-      "slope": 0.026280470530549053
-    },
-    {
       "from": 9000121,
       "to": 2805238632,
-      "distance": 84.17034210467033,
+      "distance": 84.13924244981965,
       "accessible": true,
-      "slope": 0
+      "slope": 0.8794944884859563
     },
     {
       "from": 2805238632,
       "to": 9000121,
-      "distance": 84.17034210467033,
+      "distance": 84.13924244981965,
       "accessible": true,
-      "slope": 0
+      "slope": 0.8794944884859563
     },
     {
       "from": 1257874735,
       "to": 9000121,
-      "distance": 23.48488390776558,
+      "distance": 23.717996904987714,
       "accessible": true,
-      "slope": 0
+      "slope": 3.1199936612032513
     },
     {
       "from": 9000121,
       "to": 1257874735,
-      "distance": 23.48488390776558,
+      "distance": 23.717996904987714,
       "accessible": true,
-      "slope": 0
+      "slope": 3.1199936612032513
     },
     {
       "from": 5909462898,
@@ -23291,67 +23380,32 @@
       "slope": 0
     },
     {
-      "from": 8233309841,
-      "to": 2490499334,
-      "distance": 246.1238923156277,
-      "accessible": true,
-      "slope": 0.03250395532401564
-    },
-    {
       "from": 5909462889,
       "to": 664470980,
-      "distance": 167.9322741875913,
+      "distance": 167.9022768527304,
       "accessible": true,
-      "slope": 0.047638252019760526
+      "slope": 0
     },
     {
       "from": 664470980,
       "to": 10742733690,
-      "distance": 65.85924163116748,
+      "distance": 65.85691278679066,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 1775446775957,
       "to": 5369293450,
-      "distance": 40.2708073162867,
-      "accessible": true,
-      "slope": 0.0248318836060575
-    },
-    {
-      "from": 10742733690,
-      "to": 1775446775957,
-      "distance": 49.12311831990859,
+      "distance": 40.0191027924836,
       "accessible": true,
       "slope": 0
     },
     {
-      "from": 625885153,
+      "from": 10742733690,
       "to": 1775446775957,
-      "distance": 19.338240135302804,
+      "distance": 49.17800782818315,
       "accessible": true,
-      "slope": 0.05171101367049715
-    },
-    {
-      "from": 1775446775957,
-      "to": 625885153,
-      "distance": 19.338240135302804,
-      "accessible": true,
-      "slope": 0.05171101367049715
-    },
-    {
-      "from": 1775446775957,
-      "to": 9000086,
-      "distance": 10.117733990547931,
-      "accessible": true,
-      "slope": 0.09883636009151932
-    },
-    {
-      "from": 9000086,
-      "to": 1775446775957,
-      "distance": 10.117733990547931,
-      "accessible": true,
-      "slope": 0.09883636009151932
+      "slope": 0
     },
     {
       "from": 1775446775959,
@@ -23478,16 +23532,9 @@
       "slope": 0
     },
     {
-      "from": 2490499336,
-      "to": 8233309841,
-      "distance": 11.436699322419495,
-      "accessible": true,
-      "slope": 0
-    },
-    {
       "from": 5909462888,
       "to": 5909462889,
-      "distance": 13.261288700527622,
+      "distance": 13.465078429265857,
       "accessible": true,
       "slope": 0
     },
@@ -23970,156 +24017,128 @@
     {
       "from": 9000118,
       "to": 2490499331,
-      "distance": 19.234573168426564,
+      "distance": 19.333769378810413,
       "accessible": true,
-      "slope": 0.051989716186761764
-    },
-    {
-      "from": 2805238630,
-      "to": 2490499331,
-      "distance": 62.60573101648409,
-      "accessible": true,
-      "slope": 0.01597297857182915
-    },
-    {
-      "from": 2490499331,
-      "to": 2805238630,
-      "distance": 62.60573101648409,
-      "accessible": true,
-      "slope": 0.01597297857182915
+      "slope": 3.361993138867129
     },
     {
       "from": 6293656913,
       "to": 9000082,
-      "distance": 102.09563562074564,
+      "distance": 102.11578563106218,
       "accessible": true,
-      "slope": 0.058768427891356514
+      "slope": 0.6952891716126874
     },
     {
       "from": 6293678845,
       "to": 6293656913,
-      "distance": 126.76218968218662,
+      "distance": 113.80339080715919,
       "accessible": true,
-      "slope": 0.0236663630339732
+      "slope": 0
     },
     {
       "from": 2490499331,
       "to": 2805266337,
-      "distance": 114.04101277942304,
+      "distance": 113.7116482644636,
       "accessible": true,
-      "slope": 0.02630632547785742
+      "slope": 0.5716212981877369
     },
     {
       "from": 2805266339,
       "to": 2490499371,
-      "distance": 107.39271320769272,
+      "distance": 109.22934217757961,
       "accessible": true,
-      "slope": 0.009311618732139159
+      "slope": 0
     },
     {
       "from": 8233309626,
       "to": 6293678838,
-      "distance": 104.96950780658284,
+      "distance": 111.71581915670727,
       "accessible": true,
-      "slope": 0.009526576059045673
-    },
-    {
-      "from": 2490499371,
-      "to": 2805238624,
-      "distance": 63.06376315635801,
-      "accessible": true,
-      "slope": 0.015856966821352483
-    },
-    {
-      "from": 2805238624,
-      "to": 2490499371,
-      "distance": 63.06376315635801,
-      "accessible": true,
-      "slope": 0.015856966821352483
+      "slope": 0
     },
     {
       "from": 9000096,
       "to": 1775446775985,
-      "distance": 9.076262715508491,
+      "distance": 9.569051241246303,
       "accessible": true,
-      "slope": 0.11017750712430492
+      "slope": 0
     },
     {
       "from": 1775446775985,
       "to": 9000096,
-      "distance": 9.076262715508491,
+      "distance": 9.569051241246303,
       "accessible": true,
-      "slope": 0.11017750712430492
+      "slope": 0
     },
     {
       "from": 1775446775985,
       "to": 2805249585,
-      "distance": 37.93028878367289,
+      "distance": 37.73317863804789,
       "accessible": true,
-      "slope": 0.02636415466550443
+      "slope": 2.5176781662440613
     },
     {
       "from": 2805249585,
       "to": 1775446775985,
-      "distance": 37.93028878367289,
+      "distance": 37.73317863804789,
       "accessible": true,
-      "slope": 0.02636415466550443
+      "slope": 2.5176781662440613
     },
     {
       "from": 1775446775984,
       "to": 1775446775985,
-      "distance": 16.126491697744537,
+      "distance": 16.91540646194837,
       "accessible": true,
-      "slope": 0
+      "slope": 5.5570642190275095
     },
     {
       "from": 1775446775985,
       "to": 1775446775984,
-      "distance": 16.126491697744537,
+      "distance": 16.91540646194837,
       "accessible": true,
-      "slope": 0
+      "slope": 5.5570642190275095
     },
     {
       "from": 9000094,
       "to": 1775446775987,
-      "distance": 20.57928484031882,
+      "distance": 20.163178510694326,
       "accessible": true,
-      "slope": 0.09718510703936666
+      "slope": 0
     },
     {
       "from": 1775446775987,
       "to": 9000094,
-      "distance": 20.57928484031882,
+      "distance": 20.163178510694326,
       "accessible": true,
-      "slope": 0.09718510703936666
+      "slope": 0
     },
     {
       "from": 1775446775987,
       "to": 9000083,
-      "distance": 20.007843261213303,
+      "distance": 20.573851548101352,
       "accessible": true,
-      "slope": 0.04998039953354566
+      "slope": 0
     },
     {
       "from": 9000083,
       "to": 1775446775987,
-      "distance": 20.007843261213303,
+      "distance": 20.573851548101352,
       "accessible": true,
-      "slope": 0.04998039953354566
+      "slope": 0
     },
     {
       "from": 1775446775986,
       "to": 1775446775987,
-      "distance": 15.035656197668068,
+      "distance": 16.84570752644076,
       "accessible": true,
-      "slope": 0
+      "slope": 5.580056513058835
     },
     {
       "from": 1775446775987,
       "to": 1775446775986,
-      "distance": 15.035656197668068,
+      "distance": 16.84570752644076,
       "accessible": true,
-      "slope": 0
+      "slope": 5.580056513058835
     },
     {
       "from": 2805249588,
@@ -24138,21 +24157,21 @@
     {
       "from": 2490499361,
       "to": 1775446775988,
-      "distance": 15.18584534435645,
+      "distance": 15.016583780896301,
       "accessible": true,
-      "slope": 0
+      "slope": 6.526118152430448
     },
     {
       "from": 6293631965,
       "to": 6293631967,
-      "distance": 170.31768670248513,
+      "distance": 170.43023848506513,
       "accessible": true,
-      "slope": 0.00587138082580245
+      "slope": 0
     },
     {
       "from": 6293631967,
       "to": 8233309841,
-      "distance": 57.23215945287958,
+      "distance": 57.03818311731647,
       "accessible": true,
       "slope": 0
     },
@@ -24472,39 +24491,18 @@
       "slope": 0.02640917708445731
     },
     {
-      "from": 9000090,
-      "to": 5909462890,
-      "distance": 79.73092889447886,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 5909462890,
-      "to": 9000090,
-      "distance": 79.73092889447886,
-      "accessible": true,
-      "slope": 0
-    },
-    {
       "from": 9000114,
       "to": 6293658338,
-      "distance": 27.338187518916186,
+      "distance": 27.476899884660476,
       "accessible": true,
-      "slope": 0.03657886973333793
+      "slope": 0
     },
     {
       "from": 6293661091,
       "to": 6293657526,
-      "distance": 169.13646566004888,
+      "distance": 168.89510735239847,
       "accessible": true,
-      "slope": 0.02956192788165274
-    },
-    {
-      "from": 8233309904,
-      "to": 8233309638,
-      "distance": 39.01864060056211,
-      "accessible": true,
-      "slope": 0.025628776005732858
+      "slope": 0
     },
     {
       "from": 9000120,
@@ -24563,32 +24561,18 @@
       "slope": 0
     },
     {
-      "from": 1775446776025,
-      "to": 2490499336,
-      "distance": 18.345670619804373,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 1775446776024,
-      "to": 1775446776025,
-      "distance": 20.451942515289446,
-      "accessible": true,
-      "slope": 0.04889511102685825
-    },
-    {
       "from": 2805254124,
       "to": 1775446776025,
-      "distance": 192.77944530677416,
+      "distance": 192.69606344624853,
       "accessible": true,
-      "slope": 0.025936375073822782
+      "slope": 0.5293310002072373
     },
     {
       "from": 1775446776025,
       "to": 2805254124,
-      "distance": 192.77944530677416,
+      "distance": 192.69606344624853,
       "accessible": true,
-      "slope": 0.025936375073822782
+      "slope": 0.5293310002072373
     },
     {
       "from": 1775446776024,
@@ -24596,48 +24580,6 @@
       "distance": 9.750259557324808,
       "accessible": true,
       "slope": 0.10256137225072717
-    },
-    {
-      "from": 1775446776023,
-      "to": 1775446776024,
-      "distance": 11.339996783225203,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 6293657526,
-      "to": 1775446776023,
-      "distance": 246.36827079178468,
-      "accessible": true,
-      "slope": 0.028412749651175535
-    },
-    {
-      "from": 8233309841,
-      "to": 1775446776023,
-      "distance": 9.654292611070902,
-      "accessible": true,
-      "slope": 0.10358086711120257
-    },
-    {
-      "from": 1775446776023,
-      "to": 8233309841,
-      "distance": 9.654292611070902,
-      "accessible": true,
-      "slope": 0.10358086711120257
-    },
-    {
-      "from": 2805249585,
-      "to": 6293631967,
-      "distance": 60.91391338271063,
-      "accessible": true,
-      "slope": 0.03283322132719297
-    },
-    {
-      "from": 6293631967,
-      "to": 2805249585,
-      "distance": 60.91391338271063,
-      "accessible": true,
-      "slope": 0.03283322132719297
     },
     {
       "from": 5369293464,
@@ -24866,16 +24808,16 @@
     {
       "from": 5369293454,
       "to": 2805249573,
-      "distance": 20.436191608604314,
+      "distance": 20.57273854122253,
       "accessible": true,
-      "slope": 0.04893279624462744
+      "slope": 4.520545469124184
     },
     {
       "from": 2805249573,
       "to": 5369293454,
-      "distance": 20.436191608604314,
+      "distance": 20.57273854122253,
       "accessible": true,
-      "slope": 0.04893279624462744
+      "slope": 4.520545469124184
     },
     {
       "from": 6293631964,
@@ -25144,32 +25086,18 @@
       "slope": 0.04355134103102887
     },
     {
-      "from": 2805254118,
-      "to": 1775446776052,
-      "distance": 63.132413309688744,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 1775446776052,
-      "to": 2805254118,
-      "distance": 63.132413309688744,
-      "accessible": true,
-      "slope": 0
-    },
-    {
       "from": 1775446776052,
       "to": 9000117,
-      "distance": 13.775289123049264,
+      "distance": 14.012009853372435,
       "accessible": true,
-      "slope": 0.0725937576385796
+      "slope": 0
     },
     {
       "from": 5369293450,
       "to": 1775446776052,
-      "distance": 92.03198093796922,
+      "distance": 92.20439245511473,
       "accessible": true,
-      "slope": 0.05432894032097458
+      "slope": 0
     },
     {
       "from": 1775446776054,
@@ -25216,44 +25144,30 @@
     {
       "from": 1775446776059,
       "to": 1775446776058,
-      "distance": 9.852255321953201,
+      "distance": 9.798305759455827,
       "accessible": true,
-      "slope": 0
+      "slope": 7.65438452740888
     },
     {
       "from": 1775446776058,
       "to": 1775446776059,
-      "distance": 9.852255321953201,
+      "distance": 9.798305759455827,
       "accessible": true,
-      "slope": 0
+      "slope": 7.65438452740888
     },
     {
       "from": 2805254117,
       "to": 1775446776059,
-      "distance": 41.29446134956335,
+      "distance": 41.65406709570831,
       "accessible": true,
-      "slope": 0
+      "slope": 1.8005444661063454
     },
     {
       "from": 1775446776059,
       "to": 2805254117,
-      "distance": 41.29446134956335,
+      "distance": 41.65406709570831,
       "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 1775446776059,
-      "to": 10742733690,
-      "distance": 21.252725595939406,
-      "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 10742733690,
-      "to": 1775446776059,
-      "distance": 21.252725595939406,
-      "accessible": true,
-      "slope": 0
+      "slope": 1.8005444661063454
     },
     {
       "from": 1775446776060,
@@ -25697,60 +25611,32 @@
       "slope": 0
     },
     {
-      "from": 1775446776096,
-      "to": 1775446776098,
-      "distance": 19.683527243886868,
-      "accessible": true,
-      "slope": 0.05080390255311436
-    },
-    {
-      "from": 1775446776098,
-      "to": 1775446776096,
-      "distance": 19.683527243886868,
-      "accessible": true,
-      "slope": 0.05080390255311436
-    },
-    {
       "from": 1775446776098,
       "to": 5909462888,
-      "distance": 74.32366208185853,
+      "distance": 74.26301954765972,
       "accessible": true,
-      "slope": 0.040363996013757536
+      "slope": 0
     },
     {
       "from": 2805254122,
       "to": 1775446776104,
-      "distance": 11.689855086761877,
+      "distance": 11.300068598447748,
       "accessible": true,
-      "slope": 0.08554425975155547
+      "slope": 0
     },
     {
       "from": 1775446776104,
       "to": 2805254122,
-      "distance": 11.689855086761877,
+      "distance": 11.300068598447748,
       "accessible": true,
-      "slope": 0.08554425975155547
-    },
-    {
-      "from": 1775446776104,
-      "to": 1775446776105,
-      "distance": 52.94436522278797,
-      "accessible": true,
-      "slope": 0.018887751242120596
-    },
-    {
-      "from": 1775446776105,
-      "to": 1775446776104,
-      "distance": 52.94436522278797,
-      "accessible": true,
-      "slope": 0.018887751242120596
+      "slope": 0
     },
     {
       "from": 1775446776105,
       "to": 1775446776098,
-      "distance": 37.707930562627816,
+      "distance": 37.436754986805674,
       "accessible": true,
-      "slope": 0
+      "slope": 2.29720765141931
     },
     {
       "from": 2490499334,
@@ -25762,16 +25648,16 @@
     {
       "from": 1775446776107,
       "to": 2805249591,
-      "distance": 48.96045881531602,
+      "distance": 49.8227569542322,
       "accessible": true,
-      "slope": 0.02042464519730309
+      "slope": 1.7662611501173628
     },
     {
       "from": 2805249591,
       "to": 1775446776107,
-      "distance": 48.96045881531602,
+      "distance": 49.8227569542322,
       "accessible": true,
-      "slope": 0.02042464519730309
+      "slope": 1.7662611501173628
     },
     {
       "from": 2805254123,
@@ -25923,240 +25809,212 @@
     {
       "from": 1775446776116,
       "to": 9000092,
-      "distance": 12.25262684178093,
+      "distance": 12.132311891369154,
       "accessible": true,
-      "slope": 0.0816151518293239
+      "slope": 0
     },
     {
       "from": 9000092,
       "to": 1775446776116,
-      "distance": 12.25262684178093,
+      "distance": 12.132311891369154,
       "accessible": true,
-      "slope": 0.0816151518293239
+      "slope": 0
     },
     {
       "from": 1775446776115,
       "to": 1775446776116,
-      "distance": 15.033182595744671,
+      "distance": 14.789576828158193,
       "accessible": true,
-      "slope": 0
+      "slope": 5.679675691604008
     },
     {
       "from": 1775446776116,
       "to": 1775446776115,
-      "distance": 15.033182595744671,
+      "distance": 14.789576828158193,
       "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 5909462887,
-      "to": 1775446776116,
-      "distance": 51.58168432706731,
-      "accessible": true,
-      "slope": 0.03877345274959366
-    },
-    {
-      "from": 1775446776116,
-      "to": 5909462887,
-      "distance": 51.58168432706731,
-      "accessible": true,
-      "slope": 0.03877345274959366
+      "slope": 5.679675691604008
     },
     {
       "from": 1775446776100,
       "to": 1775446776117,
-      "distance": 15.811422240988549,
+      "distance": 15.603511850895154,
       "accessible": true,
-      "slope": 0
+      "slope": 5.575667890110835
     },
     {
       "from": 1775446776117,
       "to": 1775446776100,
-      "distance": 15.811422240988549,
+      "distance": 15.603511850895154,
       "accessible": true,
-      "slope": 0
+      "slope": 5.575667890110835
     },
     {
       "from": 1775446776101,
       "to": 1775446776118,
-      "distance": 15.545720469213157,
+      "distance": 15.398978512868855,
       "accessible": true,
-      "slope": 0
+      "slope": 5.649725397518706
     },
     {
       "from": 1775446776118,
       "to": 1775446776101,
-      "distance": 15.545720469213157,
+      "distance": 15.398978512868855,
       "accessible": true,
-      "slope": 0
-    },
-    {
-      "from": 1775446776118,
-      "to": 2490499334,
-      "distance": 35.72287545610028,
-      "accessible": true,
-      "slope": 0.05598653452345383
-    },
-    {
-      "from": 2490499334,
-      "to": 1775446776118,
-      "distance": 35.72287545610028,
-      "accessible": true,
-      "slope": 0.05598653452345383
+      "slope": 5.649725397518706
     },
     {
       "from": 1775446776118,
       "to": 1775446776117,
-      "distance": 11.479895098213344,
+      "distance": 11.346338226185217,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 1775446776117,
       "to": 1775446776118,
-      "distance": 11.479895098213344,
+      "distance": 11.346338226185217,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 1775446776117,
       "to": 2805249583,
-      "distance": 11.475349048909885,
+      "distance": 10.628556085558646,
       "accessible": true,
-      "slope": 0.08714331875551935
+      "slope": 0
     },
     {
       "from": 2805249583,
       "to": 1775446776117,
-      "distance": 11.475349048909885,
+      "distance": 10.628556085558646,
       "accessible": true,
-      "slope": 0.08714331875551935
+      "slope": 0
     },
     {
       "from": 2805249583,
       "to": 1775446776119,
-      "distance": 12.304834364837676,
+      "distance": 13.123363389845965,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 1775446776119,
       "to": 2805249583,
-      "distance": 12.304834364837676,
+      "distance": 13.123363389845965,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 1775446776099,
       "to": 1775446776119,
-      "distance": 16.638753073379178,
+      "distance": 16.323818134211212,
       "accessible": true,
-      "slope": 0.06010065751861712
+      "slope": 5.329635461795958
     },
     {
       "from": 1775446776119,
       "to": 1775446776099,
-      "distance": 16.638753073379178,
+      "distance": 16.323818134211212,
       "accessible": true,
-      "slope": 0.06010065751861712
+      "slope": 5.329635461795958
     },
     {
       "from": 2805249591,
       "to": 1775446776120,
-      "distance": 17.466754236998188,
+      "distance": 17.087773292205164,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 1775446776120,
       "to": 2805249591,
-      "distance": 17.466754236998188,
+      "distance": 17.087773292205164,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 1775446776102,
       "to": 1775446776120,
-      "distance": 16.358329361645644,
+      "distance": 17.10776511201299,
       "accessible": true,
-      "slope": 0
+      "slope": 5.202315990269508
     },
     {
       "from": 1775446776120,
       "to": 1775446776102,
-      "distance": 16.358329361645644,
+      "distance": 17.10776511201299,
       "accessible": true,
-      "slope": 0
+      "slope": 5.202315990269508
     },
     {
       "from": 1775446776120,
       "to": 1775446776119,
-      "distance": 32.82807113883548,
+      "distance": 32.706751379711015,
       "accessible": true,
-      "slope": 0.030461734890570642
+      "slope": 0
     },
     {
       "from": 1775446776119,
       "to": 1775446776120,
-      "distance": 32.82807113883548,
+      "distance": 32.706751379711015,
       "accessible": true,
-      "slope": 0.030461734890570642
+      "slope": 0
     },
     {
       "from": 1775446776123,
       "to": 2805249582,
-      "distance": 19.56570961806101,
+      "distance": 17.73018442094345,
       "accessible": true,
-      "slope": 0.05110982527701959
+      "slope": 4.963287347200498
     },
     {
       "from": 2805249582,
       "to": 1775446776123,
-      "distance": 19.56570961806101,
+      "distance": 17.73018442094345,
       "accessible": true,
-      "slope": 0.05110982527701959
+      "slope": 4.963287347200498
     },
     {
       "from": 2805249583,
       "to": 1775446776122,
-      "distance": 30.185704122900816,
+      "distance": 30.860996280486038,
       "accessible": true,
-      "slope": 0.033128264821271326
+      "slope": 0
     },
     {
       "from": 1775446776122,
       "to": 2805249583,
-      "distance": 30.185704122900816,
+      "distance": 30.860996280486038,
       "accessible": true,
-      "slope": 0.033128264821271326
+      "slope": 0
     },
     {
       "from": 1775446776121,
       "to": 1775446776122,
-      "distance": 16.955320940670813,
+      "distance": 16.158091175709956,
       "accessible": true,
-      "slope": 0
+      "slope": 5.384299361473147
     },
     {
       "from": 1775446776122,
       "to": 1775446776121,
-      "distance": 16.955320940670813,
+      "distance": 16.158091175709956,
       "accessible": true,
-      "slope": 0
+      "slope": 5.384299361473147
     },
     {
       "from": 1775446776122,
       "to": 2805249582,
-      "distance": 37.00968333013522,
+      "distance": 36.77221575167073,
       "accessible": true,
-      "slope": 0.05403991118106908
+      "slope": 0
     },
     {
       "from": 2805249582,
       "to": 1775446776122,
-      "distance": 37.00968333013522,
+      "distance": 36.77221575167073,
       "accessible": true,
-      "slope": 0.05403991118106908
+      "slope": 0
     },
     {
       "from": 2805249585,
@@ -26586,20 +26444,6 @@
       "slope": 0.05106881313244167
     },
     {
-      "from": 1775446776147,
-      "to": 1775446776143,
-      "distance": 54.821097323848164,
-      "accessible": true,
-      "slope": 0.07296461025525529
-    },
-    {
-      "from": 1775446776143,
-      "to": 1775446776147,
-      "distance": 54.821097323848164,
-      "accessible": true,
-      "slope": 0.07296461025525529
-    },
-    {
       "from": 1775446776148,
       "to": 1775446776147,
       "distance": 26.721318953036167,
@@ -26707,84 +26551,84 @@
     {
       "from": 1775446776155,
       "to": 2805249573,
-      "distance": 9.43228475024739,
+      "distance": 9.29638345745774,
       "accessible": true,
-      "slope": 0.10601885189839842
+      "slope": 9.788752843128263
     },
     {
       "from": 2805249573,
       "to": 1775446776155,
-      "distance": 9.43228475024739,
+      "distance": 9.29638345745774,
       "accessible": true,
-      "slope": 0.10601885189839842
+      "slope": 9.788752843128263
     },
     {
       "from": 1775446776154,
       "to": 2805249577,
-      "distance": 47.023921567713465,
+      "distance": 47.16432478653155,
       "accessible": true,
-      "slope": 0.021265772114731452
+      "slope": 1.9294244200859705
     },
     {
       "from": 2805249577,
       "to": 1775446776154,
-      "distance": 47.023921567713465,
+      "distance": 47.16432478653155,
       "accessible": true,
-      "slope": 0.021265772114731452
+      "slope": 1.9294244200859705
     },
     {
       "from": 1775446776156,
       "to": 2805249573,
-      "distance": 48.73236717275061,
+      "distance": 48.664019570582646,
       "accessible": true,
-      "slope": 0.04104048532898538
+      "slope": 1.8494156626224298
     },
     {
       "from": 2805249573,
       "to": 1775446776156,
-      "distance": 48.73236717275061,
+      "distance": 48.664019570582646,
       "accessible": true,
-      "slope": 0.04104048532898538
+      "slope": 1.8494156626224298
     },
     {
       "from": 1775446776157,
       "to": 1775446776158,
-      "distance": 22.28204501190568,
+      "distance": 22.794872721815583,
       "accessible": true,
-      "slope": 0.044879184090404756
+      "slope": 3.992125821913866
     },
     {
       "from": 1775446776158,
       "to": 1775446776157,
-      "distance": 22.28204501190568,
+      "distance": 22.794872721815583,
       "accessible": true,
-      "slope": 0.044879184090404756
+      "slope": 3.992125821913866
     },
     {
       "from": 1775446776158,
       "to": 2805249577,
-      "distance": 58.5088616599217,
+      "distance": 58.3383735883351,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 2805249577,
       "to": 1775446776158,
-      "distance": 58.5088616599217,
+      "distance": 58.3383735883351,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 1775446776158,
       "to": 8233309968,
-      "distance": 12.303455614310634,
+      "distance": 12.268647123888076,
       "accessible": true,
       "slope": 0
     },
     {
       "from": 8233309968,
       "to": 1775446776158,
-      "distance": 12.303455614310634,
+      "distance": 12.268647123888076,
       "accessible": true,
       "slope": 0
     },
@@ -27379,30 +27223,30 @@
     {
       "from": 8233309969,
       "to": 8233309968,
-      "distance": 75.70746407623787,
+      "distance": 76.11855919898449,
       "accessible": true,
-      "slope": 0.052834948955257255
+      "slope": 1.1298164456211535
     },
     {
       "from": 8233309968,
       "to": 8233309969,
-      "distance": 75.70746407623787,
+      "distance": 76.11855919898449,
       "accessible": true,
-      "slope": 0.052834948955257255
+      "slope": 1.1298164456211535
     },
     {
       "from": 2805249575,
       "to": 3128972858,
-      "distance": 75.64156653740042,
+      "distance": 76.39357480210079,
       "accessible": true,
-      "slope": 0
+      "slope": 1.1388392312491644
     },
     {
       "from": 3128972858,
       "to": 2805249575,
-      "distance": 75.64156653740042,
+      "distance": 76.39357480210079,
       "accessible": true,
-      "slope": 0
+      "slope": 1.1388392312491644
     },
     {
       "from": 1775446776288,
@@ -33161,44 +33005,44 @@
     {
       "from": 1775446776751,
       "to": 1775446776056,
-      "distance": 17.847591784364234,
+      "distance": 17.159824287302655,
       "accessible": true,
-      "slope": 0
+      "slope": 4.254122814883138
     },
     {
       "from": 1775446776056,
       "to": 1775446776751,
-      "distance": 17.847591784364234,
+      "distance": 17.159824287302655,
       "accessible": true,
-      "slope": 0
+      "slope": 4.254122814883138
     },
     {
       "from": 1775446776751,
       "to": 2805254117,
-      "distance": 34.355088552884496,
+      "distance": 34.424607714491096,
       "accessible": true,
-      "slope": 0.058215539072801414
+      "slope": 2.1786740642632982
     },
     {
       "from": 2805254117,
       "to": 1775446776751,
-      "distance": 34.355088552884496,
+      "distance": 34.424607714491096,
       "accessible": true,
-      "slope": 0.058215539072801414
+      "slope": 2.1786740642632982
     },
     {
       "from": 5369293449,
       "to": 1775446776751,
-      "distance": 54.69997610912214,
+      "distance": 54.62254353419525,
       "accessible": true,
-      "slope": 0.036563087267353786
+      "slope": 1.2998296198995567
     },
     {
       "from": 1775446776751,
       "to": 5369293449,
-      "distance": 54.69997610912214,
+      "distance": 54.62254353419525,
       "accessible": true,
-      "slope": 0.036563087267353786
+      "slope": 1.2998296198995567
     },
     {
       "from": 1775446776764,
@@ -37563,6 +37407,2107 @@
       "distance": 47.08763710433864,
       "slope": 0,
       "accessible": true
+    },
+    {
+      "from": 1775446776997,
+      "to": 2490499371,
+      "distance": 8.543624665117457,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 2490499371,
+      "to": 1775446776997,
+      "distance": 8.543624665117457,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776997,
+      "to": 2805238624,
+      "distance": 53.90585908247705,
+      "slope": 1.0017463949026193,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 2805238624,
+      "to": 1775446776997,
+      "distance": 53.90585908247705,
+      "slope": 1.0017463949026193,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776998,
+      "to": 1775446776997,
+      "distance": 107.72128470261477,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776997,
+      "to": 1775446776998,
+      "distance": 107.72128470261477,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776998,
+      "to": 1775446776999,
+      "distance": 31.114778981924342,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776999,
+      "to": 1775446776998,
+      "distance": 31.114778981924342,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 6293678847,
+      "to": 6293678848,
+      "distance": 31.236054015176972,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 6293678838,
+      "to": 6293678844,
+      "distance": 33.575961805675504,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776999,
+      "to": 1775446777000,
+      "distance": 28.601942267343837,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777000,
+      "to": 1775446776999,
+      "distance": 28.601942267343837,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 6293678844,
+      "to": 6293678839,
+      "distance": 32.52859714690865,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777000,
+      "to": 1775446777001,
+      "distance": 28.80646060387064,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777001,
+      "to": 1775446777000,
+      "distance": 28.80646060387064,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777001,
+      "to": 1775446777002,
+      "distance": 30.01647397077889,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777002,
+      "to": 1775446777001,
+      "distance": 30.01647397077889,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777002,
+      "to": 1775446777003,
+      "distance": 26.31397738459415,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777003,
+      "to": 1775446777002,
+      "distance": 26.31397738459415,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777003,
+      "to": 1775446777004,
+      "distance": 33.1708887276922,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777004,
+      "to": 1775446777003,
+      "distance": 33.1708887276922,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777004,
+      "to": 1775446777005,
+      "distance": 35.767317866287044,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777005,
+      "to": 1775446777004,
+      "distance": 35.767317866287044,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777005,
+      "to": 1775446777006,
+      "distance": 113.6322016564167,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777006,
+      "to": 1775446777005,
+      "distance": 113.6322016564167,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777006,
+      "to": 2805238630,
+      "distance": 54.10460332147218,
+      "slope": 1.1828938033189624,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 2805238630,
+      "to": 1775446777006,
+      "distance": 54.10460332147218,
+      "slope": 1.1828938033189624,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 2490499331,
+      "to": 1775446777006,
+      "distance": 8.501128777960714,
+      "slope": 7.6460434487845115,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777006,
+      "to": 2490499331,
+      "distance": 8.501128777960714,
+      "slope": 7.6460434487845115,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777006,
+      "to": 1775446777007,
+      "distance": 19.34357080417338,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777007,
+      "to": 1775446777006,
+      "distance": 19.34357080417338,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777007,
+      "to": 1257174528,
+      "distance": 10.254967062931616,
+      "slope": 6.43590560505734,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1257174528,
+      "to": 1775446777007,
+      "distance": 10.254967062931616,
+      "slope": 6.43590560505734,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 9000118,
+      "to": 1775446777007,
+      "distance": 8.407331396966322,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777007,
+      "to": 9000118,
+      "distance": 8.407331396966322,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777007,
+      "to": 1775446777008,
+      "distance": 26.008646197030345,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777008,
+      "to": 1775446777007,
+      "distance": 26.008646197030345,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777008,
+      "to": 1257174527,
+      "distance": 11.304419359451822,
+      "slope": 6.015346550563343,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1257174527,
+      "to": 1775446777008,
+      "distance": 11.304419359451822,
+      "slope": 6.015346550563343,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777008,
+      "to": 9000117,
+      "distance": 8.680436832470594,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 9000117,
+      "to": 1775446777008,
+      "distance": 8.680436832470594,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777008,
+      "to": 1775446777009,
+      "distance": 13.978291664664361,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777009,
+      "to": 1775446777008,
+      "distance": 13.978291664664361,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777009,
+      "to": 1775446776052,
+      "distance": 8.748836518714205,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776052,
+      "to": 1775446777009,
+      "distance": 8.748836518714205,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777009,
+      "to": 2805254118,
+      "distance": 54.43429839381487,
+      "slope": 1.2675831605435033,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 2805254118,
+      "to": 1775446777009,
+      "distance": 54.43429839381487,
+      "slope": 1.2675831605435033,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777009,
+      "to": 1775446777010,
+      "distance": 92.20526384085512,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777010,
+      "to": 1775446777009,
+      "distance": 92.20526384085512,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777010,
+      "to": 5369293449,
+      "distance": 53.667801640745985,
+      "slope": 1.3229533878670179,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 5369293449,
+      "to": 1775446777010,
+      "distance": 53.667801640745985,
+      "slope": 1.3229533878670179,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777010,
+      "to": 5369293450,
+      "distance": 9.193057341003103,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 5369293450,
+      "to": 1775446777010,
+      "distance": 9.193057341003103,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777010,
+      "to": 1775446777024,
+      "distance": 39.98484978219639,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777024,
+      "to": 1775446777010,
+      "distance": 39.98484978219639,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777024,
+      "to": 625885153,
+      "distance": 10.213637156934324,
+      "slope": 7.2452152806073915,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 625885153,
+      "to": 1775446777024,
+      "distance": 10.213637156934324,
+      "slope": 7.2452152806073915,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446775957,
+      "to": 1775446777024,
+      "distance": 9.090742872626679,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777024,
+      "to": 1775446775957,
+      "distance": 9.090742872626679,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777024,
+      "to": 1775446777025,
+      "distance": 49.11015284884279,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777025,
+      "to": 1775446777024,
+      "distance": 49.11015284884279,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777025,
+      "to": 1775446776059,
+      "distance": 11.61971003117401,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776059,
+      "to": 1775446777025,
+      "distance": 11.61971003117401,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777025,
+      "to": 10742733690,
+      "distance": 9.262361645140949,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 10742733690,
+      "to": 1775446777025,
+      "distance": 9.262361645140949,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777025,
+      "to": 1775446777026,
+      "distance": 65.99215363188844,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777026,
+      "to": 1775446777025,
+      "distance": 65.99215363188844,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 9000121,
+      "to": 1775446777026,
+      "distance": 29.356515925418478,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777026,
+      "to": 9000121,
+      "distance": 29.356515925418478,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 664470980,
+      "to": 1775446777026,
+      "distance": 8.714507868648797,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777026,
+      "to": 664470980,
+      "distance": 8.714507868648797,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777022,
+      "to": 6293675150,
+      "distance": 8.475707026604331,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 6293675150,
+      "to": 1775446777022,
+      "distance": 8.475707026604331,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 9000082,
+      "to": 6293675150,
+      "distance": 204.40423424252813,
+      "slope": 0.3473509257922594,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777022,
+      "to": 1775446777021,
+      "distance": 204.4048204477266,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777021,
+      "to": 1775446777022,
+      "distance": 204.4048204477266,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777021,
+      "to": 9000082,
+      "distance": 8.67883194583205,
+      "slope": 8.180824383181802,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 9000082,
+      "to": 1775446777021,
+      "distance": 8.67883194583205,
+      "slope": 8.180824383181802,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777021,
+      "to": 369329442,
+      "distance": 54.52499075865817,
+      "slope": 1.3021551954820958,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 369329442,
+      "to": 1775446777021,
+      "distance": 54.52499075865817,
+      "slope": 1.3021551954820958,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777020,
+      "to": 6293656913,
+      "distance": 8.646707733621101,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 6293656913,
+      "to": 1775446777020,
+      "distance": 8.646707733621101,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777020,
+      "to": 1775446777021,
+      "distance": 102.1162843414967,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777021,
+      "to": 1775446777020,
+      "distance": 102.1162843414967,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777020,
+      "to": 1775446777019,
+      "distance": 113.87161305400933,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777019,
+      "to": 1775446777020,
+      "distance": 113.87161305400933,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777019,
+      "to": 1775446777018,
+      "distance": 43.237183527657564,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777018,
+      "to": 1775446777019,
+      "distance": 43.237183527657564,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777018,
+      "to": 1775446777017,
+      "distance": 38.9973260893468,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777017,
+      "to": 1775446777018,
+      "distance": 38.9973260893468,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777017,
+      "to": 1775446777016,
+      "distance": 33.427082653645876,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777016,
+      "to": 1775446777017,
+      "distance": 33.427082653645876,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777015,
+      "to": 1775446777016,
+      "distance": 32.8179626505571,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777016,
+      "to": 1775446777015,
+      "distance": 32.8179626505571,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777014,
+      "to": 1775446777015,
+      "distance": 34.5823488358506,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777015,
+      "to": 1775446777014,
+      "distance": 34.5823488358506,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777014,
+      "to": 1775446777013,
+      "distance": 33.82236264181232,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777013,
+      "to": 1775446777014,
+      "distance": 33.82236264181232,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777012,
+      "to": 1775446777013,
+      "distance": 35.189195253711546,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777013,
+      "to": 1775446777012,
+      "distance": 35.189195253711546,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777012,
+      "to": 1775446777011,
+      "distance": 113.15223139620959,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777011,
+      "to": 1775446777012,
+      "distance": 113.15223139620959,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777011,
+      "to": 8233309626,
+      "distance": 8.16832607288929,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 8233309626,
+      "to": 1775446777011,
+      "distance": 8.16832607288929,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777027,
+      "to": 9000114,
+      "distance": 9.056464066644326,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 9000114,
+      "to": 1775446777027,
+      "distance": 9.056464066644326,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777027,
+      "to": 1257174522,
+      "distance": 16.819412400274352,
+      "slope": 4.9942291681146855,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1257174522,
+      "to": 1775446777027,
+      "distance": 16.819412400274352,
+      "slope": 4.9942291681146855,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777027,
+      "to": 1775446777022,
+      "distance": 140.39170733434355,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777022,
+      "to": 1775446777027,
+      "distance": 140.39170733434355,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777030,
+      "to": 6293657526,
+      "distance": 9.261607862551115,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 6293657526,
+      "to": 1775446777030,
+      "distance": 9.261607862551115,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777032,
+      "to": 2805249584,
+      "distance": 8.612359968620336,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 2805249584,
+      "to": 1775446777032,
+      "distance": 8.612359968620336,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777033,
+      "to": 6293631967,
+      "distance": 9.056491275649007,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 6293631967,
+      "to": 1775446777033,
+      "distance": 9.056491275649007,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777033,
+      "to": 2805249585,
+      "distance": 51.942151513717114,
+      "slope": 1.828957739167042,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 2805249585,
+      "to": 1775446777033,
+      "distance": 51.942151513717114,
+      "slope": 1.828957739167042,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777033,
+      "to": 1775446777034,
+      "distance": 48.255174204773446,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777034,
+      "to": 1775446777033,
+      "distance": 48.255174204773446,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777036,
+      "to": 1775446777032,
+      "distance": 48.22186281618417,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777032,
+      "to": 1775446777036,
+      "distance": 48.22186281618417,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777034,
+      "to": 1775446777036,
+      "distance": 28.84393994901117,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777036,
+      "to": 1775446777034,
+      "distance": 28.84393994901117,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777038,
+      "to": 1775446777034,
+      "distance": 26.930086827710866,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777034,
+      "to": 1775446777038,
+      "distance": 26.930086827710866,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777038,
+      "to": 1775446777030,
+      "distance": 237.28111947100217,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777030,
+      "to": 1775446777038,
+      "distance": 237.28111947100217,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777039,
+      "to": 1775446777034,
+      "distance": 237.414161140945,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777034,
+      "to": 1775446777039,
+      "distance": 237.414161140945,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776118,
+      "to": 1775446777039,
+      "distance": 26.724845806886577,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777039,
+      "to": 1775446776118,
+      "distance": 26.724845806886577,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777039,
+      "to": 2490499334,
+      "distance": 9.444648674831166,
+      "slope": 9.423325638059373,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 2490499334,
+      "to": 1775446777039,
+      "distance": 9.444648674831166,
+      "slope": 9.423325638059373,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 8233309841,
+      "to": 2490499334,
+      "distance": 246.365263152281,
+      "slope": 0.36125222712500726,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777041,
+      "to": 1775446776105,
+      "distance": 9.280599175454386,
+      "slope": 9.266643066264024,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776105,
+      "to": 1775446777041,
+      "distance": 9.280599175454386,
+      "slope": 9.266643066264024,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777041,
+      "to": 1775446777039,
+      "distance": 57.11067809943892,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777039,
+      "to": 1775446777041,
+      "distance": 57.11067809943892,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776104,
+      "to": 1775446777041,
+      "distance": 43.675808864316835,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777041,
+      "to": 1775446776104,
+      "distance": 43.675808864316835,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777042,
+      "to": 1775446777041,
+      "distance": 37.52435335250053,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777041,
+      "to": 1775446777042,
+      "distance": 37.52435335250053,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777042,
+      "to": 1775446776096,
+      "distance": 10.148544529407838,
+      "slope": 8.375585262861305,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776096,
+      "to": 1775446777042,
+      "distance": 10.148544529407838,
+      "slope": 8.375585262861305,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777043,
+      "to": 1775446777026,
+      "distance": 161.68232092820972,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777026,
+      "to": 1775446777043,
+      "distance": 161.68232092820972,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777044,
+      "to": 1775446777027,
+      "distance": 21.189282596886603,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777027,
+      "to": 1775446777044,
+      "distance": 21.189282596886603,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777045,
+      "to": 1775446777044,
+      "distance": 25.32396423097236,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777044,
+      "to": 1775446777045,
+      "distance": 25.32396423097236,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777045,
+      "to": 1775446777030,
+      "distance": 163.25506063100866,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777030,
+      "to": 1775446777045,
+      "distance": 163.25506063100866,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777046,
+      "to": 1775446777045,
+      "distance": 27.237776214461967,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777045,
+      "to": 1775446777046,
+      "distance": 27.237776214461967,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777044,
+      "to": 1775446777043,
+      "distance": 27.032615144799152,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777043,
+      "to": 1775446777044,
+      "distance": 27.032615144799152,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777043,
+      "to": 1775446777046,
+      "distance": 25.25725350715961,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777046,
+      "to": 1775446777043,
+      "distance": 25.25725350715961,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 5909462890,
+      "to": 5909462889,
+      "distance": 62.76755320300954,
+      "slope": 1.3064074639772372,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 5909462888,
+      "to": 5909462887,
+      "distance": 62.77766215989983,
+      "slope": 1.3061970958896065,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 8233309905,
+      "to": 1775446777046,
+      "distance": 53.721623069916355,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777046,
+      "to": 8233309905,
+      "distance": 53.721623069916355,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 8233309904,
+      "to": 1775446777043,
+      "distance": 53.9964907820364,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777043,
+      "to": 8233309904,
+      "distance": 53.9964907820364,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 8233309905,
+      "to": 5909462887,
+      "distance": 5.718985700123137,
+      "slope": 14.33820686039387,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 5909462887,
+      "to": 8233309905,
+      "distance": 5.718985700123137,
+      "slope": 14.33820686039387,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 8233309905,
+      "to": 1775446776116,
+      "distance": 45.9657563814362,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776116,
+      "to": 8233309905,
+      "distance": 45.9657563814362,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 5909462890,
+      "to": 8233309904,
+      "distance": 6.25661828779516,
+      "slope": 13.106121586473977,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 8233309904,
+      "to": 5909462890,
+      "distance": 6.25661828779516,
+      "slope": 13.106121586473977,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 8233309904,
+      "to": 9000090,
+      "distance": 73.47443757982934,
+      "slope": 1.116034401908932,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 9000090,
+      "to": 8233309904,
+      "distance": 73.47443757982934,
+      "slope": 1.116034401908932,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777046,
+      "to": 1775446777042,
+      "distance": 68.5566459269105,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777042,
+      "to": 1775446777046,
+      "distance": 68.5566459269105,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776098,
+      "to": 1775446777042,
+      "distance": 9.19411315301831,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777042,
+      "to": 1775446776098,
+      "distance": 9.19411315301831,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 5909462889,
+      "to": 6293658338,
+      "distance": 9.432575992874012,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 6293658338,
+      "to": 5909462889,
+      "distance": 9.432575992874012,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 6293661091,
+      "to": 5909462888,
+      "distance": 9.329846454816503,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 5909462888,
+      "to": 6293661091,
+      "distance": 9.329846454816503,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 8233309841,
+      "to": 2490499336,
+      "distance": 11.195428127333527,
+      "slope": 8.664251058266853,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 2490499336,
+      "to": 8233309841,
+      "distance": 11.195428127333527,
+      "slope": 8.664251058266853,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 6293657526,
+      "to": 1775446776024,
+      "distance": 257.61951401490023,
+      "slope": 0.3726425785992576,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776024,
+      "to": 1775446776025,
+      "distance": 20.348005519085294,
+      "slope": 4.717907114284855,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776025,
+      "to": 2490499336,
+      "distance": 18.414832084537032,
+      "slope": 5.2674930487935905,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 2490499336,
+      "to": 1775446776025,
+      "distance": 18.414832084537032,
+      "slope": 5.2674930487935905,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777036,
+      "to": 1775446777047,
+      "distance": 3.8961947091697877,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777047,
+      "to": 1775446777036,
+      "distance": 3.8961947091697877,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446777047,
+      "to": 1775446776025,
+      "distance": 11.190691946466536,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
+    },
+    {
+      "from": 1775446776025,
+      "to": 1775446777047,
+      "distance": 11.190691946466536,
+      "slope": 0,
+      "walk": 1,
+      "bike": 1,
+      "ebike": 1,
+      "motorcycle": 1,
+      "car": 1
     }
   ]
 }
