@@ -21,6 +21,7 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   zoomOffset: -1
 }).addTo(map);
 
+let currentFullPath = [];
 let nodesByName = {};
 let locationMarkers = [];
 let globalData = null;
@@ -308,9 +309,9 @@ document.getElementById("findRoute").addEventListener("click", async () => {
     }
 
     if (fullPath.length > 0) {
-      // 👇 這裡將 routeWeight (即選擇的 mode) 傳遞給 drawPath
+      currentFullPath = fullPath;
       drawPath(fullPath, visitOrder, routeWeight); 
-      totalDist = calculatePathDistance(fullPath); 
+      totalDist = calculatePathDistance(fullPath);
       
       let totalMainSeconds = 0;
       let totalWalkSeconds = 0;
@@ -546,85 +547,69 @@ function drawEdgesOnLayer(edgesToDraw, layerGroup, color, weight, opacity, dashA
   });
 }
 
-//  新增：常綠林蔭路段顯示開關監聽
-document.getElementById('toggle-tree-shade').addEventListener('change', function(e) {
-  if (e.target.checked) {
-    if (!globalData || !globalData.edges) return;
-    // 篩選出圖資中帶有樹蔭權重 (tree_shade > 0.5) 的路段
-    const shadedEdges = globalData.edges.filter(edge => edge.tree_shade > 0.5);
-    // 用半透明的森林綠色粗線條標記
-    drawEdgesOnLayer(shadedEdges, treeShadeLayer, '#4CAF50', 6, 0.7);
-  } else {
-    treeShadeLayer.clearLayers();
-  }
-});
+// 建立一個專屬的圖層群組來放所有的真實陰影與樹蔭
+const realtimeShadowLayer = L.layerGroup().addTo(map);
 
-//  新增：即時建築物陰影顯示開關監聽
-//  新增：即時建築物陰影顯示開關監聽 (強化型別比對版)
-document.getElementById('toggle-building-shadow').addEventListener('change', async function(e) {
-  // 不論如何先清空舊圖層
-  buildingShadowLayer.clearLayers(); 
+document.getElementById('toggle-realtime-shadow').addEventListener('change', async function(e) {
+  realtimeShadowLayer.clearLayers(); // 每次切換前先清空
 
   if (e.target.checked) {
-    if (!globalData || !globalData.edges) return;
+    // 防呆：如果還沒有產生路徑
+    if (!currentFullPath || currentFullPath.length === 0) {
+      alert("請先開始巡航導航，再開啟陰影顯示！");
+      e.target.checked = false;
+      return;
+    }
+
     try {
-      // 呼叫後端 API
-      const response = await fetch('http://localhost:8000/api/current-shadows');
-      const resData = await response.json();
-      
-      console.log("🌞 [陰影API] 原始回應:", resData);
-      
-      // 🌟 新增：印出陣列內部的真實長相
-      if (resData.shaded_edges && resData.shaded_edges.length > 0) {
-          console.log("🧐 陰影陣列的內容範例 (前3筆):", resData.shaded_edges.slice(0, 3));
-          console.log("🧐 陰影資料的第一筆型別:", typeof resData.shaded_edges[0]);
-          console.log("🧐 圖資 Edge 的格式範例 (第1筆):", globalData.edges[0]);
+      // 1. 篩選出「當前導航路徑」上的所有 Edges
+      const pathEdges = [];
+      for (let i = 0; i < currentFullPath.length - 1; i++) {
+        const u = currentFullPath[i], v = currentFullPath[i+1];
+        const edge = globalData.edges.find(e => (e.from===u&&e.to===v) || (e.from===v&&e.to===u));
+        if (edge) pathEdges.push(edge);
       }
 
-      if (resData.status === "success" && resData.shaded_edges) {
-        
-        if (resData.shaded_edges.length === 0) {
-            console.log("ℹ️ 目前時間沒有任何建築物陰影。");
-            return;
-        }
-        
-        // 檢查圖資第一筆資料是否有 id
-        if (globalData.edges.length > 0 && globalData.edges[0].id === undefined) {
-            console.error("❌ [錯誤] 你的 campus_nodes_edges_updated.json 中，edge 缺少 'id' 欄位！");
-            alert("圖資缺少 Edge ID，無法對應陰影位置。");
-        }
-
-       // 🌟 確保只宣告一次：將 API 回傳的陰影 ID (from-to 格式) 存入 Set 加速查詢
-        const shadedEdgeIds = new Set(resData.shaded_edges.map(id => String(id)));
-        
-        // 🌟 終極修復：直接將圖資的 from 和 to 組合成字串來比對！
-        const bldgShadedEdges = globalData.edges.filter(edge => {
-            const forwardStr = `${edge.from}-${edge.to}`;
-            const backwardStr = `${edge.to}-${edge.from}`; // 道路可能是雙向的，所以反過來也查一下
-            
-            // 只要正向或反向有在陰影名單內，就判定為陰影路段
-            return shadedEdgeIds.has(forwardStr) || shadedEdgeIds.has(backwardStr);
-        });
-        
-        console.log(`🔍 [繪圖準備] 成功對應到 ${bldgShadedEdges.length} 條陰影路段`);
-        
-
-        // 如果 API 有回傳陰影，但前端卻沒抓到半條，跳出警告
-        if (bldgShadedEdges.length === 0 && resData.shaded_edges.length > 0) {
-            console.warn("⚠️ API有回傳陰影，但無法在圖資中找到對應的 ID。");
-        }
-
-        // 繪製陰影
-        drawEdgesOnLayer(bldgShadedEdges, buildingShadowLayer, '#37474F', 6, 0.7, "8, 8");
-        
-      } else {
-        alert("無法取得即時陰影資料：" + resData.message);
-        e.target.checked = false;
+      // 2. 處理樹蔭 (僅針對當前路徑)
+      const treeShadedEdges = pathEdges.filter(edge => edge.tree_shade > 0.5);
+      
+      // 繪製路徑上的樹蔭 (疊加深色透明線條)
+      if (treeShadedEdges.length > 0) {
+        drawEdgesOnLayer(treeShadedEdges, realtimeShadowLayer, '#1a1a1a', 8, 0.6);
       }
+
+      // 3. 處理建築物即時陰影 (配合 shadow_calculator.py)
+      // 由於不需要畫出全圖 Polygon 蓋住畫面，若你的後端有將 building_shade 寫入 Edge，可以直接像樹蔭一樣濾出：
+      const buildingShadedEdges = pathEdges.filter(edge => edge.building_shade > 0.5);
+      if (buildingShadedEdges.length > 0) {
+        drawEdgesOnLayer(buildingShadedEdges, realtimeShadowLayer, '#1a1a1a', 8, 0.6);
+      } 
+
     } catch (error) {
-      console.error("❌ 獲取陰影 API 失敗:", error);
-      alert("無法連接到陰影 API，請確認後端 Python 伺服器是否正常運作！");
+      console.error("❌ 獲取即時陰影失敗:", error);
+      alert("無法套用陰影圖層，請檢查資料或 API。");
       e.target.checked = false;
     }
   }
 });
+const routeWeightSelect = document.getElementById("route-weight");
+const shadowToggle = document.getElementById("toggle-realtime-shadow");
+
+function updateShadowToggleState() {
+  const isShadeMode = routeWeightSelect.value === "shade";
+  
+  shadowToggle.disabled = !isShadeMode;
+  shadowToggle.parentElement.style.opacity = isShadeMode ? "1" : "0.5";
+  shadowToggle.parentElement.style.cursor = isShadeMode ? "pointer" : "not-allowed";
+  
+  // 如果切換回非 shade 模式，強制取消勾選並清除陰影圖層
+  if (!isShadeMode) {
+    shadowToggle.checked = false;
+    realtimeShadowLayer.clearLayers();
+  }
+}
+
+// 監聽下拉選單變化
+routeWeightSelect.addEventListener("change", updateShadowToggleState);
+// 初始執行一次以設定正確狀態
+updateShadowToggleState();

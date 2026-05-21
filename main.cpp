@@ -79,9 +79,6 @@ int main(int argc, char* argv[]) {
 
     // 將目標節點放入 Set，加速查詢
     unordered_set<long long> target_nodes(ends.begin(), ends.end());
-    
-    // 簡化 Priority Queue 狀態： {當前累積成本, 當前節點}
-    // 使用 priority_queue，且設定為 min-heap (最小成本優先)
     priority_queue<pair<double, long long>, 
                    vector<pair<double, long long>>, 
                    greater<pair<double, long long>>> pq;

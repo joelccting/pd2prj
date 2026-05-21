@@ -8,7 +8,7 @@ import numpy as np
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 IMAGE_PATH = os.path.join(BASE_DIR, "ccu_orthophoto.png")
 JSON_INPUT_PATH = os.path.join(BASE_DIR, "campus_nodes_edges.json")
-JSON_OUTPUT_PATH = os.path.join(BASE_DIR, "campus_nodes_edges_updated.json")
+JSON_OUTPUT_PATH = os.path.join(BASE_DIR, "campus_nodes_edges.json")
 DEBUG_MASK_PATH = os.path.join(BASE_DIR, "debug_tree_mask.png")
 
 MIN_LON, MIN_LAT = 120.460, 23.550
@@ -27,7 +27,7 @@ def get_tree_mask(image_path):
     # range was accepting farm plots, roads, and shadowed roofs as tree pixels.
     exg = 2 * g - r - b
     green_dominance = (g > r + 4) & (g > b + 4) & (exg > 10)
-    hsv_green = cv2.inRange(hsv, np.array([35, 25, 25]), np.array([95, 210, 175])) > 0
+    hsv_green = cv2.inRange(hsv, np.array([10, 15, 20]), np.array([90, 255, 175])) > 0
 
     tree_mask = np.where(green_dominance & hsv_green, 255, 0).astype(np.uint8)
 
