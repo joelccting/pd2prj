@@ -7,7 +7,7 @@ import json
 from datetime import datetime
 from typing import List, Dict
 import pytz
-
+from contextlib import asynccontextmanager
 # 原本的陰影計算模組 (負責計算邊緣權重給 C++ 引擎)
 from shadow_calculator import ShadowCalculator 
 
@@ -18,7 +18,17 @@ import geopandas as gpd
 from shapely.affinity import translate
 import pandas as pd
 
-app = FastAPI()
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    print("🧹 伺服器啟動中：正在自動清洗高程圖資...")
+    try:
+        subprocess.run(["python", "clean_elevation.py"], check=True)
+    except Exception as e:
+        print(f"❌ 圖資清洗發生錯誤: {e}")
+        
+    yield # 交還控制權，讓 FastAPI 正式啟動
+    
+app = FastAPI(lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
