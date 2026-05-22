@@ -85,7 +85,15 @@ fetch('http://localhost:8000/api/graph')
       
       // 只在有效座標時添加
       if (!isNaN(avgLat) && !isNaN(avgLng)) {
-        locationMarkers.push({ name: name, lat: avgLat, lng: avgLng });
+        const categoryCounts = nodes.reduce((counts, node) => {
+          const category = node.category || getCategory(name);
+          counts[category] = (counts[category] || 0) + 1;
+          return counts;
+        }, {});
+        const category = Object.entries(categoryCounts)
+          .sort((a, b) => b[1] - a[1])[0]?.[0] || getCategory(name);
+
+        locationMarkers.push({ name: name, lat: avgLat, lng: avgLng, category });
       }
     }
 
@@ -96,11 +104,25 @@ fetch('http://localhost:8000/api/graph')
     window.locationMarkers = locationMarkers;
 
     locationMarkers.forEach((location) => {
-      L.marker([location.lat, location.lng]).bindPopup(location.name).addTo(map);
+      const categoryInfo = window.buildingCategories[location.category] || window.buildingCategories.school;
+      L.marker([location.lat, location.lng], {
+        icon: createLocationMarkerIcon(location.category)
+      }).bindPopup(`
+        <div style="font-size: 12px;">
+          <b>${location.name}</b><br/>
+          分類: ${categoryInfo.zh} ${categoryInfo.en}
+        </div>
+      `).addTo(map);
     });
 
     populateDropdown(document.getElementById("start"));
     populateDropdown(document.querySelector(".waypoint-select"));
+    
+    // 設置搜尋功能
+    setupSearchAndDropdown('start-search', 'start');
+    setupSearchAndDropdown('waypoint-0-search', 'waypoint-0');
+    
+    // 分類顏色顯示在有 name 的 node 指標上，不再自動繪製建築範圍面圖層。
     
     const langSelectElement = document.getElementById("language-selector");
     if (langSelectElement) {
@@ -119,43 +141,12 @@ fetch('http://localhost:8000/api/graph')
 
 function populateDropdown(selectElement) {
   if (!selectElement) return;
-  selectElement.innerHTML = ""; 
-
-  const optGroups = {
-    "school": { zh: "🏫 學校建築", en: "🏫 School Buildings", el: document.createElement("optgroup") },
-    "housing": { zh: "🛏️ 住宿區", en: "🛏️ Accommodation", el: document.createElement("optgroup") },
-    "dining": { zh: "🍔 飲食與生活", en: "🍔 Dining & Life", el: document.createElement("optgroup") }
-  };
-
-  Object.keys(optGroups).forEach(key => {
-    optGroups[key].el.dataset.i18nCat = key;
-  });
-
-  function getCategory(name) {
-    const overrides = { "嘉農小館": "dining", "康乃爾學院": "housing", "苗園":"housing" };
-    if (overrides[name]) return overrides[name];
-    if (name.includes("全家") || name.includes("7-ELEVEN") || name.includes("萊爾富") || name.includes("蝦皮") || name.includes("早餐")) return "dining";
-    const housingNames = ["伯爵", "陶潛", "現代首席", "京采", "墨香苑", "陶居", "木菊苑", "書香門第", "常春藤", "鼎泰", "柏克萊", "彬彬", "夏都", "深白舍", "橙舍", "節能宿舍"];
-    if (name.includes("宿舍") || name.includes("學苑") || name.includes("會館") || name.includes("凱格鹿") || housingNames.some(h => name.includes(h))) return "housing";
-    const schoolNames = ["禮堂", "實習工廠", "苗圃", "動物實驗室", "變電所", "納米運動", "三興國小"];
-    if (name.includes("大樓") || name.includes("學院") || name.includes("教室") || name.includes("系") || name.includes("館") || name.includes("活動中心") || name.includes("環安中心") || schoolNames.some(s => name.includes(s))) return "school";
-    return "dining"; 
-  }
-
-  locationMarkers.forEach((location) => {
-    const cat = getCategory(location.name);
-    const option = document.createElement("option");
-    option.value = location.name; 
-    option.text = location.name;
-    optGroups[cat].el.appendChild(option);
-  });
-
-  Object.keys(optGroups).forEach(key => selectElement.appendChild(optGroups[key].el));
+  renderCategoryOptions(selectElement);
 }
 
 window.updateDropdownLanguage = function(currentLang) {
-  document.querySelectorAll(".modern-select").forEach(selectElement => {
-    if (selectElement.id === "language-selector" || selectElement.id === "cruise-mode") return;
+  document.querySelectorAll("select.modern-select").forEach(selectElement => {
+    if (!selectElement.matches("#start, .waypoint-select")) return;
 
     selectElement.querySelectorAll("optgroup").forEach(group => {
       const catKey = group.dataset.i18nCat;
@@ -171,6 +162,11 @@ window.updateDropdownLanguage = function(currentLang) {
 
     Array.from(selectElement.options).forEach(option => {
       if (option.value === "") return; 
+      if (option.dataset.categoryOption === "true" && window.buildingCategories[option.value]) {
+        const categoryInfo = window.buildingCategories[option.value];
+        option.text = currentLang === "en" ? categoryInfo.en : categoryInfo.zh;
+        return;
+      }
       if (typeof buildingTranslations !== 'undefined') {
         const translation = buildingTranslations[option.value];
         if (translation && translation[currentLang]) {
@@ -189,14 +185,30 @@ const addBtn = document.getElementById('add-waypoint');
 addBtn.addEventListener('click', () => {
   const newItem = waypointContainer.firstElementChild.cloneNode(true);
   const newSelect = newItem.querySelector('.waypoint-select');
-  populateDropdown(newSelect); 
+  const newSearch = newItem.querySelector('.waypoint-search');
   
-  const currentLang = document.getElementById("language-selector").value;
-  window.updateDropdownLanguage(currentLang);
-
+  // 1. 為新的搜尋框和select生成唯一ID
+  const uniqueId = 'waypoint-' + Date.now();
+  newSearch.id = uniqueId + '-search';
+  newSelect.id = uniqueId;
+  newSearch.value = '';
+  newSelect.innerHTML = '';
+  newSelect.style.display = 'none';
+  
+  // 2. 設定刪除按鈕功能
   newItem.querySelector('.btn-remove-waypoint').style.display = "block";
   newItem.querySelector('.btn-remove-waypoint').onclick = function() { this.parentElement.remove(); };
+  
+  // 🌟 關鍵修復：先將新元素加入到畫面 (DOM) 中！
   waypointContainer.appendChild(newItem);
+  
+  // 3. 確保元素已經在畫面上後，再來綁定下拉選單與搜尋事件
+  populateDropdown(newSelect); 
+  setupSearchAndDropdown(uniqueId + '-search', uniqueId);
+  
+  // 4. 更新語言
+  const currentLang = document.getElementById("language-selector").value;
+  window.updateDropdownLanguage(currentLang);
 });
 
 async function fetchSegment(startsNames, endsNames, mode = "distance", vehicle = "walk") {
@@ -258,14 +270,37 @@ function getLinearDist(name1, name2) {
     return Math.sqrt(Math.pow(n1.lat - n2.lat, 2) + Math.pow(n1.lng - n2.lng, 2));
 }
 
+function resolveLocationValue(searchInput, selectElement) {
+  const typedValue = searchInput?.value?.trim() || '';
+  if (typedValue && nodesByName[typedValue]) return typedValue;
+  if (selectElement?.value && nodesByName[selectElement.value]) return selectElement.value;
+  return typedValue;
+}
+
 document.getElementById("findRoute").addEventListener("click", async () => {
   const cruiseMode = document.getElementById("cruise-mode").value;
   const routeWeight = document.getElementById("route-weight").value; // 包含 shade 模式
-  const startName = document.getElementById("start").value;
+  
+  // 從搜尋框或select獲取起點名稱
+  const startSearchInput = document.getElementById("start-search");
+  const startSelect = document.getElementById("start");
+  const startName = resolveLocationValue(startSearchInput, startSelect);
+  
   const selectedTransport = document.getElementById("transport-mode").value; 
-  const waypointSelects = document.querySelectorAll(".waypoint-select");
-  let destinations = Array.from(waypointSelects).map(s => s.value).filter(v => v !== "");
+  const waypointItems = document.querySelectorAll(".waypoint-item");
+  let destinations = [];
+  
+  // 收集所有目的地
+  waypointItems.forEach(item => {
+    const searchInput = item.querySelector('.waypoint-search');
+    const select = item.querySelector('.waypoint-select');
+    const value = resolveLocationValue(searchInput, select);
+    if (value) {
+      destinations.push(value);
+    }
+  });
 
+  if (!nodesByName[startName]) return alert("請選擇有效的起點");
   if (destinations.length === 0) return alert("請選擇至少一個目的地");
 
   let fullPath = [];
@@ -598,9 +633,7 @@ const shadowToggle = document.getElementById("toggle-realtime-shadow");
 function updateShadowToggleState() {
   const isShadeMode = routeWeightSelect.value === "shade";
   
-  shadowToggle.disabled = !isShadeMode;
-  shadowToggle.parentElement.style.opacity = isShadeMode ? "1" : "0.5";
-  shadowToggle.parentElement.style.cursor = isShadeMode ? "pointer" : "not-allowed";
+  shadowToggle.parentElement.style.display = isShadeMode ? "flex" : "none";
   
   // 如果切換回非 shade 模式，強制取消勾選並清除陰影圖層
   if (!isShadeMode) {
@@ -613,3 +646,207 @@ function updateShadowToggleState() {
 routeWeightSelect.addEventListener("change", updateShadowToggleState);
 // 初始執行一次以設定正確狀態
 updateShadowToggleState();
+
+// ===== 面板折疊功能 =====
+document.getElementById('toggle-panel').addEventListener('click', function() {
+  const panel = document.getElementById('nav-panel');
+  const isCollapsed = panel.classList.toggle('collapsed');
+  this.textContent = isCollapsed ? '➡️' : '⬅️';
+  this.setAttribute('aria-expanded', String(!isCollapsed));
+});
+
+// ===== 建築顏色配置 =====
+const buildingCategoryColors = {
+  "school": "#2196F3",   // 藍色
+  "dining": "#FF9800",   // 橘色
+  "housing": "#000000"   // 黑色
+};
+
+// 建築分類資訊（用於後端標記）
+window.buildingCategories = {
+  "school": { zh: "學校區", en: "School", color: "#2196F3" },
+  "dining": { zh: "餐飲區", en: "Dining", color: "#FF9800" },
+  "housing": { zh: "住宿區", en: "Accommodation", color: "#000000" }
+};
+
+const categoryOrder = ["school", "dining", "housing"];
+
+function createLocationMarkerIcon(category) {
+  const color = buildingCategoryColors[category] || buildingCategoryColors.school;
+  const borderColor = category === "housing" ? "#ffffff" : "#1f2937";
+
+  return L.divIcon({
+    className: "category-location-marker",
+    html: `
+      <span class="category-map-pin" style="--marker-color:${color}; --marker-border:${borderColor};"></span>
+    `,
+    iconSize: [34, 42],
+    iconAnchor: [17, 40],
+    popupAnchor: [0, -38]
+  });
+}
+
+function getCategoryLabel(category) {
+  const categoryInfo = window.buildingCategories[category];
+  if (!categoryInfo) return category;
+  const currentLang = document.getElementById("language-selector")?.value || "zh";
+  return currentLang === "en" ? categoryInfo.en : categoryInfo.zh;
+}
+
+function renderCategoryOptions(selectElement) {
+  selectElement.innerHTML = "";
+  categoryOrder.forEach(category => {
+    const option = document.createElement("option");
+    option.value = category;
+    option.text = getCategoryLabel(category);
+    option.dataset.categoryOption = "true";
+    selectElement.appendChild(option);
+  });
+  selectElement.size = categoryOrder.length;
+  selectElement.selectedIndex = -1;
+  selectElement.dataset.mode = "categories";
+}
+
+function getLocationsByCategory(category) {
+  return locationMarkers
+    .filter(location => (location.category || getCategory(location.name)) === category)
+    .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
+}
+
+function renderLocationOptions(selectElement, locations) {
+  selectElement.innerHTML = "";
+
+  if (locations.length === 0) {
+    const option = document.createElement("option");
+    option.value = "";
+    option.text = "沒有符合的建築";
+    option.disabled = true;
+    option.selected = true;
+    selectElement.appendChild(option);
+  } else {
+    const promptOption = document.createElement("option");
+    promptOption.value = "";
+    promptOption.text = "請選擇建築";
+    promptOption.disabled = true;
+    promptOption.selected = true;
+    selectElement.appendChild(promptOption);
+
+    locations.forEach(location => {
+      const option = document.createElement("option");
+      option.value = location.name;
+      option.text = location.name;
+      selectElement.appendChild(option);
+    });
+  }
+
+  selectElement.size = Math.min(Math.max(locations.length + 1, 1), 8);
+  selectElement.dataset.mode = "locations";
+}
+
+// ===== 建築繪製功能 =====
+function getCategory(name) {
+  const overrides = { "嘉農小館": "dining", "康乃爾學院": "housing", "苗園":"housing" };
+  if (overrides[name]) return overrides[name];
+  if (name.includes("全家") || name.includes("7-ELEVEN") || name.includes("萊爾富") || name.includes("蝦皮") || name.includes("早餐")) return "dining";
+  const housingNames = ["伯爵", "陶潛", "現代首席", "京采", "墨香苑", "陶居", "木菊苑", "書香門第", "常春藤", "鼎泰", "柏克萊", "彬彬", "夏都", "深白舍", "橙舍", "節能宿舍"];
+  if (name.includes("宿舍") || name.includes("學苑") || name.includes("會館") || name.includes("凱格鹿") || housingNames.some(h => name.includes(h))) return "housing";
+  const schoolNames = ["禮堂", "實習工廠", "苗圃", "動物實驗室", "變電所", "納米運動", "三興國小"];
+  if (name.includes("大樓") || name.includes("學院") || name.includes("教室") || name.includes("系") || name.includes("館") || name.includes("活動中心") || name.includes("環安中心") || schoolNames.some(s => name.includes(s))) return "school";
+  return "dining"; 
+}
+
+const buildingLayer = L.layerGroup();
+
+async function loadAndRenderBuildings() {
+  try {
+    const response = await fetch('ccu_buildings_ready.geojson');
+    if (!response.ok) throw new Error('Failed to load buildings GeoJSON');
+    
+    const buildingsData = await response.json();
+    
+    L.geoJSON(buildingsData, {
+      style: function(feature) {
+        const name = feature.properties.name || "";
+        const category = getCategory(name);
+        const color = buildingCategoryColors[category] || buildingCategoryColors.school;
+        
+        return {
+          color: color,
+          weight: 2,
+          opacity: 0.7,
+          fillColor: color,
+          fillOpacity: 0.3
+        };
+      },
+      onEachFeature: function(feature, layer) {
+        const name = feature.properties.name || "未命名建築";
+        const category = getCategory(name);
+        const categoryInfo = window.buildingCategories[category];
+        
+        const popupContent = `
+          <div style="font-size: 12px;">
+            <b>${name}</b><br/>
+            分類: ${categoryInfo.zh} ${categoryInfo.en}<br/>
+            高度: ${feature.properties.height || '未知'} m<br/>
+            樓層: ${feature.properties.levels || '未知'}
+          </div>
+        `;
+        
+        layer.bindPopup(popupContent);
+      }
+    }).addTo(buildingLayer);
+    
+    buildingLayer.addTo(map);
+    console.log('✅ 建築圖層已加載');
+  } catch (error) {
+    console.warn('⚠️ 無法加載建築圖層:', error);
+  }
+}
+
+// 搜尋和選單功能
+function setupSearchAndDropdown(searchInputId, selectId) {
+  const searchInput = document.getElementById(searchInputId) || document.querySelector(`input[id="${searchInputId}"]`);
+  const selectElement = document.getElementById(selectId) || document.querySelector(`select[id="${selectId}"]`);
+  
+  if (!searchInput || !selectElement) return;
+
+  const showCategories = () => {
+    renderCategoryOptions(selectElement);
+    selectElement.style.display = 'block';
+  };
+
+  const showSearchResults = () => {
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    if (!searchTerm) {
+      showCategories();
+      return;
+    }
+
+    const filtered = locationMarkers.filter(location =>
+      location.name.toLowerCase().includes(searchTerm)
+    );
+    renderLocationOptions(selectElement, filtered);
+    selectElement.style.display = 'block';
+  };
+
+  searchInput.setAttribute('autocomplete', 'off');
+  searchInput.addEventListener('focus', showSearchResults);
+  searchInput.addEventListener('click', showSearchResults);
+  searchInput.addEventListener('input', showSearchResults);
+
+  selectElement.addEventListener('change', function(e) {
+    if (!e.target.value) return;
+    
+    if (selectElement.dataset.mode === 'categories' && window.buildingCategories[e.target.value]) {
+      const category = e.target.value;
+      renderLocationOptions(selectElement, getLocationsByCategory(category));
+      selectElement.style.display = 'block';
+      return;
+    }
+
+    if (nodesByName[e.target.value]) {
+      searchInput.value = e.target.value;
+      selectElement.style.display = 'none';
+    }
+  });
+}

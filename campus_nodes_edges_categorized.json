@@ -648,7 +648,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 78,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 268069317,
@@ -668,7 +668,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 59,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 268069718,
@@ -1248,7 +1248,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 94,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776038,
@@ -2318,7 +2318,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 98,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 7600328606,
@@ -2328,7 +2328,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 110,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 11694354898,
@@ -2358,7 +2358,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 89,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776436,
@@ -2368,7 +2368,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 89,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776611,
@@ -2378,7 +2378,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 82,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776604,
@@ -2408,7 +2408,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 82,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776617,
@@ -2418,7 +2418,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 82,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 11780817534,
@@ -2428,7 +2428,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 59,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776408,
@@ -2438,7 +2438,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 66,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 11694354804,
@@ -2448,7 +2448,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 50,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 3128972868,
@@ -2458,7 +2458,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 50,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776350,
@@ -2468,7 +2468,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 48,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776395,
@@ -2478,7 +2478,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 47,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776391,
@@ -2488,7 +2488,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 47,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776631,
@@ -2498,7 +2498,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 50,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776399,
@@ -2508,7 +2508,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 50,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776387,
@@ -2518,7 +2518,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 62,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776386,
@@ -2528,7 +2528,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 62,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776348,
@@ -2538,7 +2538,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 59,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776642,
@@ -2548,7 +2548,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 68,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776643,
@@ -2558,7 +2558,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 68,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776644,
@@ -2568,7 +2568,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 62,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776647,
@@ -12033,11 +12033,11 @@
     {
       "id": 1775446776478,
       "name": "",
-      "lat": 23.560624167739448,
-      "lng": 120.47343476977795,
+      "lat": 23.5623549713418,
+      "lng": 120.47494571436788,
       "accessible": true,
       "type": "path_node",
-      "elevation": 0,
+      "elevation": 97,
       "category": "school"
     },
     {
@@ -44453,7 +44453,7 @@
     {
       "from": 667361822,
       "to": 1775446776478,
-      "distance": 256.40311310587725,
+      "distance": 9.92,
       "slope": 0.0,
       "walk": 1,
       "bike": 1,
@@ -44466,7 +44466,7 @@
     {
       "from": 1775446776478,
       "to": 667361822,
-      "distance": 256.40311310587725,
+      "distance": 9.92,
       "accessible": true,
       "slope": 0.0,
       "tree_shade": 0,
@@ -49761,7 +49761,7 @@
     {
       "from": 1775446776478,
       "to": 1775446776798,
-      "distance": 222.33885148846355,
+      "distance": 24.19,
       "slope": 0.0,
       "walk": 1,
       "bike": 1,
@@ -49774,7 +49774,7 @@
     {
       "from": 1775446776798,
       "to": 1775446776478,
-      "distance": 222.33885148846355,
+      "distance": 24.19,
       "accessible": true,
       "slope": 0.0,
       "tree_shade": 0,

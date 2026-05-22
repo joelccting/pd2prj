@@ -16,11 +16,14 @@
     </div>
     
     <div id="nav-panel" class="modern-panel">
-      <div class="panel-header">
-        <select id="language-selector" class="modern-select minimal">
+      <div class="panel-header" style="display: flex; justify-content: space-between; align-items: center;">
+        <select id="language-selector" class="modern-select minimal" style="flex: 1;">
           <option value="zh">繁體中文</option>
           <option value="en">English</option>
         </select>
+        <button id="toggle-panel" aria-expanded="true" aria-label="收合左上角面板" style="margin-left: 8px; padding: 6px 10px; background-color: #4A90E2; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 12px;">
+          ⬅️
+        </button>
       </div>
 
       <div class="options-section" style="display: flex; flex-direction: column; gap: 15px;">
@@ -49,7 +52,10 @@
       <div class="route-section">
         <div class="input-group">
           <div class="icon-dot start-dot"></div>
-          <select id="start" class="modern-select"></select>
+          <div class="location-picker">
+            <input type="text" id="start-search" class="modern-select" placeholder="🔍 搜尋起點..." style="flex: 1;">
+            <select id="start" class="modern-select" style="flex: 1; display: none;"></select>
+          </div>
         </div>
         
         <div class="route-line"></div>
@@ -57,7 +63,10 @@
         <div id="waypoint-container">
           <div class="input-group waypoint-item">
             <div class="icon-dot end-dot"></div>
-            <select class="modern-select waypoint-select"></select>
+            <div class="location-picker">
+              <input type="text" id="waypoint-0-search" class="waypoint-search modern-select" placeholder="🔍 搜尋目的地..." style="flex: 1;">
+              <select id="waypoint-0" class="modern-select waypoint-select" style="flex: 1; display: none;"></select>
+            </div>
             <button class="btn-remove-waypoint" style="display:none;">×</button>
           </div>
         </div>

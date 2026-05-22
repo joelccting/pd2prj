@@ -8,7 +8,6 @@ from datetime import datetime
 from typing import List, Dict
 import pytz
 from contextlib import asynccontextmanager
-# 原本的陰影計算模組 (負責計算邊緣權重給 C++ 引擎)
 from shadow_calculator import ShadowCalculator 
 
 # --- 🌟 新增：地理空間與太陽計算套件 (負責前端多邊形渲染) ---
