@@ -336,10 +336,14 @@ document.getElementById("findRoute").addEventListener("click", async () => {
             if(d < minDist) { minDist = d; nearestIdx = i; }
         }
         const nextDest = remaining.splice(nearestIdx, 1)[0];
-        const segment = await fetchSegment([startName], [nextDest], routeWeight, selectedTransport);
-        fullPath = fullPath.length === 0 ? segment : fullPath.concat(segment.slice(1));
-        currentLoc = nextDest;
-        visitOrder.push(nextDest);
+        const segment = await fetchSegment([currentLoc], [nextDest], routeWeight, selectedTransport);
+        if (segment && segment.length > 0) {
+            fullPath = fullPath.length === 0 ? segment : fullPath.concat(segment.slice(1));
+            currentLoc = nextDest;
+            visitOrder.push(nextDest);
+        } else {
+            console.warn(`無法找到前往 ${nextDest} 的路徑，已跳過該節點。`);
+        }
       }
     }
 
