@@ -25090,7 +25090,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 0,
-      "tree_shade": 0,
+      "tree_shade": 1,
       "id": "edge_713"
     },
     {
@@ -43272,7 +43272,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 0,
-      "tree_shade": 0,
+      "tree_shade": 1,
       "id": "edge_2281"
     },
     {
@@ -44283,7 +44283,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 0,
-      "tree_shade": 0,
+      "tree_shade": 1,
       "id": "edge_2356"
     },
     {
@@ -44472,7 +44472,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 0,
-      "tree_shade": 0,
+      "tree_shade": 1,
       "id": "edge_2370"
     },
     {
@@ -44499,7 +44499,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 0,
-      "tree_shade": 0,
+      "tree_shade": 1,
       "id": "edge_2372"
     },
     {
@@ -48475,7 +48475,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 0,
-      "tree_shade": 0,
+      "tree_shade": 1,
       "id": "edge_2745"
     },
     {
@@ -53623,7 +53623,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 1,
-      "tree_shade": 0,
+      "tree_shade": 1,
       "id": "edge_3148"
     },
     {
@@ -65146,7 +65146,8 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 0
+      "car": 0,
+      "tree_shade": 1
     },
     {
       "from": 1775446777180,
@@ -65168,7 +65169,8 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 0
+      "car": 0,
+      "tree_shade": 1
     },
     {
       "from": 2734322156,
