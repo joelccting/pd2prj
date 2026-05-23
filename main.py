@@ -137,7 +137,14 @@ def generate_graph_txt(current_time=None):
             building_shade = 1 if is_shaded else 0
 
             # 寫入格式給 C++
-            f.write(f"{u} {v} 4 distance {dist} slope {slope} tree_shade {tree_shade} building_shade {building_shade}\n")
+            f.write(f"{u} {v} 9 "
+                f"distance {dist} slope {slope} "
+                f"tree_shade {tree_shade} building_shade {building_shade} "
+                f"walk {edge.get('walk', 1)} "
+                f"bike {edge.get('bike', 1)} "
+                f"ebike {edge.get('ebike', 1)} "
+                f"motorcycle {edge.get('motorcycle', 1)} "
+                f"car {edge.get('car', 1)}\n")
                 
     print("✅ C++ 專用圖資 (graph.txt) 生成完成！")
 

@@ -28,6 +28,11 @@ struct Edge {
     double slope = 0.0;
     double tree_shade = 0.0;
     double building_shade = 0.0;
+    int walk = 1;
+    int bike = 1;
+    int ebike = 1;
+    int motorcycle = 1;
+    int car = 1;
 };
 
 // 狀態結構 (Priority Queue 使用)
@@ -95,6 +100,11 @@ void loadGraph(const string& filename) {
             else if (weight_name == "slope") edge.slope = weight_value;
             else if (weight_name == "tree_shade") edge.tree_shade = weight_value;
             else if (weight_name == "building_shade") edge.building_shade = weight_value;
+            else if (weight_name == "walk")       edge.walk = (int)weight_value;
+            else if (weight_name == "bike")       edge.bike = (int)weight_value;
+            else if (weight_name == "ebike")      edge.ebike = (int)weight_value;
+            else if (weight_name == "motorcycle") edge.motorcycle = (int)weight_value;
+            else if (weight_name == "car")        edge.car = (int)weight_value;
         }
         graph[u].push_back(edge);
     }
@@ -172,7 +182,14 @@ int main(int argc, char* argv[]) {
 
         for (const auto& edge : graph[u]) {
             long long v = edge.to;
-            double next_cost = edge.distance; 
+            bool can_ride;
+            if (vehicle == "bike")       can_ride = edge.bike == 1;
+            else if (vehicle == "ebike") can_ride = edge.ebike == 1;
+            else if (vehicle == "motorcycle") can_ride = edge.motorcycle == 1;
+            else if (vehicle == "car")   can_ride = edge.car == 1;
+            else can_ride = true;
+            if (vehicle == "walk" && edge.walk == 0) continue;
+            double next_cost = can_ride ? edge.distance : edge.distance * 3.0;
             
             // --- 依照不同模式套用各自的權重與懲罰 ---
             if (mode == "shortest") {
