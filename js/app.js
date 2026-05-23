@@ -154,7 +154,7 @@ window.updateDropdownLanguage = function(currentLang) {
         "school": { zh: "🏫 學校建築", en: "🏫 School Buildings" },
         "housing": { zh: "🛏️ 住宿區", en: "🛏️ Accommodation" },
         "dining": { zh: "🍔 飲食與生活", en: "🍔 Dining & Life" },
-        "other": { zh: "其他", en: "Other" }
+        "other":   { zh: "📌 其他",      en: "📌 Other" } 
       };
       if (catTranslations[catKey] && catTranslations[catKey][currentLang]) {
         group.label = catTranslations[catKey][currentLang];
@@ -665,7 +665,8 @@ document.getElementById('toggle-panel').addEventListener('click', function() {
 const buildingCategoryColors = {
   "school": "#2196F3",   // 藍色
   "dining": "#FF9800",   // 橘色
-  "housing": "#000000"   // 黑色
+  "housing": "#000000",  // 黑色
+  "other":   "#9E9E9E" 
 };
 
 // 建築分類資訊（用於後端標記）
@@ -750,17 +751,6 @@ function renderLocationOptions(selectElement, locations) {
   selectElement.dataset.mode = "locations";
 }
 
-// ===== 建築繪製功能 =====
-function getCategory(name) {
-  const overrides = { "嘉農小館": "dining", "康乃爾學院": "housing", "苗園":"housing" };
-  if (overrides[name]) return overrides[name];
-  if (name.includes("全家") || name.includes("7-ELEVEN") || name.includes("萊爾富") || name.includes("蝦皮") || name.includes("早餐")) return "dining";
-  const housingNames = ["伯爵", "陶潛", "現代首席", "京采", "墨香苑", "陶居", "木菊苑", "書香門第", "常春藤", "鼎泰", "柏克萊", "彬彬", "夏都", "深白舍", "橙舍", "節能宿舍"];
-  if (name.includes("宿舍") || name.includes("學苑") || name.includes("會館") || name.includes("凱格鹿") || housingNames.some(h => name.includes(h))) return "housing";
-  const schoolNames = ["禮堂", "實習工廠", "苗圃", "動物實驗室", "變電所", "納米運動", "三興國小"];
-  if (name.includes("大樓") || name.includes("學院") || name.includes("教室") || name.includes("系") || name.includes("館") || name.includes("活動中心") || name.includes("環安中心") || schoolNames.some(s => name.includes(s))) return "school";
-  return "dining"; 
-}
 
 const buildingLayer = L.layerGroup();
 
