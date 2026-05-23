@@ -9,6 +9,8 @@ from typing import List, Dict
 import pytz
 from contextlib import asynccontextmanager
 from shadow_calculator import ShadowCalculator 
+import secrets
+import hashlib
 
 # --- 🌟 新增：地理空間與太陽計算套件 (負責前端多邊形渲染) ---
 import math
@@ -57,6 +59,18 @@ print(f"📂 使用數據文件: {DATA_FILE}")
 # 全域變數存放陰影計算機與幾何圖資
 shadow_calc = None
 all_objects_gdf = None
+
+# --- 🔐 密碼保護全局變數 ---
+EXPORT_PASSWORD = "A@S((CII#CoDeee))@2026"
+verified_tokens = set()  # 存儲已驗證的token
+
+def generate_verification_token():
+    """生成隨機驗證token"""
+    return secrets.token_hex(32)
+
+def verify_export_token(token: str) -> bool:
+    """驗證export token是否有效"""
+    return token in verified_tokens
 
 # --- 🌟 新增：啟動時預先載入幾何圖資 ---
 print("⏳ 準備載入幾何圖資供即時陰影多邊形使用...")
@@ -289,14 +303,59 @@ async def get_current_shadow_polygons():
         print(f"❌ 陰影計算發生錯誤: {e}")
         return {"status": "error", "message": str(e), "shadow_geojson": None}
 
-@app.post("/api/graph")
-async def save_graph(data: Dict):
+# --- 🔐 密碼驗證端點 ---
+@app.post("/api/verify-password")
+async def verify_password(request: Request):
+    """驗證密碼並返回驗證token"""
     try:
+        body = await request.json()
+        password = body.get("password", "")
+        
+        if password == EXPORT_PASSWORD:
+            token = generate_verification_token()
+            verified_tokens.add(token)
+            print(f"✅ 密碼驗證成功，已發放token: {token[:8]}...")
+            return {
+                "status": "success",
+                "token": token,
+                "message": "密碼驗證成功"
+            }
+        else:
+            print("❌ 密碼驗證失敗")
+            return {
+                "status": "error",
+                "message": "密碼錯誤"
+            }
+    except Exception as e:
+        print(f"❌ 密碼驗證API錯誤: {e}")
+        return {
+            "status": "error",
+            "message": str(e)
+        }
+
+@app.post("/api/graph")
+async def save_graph(request: Request):
+    """儲存圖資數據（需要驗證token）"""
+    try:
+        # 檢查驗證token
+        token = request.headers.get("X-Export-Token", "")
+        
+        if not verify_export_token(token):
+            print("❌ 未授權的儲存請求：無效token")
+            raise HTTPException(status_code=403, detail="未授權：需要有效的密碼驗證token")
+        
+        # 取得請求體
+        data = await request.json()
+        
+        print(f"✅ 使用有效token進行儲存")
         with open(DATA_FILE, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
         generate_graph_txt() # 存檔後自動重新生成 TXT 圖資
         return {"status": "success", "message": "圖資已儲存並更新編譯權重"}
+    except HTTPException:
+        raise
     except Exception as e:
+        print(f"❌ 儲存API錯誤: {e}")
         return {"status": "error", "message": str(e)}
 
 @app.get("/api/tree-polygons")

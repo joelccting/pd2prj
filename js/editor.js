@@ -10,13 +10,31 @@ export function initEditorMode(map, data, graph) {
   const activePolylines = [];
   const activeMarkers = [];
   let selectedNodeForEdge = null;
-  const selectedEdges = new Set(); // 儲存批量選取的邊
+  const selectedEdges = new Set();
   const selectedNodes = new Set();
   let currentEditorMode = "build";
   let isBoxSelectMode = false;
   let boxSelectTarget = null;
   let selectionBox = null;
   let boxStartLatLng = null;
+
+  // --- 注入 God Mode 專屬動畫 CSS ---
+  const styleId = 'god-mode-custom-style';
+  if (!document.getElementById(styleId)) {
+      const style = document.createElement('style');
+      style.id = styleId;
+      style.innerHTML = `
+          .god-pulse-animation {
+              animation: map-pulse 1.5s infinite;
+          }
+          @keyframes map-pulse {
+              0% { stroke-opacity: 0.8; stroke-width: 4; }
+              50% { stroke-opacity: 0.2; stroke-width: 12; }
+              100% { stroke-opacity: 0.8; stroke-width: 4; }
+          }
+      `;
+      document.head.appendChild(style);
+  }
 
   // --- 取得海拔的魔法函數 ---
   async function getElevation(lat, lng) {
@@ -59,12 +77,34 @@ export function initEditorMode(map, data, graph) {
 
   const modePanel = document.createElement('div');
   modePanel.id = 'god-mode-panel';
-  modePanel.style = "position:fixed; bottom:20px; right:150px; z-index:2000; display:none; gap:8px; align-items:center;";
+  modePanel.style = "position:fixed; bottom:20px; right:150px; z-index:2000; display:none; flex-direction:column; gap:8px;";
   modePanel.innerHTML = `
-    <button id="god-build-mode" type="button" style="padding:10px 14px; font-weight:bold; border:none; border-radius:8px; cursor:pointer; box-shadow:0 4px 6px rgba(0,0,0,0.25);">建築模式</button>
-    <button id="god-attr-mode" type="button" style="padding:10px 14px; font-weight:bold; border:none; border-radius:8px; cursor:pointer; box-shadow:0 4px 6px rgba(0,0,0,0.25);">修改模式</button>
+    <div style="display:flex; gap:8px;">
+      <button id="god-build-mode" type="button" style="padding:10px 14px; font-weight:bold; border:none; border-radius:8px; cursor:pointer; box-shadow:0 4px 6px rgba(0,0,0,0.25);">建築模式</button>
+      <button id="god-attr-mode" type="button" style="padding:10px 14px; font-weight:bold; border:none; border-radius:8px; cursor:pointer; box-shadow:0 4px 6px rgba(0,0,0,0.25);">修改模式</button>
+    </div>
   `;
   document.body.appendChild(modePanel);
+
+  // --- 🔍 精緻化的屬性搜尋面板 ---
+  const searchPanel = document.createElement('div');
+  searchPanel.id = 'property-search-panel';
+  searchPanel.style = "position:fixed; bottom:140px; right:20px; z-index:2000; display:none; background:rgba(255, 255, 255, 0.95); padding:16px; border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.15); border: 1px solid #e0e0e0; min-width:320px; font-family:sans-serif; backdrop-filter: blur(8px);";
+  searchPanel.innerHTML = `
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+          <label style="font-size:14px; font-weight:900; color:#2c3e50; margin:0;">🔍 屬性條件過濾</label>
+          <span style="font-size:11px; background:#e8f4f8; color:#0077aa; padding:3px 8px; border-radius:12px; font-weight:bold;">God Mode</span>
+      </div>
+      <input type="text" id="property-search-input" placeholder="例: tree_shade=1 或 lit" style="padding:10px; border:1px solid #ccd1d9; border-radius:8px; font-size:14px; box-sizing: border-box; transition: border-color 0.3s; outline:none;" onfocus="this.style.borderColor='#4A90E2'" onblur="this.style.borderColor='#ccd1d9'">
+      <div style="display:flex; gap:8px;">
+        <button id="property-search-btn" type="button" style="flex:2; padding:10px; background:linear-gradient(135deg, #4A90E2, #357abd); color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; font-size:13px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">搜尋圖元</button>
+        <button id="property-clear-btn" type="button" style="flex:1; padding:10px; background:#f1f3f6; color:#555; border:1px solid #d9dce1; border-radius:8px; cursor:pointer; font-weight:bold; font-size:13px; transition: background 0.2s;" onmouseover="this.style.background='#e4e7eb'" onmouseout="this.style.background='#f1f3f6'">清除</button>
+      </div>
+      <div id="search-result-info" style="font-size:13px; color:#444; background:#f8f9fa; border-radius:8px; padding:10px; display:none; border-left:4px solid #4CAF50; box-shadow: inset 0 0 4px rgba(0,0,0,0.05);"></div>
+    </div>
+  `;
+  document.body.appendChild(searchPanel);
 
   const buildModeBtn = document.getElementById('god-build-mode');
   const attrModeBtn = document.getElementById('god-attr-mode');
@@ -177,7 +217,6 @@ export function initEditorMode(map, data, graph) {
     updateBatchUI();
   }
 
-  // --- 批量操作 UI 邏輯 ---
   function updateBatchUI() {
     let batchDiv = document.getElementById('batch-edit-panel');
     if (!batchDiv) {
@@ -303,7 +342,6 @@ export function initEditorMode(map, data, graph) {
     updateBatchUI();
   }
 
-  // --- 繪製可編輯邊線 ---
   function createEditableEdge(nodeA, nodeB, isNew = false) {
     const lineColor = isNew ? "#ff0044" : "gray";
     const polyline = L.polyline(
@@ -449,7 +487,6 @@ export function initEditorMode(map, data, graph) {
     });
   }
 
-  // --- 初始資料載入 ---
   data.nodes.forEach(node => createEditableMarker(node));
   const drawnEdges = new Set();
   data.edges.forEach((edge) => {
@@ -479,9 +516,6 @@ export function initEditorMode(map, data, graph) {
     createEditableMarker(newNode);
   }
 
-  // ==========================================
-  // 修改模式專用：Edge / Node 分開框選
-  // ==========================================
   const boxButtonPanel = document.createElement('div');
   boxButtonPanel.id = 'box-select-panel';
   boxButtonPanel.style = "position:absolute; top:80px; right:10px; z-index:1000; display:none; gap:8px;";
@@ -600,6 +634,140 @@ export function initEditorMode(map, data, graph) {
   attrModeBtn.addEventListener('click', () => setEditorMode("modify"));
   refreshModeButtons();
 
+  // ==============================================
+  // 🔍 重構：強大的屬性搜尋機制（不會阻擋原有物件點擊）
+  // ==============================================
+  
+  // 建立獨立圖層以存放高亮的無互動圖形
+  const searchHighlightLayer = L.layerGroup().addTo(map);
+
+  function clearPropertyHighlight() {
+    searchHighlightLayer.clearLayers();
+    const resultInfo = document.getElementById('search-result-info');
+    if (resultInfo) resultInfo.style.display = 'none';
+  }
+
+  function performPropertySearch(query) {
+    if (!query || query.trim() === "") {
+      alert("請輸入搜尋條件，例如 tree_shade=1 或 tree_shade");
+      return;
+    }
+
+    clearPropertyHighlight();
+    query = query.trim();
+
+    let propName = query;
+    let propValue = null;
+
+    if (query.includes('=')) {
+      const parts = query.split('=');
+      propName = parts[0].trim();
+      propValue = parts[1].trim();
+
+      // 嘗試轉換為數字或布林值以利比對
+      if (propValue.toLowerCase() === 'true') propValue = true;
+      else if (propValue.toLowerCase() === 'false') propValue = false;
+      else if (!isNaN(propValue) && propValue !== '') propValue = Number(propValue);
+    }
+
+    if (!propName) return;
+
+    console.log(`🔍 搜尋條件: ${propName}${propValue !== null ? '=' + propValue : ''}`);
+
+    let matchedNodeCount = 0;
+    let matchedEdgeCount = 0;
+
+    // 搜尋 Nodes
+    if (data && data.nodes) {
+      data.nodes.forEach(node => {
+        if (!node.hasOwnProperty(propName)) return;
+
+        let isMatch = false;
+        if (propValue === null) {
+            isMatch = true; // 只要有這個屬性即算符合
+        } else {
+            isMatch = (String(node[propName]) === String(propValue));
+        }
+
+        if (isMatch) {
+          matchedNodeCount++;
+          // 新增無互動性的發光標記，放在最底層避免擋住原先 Marker 的點擊
+          L.circleMarker([node.lat, node.lng], {
+            radius: 18,
+            color: '#FF007F', // 螢光粉紅
+            weight: 4,
+            fillColor: '#FF007F',
+            fillOpacity: 0.4,
+            interactive: false, // 這是關鍵！不會擋住滑鼠點擊原始 Marker
+            className: 'god-pulse-animation'
+          }).addTo(searchHighlightLayer);
+        }
+      });
+    }
+
+    // 搜尋 Edges
+    if (data && data.edges) {
+      data.edges.forEach(edge => {
+        if (!edge.hasOwnProperty(propName)) return;
+
+        let isMatch = false;
+        if (propValue === null) {
+            isMatch = true;
+        } else {
+            isMatch = (String(edge[propName]) === String(propValue));
+        }
+
+        if (isMatch) {
+          matchedEdgeCount++;
+          
+          const nodeA = data.nodes.find(n => n.id === edge.from);
+          const nodeB = data.nodes.find(n => n.id === edge.to);
+
+          if (nodeA && nodeB) {
+              L.polyline([[nodeA.lat, nodeA.lng], [nodeB.lat, nodeB.lng]], {
+                  color: '#00FFFF', // 螢光青
+                  weight: 14,
+                  opacity: 0.55,
+                  dashArray: '15, 10',
+                  lineCap: 'round',
+                  interactive: false // 這是關鍵！不會擋住滑鼠點擊原始 Polyline
+              }).addTo(searchHighlightLayer);
+          }
+        }
+      });
+    }
+
+    // 顯示結果反饋
+    const resultInfo = document.getElementById('search-result-info');
+    if (resultInfo) {
+      resultInfo.style.display = 'block';
+      if (matchedNodeCount === 0 && matchedEdgeCount === 0) {
+          resultInfo.style.borderLeftColor = '#f44336';
+          resultInfo.innerHTML = `❌ <b>未找到結果</b><br><span style="font-size:11px; color:#777;">條件: ${query}</span>`;
+      } else {
+          resultInfo.style.borderLeftColor = '#4CAF50';
+          resultInfo.innerHTML = `✅ <b>搜尋成功</b><br>找到 <b style="color:#FF007F;">${matchedNodeCount}</b> 個 Node<br>找到 <b style="color:#009999;">${matchedEdgeCount}</b> 條 Edge`;
+      }
+    }
+  }
+
+  // 綁定搜尋按鈕與事件
+  const searchBtn = document.getElementById('property-search-btn');
+  const clearBtn = document.getElementById('property-clear-btn');
+  const searchInput = document.getElementById('property-search-input');
+
+  if (searchBtn) searchBtn.addEventListener('click', () => performPropertySearch(searchInput.value));
+  if (clearBtn) clearBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      clearPropertyHighlight();
+  });
+  
+  if (searchInput) {
+    searchInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') performPropertySearch(searchInput.value);
+    });
+  }
+
   // --- 上帝模式開關邏輯 ---
   if (toggleBtn) {
     toggleBtn.addEventListener("click", () => {
@@ -607,6 +775,7 @@ export function initEditorMode(map, data, graph) {
       if (isEditModeActive) {
         editorLayerGroup.addTo(map);
         modePanel.style.display = 'flex';
+        searchPanel.style.display = 'block';
         if (exportBtn) exportBtn.style.display = 'block';
         toggleBtn.style.backgroundColor = "#d9534f";
         toggleBtn.innerHTML = "關閉 God Mode";
@@ -615,13 +784,14 @@ export function initEditorMode(map, data, graph) {
         map.removeLayer(editorLayerGroup);
         map.off('click', onMapClick);
         modePanel.style.display = 'none';
+        searchPanel.style.display = 'none';
         if (exportBtn) exportBtn.style.display = 'none';
         boxButtonPanel.style.display = 'none';
         selectedNodeForEdge = null;
         toggleBtn.style.backgroundColor = "#f0ad4e";
         toggleBtn.innerHTML = "🛠️ 開啟上帝模式";
         
-        // 防呆機制：關閉上帝模式時，強制復原地圖拖曳狀態
+        clearPropertyHighlight();
         resetBoxSelectButtons();
         refreshBoxButtons();
         updateMarkerDragState();
@@ -630,9 +800,131 @@ export function initEditorMode(map, data, graph) {
     });
   }
 
-  // --- 儲存至數據庫 ---
+  const PASSWORD_TOKEN_KEY = "export_password_token";
+
+  function isPasswordVerified() {
+    const token = sessionStorage.getItem(PASSWORD_TOKEN_KEY);
+    return !!token && token.length > 0;
+  }
+
+  function getPasswordToken() {
+    return sessionStorage.getItem(PASSWORD_TOKEN_KEY) || "";
+  }
+
+  function verifyPassword() {
+    return new Promise((resolve) => {
+      if (isPasswordVerified()) {
+        resolve(true);
+        return;
+      }
+
+      const passwordDiv = document.createElement('div');
+      passwordDiv.style = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        z-index: 10000;
+        min-width: 350px;
+        font-family: Arial, sans-serif;
+      `;
+      passwordDiv.innerHTML = `
+        <div style="display: flex; flex-direction: column; gap: 15px;">
+          <h3 style="margin: 0; color: #333; text-align: center;">🔐 密碼驗證</h3>
+          <p style="margin: 0; color: #666; font-size: 13px; text-align: center;">儲存修改需要密碼驗證</p>
+          <input type="password" id="password-input" placeholder="請輸入密碼" style="padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 14px;" autofocus>
+          <div style="display: flex; gap: 10px;">
+            <button id="password-confirm" style="flex: 1; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">確認</button>
+            <button id="password-cancel" style="flex: 1; padding: 10px; background: #ccc; color: #333; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;">取消</button>
+          </div>
+          <div id="password-error" style="color: #d32f2f; font-size: 12px; display: none; text-align: center;"></div>
+        </div>
+      `;
+
+      const overlay = document.createElement('div');
+      overlay.style = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 9999;
+      `;
+
+      document.body.appendChild(overlay);
+      document.body.appendChild(passwordDiv);
+
+      const passwordInput = document.getElementById('password-input');
+      const confirmBtn = document.getElementById('password-confirm');
+      const cancelBtn = document.getElementById('password-cancel');
+      const errorDiv = document.getElementById('password-error');
+
+      const cleanup = () => {
+        document.body.removeChild(overlay);
+        document.body.removeChild(passwordDiv);
+      };
+
+      confirmBtn.addEventListener('click', async () => {
+        const inputPassword = passwordInput.value;
+        confirmBtn.disabled = true;
+        confirmBtn.innerText = "⏳ 驗證中...";
+
+        try {
+          const response = await fetch('http://localhost:8000/api/verify-password', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ password: inputPassword })
+          });
+          const result = await response.json();
+
+          if (result.status === 'success' && result.token) {
+            sessionStorage.setItem(PASSWORD_TOKEN_KEY, result.token);
+            console.log("✅ 密碼驗證成功");
+            cleanup();
+            resolve(true);
+          } else {
+            errorDiv.textContent = "❌ 密碼錯誤，請重試";
+            errorDiv.style.display = 'block';
+            passwordInput.value = '';
+            passwordInput.focus();
+            confirmBtn.disabled = false;
+            confirmBtn.innerText = "確認";
+          }
+        } catch (error) {
+          console.error("密碼驗證請求失敗:", error);
+          errorDiv.textContent = "❌ 連線失敗，請檢查伺服器";
+          errorDiv.style.display = 'block';
+          confirmBtn.disabled = false;
+          confirmBtn.innerText = "確認";
+        }
+      });
+
+      cancelBtn.addEventListener('click', () => {
+        cleanup();
+        resolve(false);
+      });
+
+      passwordInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && !confirmBtn.disabled) {
+          confirmBtn.click();
+        }
+      });
+    });
+  }
+
   if (exportBtn) {
     exportBtn.addEventListener('click', async () => {
+      const passwordOk = await verifyPassword();
+      if (!passwordOk) {
+        console.log("密碼驗證已取消");
+        return;
+      }
+
       const originalText = exportBtn.innerText;
       exportBtn.innerText = "⏳ 儲存中...";
       exportBtn.style.backgroundColor = "#5bc0de";
@@ -640,7 +932,10 @@ export function initEditorMode(map, data, graph) {
       try {
         const response = await fetch('http://localhost:8000/api/graph', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 
+            'Content-Type': 'application/json',
+            'X-Export-Token': getPasswordToken()
+          },
           body: JSON.stringify(data)
         });
         const result = await response.json();
