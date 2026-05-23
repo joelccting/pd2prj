@@ -1,22 +1,390 @@
-底層實作
-    前端
-        使用者介面
-        地圖繪畫
-    後端
-        伺服器
-        演算法
-    資料儲存
-功能
-    導航模式
-        最短路徑
-        依順序巡航
-        自動規劃多目的地TSP
-    路線偏好
-        最短路徑
-        最少轉彎
-        最少爬坡
-        日曬地圖
-    God Mode
-        視覺化修改地圖
-            建築模式
-            修改模式
+========================
+ 底層實作
+========================
+
+【前端】
+━━━━━━━━━━━━━━━━━━
+1. 介紹
+   - 包含什麼：校園地圖的視覺化界面，包括地圖渲染、UI 元件、使用者互動功能
+   - 功能：使用者可以查看地圖、選擇起點終點、設定路線偏好、查看陰影和樹木覆蓋
+   - 怎麼使用：在瀏覽器中打開 index.html，與地圖互動選擇路線、點擊按鈕獲取導航結果
+
+2. 方法論
+   - 技術棧：Leaflet.js（地圖庫）、原生 HTML/CSS/JavaScript
+   - 流程：
+     • 載入 OpenStreetMap 地圖瓦片
+     • 從後端 API 獲取節點和邊的圖數據
+     • 在地圖上繪製節點（標記）、邊（多邊形）
+     • 監聽使用者點擊事件選擇起點/終點
+     • 提交路線請求至後端，獲得結果後在地圖上繪製路徑
+   - 語言：原生 JavaScript（無框架）
+   - 實現細節：
+     • 使用 L.map 初始化地圖，設置邊界和縮放級別
+     • 使用 L.tileLayer 加載 OpenStreetMap 圖層
+     • 用 L.marker 和自定義圖標表示節點
+     • 用 L.polyline 繪製邊和路徑
+
+3. 相關檔案
+   - js/app.js：主應用邏輯，地圖初始化、事件監聽、API 調用
+   - js/graph.js：圖數據結構定義（Node、Edge、Graph 類）
+   - js/editor.js：God Mode 編輯器功能
+   - js/lang.js：語言和本地化支持
+   - css/styles.css：樣式定義
+   - index.html：主頁面結構
+
+【地圖繪畫】
+━━━━━━━━━━━━━━━━━━
+1. 介紹
+   - 包含什麼：在地圖上動態繪製校園地圖要素，包括建築、樹木、邊線、路徑
+   - 功能：顯示校園地理信息，支持不同的視覺層（陰影、樹木覆蓋等），實時更新路徑顯示
+   - 怎麼使用：地圖自動加載地理數據，不同層可通過控件切換顯示/隱藏
+
+2. 方法論
+   - 技術：Leaflet.js LayerGroup、GeoJSON 渲染、Shapely（Python）用於多邊形計算
+   - 流程：
+     • 從 GeoJSON 文件讀取建築和樹木數據
+     • 使用 Leaflet 的 GeoJSON layer 渲染地理要素
+     • 根據太陽位置動態計算陰影多邊形
+     • 將陰影和樹木覆蓋渲染為不同顏色的層
+     • 路線計算後立即在地圖上繪製路徑
+   - 語言：JavaScript（Leaflet）+ Python（Shapely）
+   - 實現細節：
+     • 使用 treeShadeLayer、buildingShadowLayer 等 LayerGroup 管理不同層
+     • 調用 /api/current-shadow-polygons 獲取實時陰影多邊形
+     • 用 L.GeoJSON 和自定義 style 函數繪製不同樣式的要素
+
+3. 相關檔案
+   - js/app.js：層管理和更新邏輯
+   - index.html：地圖容器和控件
+   - ccu_buildings.geojson：建築數據
+   - ccu_trees_ready.geojson：樹木數據
+   - main.py：/api/current-shadow-polygons 端點（陰影計算）
+   - shadow_calculator.py：陰影多邊形生成
+
+========================
+【後端】
+━━━━━━━━━━━━━━━━━━
+1. 介紹
+   - 包含什麼：REST API 服務器，處理路由計算、數據查詢、圖修改請求
+   - 功能：接收客戶端請求，調用 C++ 路由引擎計算最優路徑，返回圖數據和陰影信息
+   - 怎麼使用：啟動 main.py 後會在 localhost:8000 開啟 API 服務，前端通過 HTTP 請求調用
+
+2. 方法論
+   - 框架：FastAPI（Python）
+   - 流程：
+     • 應用啟動時自動清洗高程數據（clean_elevation.py）
+     • 初始化陰影計算機（ShadowCalculator）
+     • 監聽來自前端的四類請求：
+       ✓ /api/route：調用 C++ main.exe 計算路徑
+       ✓ /api/graph：返回節點和邊的圖數據
+       ✓ /api/current-shadow-polygons：計算和返回實時陰影多邊形
+       ✓ /api/get-tree-polygons：返回樹木覆蓋多邊形
+     • 支持密碼驗證和圖數據導出功能
+   - 語言：Python
+   - 實現細節：
+     • 使用 lifespan context manager 在啟動/關閉時執行清理
+     • 使用 pysolar 計算太陽位置（高度角、方位角）
+     • 使用 geopandas 和 shapely 進行地理空間計算
+     • CORS 中間件允許跨域請求
+
+3. 相關檔案
+   - main.py：FastAPI 應用主文件，API 端點定義
+   - shadow_calculator.py：陰影計算引擎
+   - clean_elevation.py：高程數據清洗
+   - fetch_elevation.py：高程數據獲取
+   - requirements.txt：Python 依賴列表
+
+【路由演算法】
+━━━━━━━━━━━━━━━━━━
+1. 介紹
+   - 包含什麼：校園導航的核心路由計算引擎，支持多種路線優化策略
+   - 功能：根據起點、終點和路線偏好（最短、最少轉彎、最少爬坡等），計算最優路徑
+   - 怎麼使用：前端設置起點、終點、選擇導航模式和路線偏好，後端調用 C++ 引擎計算並返回路線
+
+2. 方法論
+   - 核心技術：C++ 實現的 Dijkstra 算法，支持多目標 TSP（旅行商人問題）
+   - 流程：
+     • 前端發送 POST 請求到 /api/route，包含：starts（起點列表）、ends（終點列表）、mode（導航模式）、vehicle（交通工具）
+     • 後端調用 main.exe，傳遞參數：起點ID、終點ID、導航模式、交通工具
+     • C++ 引擎根據邊的距離、爬坡度、轉彎次數等屬性計算成本
+     • 返回最優路徑的節點序列
+   - 語言：C++（核心算法）
+   - 支持的模式：
+     ✓ 最短路徑（shortest）
+     ✓ 依順序巡航（sequential）
+     ✓ 多目的地 TSP（tsp）
+   - 支持的交通工具：步行（walk）、自行車（bike）等
+
+3. 相關檔案
+   - main.exe：編譯後的 C++ 路由引擎
+   - main.cpp：C++ 源代碼
+   - campus_nodes_edges.json：圖的節點和邊的數據
+   - main.py：路由 API 端點（/api/route）
+
+【資料儲存】
+━━━━━━━━━━━━━━━━━━
+1. 介紹
+   - 包含什麼：校園地理數據和圖數據的存儲結構，包括節點、邊、建築、樹木等
+   - 功能：持久化存儲校園地圖信息，支持讀取、修改、導出功能
+   - 怎麼使用：系統自動讀取 JSON 和 GeoJSON 文件，支持通過 API 修改並保存
+
+2. 方法論
+   - 格式：
+     • JSON：圖數據（節點、邊及其屬性）
+     • GeoJSON：地理空間數據（建築、樹木、陰影）
+     • TXT：人類可讀的圖描述（debug 用）
+   - 流程：
+     • 系統啟動時讀取 campus_nodes_edges.json（圖的唯一真相來源）
+     • 讀取 ccu_buildings.geojson 和 ccu_trees_ready.geojson（地理數據）
+     • 根據數據初始化陰影計算機、驗證數據完整性
+     • 支持通過 /api/save-graph 修改並保存圖數據
+   - 語言：JSON、Python（json 模塊）、JavaScript（fetch API）
+
+3. 相關檔案
+   - campus_nodes_edges.json：圖的節點和邊（核心數據文件）
+   - campus_nodes_edges_categorized.json：備份文件
+   - ccu_buildings.geojson：建築地理數據
+   - ccu_buildings_ready.geojson：處理後的建築數據
+   - ccu_trees_ready.geojson：樹木地理數據
+   - ccu.geojson：通用地理數據
+   - graph.txt：圖的文本表示
+   - nodes.txt：節點數據
+   - prepare_data.py：數據準備和轉換脚本
+
+
+========================
+ 功能
+========================
+
+【導航模式】
+━━━━━━━━━━━━━━━━━━
+
+【最短路徑（Shortest Path）】
+1. 介紹
+   - 包含什麼：計算起點到終點距離最短的路徑
+   - 功能：在校園內快速導航到目的地，優先考慮距離而非其他因素
+   - 怎麼使用：選擇起點、終點，在模式選擇中選擇「最短路徑」模式，點擊「取得路線」
+
+2. 方法論
+   - 技術：Dijkstra 算法，邊權重為實際距離（單位：米）
+   - 流程：
+     • 前端設置 mode="shortest"
+     • C++ 引擎計算圖中起點到終點的最短距離路徑
+     • 沿著經過的邊累加距離，找到最小值
+   - 實現：main.cpp 中的 Dijkstra 實現，以距離作為成本函數
+
+3. 相關檔案
+   - main.cpp：最短路徑算法實現
+   - main.py：API 路由（第一個參數為 "shortest"）
+
+【依順序巡航（Sequential）】
+1. 介紹
+   - 包含什麼：順序訪問多個目的地，按照給定的順序依次到達
+   - 功能：適合需要按特定順序訪問多個地點的場景（如巡檢、送貨）
+   - 怎麼使用：輸入多個終點，選擇「依順序巡航」模式，系統會按順序計算路徑
+
+2. 方法論
+   - 技術：依次計算相鄰兩個節點間的最短路徑，串接成完整路線
+   - 流程：
+     • 前端設置 mode="sequential"，提供 starts 和 ends（都為節點列表）
+     • C++ 引擎依次計算：starts[0]→ends[0]、ends[0]→ends[1]、...、ends[n-2]→ends[n-1]
+     • 將所有路段串接成一條完整路線
+   - 實現：多次調用 Dijkstra，結果列表拼接
+
+3. 相關檔案
+   - main.cpp：sequential 模式實現
+   - main.py：API 路由
+
+【自動規劃多目的地 TSP（Traveling Salesman Problem）】
+1. 介紹
+   - 包含什麼：自動找到訪問多個目的地且總距離最短的路線
+   - 功能：智能規劃路線順序，適合需要高效訪問多個位置的場景（如外勤工作）
+   - 怎麼使用：輸入起點和多個終點，選擇「TSP」模式，系統自動確定最優訪問順序
+
+2. 方法論
+   - 技術：動態規劃或啟發式算法（具體實現在 C++）解決 TSP 問題
+   - 流程：
+     • 前端設置 mode="tsp"，提供 starts（通常為單個起點）和 ends（多個終點）
+     • C++ 引擎通過以下步驟：
+       ✓ 計算所有終點之間的距離矩陣
+       ✓ 找到訪問所有終點總距離最短的順序
+       ✓ 返回最優路線的節點序列
+   - 實現：TSP 算法（可能使用分支定界或貪心+本地搜索）
+
+3. 相關檔案
+   - main.cpp：TSP 算法實現
+   - main.py：API 路由
+
+【路線偏好】
+━━━━━━━━━━━━━━━━━━
+
+【最短路徑（Shortest Distance）】
+1. 介紹
+   - 包含什麼：優先選擇距離最短的路線
+   - 功能：最快到達目的地
+   - 怎麼使用：在路線偏好中選擇「最短路徑」
+
+2. 方法論
+   - 技術：邊權重為距離（distance 屬性）
+   - 實現：C++ 中的成本函數使用 edge.distance
+
+3. 相關檔案
+   - campus_nodes_edges.json：邊的距離屬性
+   - main.cpp：成本函數計算
+
+【最少轉彎（Fewest Turns）】
+1. 介紹
+   - 包含什麼：優先選擇轉彎次數最少的路線
+   - 功能：提高導航體驗，減少複雜的轉向指示
+   - 怎麼使用：在路線偏好中選擇「最少轉彎」
+
+2. 方法論
+   - 技術：邊權重為轉彎成本（turn_penalty 或類似屬性）
+   - 流程：
+     • 計算每條邊的轉彎成本（根據到達角度和離開角度的差異）
+     • C++ 算法優先選擇轉彎少的邊
+   - 實現：在 Dijkstra 的成本函數中加入轉彎懲罰
+
+3. 相關檔案
+   - campus_nodes_edges.json：邊的轉彎相關屬性
+   - main.cpp：轉彎成本計算
+
+【最少爬坡（Least Elevation Gain）】
+1. 介紹
+   - 包含什麼：優先選擇爬坡度最小的路線
+   - 功能：減輕體力消耗，適合行動不便或不想登山的使用者
+   - 怎麼使用：在路線偏好中選擇「最少爬坡」
+
+2. 方法論
+   - 技術：
+     • 邊權重為爬坡度或海拔增益
+     • 數據來源：OpenTopography 的 SRTM 高程數據
+   - 流程：
+     • 於系統啟動時透過 fetch_elevation.py 獲取校園內所有節點的海拔
+     • 根據相鄰節點的海拔差計算邊的爬坡度：slope = (elevation[to] - elevation[from]) / distance
+     • C++ 算法優先選擇爬坡度小的邊
+   - 實現：
+     • fetch_elevation.py：批量查詢海拔（OpenTopography API）
+     • recalculate_distance_and_slopes：重新計算距離和爬坡度
+     • main.cpp：爬坡成本函數
+
+3. 相關檔案
+   - fetch_elevation.py：海拔數據獲取
+   - campus_nodes_edges.json：節點的海拔和邊的爬坡度
+   - main.cpp：爬坡成本計算
+   - clean_elevation.py：高程數據清洗
+
+【日曬地圖（Shade/Sun Map）】
+1. 介紹
+   - 包含什麼：顯示當前時間校園各位置的陰影覆蓋情況
+   - 功能：使用者可以查看日曬情況，選擇避日的路線
+   - 怎麼使用：地圖自動實時顯示陰影，選擇路線時可考慮陰影覆蓋
+
+2. 方法論
+   - 技術：
+     • Pysolar：計算太陽位置（高度角、方位角）
+     • Shapely：計算建築投影陰影
+     • GeoJSON：存儲和渲染陰影多邊形
+   - 流程：
+     • 系統啟動時載入建築 GeoJSON（ccu_buildings.geojson）
+     • 當前端訪問 /api/current-shadow-polygons 時：
+       ✓ 計算當前時間的太陽位置（高度角 altitude、方位角 azimuth）
+       ✓ 根據建築高度和太陽位置計算投影方向
+       ✓ 使用 Shapely 計算建築在地面上的投影陰影
+       ✓ 返回 GeoJSON 格式的陰影多邊形
+     • 前端將陰影多邊形渲染為灰色或藍色層
+   - 實現細節：
+     • 選擇「日曬地圖」路線偏好時，C++ 算法將邊的「陰影覆蓋度」作為成本
+     • 優先選擇被陰影覆蓋較多的邊
+   - 語言：Python（Pysolar、Shapely）+ JavaScript（渲染）
+
+3. 相關檔案
+   - main.py：/api/current-shadow-polygons 端點
+   - shadow_calculator.py：陰影多邊形計算引擎
+   - ccu_buildings.geojson：建築數據（包括高度）
+   - js/app.js：陰影層渲染和更新
+   - main.cpp：陰影成本計算（可能有 shadow 相關屬性）
+
+【God Mode】
+━━━━━━━━━━━━━━━━━━
+1. 介紹
+   - 包含什麼：隱藏功能，允許開發者/管理員修改校園地圖數據
+   - 功能：添加/刪除建築或節點，修改邊和節點的屬性，實時保存到數據庫
+   - 怎麼使用：通過特殊密碼驗證後，切換至「God Mode」，選擇「建築模式」或「修改模式」進行編輯
+
+2. 方法論
+   - 技術：
+     • 前端：Leaflet 地圖編輯 UI、HTML5 Drag & Drop
+     • 後端：FastAPI 密碼驗證、JSON 文件更新
+   - 流程：
+     • 點擊 "God Mode" 按鈕，提示輸入密碼
+     • 驗證密碼通過後，地圖進入編輯模式
+     • 顯示額外的編輯控件和屬性面板
+   - 語言：JavaScript（前端編輯）+ Python（後端驗證和保存）
+   - 安全機制：
+     • 密碼驗證（/api/verify-password）
+     • 導出時需要 token 驗證
+
+3. 相關檔案
+   - js/editor.js：God Mode 編輯邏輯
+   - main.py：/api/verify-password、/api/save-graph 端點
+   - js/app.js：God Mode 初始化
+
+【建築模式（Building Mode）】
+1. 介紹
+   - 包含什麼：在 God Mode 中添加或刪除校園建築
+   - 功能：修改校園建築布局，自動更新相關的圖數據
+   - 怎麼使用：
+     • 添加：點擊地圖位置，輸入建築名稱和參數，確認新增
+     • 刪除：選擇建築，點擊刪除按鈕
+
+2. 方法論
+   - 技術：Leaflet 地圖交互、GeoJSON 編輯、JSON 文件更新
+   - 流程：
+     • 用戶點擊「建築模式」按鈕
+     • 激活地圖的點擊事件監聽
+     • 用戶點擊地圖位置後顯示輸入對話框
+     • 輸入建築屬性（名稱、高度等）並確認
+     • 發送 POST 請求至後端保存新建築
+     • 後端更新 ccu_buildings.geojson 和 campus_nodes_edges.json
+     • 前端重新載入數據，更新地圖顯示
+   - 實現：
+     • 使用 getElevation() 自動查詢建築位置的海拔
+     • 根據建築位置計算新的節點和邊
+     • 將新建築添加至 GeoJSON 並保存
+
+3. 相關檔案
+   - js/editor.js：建築添加/刪除邏輯
+   - main.py：/api/save-graph 端點（保存建築數據）
+   - ccu_buildings.geojson：建築數據文件
+   - campus_nodes_edges.json：圖的節點和邊
+
+【修改模式（Modify Mode）】
+1. 介紹
+   - 包含什麼：在 God Mode 中修改節點、邊和其他地圖要素的屬性
+   - 功能：調整節點位置、修改邊的屬性（距離、爬坡度等）、更新建築信息
+   - 怎麼使用：
+     • 在修改模式中點擊要修改的元素（節點或邊）
+     • 在側邊欄修改屬性
+     • 自動保存或手動保存
+
+2. 方法論
+   - 技術：
+     • 屬性搜尋過濾（支持邏輯查詢，如 "tree_shade=1 且 lit=0"）
+     • 批量選擇（框選多個要素）
+     • 即時預覽和驗證
+   - 流程：
+     • 進入修改模式，地圖上高亮顯示所有編輯對象
+     • 可使用屬性搜尋面板查詢特定要素
+     • 點擊要修改的節點/邊，在右側面板顯示屬性
+     • 修改屬性值，按 Enter 或點擊保存
+     • 後端驗證修改有效性，更新 JSON 文件
+   - 實現細節：
+     • 支持框選：按住 Shift 拖拽框出多個要素
+     • 屬性驗證：防止無效的數據修改
+     • 版本控制：保留修改前的備份
+
+3. 相關檔案
+   - js/editor.js：修改邏輯、屬性面板
+   - main.py：/api/save-graph 端點
+   - campus_nodes_edges.json：編輯對象的源數據
