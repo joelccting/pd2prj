@@ -798,7 +798,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 89,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 507170464,
@@ -838,7 +838,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 74,
-      "category": "school"
+      "category": "housing"
     },
     {
       "id": 625885179,
@@ -888,7 +888,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 81,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 625890361,
@@ -1048,7 +1048,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 84,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1257174524,
@@ -1228,7 +1228,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 89,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776019,
@@ -1238,7 +1238,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 81,
-      "category": "housing"
+      "category": "dining"
     },
     {
       "id": 1775446776035,
@@ -1258,7 +1258,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 67,
-      "category": "housing"
+      "category": "school"
     },
     {
       "id": 1775446776050,
@@ -1268,7 +1268,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 0,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776055,
@@ -1298,7 +1298,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 76,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776060,
@@ -1308,7 +1308,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 76,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776061,
@@ -1368,7 +1368,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 84,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776130,
@@ -1438,7 +1438,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 101,
-      "category": "school"
+      "category": "housing"
     },
     {
       "id": 1775446776125,
@@ -1468,7 +1468,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 89,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776123,
@@ -1498,7 +1498,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 89,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776101,
@@ -1508,7 +1508,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 89,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776102,
@@ -1518,7 +1518,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 91,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776096,
@@ -1528,7 +1528,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 84,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776106,
@@ -1538,7 +1538,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 91,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776110,
@@ -1548,7 +1548,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 81,
-      "category": "school"
+      "category": "housing"
     },
     {
       "id": 1775446776111,
@@ -1588,7 +1588,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 68,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776076,
@@ -1608,7 +1608,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 70,
-      "category": "school"
+      "category": "housing"
     },
     {
       "id": 1775446776078,
@@ -1638,7 +1638,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 74,
-      "category": "dining"
+      "category": "housing"
     },
     {
       "id": 1775446776084,
@@ -1778,7 +1778,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 84,
-      "category": "dining"
+      "category": "school"
     },
     {
       "id": 1775446776267,
@@ -1928,7 +1928,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 86,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 1775446776188,
@@ -2788,7 +2788,7 @@
       "accessible": true,
       "type": "poi",
       "elevation": 86,
-      "category": "school"
+      "category": "dining"
     },
     {
       "id": 664411067,
