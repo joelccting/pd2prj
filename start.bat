@@ -38,7 +38,7 @@ if %errorlevel% neq 0 (
 
 :: 執行編譯 (-O3 代表最高效能優化)
 echo ⏳ 正在編譯 C++ 演算法引擎...
-g++ main.cpp -o dijkstra.exe -O3
+g++ main.cpp -o main.exe -O3
 if %errorlevel% neq 0 (
     echo ❌ [錯誤] C++ 編譯失敗！請檢查 main.cpp 是否有語法錯誤。
     echo.
