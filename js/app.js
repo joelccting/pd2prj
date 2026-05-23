@@ -153,7 +153,8 @@ window.updateDropdownLanguage = function(currentLang) {
       const catTranslations = {
         "school": { zh: "🏫 學校建築", en: "🏫 School Buildings" },
         "housing": { zh: "🛏️ 住宿區", en: "🛏️ Accommodation" },
-        "dining": { zh: "🍔 飲食與生活", en: "🍔 Dining & Life" }
+        "dining": { zh: "🍔 飲食與生活", en: "🍔 Dining & Life" },
+        "other": { zh: "其他", en: "Other" }
       };
       if (catTranslations[catKey] && catTranslations[catKey][currentLang]) {
         group.label = catTranslations[catKey][currentLang];
@@ -671,10 +672,11 @@ const buildingCategoryColors = {
 window.buildingCategories = {
   "school": { zh: "學校區", en: "School", color: "#2196F3" },
   "dining": { zh: "餐飲區", en: "Dining", color: "#FF9800" },
-  "housing": { zh: "住宿區", en: "Accommodation", color: "#000000" }
+  "housing": { zh: "住宿區", en: "Accommodation", color: "#000000" },
+  "other": { zh: "其他", en: "Other", color: "#9E9E9E" }
 };
 
-const categoryOrder = ["school", "dining", "housing"];
+const categoryOrder = ["school", "dining", "housing", "other"];
 
 function createLocationMarkerIcon(category) {
   const color = buildingCategoryColors[category] || buildingCategoryColors.school;
