@@ -105,7 +105,13 @@ def generate_graph_txt(current_time=None):
 
     with open(DATA_FILE, 'r', encoding='utf-8') as f:
         data = json.load(f)
-
+    with open(NODES_FILE, 'w', encoding='utf-8') as f:
+        for node in data['nodes']:
+            nid = node['id']
+            lat = node.get('lat', 0)
+            lon = node.get('lng', node.get('lon', 0))  # 相容 lng 或 lon
+            f.write(f"{nid} {lat} {lon}\n")
+    print("✅ nodes.txt 重新生成完成！")
     # 動態計算建築物陰影 (給 C++ 用)
     shaded_edge_ids = []
     if shadow_calc:
@@ -132,9 +138,6 @@ def generate_graph_txt(current_time=None):
 
             # 寫入格式給 C++
             f.write(f"{u} {v} 4 distance {dist} slope {slope} tree_shade {tree_shade} building_shade {building_shade}\n")
-            
-            if not edge.get('is_oneway', False):
-                f.write(f"{v} {u} 4 distance {dist} slope {slope} tree_shade {tree_shade} building_shade {building_shade}\n")
                 
     print("✅ C++ 專用圖資 (graph.txt) 生成完成！")
 
@@ -171,6 +174,7 @@ async def startup_event():
 
 @app.post("/api/route")
 async def get_route(req: RouteRequest):
+    print(f"🧭 收到路徑請求: starts={req.starts}, ends={req.ends}, mode={req.mode}, vehicle={req.vehicle}")
     exe_name = "./main" if os.name != 'nt' else "main.exe"
     
     starts_str = ",".join(map(str, req.starts))

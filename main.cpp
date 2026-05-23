@@ -8,10 +8,20 @@
 #include <algorithm>
 #include <string>
 #include <sstream>
+#include <cmath>
 
 using namespace std;
 
-// 定義邊的結構
+// --- 結構定義 ---
+
+// 節點結構 (新增座標，用於計算轉彎角度)
+struct Node {
+    long long id;
+    double lat;
+    double lon;
+};
+
+// 邊的結構
 struct Edge {
     long long to; 
     double distance = 1.0;
@@ -20,7 +30,23 @@ struct Edge {
     double building_shade = 0.0;
 };
 
-// 輔助函數：將以逗號分隔的字串 "1,2,3" 解析成 vector
+// 狀態結構 (Priority Queue 使用)
+struct State {
+    double cost;  // 累積的權重
+    long long u;  // 當前節點
+    long long p;  // 前一個節點
+    
+    bool operator>(const State& other) const {
+        return cost > other.cost;
+    }
+};
+
+// --- 全域變數 ---
+unordered_map<long long, vector<Edge>> graph;
+unordered_map<long long, Node> nodes; // 儲存所有節點的座標
+
+// --- 輔助函數 ---
+
 vector<long long> parseList(const string& str) {
     vector<long long> res;
     stringstream ss(str);
@@ -31,9 +57,23 @@ vector<long long> parseList(const string& str) {
     return res;
 }
 
-unordered_map<long long, vector<Edge>> graph;
+// 載入節點座標
+void loadNodes(const string& filename) {
+    ifstream infile(filename);
+    if (!infile.is_open()) {
+        cerr << "Error: Cannot open " << filename << endl;
+        exit(1);
+    }
+    long long id;
+    double lat, lon;
+    // 假設 nodes.txt 的格式是: id lat lon
+    while (infile >> id >> lat >> lon) {
+        nodes[id] = {id, lat, lon};
+    }
+    infile.close();
+}
 
-// 讀取圖資的函數
+// 載入圖的邊與權重
 void loadGraph(const string& filename) {
     ifstream infile(filename);
     if (!infile.is_open()) {
@@ -61,111 +101,154 @@ void loadGraph(const string& filename) {
     infile.close();
 }
 
+// 計算轉彎角度
+double calculate_turn_angle(Node prev, Node curr, Node next) {
+    double dx1 = curr.lon - prev.lon;
+    double dy1 = curr.lat - prev.lat;
+    
+    double dx2 = next.lon - curr.lon;
+    double dy2 = next.lat - curr.lat;
+    
+    double angle1 = atan2(dy1, dx1);
+    double angle2 = atan2(dy2, dx2);
+    
+    double diff = abs(angle2 - angle1);
+    if (diff > M_PI) {
+        diff = 2.0 * M_PI - diff;
+    }
+    return diff; 
+}
+
+// --- 主程式 ---
+
 int main(int argc, char* argv[]) {
-    // 檢查參數數量 (執行檔名稱, 起點列表, 終點列表, 模式, 交通工具)
+    cerr << "starts: " << argv[1] << endl;
+    cerr << "ends: " << argv[2] << endl;
+    cerr << "mode: " << argv[3] << endl;
+    cerr << "graph edges loaded: " << graph.size() << endl;
+    cerr << "nodes loaded: " << nodes.size() << endl;
     if (argc < 5) {
         cerr << "Usage: ./main <starts> <ends> <mode> <vehicle>" << endl;
         return 1;
     }
 
-    // 解析命令列參數
     vector<long long> starts = parseList(argv[1]);
     vector<long long> ends = parseList(argv[2]);
     string mode = argv[3];
     string vehicle = argv[4];
 
-    // 載入 Python 準備好的帶有權重的圖資檔案
+    // 載入檔案 (請確保檔名與路徑正確)
+    loadNodes("nodes.txt"); 
     loadGraph("graph.txt");
 
-    // 將目標節點放入 Set，加速查詢
     unordered_set<long long> target_nodes(ends.begin(), ends.end());
-    priority_queue<pair<double, long long>, 
-                   vector<pair<double, long long>>, 
-                   greater<pair<double, long long>>> pq;
+    
+    // 修正點 1：改用自訂的 State 結構
+    priority_queue<State, vector<State>, greater<State>> pq;
 
-    // 🌟 修正點：降維成 1D unordered_map，避免大量記憶體分配導致 bad_alloc！
-    // 記錄起點到該節點的最小成本
-    unordered_map<long long, double> dist;
-    // 記錄回溯路徑的父節點
-    unordered_map<long long, long long> parent;
+    unordered_map<long long, unordered_map<long long, double>> dist;
+    unordered_map<long long, unordered_map<long long, long long>> parent;
 
-    // 將所有起點放入 Queue 初始化
+    // 修正點 2：加入 p = -1 作為起點的標記
     for (long long start : starts) {
-        pq.push({0.0, start});
-        dist[start] = 0.0;
+        pq.push({0.0, start, -1});
+        dist[start][-1] = 0.0;  // 這裡升級成 2D [目前節點][-1]
     }
 
     long long final_end = -1;
 
-    // 開始 Dijkstra 尋路
     while (!pq.empty()) {
-        auto [current_dist, current_node] = pq.top();
-        pq.pop();
+    State current_state = pq.top();
+    pq.pop();
+    double current_dist = current_state.cost;
+    long long u = current_state.u;
+    long long p = current_state.p;
 
-        // 如果找到任何一個目標節點，提早結束搜尋
-        if (target_nodes.count(current_node)) {
-            final_end = current_node;
-            break;
-        }
+    if (dist.count(u) && dist[u].count(p) && current_dist > dist[u][p]) continue;
+    if (target_nodes.count(u)) {
+        final_end = u;
+        break;
+    }
 
-        // Lazy deletion：如果取出的距離比目前記錄的最佳距離還大，代表這是一條舊路徑，略過。
-        if (current_dist > dist[current_node]) continue;
-
-        // 遍歷所有相連的邊 (Neighbors)
-        for (const auto& edge : graph[current_node]) {
-            long long next_node = edge.to;
-
-            // 預設成本為距離
-            double next_weight = edge.distance;
-            double penalty = 0.0;
-
-            // 1. 處理坡度懲罰
-            if (edge.slope > 0.08) {
-                penalty += 1000.0 + (edge.slope * 5000.0);
-            }
-
-            // 2. 處理日曬/林蔭模式 (Mode: shade)
-            if (mode == "shade") {
-                if (edge.tree_shade > 0.5 || edge.building_shade > 0.5) {
-                    next_weight *= 0.3; 
+        for (const auto& edge : graph[u]) {
+            long long v = edge.to;
+            double next_cost = edge.distance; 
+            
+            // --- 依照不同模式套用各自的權重與懲罰 ---
+            if (mode == "shortest") {
+                next_cost = edge.distance;
+                
+            } else if (mode == "least_climbing") {
+                // 用絕對值，上下坡都算；斜率越大懲罰越重
+                double abs_slope = abs(edge.slope);
+                if (abs_slope > 0.01) {
+                    next_cost += abs_slope * 10000.0;
+                }
+            } else if (mode == "shade") {
+                // 將樹蔭與建築物陰影相加，但最高限制在 1.0 (100% 遮蔽)
+                double total_shade = min(1.0, edge.tree_shade + edge.building_shade);
+                
+                if (total_shade >= 0.5) { 
+                    // 遮蔽率大於 50%，當作林蔭大道，給予權重折扣
+                    next_cost *= 0.4; 
                 } else {
-                    penalty += next_weight * 5.0; 
+                    // 遮蔽率不足，太陽直射，加上固定懲罰
+                    // 這個 50.0 可以視你的 base distance 單位來調整 (如果是公尺，50 算是滿有感的懲罰)
+                    next_cost += 50.0; 
+                }    
+            } else if (mode == "least_turns") {
+                if (p != -1) { 
+                    if (nodes.count(p) && nodes.count(u) && nodes.count(v)) {
+                        double turn_rad = calculate_turn_angle(nodes[p], nodes[u], nodes[v]);
+                        // 2. 只要有微小轉彎 (大約 11 度) 就視為轉彎，並給予毀滅性懲罰
+                        if (turn_rad > M_PI / 16.0) {
+                            next_cost += 99999.0; 
+                        }
+                    }
                 }
             }
 
-            // 計算走到下個節點的總新成本
-            double new_dist = current_dist + next_weight + penalty;
+            double dist_v_u = (dist.count(v) && dist[v].count(u)) ? dist[v][u] : numeric_limits<double>::max();
 
-            // Relaxation 鬆弛步驟：如果找到更便宜的走法，就更新它
-            if (dist.find(next_node) == dist.end() || new_dist < dist[next_node]) {
-                dist[next_node] = new_dist;
-                parent[next_node] = current_node; // 紀錄從哪裡走過來的，供回溯使用
-                pq.push({new_dist, next_node});
+            if (current_dist + next_cost < dist_v_u) {
+                dist[v][u] = current_dist + next_cost;
+                parent[v][u] = p; // 紀錄從狀態 (v, u) 往回推，前一步是 p
+                pq.push({dist[v][u], v, u});
             }
         }
     } 
 
-    // 回溯與輸出路徑
-    if (final_end == -1) {
-        // 找不到任何路徑到達終點
+   if (final_end == -1) {
         cout << "NONE\n";
     } else {
+        // 找出到達終點的所有狀態中，Cost 最小的那一個 p
+        double min_final_dist = numeric_limits<double>::max();
+        long long best_p = -1;
+        
+        for (const auto& [prev_node, cost] : dist[final_end]) {
+            if (cost < min_final_dist) {
+                min_final_dist = cost;
+                best_p = prev_node;
+            }
+        }
+
+        // 開始回溯路徑
         vector<long long> path;
         long long curr = final_end;
+        long long prev = best_p;
         
-        // 循著 parent 指標往回找，直到沒有 parent 為止 (即起點)
-        while (true) {
-            path.push_back(curr);
-            if (parent.find(curr) == parent.end()) {
-                break; 
-            }
-            curr = parent[curr];
+        path.push_back(curr);
+        
+        // 如果 prev == -1，代表已經回到當初起點放入 Queue 時的狀態了
+        while (prev != -1) {
+            path.push_back(prev);
+            long long next_prev = parent[curr][prev];
+            curr = prev;
+            prev = next_prev;
         }
         
-        // 因為是從終點往回找，所以需要反轉陣列
         reverse(path.begin(), path.end());
         
-        // 輸出結果給 Python 讀取 (以空格分隔的 ID 列表)
         for (size_t i = 0; i < path.size(); ++i) {
             cout << path[i] << (i == path.size() - 1 ? "" : " ");
         }

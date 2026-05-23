@@ -211,7 +211,7 @@ addBtn.addEventListener('click', () => {
   window.updateDropdownLanguage(currentLang);
 });
 
-async function fetchSegment(startsNames, endsNames, mode = "distance", vehicle = "walk") {
+async function fetchSegment(startsNames, endsNames, mode, vehicle ) {
   const startIds = [];
   startsNames.forEach(name => {
     if (nodesByName[name]) {
@@ -478,7 +478,7 @@ function displayTravelTimes(mainSeconds, walkSeconds, selectedMode) {
 let currentPathLayerGroup = null;
 
 // 👇 接收 mode 參數，並根據 mode 決定路線基礎顏色
-function drawPath(nodeIds, visitOrder = [], mode = "distance") {
+function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
   if (currentPathLayerGroup) map.removeLayer(currentPathLayerGroup);
   currentPathLayerGroup = L.layerGroup().addTo(map);
 
