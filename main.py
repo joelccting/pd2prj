@@ -170,19 +170,20 @@ async def startup_event():
                 json.dump(data, f, ensure_ascii=False, indent=2)
             print("✅ 已自動為圖資中的所有 Edge 補上 'id' 欄位並存檔！")
 
-    # 初始化原本的陰影計算機 (供導航避暑使用)
+    generate_graph_txt()
+
+     # 有 BUILDINGS_FILE 才初始化陰影計算機
     if os.path.exists(DATA_FILE) and os.path.exists(BUILDINGS_FILE):
-        print("🔄 正在初始化路段陰影計算機 (建立 R-tree)...")
+        print("🔄 正在初始化路段陰影計算機...")
         shadow_calc = ShadowCalculator(BUILDINGS_FILE, DATA_FILE)
-        generate_graph_txt()
-    else:
-        print("⚠️ 缺少必要的 GeoJSON 或更新版的 JSON，請確認檔案路徑。")
+        generate_graph_txt()  # 有陰影資料就再生成一次（含 building_shade）
 
 
 @app.post("/api/route")
 async def get_route(req: RouteRequest):
     print(f"🧭 收到路徑請求: starts={req.starts}, ends={req.ends}, mode={req.mode}, vehicle={req.vehicle}")
-    exe_name = "./main" if os.name != 'nt' else "main.exe"
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    exe_name = os.path.join(BASE_DIR, "main.exe" if os.name == 'nt' else "main")
     
     starts_str = ",".join(map(str, req.starts))
     ends_str = ",".join(map(str, req.ends))

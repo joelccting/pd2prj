@@ -493,7 +493,8 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
   for (let i = 0; i < nodeIds.length - 1; i++) {
     const u = nodeIds[i], v = nodeIds[i+1];
     const nodeU = graph.nodes.get(u), nodeV = graph.nodes.get(v);
-    const edge = globalData.edges.find(e => (e.from===u&&e.to===v)||(e.from===v&&e.to===u));
+    const edge = globalData.edges.find(e => e.from===u && e.to===v)
+          || globalData.edges.find(e => e.from===v && e.to===u);
     
     const isWalkRequired = edge && edge[selectedTransport] === 0;
 

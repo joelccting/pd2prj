@@ -189,37 +189,31 @@ int main(int argc, char* argv[]) {
             else if (vehicle == "car")   can_ride = edge.car == 1;
             else can_ride = true;
             if (vehicle == "walk" && edge.walk == 0) continue;
-            double next_cost = can_ride ? edge.distance : edge.distance * 3.0;
             
             // --- 依照不同模式套用各自的權重與懲罰 ---
+            double next_cost = can_ride ? edge.distance : edge.distance + 99999.0;
+
+            // 再套路線偏好（注意：不能覆蓋 next_cost，要在上面加）
             if (mode == "shortest") {
-                next_cost = edge.distance;
-                
+                // 不加任何東西，just distance（already set above）
             } else if (mode == "least_climbing") {
-                // 用絕對值，上下坡都算；斜率越大懲罰越重
                 double abs_slope = abs(edge.slope);
                 if (abs_slope > 0.01) {
                     next_cost += abs_slope * 10000.0;
                 }
             } else if (mode == "shade") {
-                // 將樹蔭與建築物陰影相加，但最高限制在 1.0 (100% 遮蔽)
                 double total_shade = min(1.0, edge.tree_shade + edge.building_shade);
-                
-                if (total_shade >= 0.5) { 
-                    // 遮蔽率大於 50%，當作林蔭大道，給予權重折扣
-                    next_cost *= 0.4; 
+                if (total_shade >= 0.5) {
+                    next_cost *= 0.4;
                 } else {
-                    // 遮蔽率不足，太陽直射，加上固定懲罰
-                    // 這個 50.0 可以視你的 base distance 單位來調整 (如果是公尺，50 算是滿有感的懲罰)
-                    next_cost += 50.0; 
-                }    
+                    next_cost += 50.0;
+                }
             } else if (mode == "least_turns") {
-                if (p != -1) { 
+                if (p != -1) {
                     if (nodes.count(p) && nodes.count(u) && nodes.count(v)) {
                         double turn_rad = calculate_turn_angle(nodes[p], nodes[u], nodes[v]);
-                        // 2. 只要有微小轉彎 (大約 11 度) 就視為轉彎，並給予毀滅性懲罰
                         if (turn_rad > M_PI / 16.0) {
-                            next_cost += 99999.0; 
+                            next_cost += 99999.0;
                         }
                     }
                 }
