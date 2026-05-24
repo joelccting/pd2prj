@@ -55312,8 +55312,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2889"
+      "car": 1
     },
     {
       "from": 6293678847,
@@ -55324,8 +55323,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2890"
+      "car": 1
     },
     {
       "from": 6293678844,
@@ -55336,8 +55334,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2891"
+      "car": 1
     },
     {
       "from": 1775446777011,
@@ -55348,8 +55345,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2892"
+      "car": 0
     },
     {
       "from": 8233309626,
@@ -55360,8 +55356,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2893"
+      "car": 0
     },
     {
       "from": 1775446777011,
@@ -55372,8 +55367,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2894"
+      "car": 0
     },
     {
       "from": 1775446777012,
@@ -55384,8 +55378,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2895"
+      "car": 0
     },
     {
       "from": 1775446777012,
@@ -55396,8 +55389,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2896"
+      "car": 0
     },
     {
       "from": 1775446777013,
@@ -55408,8 +55400,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2897"
+      "car": 0
     },
     {
       "from": 1775446777013,
@@ -55420,8 +55411,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2898"
+      "car": 0
     },
     {
       "from": 1775446777014,
@@ -55432,8 +55422,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2899"
+      "car": 0
     },
     {
       "from": 1775446777014,
@@ -55444,8 +55433,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2900"
+      "car": 0
     },
     {
       "from": 1775446777015,
@@ -55456,8 +55444,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2901"
+      "car": 0
     },
     {
       "from": 1775446777015,
@@ -55468,8 +55455,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2902"
+      "car": 0
     },
     {
       "from": 1775446777016,
@@ -55480,8 +55466,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2903"
+      "car": 0
     },
     {
       "from": 1775446777016,
@@ -55492,8 +55477,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2904"
+      "car": 0
     },
     {
       "from": 1775446777017,
@@ -55504,8 +55488,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2905"
+      "car": 0
     },
     {
       "from": 1775446777017,
@@ -55516,8 +55499,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2906"
+      "car": 0
     },
     {
       "from": 1775446777018,
@@ -55528,8 +55510,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2907"
+      "car": 0
     },
     {
       "from": 1775446777018,
@@ -55540,8 +55521,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2908"
+      "car": 0
     },
     {
       "from": 1775446777019,
@@ -55552,8 +55532,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2909"
+      "car": 0
     },
     {
       "from": 1775446777019,
@@ -55564,8 +55543,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2910"
+      "car": 0
     },
     {
       "from": 1775446777020,
@@ -55576,8 +55554,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2911"
+      "car": 0
     },
     {
       "from": 1775446777006,
@@ -55588,8 +55565,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2912"
+      "car": 0
     },
     {
       "from": 1775446777007,
@@ -55600,8 +55576,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2913"
+      "car": 0
     },
     {
       "from": 1775446777007,
@@ -55612,8 +55587,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2914"
+      "car": 0
     },
     {
       "from": 1775446777008,
@@ -55624,8 +55598,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2915"
+      "car": 0
     },
     {
       "from": 1775446777009,
@@ -55636,8 +55609,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2916"
+      "car": 0
     },
     {
       "from": 1775446777008,
@@ -55648,8 +55620,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2917"
+      "car": 0
     },
     {
       "from": 1775446777006,
@@ -55660,8 +55631,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2918"
+      "car": 0
     },
     {
       "from": 1775446777005,
@@ -55672,8 +55642,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2919"
+      "car": 0
     },
     {
       "from": 1775446777004,
@@ -55684,8 +55653,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2920"
+      "car": 0
     },
     {
       "from": 1775446777005,
@@ -55696,8 +55664,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2921"
+      "car": 0
     },
     {
       "from": 1775446777003,
@@ -55708,8 +55675,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2922"
+      "car": 0
     },
     {
       "from": 1775446777004,
@@ -55720,8 +55686,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2923"
+      "car": 0
     },
     {
       "from": 1775446777002,
@@ -55732,8 +55697,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2924"
+      "car": 0
     },
     {
       "from": 1775446777003,
@@ -55744,8 +55708,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2925"
+      "car": 0
     },
     {
       "from": 1775446777001,
@@ -55756,8 +55719,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2926"
+      "car": 0
     },
     {
       "from": 1775446777002,
@@ -55768,8 +55730,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2927"
+      "car": 0
     },
     {
       "from": 1775446777000,
@@ -55780,8 +55741,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2928"
+      "car": 0
     },
     {
       "from": 1775446777001,
@@ -55792,8 +55752,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2929"
+      "car": 0
     },
     {
       "from": 1775446776999,
@@ -55804,8 +55763,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2930"
+      "car": 0
     },
     {
       "from": 1775446777000,
@@ -55816,8 +55774,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2931"
+      "car": 0
     },
     {
       "from": 1775446776998,
@@ -55828,8 +55785,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2932"
+      "car": 0
     },
     {
       "from": 1775446776999,
@@ -55840,8 +55796,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2933"
+      "car": 0
     },
     {
       "from": 1775446776997,
@@ -55852,8 +55807,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2934"
+      "car": 0
     },
     {
       "from": 1775446776998,
@@ -55864,8 +55818,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2935"
+      "car": 0
     },
     {
       "from": 1775446777020,
@@ -55876,8 +55829,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2936"
+      "car": 0
     },
     {
       "from": 1775446777021,
@@ -55888,8 +55840,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2937"
+      "car": 0
     },
     {
       "from": 9000082,
@@ -55900,8 +55851,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2938"
+      "car": 1
     },
     {
       "from": 1775446777022,
@@ -55912,8 +55862,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2939"
+      "car": 0
     },
     {
       "from": 6293675150,
@@ -55924,8 +55873,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2940"
+      "car": 0
     },
     {
       "from": 1775446777022,
@@ -55936,8 +55884,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2941"
+      "car": 0
     },
     {
       "from": 1775446777021,
@@ -55948,8 +55895,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2942"
+      "car": 0
     },
     {
       "from": 1775446777026,
@@ -55960,8 +55906,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2943"
+      "car": 0
     },
     {
       "from": 1775446777025,
@@ -55972,8 +55917,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2944"
+      "car": 0
     },
     {
       "from": 1775446777025,
@@ -55984,8 +55928,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2945"
+      "car": 0
     },
     {
       "from": 1775446777024,
@@ -55996,8 +55939,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2946"
+      "car": 0
     },
     {
       "from": 1775446777010,
@@ -56008,8 +55950,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2947"
+      "car": 0
     },
     {
       "from": 1775446777024,
@@ -56020,8 +55961,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2948"
+      "car": 0
     },
     {
       "from": 1775446777009,
@@ -56032,8 +55972,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2949"
+      "car": 0
     },
     {
       "from": 1775446777010,
@@ -56044,8 +55983,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2950"
+      "car": 0
     },
     {
       "from": 1775446777027,
@@ -56056,8 +55994,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2951"
+      "car": 0
     },
     {
       "from": 1775446777044,
@@ -56068,8 +56005,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2952"
+      "car": 0
     },
     {
       "from": 1775446777043,
@@ -56080,8 +56016,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2953"
+      "car": 0
     },
     {
       "from": 1775446777026,
@@ -56092,8 +56027,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2954"
+      "car": 0
     },
     {
       "from": 1775446777022,
@@ -56104,8 +56038,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2955"
+      "car": 0
     },
     {
       "from": 1775446777027,
@@ -56116,8 +56049,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2956"
+      "car": 0
     },
     {
       "from": 1775446777045,
@@ -56128,8 +56060,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2957"
+      "car": 0
     },
     {
       "from": 1775446777044,
@@ -56140,8 +56071,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2958"
+      "car": 0
     },
     {
       "from": 1775446777043,
@@ -56152,8 +56082,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2959"
+      "car": 0
     },
     {
       "from": 1775446777044,
@@ -56164,8 +56093,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2960"
+      "car": 0
     },
     {
       "from": 1775446777045,
@@ -56176,8 +56104,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2961"
+      "car": 0
     },
     {
       "from": 1775446777046,
@@ -56188,8 +56115,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2962"
+      "car": 0
     },
     {
       "from": 1775446777046,
@@ -56200,8 +56126,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2963"
+      "car": 0
     },
     {
       "from": 1775446777043,
@@ -56212,8 +56137,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2964"
+      "car": 0
     },
     {
       "from": 5909462889,
@@ -56224,8 +56148,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2965"
+      "car": 1
     },
     {
       "from": 6293658338,
@@ -56236,8 +56159,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2966"
+      "car": 1
     },
     {
       "from": 5909462888,
@@ -56248,8 +56170,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2967"
+      "car": 1
     },
     {
       "from": 6293661091,
@@ -56260,8 +56181,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2968"
+      "car": 1
     },
     {
       "from": 1775446777042,
@@ -56272,8 +56192,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2969"
+      "car": 0
     },
     {
       "from": 1775446777046,
@@ -56284,8 +56203,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2970"
+      "car": 0
     },
     {
       "from": 1775446777041,
@@ -56296,8 +56214,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2971"
+      "car": 0
     },
     {
       "from": 1775446777042,
@@ -56308,8 +56225,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2972"
+      "car": 0
     },
     {
       "from": 1775446777045,
@@ -56320,8 +56236,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2973"
+      "car": 0
     },
     {
       "from": 1775446777030,
@@ -56332,8 +56247,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2974"
+      "car": 0
     },
     {
       "from": 1775446777030,
@@ -56344,8 +56258,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2975"
+      "car": 0
     },
     {
       "from": 6293657526,
@@ -56356,8 +56269,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2976"
+      "car": 0
     },
     {
       "from": 1775446777041,
@@ -56368,8 +56280,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2977"
+      "car": 0
     },
     {
       "from": 1775446777039,
@@ -56380,8 +56291,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2978"
+      "car": 0
     },
     {
       "from": 1775446777039,
@@ -56392,8 +56302,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2979"
+      "car": 0
     },
     {
       "from": 1775446777034,
@@ -56404,8 +56313,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2980"
+      "car": 0
     },
     {
       "from": 1775446777033,
@@ -56416,8 +56324,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2981"
+      "car": 0
     },
     {
       "from": 1775446777034,
@@ -56428,8 +56335,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2982"
+      "car": 0
     },
     {
       "from": 1775446777038,
@@ -56440,8 +56346,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2983"
+      "car": 0
     },
     {
       "from": 1775446777030,
@@ -56452,8 +56357,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2984"
+      "car": 0
     },
     {
       "from": 8233309905,
@@ -56464,8 +56368,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2985"
+      "car": 1
     },
     {
       "from": 1775446776116,
@@ -56476,8 +56379,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2986"
+      "car": 1
     },
     {
       "from": 8233309904,
@@ -56488,8 +56390,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2987"
+      "car": 1
     },
     {
       "from": 9000090,
@@ -56500,8 +56401,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2988"
+      "car": 1
     },
     {
       "from": 1775446777043,
@@ -56512,8 +56412,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2989"
+      "car": 0
     },
     {
       "from": 8233309904,
@@ -56524,8 +56423,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2990"
+      "car": 0
     },
     {
       "from": 1775446777046,
@@ -56536,8 +56434,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2991"
+      "car": 0
     },
     {
       "from": 8233309905,
@@ -56548,8 +56445,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2992"
+      "car": 0
     },
     {
       "from": 5909462890,
@@ -56560,8 +56456,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2993"
+      "car": 1
     },
     {
       "from": 5909462888,
@@ -56572,8 +56467,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_2994"
+      "car": 1
     },
     {
       "from": 1775446777034,
@@ -56584,8 +56478,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2995"
+      "car": 0
     },
     {
       "from": 1775446777036,
@@ -56596,8 +56489,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2996"
+      "car": 0
     },
     {
       "from": 1775446777036,
@@ -56608,8 +56500,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2997"
+      "car": 0
     },
     {
       "from": 1775446777047,
@@ -56620,8 +56511,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2998"
+      "car": 0
     },
     {
       "from": 1775446777047,
@@ -56632,8 +56522,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_2999"
+      "car": 0
     },
     {
       "from": 1775446776025,
@@ -56644,8 +56533,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3000"
+      "car": 0
     },
     {
       "from": 1775446777038,
@@ -56656,8 +56544,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3001"
+      "car": 0
     },
     {
       "from": 1775446777034,
@@ -56668,8 +56555,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3002"
+      "car": 0
     },
     {
       "from": 1775446777032,
@@ -56680,8 +56566,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3003"
+      "car": 0
     },
     {
       "from": 2805249584,
@@ -56692,8 +56577,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3004"
+      "car": 0
     },
     {
       "from": 1775446777032,
@@ -56704,8 +56588,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3005"
+      "car": 0
     },
     {
       "from": 1775446777036,
@@ -56716,8 +56599,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3006"
+      "car": 0
     },
     {
       "from": 8233309841,
@@ -56728,8 +56610,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3007"
+      "car": 1
     },
     {
       "from": 2490499336,
@@ -56740,8 +56621,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3008"
+      "car": 1
     },
     {
       "from": 2490499336,
@@ -56752,8 +56632,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3009"
+      "car": 1
     },
     {
       "from": 1775446776025,
@@ -56764,8 +56643,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3010"
+      "car": 1
     },
     {
       "from": 6293657526,
@@ -56776,8 +56654,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3011"
+      "car": 1
     },
     {
       "from": 5909462887,
@@ -56788,8 +56665,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3012"
+      "car": 1
     },
     {
       "from": 8233309905,
@@ -56800,8 +56676,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3013"
+      "car": 1
     },
     {
       "from": 8233309904,
@@ -56812,8 +56687,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3014"
+      "car": 1
     },
     {
       "from": 5909462890,
@@ -56824,8 +56698,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3015"
+      "car": 1
     },
     {
       "from": 1775446777049,
@@ -56836,8 +56709,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3016"
+      "car": 1
     },
     {
       "from": 6293631965,
@@ -56848,8 +56720,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3017"
+      "car": 1
     },
     {
       "from": 2490499361,
@@ -56860,8 +56731,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3018"
+      "car": 0
     },
     {
       "from": 1775446777048,
@@ -56872,8 +56742,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3019"
+      "car": 0
     },
     {
       "from": 1775446777049,
@@ -56884,8 +56753,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3020"
+      "car": 1
     },
     {
       "from": 9000105,
@@ -56896,8 +56764,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3021"
+      "car": 1
     },
     {
       "from": 1775446777033,
@@ -56908,8 +56775,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3022"
+      "car": 0
     },
     {
       "from": 1775446777049,
@@ -56920,8 +56786,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3023"
+      "car": 0
     },
     {
       "from": 1775446777032,
@@ -56932,8 +56797,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3024"
+      "car": 0
     },
     {
       "from": 1775446777048,
@@ -56944,8 +56808,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3025"
+      "car": 0
     },
     {
       "from": 2490499361,
@@ -56956,8 +56819,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3026"
+      "car": 1
     },
     {
       "from": 6293631964,
@@ -56968,8 +56830,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3027"
+      "car": 1
     },
     {
       "from": 1775446777050,
@@ -56980,8 +56841,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3028"
+      "car": 0
     },
     {
       "from": 1775446777048,
@@ -56992,8 +56852,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3029"
+      "car": 0
     },
     {
       "from": 8233292292,
@@ -57004,8 +56863,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3030"
+      "car": 0
     },
     {
       "from": 1775446777050,
@@ -57016,8 +56874,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3031"
+      "car": 0
     },
     {
       "from": 1775446777052,
@@ -57028,8 +56885,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3032"
+      "car": 0
     },
     {
       "from": 6293631964,
@@ -57040,8 +56896,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3033"
+      "car": 0
     },
     {
       "from": 1775446777052,
@@ -57052,8 +56907,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3034"
+      "car": 0
     },
     {
       "from": 1775446777049,
@@ -57064,8 +56918,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3035"
+      "car": 0
     },
     {
       "from": 1775446777053,
@@ -57076,8 +56929,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3036"
+      "car": 0
     },
     {
       "from": 1775446777052,
@@ -57088,8 +56940,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3037"
+      "car": 0
     },
     {
       "from": 1775446777054,
@@ -57100,8 +56951,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3038"
+      "car": 1
     },
     {
       "from": 1775446776142,
@@ -57112,8 +56962,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3039"
+      "car": 1
     },
     {
       "from": 1775446777054,
@@ -57124,8 +56973,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3040"
+      "car": 1
     },
     {
       "from": 1775446776144,
@@ -57136,8 +56984,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3041"
+      "car": 1
     },
     {
       "from": 1775446777054,
@@ -57148,8 +56995,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3042"
+      "car": 0
     },
     {
       "from": 1775446777053,
@@ -57160,8 +57006,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3043"
+      "car": 0
     },
     {
       "from": 1775446777050,
@@ -57172,8 +57017,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3044"
+      "car": 0
     },
     {
       "from": 2805295309,
@@ -57184,8 +57028,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3045"
+      "car": 0
     },
     {
       "from": 2490499411,
@@ -57196,8 +57039,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3046"
+      "car": 1
     },
     {
       "from": 2805295309,
@@ -57208,8 +57050,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3047"
+      "car": 1
     },
     {
       "from": 1775446776150,
@@ -57220,8 +57061,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3048"
+      "car": 1
     },
     {
       "from": 1775446777055,
@@ -57232,8 +57072,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3049"
+      "car": 1
     },
     {
       "from": 1775446777055,
@@ -57244,8 +57083,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3050"
+      "car": 0
     },
     {
       "from": 1775446777056,
@@ -57256,8 +57094,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3051"
+      "car": 0
     },
     {
       "from": 1775446777055,
@@ -57268,8 +57105,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3052"
+      "car": 0
     },
     {
       "from": 1775446777054,
@@ -57280,8 +57116,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3053"
+      "car": 0
     },
     {
       "from": 1775446776149,
@@ -57292,8 +57127,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3054"
+      "car": 1
     },
     {
       "from": 1775446777055,
@@ -57304,8 +57138,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3055"
+      "car": 1
     },
     {
       "from": 1775446777058,
@@ -57316,8 +57149,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3056"
+      "car": 1
     },
     {
       "from": 5369293452,
@@ -57328,8 +57160,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3057"
+      "car": 1
     },
     {
       "from": 1775446777058,
@@ -57340,8 +57171,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3058"
+      "car": 0
     },
     {
       "from": 1775446777059,
@@ -57352,8 +57182,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3059"
+      "car": 0
     },
     {
       "from": 1775446777058,
@@ -57364,8 +57193,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3060"
+      "car": 0
     },
     {
       "from": 1775446777056,
@@ -57376,8 +57204,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3061"
+      "car": 0
     },
     {
       "from": 1775446777058,
@@ -57388,8 +57215,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3062"
+      "car": 1
     },
     {
       "from": 2805249579,
@@ -57400,8 +57226,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3063"
+      "car": 1
     },
     {
       "from": 1775446777057,
@@ -57412,8 +57237,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3064"
+      "car": 0
     },
     {
       "from": 1775446777056,
@@ -57424,8 +57248,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3065"
+      "car": 0
     },
     {
       "from": 5369293452,
@@ -57436,8 +57259,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3066"
+      "car": 1
     },
     {
       "from": 1775446777060,
@@ -57448,8 +57270,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3067"
+      "car": 0
     },
     {
       "from": 1775446777059,
@@ -57460,8 +57281,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3068"
+      "car": 0
     },
     {
       "from": 1775446777060,
@@ -57472,8 +57292,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3069"
+      "car": 0
     },
     {
       "from": 1775446777057,
@@ -57484,8 +57303,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3070"
+      "car": 0
     },
     {
       "from": 1775446776142,
@@ -57496,8 +57314,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3071"
+      "car": 1
     },
     {
       "from": 2805249590,
@@ -57508,8 +57325,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3072"
+      "car": 1
     },
     {
       "from": 2490499411,
@@ -57520,8 +57336,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3073"
+      "car": 1
     },
     {
       "from": 5369293472,
@@ -57532,8 +57347,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3074"
+      "car": 1
     },
     {
       "from": 1775446777061,
@@ -57544,8 +57358,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3075"
+      "car": 0
     },
     {
       "from": 1775446777059,
@@ -57556,8 +57369,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3076"
+      "car": 0
     },
     {
       "from": 1775446777062,
@@ -57568,8 +57380,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3077"
+      "car": 0
     },
     {
       "from": 1775446777061,
@@ -57580,8 +57391,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3078"
+      "car": 0
     },
     {
       "from": 1775446777062,
@@ -57592,8 +57402,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3079"
+      "car": 0
     },
     {
       "from": 1775446777060,
@@ -57604,8 +57413,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3080"
+      "car": 0
     },
     {
       "from": 1775446777057,
@@ -57616,8 +57424,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3081"
+      "car": 0
     },
     {
       "from": 1775446777064,
@@ -57628,8 +57435,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3082"
+      "car": 0
     },
     {
       "from": 1775446777064,
@@ -57640,8 +57446,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3083"
+      "car": 0
     },
     {
       "from": 1775446777065,
@@ -57652,8 +57457,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3084"
+      "car": 0
     },
     {
       "from": 1775446777065,
@@ -57664,8 +57468,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3085"
+      "car": 1
     },
     {
       "from": 2805295309,
@@ -57676,8 +57479,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3086"
+      "car": 1
     },
     {
       "from": 9000124,
@@ -57688,8 +57490,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3087"
+      "car": 1
     },
     {
       "from": 1775446777065,
@@ -57700,8 +57501,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3088"
+      "car": 1
     },
     {
       "from": 1775446777066,
@@ -57712,8 +57512,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3089"
+      "car": 0
     },
     {
       "from": 1775446777067,
@@ -57724,8 +57523,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3090"
+      "car": 0
     },
     {
       "from": 1775446777069,
@@ -57736,8 +57534,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3091"
+      "car": 0
     },
     {
       "from": 1775446777068,
@@ -57748,8 +57545,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3092"
+      "car": 0
     },
     {
       "from": 1775446777071,
@@ -57760,8 +57556,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3093"
+      "car": 0
     },
     {
       "from": 1775446777069,
@@ -57772,8 +57567,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3094"
+      "car": 0
     },
     {
       "from": 1775446777071,
@@ -57784,8 +57578,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3095"
+      "car": 0
     },
     {
       "from": 1775446777070,
@@ -57796,8 +57589,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3096"
+      "car": 0
     },
     {
       "from": 1775446777072,
@@ -57808,8 +57600,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3097"
+      "car": 0
     },
     {
       "from": 1775446777070,
@@ -57820,8 +57611,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3098"
+      "car": 0
     },
     {
       "from": 1775446777073,
@@ -57832,8 +57622,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3099"
+      "car": 0
     },
     {
       "from": 1775446777072,
@@ -57844,8 +57633,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3100"
+      "car": 0
     },
     {
       "from": 5369293473,
@@ -57856,8 +57644,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3101"
+      "car": 1
     },
     {
       "from": 664471008,
@@ -57868,8 +57655,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3102"
+      "car": 1
     },
     {
       "from": 2805249590,
@@ -57880,8 +57666,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3103"
+      "car": 1
     },
     {
       "from": 5369293454,
@@ -57892,8 +57677,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3104"
+      "car": 1
     },
     {
       "from": 1775446777074,
@@ -57904,8 +57688,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3105"
+      "car": 0
     },
     {
       "from": 1775446777061,
@@ -57916,8 +57699,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3106"
+      "car": 0
     },
     {
       "from": 5369293454,
@@ -57928,8 +57710,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3107"
+      "car": 1
     },
     {
       "from": 1775446777074,
@@ -57940,8 +57721,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3108"
+      "car": 1
     },
     {
       "from": 1775446777074,
@@ -57952,8 +57732,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3109"
+      "car": 1
     },
     {
       "from": 2805249573,
@@ -57964,8 +57743,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3110"
+      "car": 1
     },
     {
       "from": 1775446775989,
@@ -57976,8 +57754,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3111"
+      "car": 0
     },
     {
       "from": 1775446777075,
@@ -57988,8 +57765,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3112"
+      "car": 0
     },
     {
       "from": 1775446777076,
@@ -58000,8 +57776,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3113"
+      "car": 0
     },
     {
       "from": 1775446777074,
@@ -58012,8 +57787,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3114"
+      "car": 0
     },
     {
       "from": 1775446777077,
@@ -58024,8 +57798,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3115"
+      "car": 0
     },
     {
       "from": 1775446777076,
@@ -58036,8 +57809,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3116"
+      "car": 0
     },
     {
       "from": 1775446777066,
@@ -58048,8 +57820,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3117"
+      "car": 0
     },
     {
       "from": 1775446777077,
@@ -58060,8 +57831,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3118"
+      "car": 0
     },
     {
       "from": 1775446777066,
@@ -58072,8 +57842,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3119"
+      "car": 0
     },
     {
       "from": 1775446777078,
@@ -58084,8 +57853,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3120"
+      "car": 0
     },
     {
       "from": 1775446777078,
@@ -58096,8 +57864,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3121"
+      "car": 0
     },
     {
       "from": 1775446777076,
@@ -58108,8 +57875,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3122"
+      "car": 0
     },
     {
       "from": 5909461082,
@@ -58120,8 +57886,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3123"
+      "car": 1
     },
     {
       "from": 7503776686,
@@ -58132,8 +57897,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3124"
+      "car": 1
     },
     {
       "from": 664471008,
@@ -58144,8 +57908,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3125"
+      "car": 1
     },
     {
       "from": 5369293471,
@@ -58156,8 +57919,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3126"
+      "car": 1
     },
     {
       "from": 1775446777077,
@@ -58168,8 +57930,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3127"
+      "car": 0
     },
     {
       "from": 1775446777062,
@@ -58180,8 +57941,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3128"
+      "car": 0
     },
     {
       "from": 2735979136,
@@ -58192,8 +57952,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3129"
+      "car": 0
     },
     {
       "from": 5369293471,
@@ -58204,8 +57963,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3130"
+      "car": 0
     },
     {
       "from": 1775446777079,
@@ -58216,8 +57974,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3131"
+      "car": 0
     },
     {
       "from": 1775446777078,
@@ -58228,8 +57985,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3132"
+      "car": 0
     },
     {
       "from": 1775446777080,
@@ -58240,8 +57996,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3133"
+      "car": 0
     },
     {
       "from": 1775446777079,
@@ -58252,8 +58007,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3134"
+      "car": 0
     },
     {
       "from": 1775446776743,
@@ -58264,8 +58018,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3135"
+      "car": 1
     },
     {
       "from": 1775446776704,
@@ -58276,8 +58029,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3136"
+      "car": 1
     },
     {
       "from": 1775446777081,
@@ -58288,8 +58040,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3137"
+      "car": 0
     },
     {
       "from": 1775446777080,
@@ -58300,8 +58051,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3138"
+      "car": 0
     },
     {
       "from": 5369293440,
@@ -58312,8 +58062,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3139"
+      "car": 1
     },
     {
       "from": 5369293470,
@@ -58324,8 +58073,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3140"
+      "car": 1
     },
     {
       "from": 1775446777071,
@@ -58336,8 +58084,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3141"
+      "car": 0
     },
     {
       "from": 1775446777081,
@@ -58348,8 +58095,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3142"
+      "car": 0
     },
     {
       "from": 1775446777082,
@@ -58360,8 +58106,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3143"
+      "car": 0
     },
     {
       "from": 1775446777081,
@@ -58372,8 +58117,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3144"
+      "car": 0
     },
     {
       "from": 1775446777075,
@@ -58384,8 +58128,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3145"
+      "car": 0
     },
     {
       "from": 1775446777083,
@@ -58396,8 +58139,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3146"
+      "car": 0
     },
     {
       "from": 1775446777083,
@@ -58408,8 +58150,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3147"
+      "car": 0
     },
     {
       "from": 1775446777080,
@@ -58420,8 +58161,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3148"
+      "car": 0
     },
     {
       "from": 1775446777070,
@@ -58432,8 +58172,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3149"
+      "car": 0
     },
     {
       "from": 1775446777082,
@@ -58444,8 +58183,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3150"
+      "car": 0
     },
     {
       "from": 5909461080,
@@ -58456,8 +58194,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3151"
+      "car": 1
     },
     {
       "from": 664411020,
@@ -58468,8 +58205,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3152"
+      "car": 1
     },
     {
       "from": 5909462896,
@@ -58480,8 +58216,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3153"
+      "car": 1
     },
     {
       "from": 5369293457,
@@ -58492,8 +58227,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3154"
+      "car": 1
     },
     {
       "from": 1775446777084,
@@ -58504,8 +58238,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3155"
+      "car": 0
     },
     {
       "from": 1775446777082,
@@ -58516,8 +58249,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3156"
+      "car": 0
     },
     {
       "from": 1775446777084,
@@ -58528,8 +58260,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3157"
+      "car": 1
     },
     {
       "from": 5369293457,
@@ -58540,8 +58271,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3158"
+      "car": 1
     },
     {
       "from": 1775446777084,
@@ -58552,8 +58282,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3159"
+      "car": 1
     },
     {
       "from": 8233309727,
@@ -58564,8 +58293,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3160"
+      "car": 1
     },
     {
       "from": 1775446777085,
@@ -58576,8 +58304,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3161"
+      "car": 0
     },
     {
       "from": 1775446777084,
@@ -58588,8 +58315,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3162"
+      "car": 0
     },
     {
       "from": 1775446777072,
@@ -58600,8 +58326,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3163"
+      "car": 0
     },
     {
       "from": 1775446777085,
@@ -58612,8 +58337,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3164"
+      "car": 0
     },
     {
       "from": 1775446775972,
@@ -58624,8 +58348,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3165"
+      "car": 1
     },
     {
       "from": 664411020,
@@ -58636,8 +58359,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3166"
+      "car": 1
     },
     {
       "from": 9502288015,
@@ -58648,8 +58370,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3167"
+      "car": 1
     },
     {
       "from": 1775446777086,
@@ -58660,8 +58381,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3168"
+      "car": 0
     },
     {
       "from": 1775446776036,
@@ -58672,8 +58392,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3169"
+      "car": 0
     },
     {
       "from": 1775446777086,
@@ -58684,8 +58403,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3170"
+      "car": 0
     },
     {
       "from": 1775446777073,
@@ -58696,8 +58414,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3171"
+      "car": 0
     },
     {
       "from": 1775446777087,
@@ -58708,8 +58425,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3172"
+      "car": 0
     },
     {
       "from": 2735868698,
@@ -58720,8 +58436,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3173"
+      "car": 0
     },
     {
       "from": 5369293475,
@@ -58732,8 +58447,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3174"
+      "car": 1
     },
     {
       "from": 664411025,
@@ -58744,8 +58458,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3175"
+      "car": 1
     },
     {
       "from": 1775446775972,
@@ -58756,8 +58469,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3176"
+      "car": 1
     },
     {
       "from": 1775446777090,
@@ -58768,8 +58480,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3177"
+      "car": 0
     },
     {
       "from": 1775446777073,
@@ -58780,8 +58491,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3178"
+      "car": 0
     },
     {
       "from": 1775446777091,
@@ -58792,8 +58502,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3179"
+      "car": 0
     },
     {
       "from": 1775446777089,
@@ -58804,8 +58513,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3180"
+      "car": 0
     },
     {
       "from": 1775446777087,
@@ -58816,8 +58524,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3181"
+      "car": 0
     },
     {
       "from": 1775446777091,
@@ -58828,8 +58535,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3182"
+      "car": 0
     },
     {
       "from": 1775446777091,
@@ -58840,8 +58546,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3183"
+      "car": 0
     },
     {
       "from": 1775446777086,
@@ -58852,8 +58557,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3184"
+      "car": 0
     },
     {
       "from": 5369293463,
@@ -58864,8 +58568,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3185"
+      "car": 1
     },
     {
       "from": 1775446775979,
@@ -58876,8 +58579,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3186"
+      "car": 1
     },
     {
       "from": 1775446777092,
@@ -58888,8 +58590,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3187"
+      "car": 1
     },
     {
       "from": 1775446777093,
@@ -58900,8 +58601,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3188"
+      "car": 0
     },
     {
       "from": 1775446777088,
@@ -58912,8 +58612,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3189"
+      "car": 0
     },
     {
       "from": 1775446775971,
@@ -58924,8 +58623,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3190"
+      "car": 1
     },
     {
       "from": 1775446775982,
@@ -58936,8 +58634,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3191"
+      "car": 1
     },
     {
       "from": 1775446777090,
@@ -58948,8 +58645,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3192"
+      "car": 0
     },
     {
       "from": 1775446777102,
@@ -58960,8 +58656,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3193"
+      "car": 0
     },
     {
       "from": 1775446777101,
@@ -58972,8 +58667,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3194"
+      "car": 0
     },
     {
       "from": 1775446777100,
@@ -58984,8 +58678,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3195"
+      "car": 0
     },
     {
       "from": 1775446777099,
@@ -58996,8 +58689,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3196"
+      "car": 0
     },
     {
       "from": 1775446777098,
@@ -59008,8 +58700,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3197"
+      "car": 0
     },
     {
       "from": 1775446777098,
@@ -59020,8 +58711,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3198"
+      "car": 0
     },
     {
       "from": 1775446777097,
@@ -59032,8 +58722,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3199"
+      "car": 0
     },
     {
       "from": 1775446777094,
@@ -59044,8 +58733,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3200"
+      "car": 0
     },
     {
       "from": 1775446777085,
@@ -59056,8 +58744,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3201"
+      "car": 0
     },
     {
       "from": 1775446777094,
@@ -59068,8 +58755,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3202"
+      "car": 1
     },
     {
       "from": 1775446775982,
@@ -59080,8 +58766,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3203"
+      "car": 1
     },
     {
       "from": 1775446777094,
@@ -59092,8 +58777,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3204"
+      "car": 1
     },
     {
       "from": 9789596717,
@@ -59104,8 +58788,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3205"
+      "car": 1
     },
     {
       "from": 1775446777095,
@@ -59116,8 +58799,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3206"
+      "car": 0
     },
     {
       "from": 1775446777094,
@@ -59128,8 +58810,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3207"
+      "car": 0
     },
     {
       "from": 1775446777096,
@@ -59140,8 +58821,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3208"
+      "car": 0
     },
     {
       "from": 1775446777095,
@@ -59152,8 +58832,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3209"
+      "car": 0
     },
     {
       "from": 1775446777097,
@@ -59164,8 +58843,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3210"
+      "car": 0
     },
     {
       "from": 1775446777096,
@@ -59176,8 +58854,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3211"
+      "car": 0
     },
     {
       "from": 1775446777098,
@@ -59188,8 +58865,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3212"
+      "car": 1
     },
     {
       "from": 9000027,
@@ -59200,8 +58876,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3213"
+      "car": 1
     },
     {
       "from": 1775446777098,
@@ -59212,8 +58887,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3214"
+      "car": 1
     },
     {
       "from": 9481587821,
@@ -59224,8 +58898,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3215"
+      "car": 1
     },
     {
       "from": 9789575415,
@@ -59236,8 +58909,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3216"
+      "car": 1
     },
     {
       "from": 1775446777099,
@@ -59248,8 +58920,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3217"
+      "car": 1
     },
     {
       "from": 9000028,
@@ -59260,8 +58931,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3218"
+      "car": 1
     },
     {
       "from": 1775446777099,
@@ -59272,8 +58942,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3219"
+      "car": 1
     },
     {
       "from": 1775446777100,
@@ -59284,8 +58953,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3220"
+      "car": 0
     },
     {
       "from": 1775446777099,
@@ -59296,8 +58964,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3221"
+      "car": 0
     },
     {
       "from": 1775446776269,
@@ -59308,8 +58975,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3222"
+      "car": 1
     },
     {
       "from": 1775446777095,
@@ -59320,8 +58986,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3223"
+      "car": 1
     },
     {
       "from": 1775446776266,
@@ -59332,8 +58997,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3224"
+      "car": 1
     },
     {
       "from": 1775446777095,
@@ -59344,8 +59008,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3225"
+      "car": 1
     },
     {
       "from": 1775446776268,
@@ -59356,8 +59019,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3226"
+      "car": 1
     },
     {
       "from": 1775446777096,
@@ -59368,8 +59030,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3227"
+      "car": 1
     },
     {
       "from": 1775446776267,
@@ -59380,8 +59041,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3228"
+      "car": 1
     },
     {
       "from": 1775446777096,
@@ -59392,8 +59052,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3229"
+      "car": 1
     },
     {
       "from": 1775446776967,
@@ -59404,8 +59063,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3230"
+      "car": 1
     },
     {
       "from": 1775446777097,
@@ -59416,8 +59074,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3231"
+      "car": 1
     },
     {
       "from": 1775446776966,
@@ -59428,8 +59085,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3232"
+      "car": 1
     },
     {
       "from": 1775446777097,
@@ -59440,8 +59096,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3233"
+      "car": 1
     },
     {
       "from": 1775446777101,
@@ -59452,8 +59107,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3234"
+      "car": 1
     },
     {
       "from": 1775446775980,
@@ -59464,8 +59118,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3235"
+      "car": 1
     },
     {
       "from": 1775446777101,
@@ -59476,8 +59129,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3236"
+      "car": 0
     },
     {
       "from": 1775446777102,
@@ -59488,8 +59140,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3237"
+      "car": 0
     },
     {
       "from": 9789575414,
@@ -59500,8 +59151,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3238"
+      "car": 1
     },
     {
       "from": 1775446777101,
@@ -59512,8 +59162,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3239"
+      "car": 1
     },
     {
       "from": 1775446777100,
@@ -59524,8 +59173,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3240"
+      "car": 1
     },
     {
       "from": 1775446776265,
@@ -59536,8 +59184,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3241"
+      "car": 1
     },
     {
       "from": 1775446777100,
@@ -59548,8 +59195,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3242"
+      "car": 1
     },
     {
       "from": 1775446776264,
@@ -59560,8 +59206,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3243"
+      "car": 1
     },
     {
       "from": 5369293464,
@@ -59572,8 +59217,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3244"
+      "car": 1
     },
     {
       "from": 1775446777102,
@@ -59584,8 +59228,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3245"
+      "car": 1
     },
     {
       "from": 1775446775981,
@@ -59596,8 +59239,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3246"
+      "car": 1
     },
     {
       "from": 1775446777102,
@@ -59608,8 +59250,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3247"
+      "car": 1
     },
     {
       "from": 9480946233,
@@ -59620,8 +59261,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3248"
+      "car": 1
     },
     {
       "from": 1775446777103,
@@ -59632,8 +59272,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3249"
+      "car": 0
     },
     {
       "from": 1775446777089,
@@ -59644,8 +59283,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3250"
+      "car": 0
     },
     {
       "from": 1775446777093,
@@ -59656,8 +59294,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3251"
+      "car": 0
     },
     {
       "from": 1775446777103,
@@ -59668,8 +59305,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3252"
+      "car": 0
     },
     {
       "from": 1775446777106,
@@ -59680,8 +59316,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3253"
+      "car": 1
     },
     {
       "from": 5369293464,
@@ -59692,8 +59327,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3254"
+      "car": 1
     },
     {
       "from": 1775446777106,
@@ -59704,8 +59338,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3255"
+      "car": 0
     },
     {
       "from": 1775446777089,
@@ -59716,8 +59349,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3256"
+      "car": 0
     },
     {
       "from": 1775446777106,
@@ -59728,8 +59360,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3257"
+      "car": 0
     },
     {
       "from": 1775446777090,
@@ -59740,8 +59371,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3258"
+      "car": 0
     },
     {
       "from": 9000034,
@@ -59752,8 +59382,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3259"
+      "car": 1
     },
     {
       "from": 1775446777106,
@@ -59764,8 +59393,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3260"
+      "car": 1
     },
     {
       "from": 9495479304,
@@ -59776,8 +59404,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3261"
+      "car": 1
     },
     {
       "from": 1775446777105,
@@ -59788,8 +59415,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3262"
+      "car": 1
     },
     {
       "from": 1775446777105,
@@ -59800,8 +59426,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3263"
+      "car": 1
     },
     {
       "from": 5369293463,
@@ -59812,8 +59437,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3264"
+      "car": 1
     },
     {
       "from": 1775446777105,
@@ -59824,8 +59448,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3265"
+      "car": 0
     },
     {
       "from": 1775446777104,
@@ -59836,8 +59459,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3266"
+      "car": 0
     },
     {
       "from": 1775446777105,
@@ -59848,8 +59470,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3267"
+      "car": 0
     },
     {
       "from": 1775446777093,
@@ -59860,8 +59481,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3268"
+      "car": 0
     },
     {
       "from": 1775446777107,
@@ -59872,8 +59492,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3269"
+      "car": 0
     },
     {
       "from": 1775446777088,
@@ -59884,8 +59503,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3270"
+      "car": 0
     },
     {
       "from": 1775446777104,
@@ -59896,8 +59514,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3271"
+      "car": 0
     },
     {
       "from": 1775446777107,
@@ -59908,8 +59525,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3272"
+      "car": 0
     },
     {
       "from": 1775446777108,
@@ -59920,8 +59536,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3273"
+      "car": 1
     },
     {
       "from": 1775446775964,
@@ -59932,8 +59547,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3274"
+      "car": 1
     },
     {
       "from": 1775446775979,
@@ -59944,8 +59558,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3275"
+      "car": 1
     },
     {
       "from": 1775446777108,
@@ -59956,8 +59569,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3276"
+      "car": 1
     },
     {
       "from": 1775446777108,
@@ -59968,8 +59580,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3277"
+      "car": 0
     },
     {
       "from": 1775446777104,
@@ -59980,8 +59591,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3278"
+      "car": 0
     },
     {
       "from": 1775446777109,
@@ -59992,8 +59602,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3279"
+      "car": 0
     },
     {
       "from": 1775446777107,
@@ -60004,8 +59613,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3280"
+      "car": 0
     },
     {
       "from": 8233309729,
@@ -60016,8 +59624,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3281"
+      "car": 0
     },
     {
       "from": 1775446777109,
@@ -60028,8 +59635,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3282"
+      "car": 0
     },
     {
       "from": 5369293462,
@@ -60040,8 +59646,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3283"
+      "car": 1
     },
     {
       "from": 1775446777110,
@@ -60052,8 +59657,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3284"
+      "car": 1
     },
     {
       "from": 2805286920,
@@ -60064,8 +59668,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3285"
+      "car": 1
     },
     {
       "from": 1775446777110,
@@ -60076,8 +59679,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3286"
+      "car": 1
     },
     {
       "from": 5369293462,
@@ -60088,8 +59690,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3287"
+      "car": 1
     },
     {
       "from": 5369293474,
@@ -60100,8 +59701,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3288"
+      "car": 1
     },
     {
       "from": 664411025,
@@ -60112,8 +59712,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3289"
+      "car": 1
     },
     {
       "from": 2805286919,
@@ -60124,8 +59723,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3290"
+      "car": 1
     },
     {
       "from": 1775446777110,
@@ -60136,8 +59734,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3291"
+      "car": 0
     },
     {
       "from": 1775446777111,
@@ -60148,8 +59745,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3292"
+      "car": 0
     },
     {
       "from": 1775446777109,
@@ -60160,8 +59756,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3293"
+      "car": 0
     },
     {
       "from": 1775446777111,
@@ -60172,8 +59767,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3294"
+      "car": 0
     },
     {
       "from": 1775446777111,
@@ -60184,8 +59778,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3295"
+      "car": 0
     },
     {
       "from": 1775446777108,
@@ -60196,8 +59789,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3296"
+      "car": 0
     },
     {
       "from": 5909462887,
@@ -60208,8 +59800,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3297"
+      "car": 1
     },
     {
       "from": 5909462891,
@@ -60220,8 +59811,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3298"
+      "car": 1
     },
     {
       "from": 1775446777112,
@@ -60232,8 +59822,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3299"
+      "car": 0
     },
     {
       "from": 8233309904,
@@ -60244,8 +59833,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3300"
+      "car": 0
     },
     {
       "from": 9000120,
@@ -60256,8 +59844,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3301"
+      "car": 1
     },
     {
       "from": 1775446777112,
@@ -60268,8 +59855,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3302"
+      "car": 1
     },
     {
       "from": 1775446777112,
@@ -60280,8 +59866,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3303"
+      "car": 1
     },
     {
       "from": 5909462891,
@@ -60292,8 +59877,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3304"
+      "car": 1
     },
     {
       "from": 1775446777113,
@@ -60304,8 +59888,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3305"
+      "car": 1
     },
     {
       "from": 1775446776114,
@@ -60316,8 +59899,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3306"
+      "car": 1
     },
     {
       "from": 1775446777113,
@@ -60328,8 +59910,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3307"
+      "car": 1
     },
     {
       "from": 1775446776112,
@@ -60340,8 +59921,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3308"
+      "car": 1
     },
     {
       "from": 1775446777113,
@@ -60352,8 +59932,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3309"
+      "car": 0
     },
     {
       "from": 8233309905,
@@ -60364,8 +59943,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3310"
+      "car": 0
     },
     {
       "from": 1775446776113,
@@ -60376,8 +59954,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3311"
+      "car": 1
     },
     {
       "from": 5909462886,
@@ -60388,8 +59965,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3312"
+      "car": 1
     },
     {
       "from": 1775446777114,
@@ -60400,8 +59976,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3313"
+      "car": 1
     },
     {
       "from": 1775446777114,
@@ -60412,8 +59987,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3314"
+      "car": 1
     },
     {
       "from": 1775446776028,
@@ -60424,8 +59998,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3315"
+      "car": 1
     },
     {
       "from": 1775446777115,
@@ -60436,8 +60009,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3316"
+      "car": 1
     },
     {
       "from": 1775446776111,
@@ -60448,8 +60020,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3317"
+      "car": 1
     },
     {
       "from": 1775446776113,
@@ -60460,8 +60031,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3318"
+      "car": 1
     },
     {
       "from": 1775446777115,
@@ -60472,8 +60042,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3319"
+      "car": 1
     },
     {
       "from": 1775446777115,
@@ -60484,8 +60053,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3320"
+      "car": 0
     },
     {
       "from": 1775446777114,
@@ -60496,8 +60064,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3321"
+      "car": 0
     },
     {
       "from": 1775446777114,
@@ -60508,8 +60075,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3322"
+      "car": 0
     },
     {
       "from": 1775446777115,
@@ -60520,8 +60086,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3323"
+      "car": 0
     },
     {
       "from": 1775446777115,
@@ -60532,8 +60097,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3324"
+      "car": 0
     },
     {
       "from": 1775446777113,
@@ -60544,8 +60108,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3325"
+      "car": 0
     },
     {
       "from": 5909462886,
@@ -60556,8 +60119,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3326"
+      "car": 1
     },
     {
       "from": 5909462892,
@@ -60568,8 +60130,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3327"
+      "car": 1
     },
     {
       "from": 1775446776020,
@@ -60580,8 +60141,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3328"
+      "car": 1
     },
     {
       "from": 1775446776020,
@@ -60592,8 +60152,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3329"
+      "car": 1
     },
     {
       "from": 1775446777116,
@@ -60604,8 +60163,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3330"
+      "car": 1
     },
     {
       "from": 1775446777116,
@@ -60616,8 +60174,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3331"
+      "car": 1
     },
     {
       "from": 823249471,
@@ -60628,8 +60185,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3332"
+      "car": 1
     },
     {
       "from": 1775446777114,
@@ -60640,8 +60196,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3333"
+      "car": 0
     },
     {
       "from": 1775446777116,
@@ -60652,8 +60207,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3334"
+      "car": 0
     },
     {
       "from": 1775446777117,
@@ -60664,8 +60218,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3335"
+      "car": 0
     },
     {
       "from": 1775446777116,
@@ -60676,8 +60229,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3336"
+      "car": 0
     },
     {
       "from": 5909462885,
@@ -60688,8 +60240,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3337"
+      "car": 1
     },
     {
       "from": 1775446777117,
@@ -60700,8 +60251,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3338"
+      "car": 1
     },
     {
       "from": 1775446777117,
@@ -60712,8 +60262,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3339"
+      "car": 1
     },
     {
       "from": 2805238637,
@@ -60724,8 +60273,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3340"
+      "car": 1
     },
     {
       "from": 1775446777118,
@@ -60736,8 +60284,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3341"
+      "car": 0
     },
     {
       "from": 1775446777112,
@@ -60748,8 +60295,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3342"
+      "car": 0
     },
     {
       "from": 1775446777118,
@@ -60760,8 +60306,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3343"
+      "car": 1
     },
     {
       "from": 1775446776697,
@@ -60772,8 +60317,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3344"
+      "car": 1
     },
     {
       "from": 5909462892,
@@ -60784,8 +60328,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3345"
+      "car": 1
     },
     {
       "from": 1775446777118,
@@ -60796,8 +60339,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3346"
+      "car": 1
     },
     {
       "from": 1775446777119,
@@ -60808,8 +60350,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3347"
+      "car": 1
     },
     {
       "from": 12348544530,
@@ -60820,8 +60361,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3348"
+      "car": 1
     },
     {
       "from": 1775446777120,
@@ -60832,8 +60372,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3349"
+      "car": 0
     },
     {
       "from": 1775446777119,
@@ -60844,8 +60383,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3350"
+      "car": 0
     },
     {
       "from": 1775446777119,
@@ -60856,8 +60394,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3351"
+      "car": 0
     },
     {
       "from": 1775446777117,
@@ -60868,8 +60405,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3352"
+      "car": 0
     },
     {
       "from": 1775446777120,
@@ -60880,8 +60416,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3353"
+      "car": 0
     },
     {
       "from": 1775446776976,
@@ -60892,8 +60427,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3354"
+      "car": 0
     },
     {
       "from": 1775446776011,
@@ -60904,8 +60438,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3355"
+      "car": 1
     },
     {
       "from": 1775446777119,
@@ -60916,8 +60449,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3356"
+      "car": 1
     },
     {
       "from": 8234021858,
@@ -60928,8 +60460,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3357"
+      "car": 1
     },
     {
       "from": 1775446777120,
@@ -60940,8 +60471,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3358"
+      "car": 1
     },
     {
       "from": 1775446777121,
@@ -60952,8 +60482,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3359"
+      "car": 0
     },
     {
       "from": 1775446777120,
@@ -60964,8 +60493,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3360"
+      "car": 0
     },
     {
       "from": 1775446777121,
@@ -60976,8 +60504,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3361"
+      "car": 1
     },
     {
       "from": 2805238636,
@@ -60988,8 +60515,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3362"
+      "car": 1
     },
     {
       "from": 5909461084,
@@ -61000,8 +60526,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3363"
+      "car": 1
     },
     {
       "from": 1775446777121,
@@ -61012,8 +60537,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3364"
+      "car": 1
     },
     {
       "from": 1775446777133,
@@ -61024,8 +60548,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3365"
+      "car": 1
     },
     {
       "from": 9000054,
@@ -61036,8 +60559,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3366"
+      "car": 1
     },
     {
       "from": 1775446777133,
@@ -61048,8 +60570,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3367"
+      "car": 1
     },
     {
       "from": 5909462893,
@@ -61060,8 +60581,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3368"
+      "car": 1
     },
     {
       "from": 1775446777132,
@@ -61072,8 +60592,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3369"
+      "car": 0
     },
     {
       "from": 1775446777133,
@@ -61084,8 +60603,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3370"
+      "car": 0
     },
     {
       "from": 1775446777131,
@@ -61096,8 +60614,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3371"
+      "car": 0
     },
     {
       "from": 1775446777132,
@@ -61108,8 +60625,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3372"
+      "car": 0
     },
     {
       "from": 1775446777130,
@@ -61120,8 +60636,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3373"
+      "car": 0
     },
     {
       "from": 1775446777131,
@@ -61132,8 +60647,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3374"
+      "car": 0
     },
     {
       "from": 1775446777128,
@@ -61144,8 +60658,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3375"
+      "car": 0
     },
     {
       "from": 1775446777129,
@@ -61156,8 +60669,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3376"
+      "car": 0
     },
     {
       "from": 1775446777129,
@@ -61168,8 +60680,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3377"
+      "car": 0
     },
     {
       "from": 1775446777130,
@@ -61180,8 +60691,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3378"
+      "car": 0
     },
     {
       "from": 1775446777127,
@@ -61192,8 +60702,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3379"
+      "car": 0
     },
     {
       "from": 1775446777128,
@@ -61204,8 +60713,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3380"
+      "car": 0
     },
     {
       "from": 1775446777126,
@@ -61216,8 +60724,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3381"
+      "car": 0
     },
     {
       "from": 1775446777127,
@@ -61228,8 +60735,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3382"
+      "car": 0
     },
     {
       "from": 1775446777125,
@@ -61240,8 +60746,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3383"
+      "car": 0
     },
     {
       "from": 1775446777126,
@@ -61252,8 +60757,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3384"
+      "car": 0
     },
     {
       "from": 1775446777124,
@@ -61264,8 +60768,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3385"
+      "car": 0
     },
     {
       "from": 1775446777125,
@@ -61276,8 +60779,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3386"
+      "car": 0
     },
     {
       "from": 1775446777123,
@@ -61288,8 +60790,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3387"
+      "car": 0
     },
     {
       "from": 1775446777124,
@@ -61300,8 +60801,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3388"
+      "car": 0
     },
     {
       "from": 1775446777122,
@@ -61312,8 +60812,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3389"
+      "car": 0
     },
     {
       "from": 1775446777123,
@@ -61324,8 +60823,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3390"
+      "car": 0
     },
     {
       "from": 1775446777118,
@@ -61336,8 +60834,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3391"
+      "car": 0
     },
     {
       "from": 1775446777122,
@@ -61348,8 +60845,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3392"
+      "car": 0
     },
     {
       "from": 9480931152,
@@ -61360,8 +60856,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3393"
+      "car": 1
     },
     {
       "from": 1775446777122,
@@ -61372,8 +60867,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3394"
+      "car": 1
     },
     {
       "from": 1775446777122,
@@ -61384,8 +60878,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3395"
+      "car": 1
     },
     {
       "from": 1775446776012,
@@ -61396,8 +60889,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3396"
+      "car": 1
     },
     {
       "from": 1775446776019,
@@ -61408,8 +60900,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3397"
+      "car": 1
     },
     {
       "from": 1775446777123,
@@ -61420,8 +60911,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3398"
+      "car": 1
     },
     {
       "from": 1775446777123,
@@ -61432,8 +60922,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3399"
+      "car": 1
     },
     {
       "from": 1775446776013,
@@ -61444,8 +60933,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3400"
+      "car": 1
     },
     {
       "from": 9480931150,
@@ -61456,8 +60944,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3401"
+      "car": 1
     },
     {
       "from": 1775446777124,
@@ -61468,8 +60955,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3402"
+      "car": 1
     },
     {
       "from": 1775446777124,
@@ -61480,8 +60966,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3403"
+      "car": 1
     },
     {
       "from": 1775446776014,
@@ -61492,8 +60977,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3404"
+      "car": 1
     },
     {
       "from": 9480931149,
@@ -61504,8 +60988,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3405"
+      "car": 1
     },
     {
       "from": 1775446777125,
@@ -61516,8 +60999,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3406"
+      "car": 1
     },
     {
       "from": 1775446777125,
@@ -61528,8 +61010,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3407"
+      "car": 1
     },
     {
       "from": 1775446776015,
@@ -61540,8 +61021,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3408"
+      "car": 1
     },
     {
       "from": 1775446776962,
@@ -61552,8 +61032,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3409"
+      "car": 1
     },
     {
       "from": 1775446777126,
@@ -61564,8 +61043,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3410"
+      "car": 1
     },
     {
       "from": 1775446777126,
@@ -61576,8 +61054,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3411"
+      "car": 1
     },
     {
       "from": 1775446776963,
@@ -61588,8 +61065,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3412"
+      "car": 1
     },
     {
       "from": 1775446777128,
@@ -61600,8 +61076,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3413"
+      "car": 1
     },
     {
       "from": 1775446776017,
@@ -61612,8 +61087,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3414"
+      "car": 1
     },
     {
       "from": 9480931148,
@@ -61624,8 +61098,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3415"
+      "car": 1
     },
     {
       "from": 1775446777128,
@@ -61636,8 +61109,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3416"
+      "car": 1
     },
     {
       "from": 1775446776094,
@@ -61648,8 +61120,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3417"
+      "car": 1
     },
     {
       "from": 1775446777129,
@@ -61660,8 +61131,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3418"
+      "car": 1
     },
     {
       "from": 1775446777129,
@@ -61672,8 +61142,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3419"
+      "car": 1
     },
     {
       "from": 1775446776095,
@@ -61684,8 +61153,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3420"
+      "car": 1
     },
     {
       "from": 1775446776093,
@@ -61696,8 +61164,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3421"
+      "car": 1
     },
     {
       "from": 1775446777127,
@@ -61708,8 +61175,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3422"
+      "car": 1
     },
     {
       "from": 1775446777127,
@@ -61720,8 +61186,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3423"
+      "car": 1
     },
     {
       "from": 1775446776016,
@@ -61732,8 +61197,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3424"
+      "car": 1
     },
     {
       "from": 1775446776091,
@@ -61744,8 +61208,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3425"
+      "car": 1
     },
     {
       "from": 1775446777130,
@@ -61756,8 +61219,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3426"
+      "car": 1
     },
     {
       "from": 1775446777130,
@@ -61768,8 +61230,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3427"
+      "car": 1
     },
     {
       "from": 1775446776092,
@@ -61780,8 +61241,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3428"
+      "car": 1
     },
     {
       "from": 9480931153,
@@ -61792,8 +61252,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3429"
+      "car": 1
     },
     {
       "from": 1775446777131,
@@ -61804,8 +61263,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3430"
+      "car": 1
     },
     {
       "from": 1775446777131,
@@ -61816,8 +61274,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3431"
+      "car": 1
     },
     {
       "from": 1775446776018,
@@ -61828,8 +61285,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3432"
+      "car": 1
     },
     {
       "from": 1775446777132,
@@ -61840,8 +61296,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3433"
+      "car": 1
     },
     {
       "from": 8234021857,
@@ -61852,8 +61307,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3434"
+      "car": 1
     },
     {
       "from": 1775446777132,
@@ -61864,8 +61318,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3435"
+      "car": 0
     },
     {
       "from": 2805238633,
@@ -61876,8 +61329,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3436"
+      "car": 0
     },
     {
       "from": 1775446777132,
@@ -61888,8 +61340,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3437"
+      "car": 0
     },
     {
       "from": 1775446777120,
@@ -61900,8 +61351,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3438"
+      "car": 0
     },
     {
       "from": 1775446777153,
@@ -61912,8 +61362,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3439"
+      "car": 1
     },
     {
       "from": 1775446776684,
@@ -61924,8 +61373,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3440"
+      "car": 1
     },
     {
       "from": 1775446776229,
@@ -61936,8 +61384,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3441"
+      "car": 1
     },
     {
       "from": 1775446777153,
@@ -61948,8 +61395,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3442"
+      "car": 1
     },
     {
       "from": 1775446777153,
@@ -61960,8 +61406,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3443"
+      "car": 0
     },
     {
       "from": 1775446777083,
@@ -61972,8 +61417,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3444"
+      "car": 0
     },
     {
       "from": 1775446777134,
@@ -61984,8 +61428,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3445"
+      "car": 0
     },
     {
       "from": 1775446777133,
@@ -61996,8 +61439,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3446"
+      "car": 0
     },
     {
       "from": 9480881324,
@@ -62008,8 +61450,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3447"
+      "car": 1
     },
     {
       "from": 1775446777134,
@@ -62020,8 +61461,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3448"
+      "car": 1
     },
     {
       "from": 1775446777134,
@@ -62032,8 +61472,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3449"
+      "car": 1
     },
     {
       "from": 1775446776657,
@@ -62044,8 +61483,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3450"
+      "car": 1
     },
     {
       "from": 1775446777135,
@@ -62056,8 +61494,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3451"
+      "car": 0
     },
     {
       "from": 1775446777134,
@@ -62068,8 +61505,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3452"
+      "car": 0
     },
     {
       "from": 1775446777136,
@@ -62080,8 +61516,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3453"
+      "car": 0
     },
     {
       "from": 1775446777135,
@@ -62092,8 +61527,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3454"
+      "car": 0
     },
     {
       "from": 1775446777137,
@@ -62104,8 +61538,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3455"
+      "car": 0
     },
     {
       "from": 1775446777136,
@@ -62116,8 +61549,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3456"
+      "car": 0
     },
     {
       "from": 1775446777138,
@@ -62128,8 +61560,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3457"
+      "car": 0
     },
     {
       "from": 1775446777137,
@@ -62140,8 +61571,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3458"
+      "car": 0
     },
     {
       "from": 1775446777139,
@@ -62152,8 +61582,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3459"
+      "car": 0
     },
     {
       "from": 1775446777138,
@@ -62164,8 +61593,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3460"
+      "car": 0
     },
     {
       "from": 1775446777140,
@@ -62176,8 +61604,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3461"
+      "car": 0
     },
     {
       "from": 1775446777139,
@@ -62188,8 +61615,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3462"
+      "car": 0
     },
     {
       "from": 1775446777141,
@@ -62200,8 +61626,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3463"
+      "car": 0
     },
     {
       "from": 1775446777140,
@@ -62212,8 +61637,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3464"
+      "car": 0
     },
     {
       "from": 1775446777142,
@@ -62224,8 +61648,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3465"
+      "car": 0
     },
     {
       "from": 1775446777141,
@@ -62236,8 +61659,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3466"
+      "car": 0
     },
     {
       "from": 1775446777143,
@@ -62248,8 +61670,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3467"
+      "car": 0
     },
     {
       "from": 1775446777142,
@@ -62260,8 +61681,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3468"
+      "car": 0
     },
     {
       "from": 1775446777144,
@@ -62272,8 +61692,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3469"
+      "car": 0
     },
     {
       "from": 1775446777143,
@@ -62284,8 +61703,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3470"
+      "car": 0
     },
     {
       "from": 1775446777145,
@@ -62296,8 +61714,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3471"
+      "car": 0
     },
     {
       "from": 1775446777144,
@@ -62308,8 +61725,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3472"
+      "car": 0
     },
     {
       "from": 1775446777146,
@@ -62320,8 +61736,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3473"
+      "car": 0
     },
     {
       "from": 1775446777145,
@@ -62332,8 +61747,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3474"
+      "car": 0
     },
     {
       "from": 1775446777147,
@@ -62344,8 +61758,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3475"
+      "car": 0
     },
     {
       "from": 1775446777146,
@@ -62356,8 +61769,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3476"
+      "car": 0
     },
     {
       "from": 1775446777148,
@@ -62368,8 +61780,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3477"
+      "car": 0
     },
     {
       "from": 1775446777147,
@@ -62380,8 +61791,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3478"
+      "car": 0
     },
     {
       "from": 1775446777149,
@@ -62392,8 +61802,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3479"
+      "car": 0
     },
     {
       "from": 1775446777148,
@@ -62404,8 +61813,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3480"
+      "car": 0
     },
     {
       "from": 1775446777150,
@@ -62416,8 +61824,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3481"
+      "car": 0
     },
     {
       "from": 1775446777149,
@@ -62428,8 +61835,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3482"
+      "car": 0
     },
     {
       "from": 1775446777151,
@@ -62440,8 +61846,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3483"
+      "car": 0
     },
     {
       "from": 1775446777150,
@@ -62452,8 +61857,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3484"
+      "car": 0
     },
     {
       "from": 1775446777152,
@@ -62464,8 +61868,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3485"
+      "car": 0
     },
     {
       "from": 1775446777151,
@@ -62476,8 +61879,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3486"
+      "car": 0
     },
     {
       "from": 1775446777153,
@@ -62488,8 +61890,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3487"
+      "car": 0
     },
     {
       "from": 1775446777152,
@@ -62500,8 +61901,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3488"
+      "car": 0
     },
     {
       "from": 9480944943,
@@ -62512,8 +61912,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3489"
+      "car": 1
     },
     {
       "from": 1775446777135,
@@ -62524,8 +61923,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3490"
+      "car": 1
     },
     {
       "from": 1775446777135,
@@ -62536,8 +61934,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3491"
+      "car": 1
     },
     {
       "from": 1775446776658,
@@ -62548,8 +61945,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3492"
+      "car": 1
     },
     {
       "from": 9480944945,
@@ -62560,8 +61956,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3493"
+      "car": 1
     },
     {
       "from": 1775446777136,
@@ -62572,8 +61967,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3494"
+      "car": 1
     },
     {
       "from": 1775446777136,
@@ -62584,8 +61978,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3495"
+      "car": 1
     },
     {
       "from": 1775446776659,
@@ -62596,8 +61989,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3496"
+      "car": 1
     },
     {
       "from": 9480944942,
@@ -62608,8 +62000,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3497"
+      "car": 1
     },
     {
       "from": 1775446777137,
@@ -62620,8 +62011,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3498"
+      "car": 1
     },
     {
       "from": 1775446777137,
@@ -62632,8 +62022,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3499"
+      "car": 1
     },
     {
       "from": 1775446776660,
@@ -62644,8 +62033,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3500"
+      "car": 1
     },
     {
       "from": 1775446776653,
@@ -62656,8 +62044,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3501"
+      "car": 1
     },
     {
       "from": 1775446777138,
@@ -62668,8 +62055,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3502"
+      "car": 1
     },
     {
       "from": 1775446777138,
@@ -62680,8 +62066,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3503"
+      "car": 1
     },
     {
       "from": 1775446776661,
@@ -62692,8 +62077,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3504"
+      "car": 1
     },
     {
       "from": 9480944944,
@@ -62704,8 +62088,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3505"
+      "car": 1
     },
     {
       "from": 1775446777139,
@@ -62716,8 +62099,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3506"
+      "car": 1
     },
     {
       "from": 1775446777139,
@@ -62728,8 +62110,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3507"
+      "car": 1
     },
     {
       "from": 1775446776667,
@@ -62740,8 +62121,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3508"
+      "car": 1
     },
     {
       "from": 1775446776934,
@@ -62752,8 +62132,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3509"
+      "car": 1
     },
     {
       "from": 1775446777140,
@@ -62764,8 +62143,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3510"
+      "car": 1
     },
     {
       "from": 1775446777140,
@@ -62776,8 +62154,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3511"
+      "car": 1
     },
     {
       "from": 1775446776672,
@@ -62788,8 +62165,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3512"
+      "car": 1
     },
     {
       "from": 9480831014,
@@ -62800,8 +62176,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3513"
+      "car": 1
     },
     {
       "from": 1775446777141,
@@ -62812,8 +62187,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3514"
+      "car": 1
     },
     {
       "from": 1775446777141,
@@ -62824,8 +62198,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3515"
+      "car": 1
     },
     {
       "from": 1775446776668,
@@ -62836,8 +62209,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3516"
+      "car": 1
     },
     {
       "from": 9480831013,
@@ -62848,8 +62220,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3517"
+      "car": 1
     },
     {
       "from": 1775446777142,
@@ -62860,8 +62231,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3518"
+      "car": 1
     },
     {
       "from": 1775446777142,
@@ -62872,8 +62242,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3519"
+      "car": 1
     },
     {
       "from": 1775446776669,
@@ -62884,8 +62253,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3520"
+      "car": 1
     },
     {
       "from": 1775446776235,
@@ -62896,8 +62264,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3521"
+      "car": 1
     },
     {
       "from": 1775446777143,
@@ -62908,8 +62275,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3522"
+      "car": 1
     },
     {
       "from": 1775446777143,
@@ -62920,8 +62286,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3523"
+      "car": 1
     },
     {
       "from": 1775446776670,
@@ -62932,8 +62297,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3524"
+      "car": 1
     },
     {
       "from": 1775446776234,
@@ -62944,8 +62308,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3525"
+      "car": 1
     },
     {
       "from": 1775446777144,
@@ -62956,8 +62319,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3526"
+      "car": 1
     },
     {
       "from": 1775446777144,
@@ -62968,8 +62330,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3527"
+      "car": 1
     },
     {
       "from": 1775446776671,
@@ -62980,8 +62341,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3528"
+      "car": 1
     },
     {
       "from": 1775446776284,
@@ -62992,8 +62352,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3529"
+      "car": 1
     },
     {
       "from": 1775446777145,
@@ -63004,8 +62363,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3530"
+      "car": 1
     },
     {
       "from": 1775446777145,
@@ -63016,8 +62374,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3531"
+      "car": 1
     },
     {
       "from": 1775446776673,
@@ -63028,8 +62385,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3532"
+      "car": 1
     },
     {
       "from": 9789596723,
@@ -63040,8 +62396,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3533"
+      "car": 1
     },
     {
       "from": 1775446777146,
@@ -63052,8 +62407,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3534"
+      "car": 1
     },
     {
       "from": 1775446777146,
@@ -63064,8 +62418,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3535"
+      "car": 1
     },
     {
       "from": 1775446776674,
@@ -63076,8 +62429,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3536"
+      "car": 1
     },
     {
       "from": 1775446776237,
@@ -63088,8 +62440,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3537"
+      "car": 1
     },
     {
       "from": 1775446777147,
@@ -63100,8 +62451,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3538"
+      "car": 1
     },
     {
       "from": 1775446777147,
@@ -63112,8 +62462,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3539"
+      "car": 1
     },
     {
       "from": 1775446776676,
@@ -63124,8 +62473,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3540"
+      "car": 1
     },
     {
       "from": 1775446776238,
@@ -63136,8 +62484,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3541"
+      "car": 1
     },
     {
       "from": 1775446777148,
@@ -63148,8 +62495,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3542"
+      "car": 1
     },
     {
       "from": 1775446777148,
@@ -63160,8 +62506,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3543"
+      "car": 1
     },
     {
       "from": 1775446776680,
@@ -63172,8 +62517,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3544"
+      "car": 1
     },
     {
       "from": 1775446776240,
@@ -63184,8 +62528,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3545"
+      "car": 1
     },
     {
       "from": 1775446777149,
@@ -63196,8 +62539,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3546"
+      "car": 1
     },
     {
       "from": 1775446777149,
@@ -63208,8 +62550,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3547"
+      "car": 1
     },
     {
       "from": 1775446776679,
@@ -63220,8 +62561,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3548"
+      "car": 1
     },
     {
       "from": 1775446776239,
@@ -63232,8 +62572,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3549"
+      "car": 1
     },
     {
       "from": 1775446777150,
@@ -63244,8 +62583,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3550"
+      "car": 1
     },
     {
       "from": 1775446777150,
@@ -63256,8 +62594,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3551"
+      "car": 1
     },
     {
       "from": 1775446776681,
@@ -63268,8 +62605,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3552"
+      "car": 1
     },
     {
       "from": 1775446776651,
@@ -63280,8 +62616,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3553"
+      "car": 1
     },
     {
       "from": 1775446777151,
@@ -63292,8 +62627,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3554"
+      "car": 1
     },
     {
       "from": 1775446777151,
@@ -63304,8 +62638,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3555"
+      "car": 1
     },
     {
       "from": 1775446776706,
@@ -63316,8 +62649,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3556"
+      "car": 1
     },
     {
       "from": 1775446777152,
@@ -63328,8 +62660,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3557"
+      "car": 1
     },
     {
       "from": 1775446776705,
@@ -63340,8 +62671,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3558"
+      "car": 1
     },
     {
       "from": 1775446776910,
@@ -63352,8 +62682,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3559"
+      "car": 1
     },
     {
       "from": 1775446777152,
@@ -63364,8 +62693,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3560"
+      "car": 1
     },
     {
       "from": 1775446777174,
@@ -63376,8 +62704,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3561"
+      "car": 0
     },
     {
       "from": 1775446777175,
@@ -63388,8 +62715,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3562"
+      "car": 0
     },
     {
       "from": 1775446777173,
@@ -63400,8 +62726,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3563"
+      "car": 0
     },
     {
       "from": 1775446777174,
@@ -63412,8 +62737,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3564"
+      "car": 0
     },
     {
       "from": 1775446777172,
@@ -63424,8 +62748,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3565"
+      "car": 0
     },
     {
       "from": 1775446777173,
@@ -63436,8 +62759,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3566"
+      "car": 0
     },
     {
       "from": 1775446777171,
@@ -63448,8 +62770,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3567"
+      "car": 0
     },
     {
       "from": 1775446777172,
@@ -63460,8 +62781,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3568"
+      "car": 0
     },
     {
       "from": 1775446777170,
@@ -63472,8 +62792,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3569"
+      "car": 0
     },
     {
       "from": 1775446777171,
@@ -63484,8 +62803,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3570"
+      "car": 0
     },
     {
       "from": 1775446777169,
@@ -63496,8 +62814,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3571"
+      "car": 0
     },
     {
       "from": 1775446777170,
@@ -63508,8 +62825,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3572"
+      "car": 0
     },
     {
       "from": 1775446777168,
@@ -63520,8 +62836,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3573"
+      "car": 0
     },
     {
       "from": 1775446777169,
@@ -63532,8 +62847,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3574"
+      "car": 0
     },
     {
       "from": 1775446777167,
@@ -63544,8 +62858,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3575"
+      "car": 0
     },
     {
       "from": 1775446777168,
@@ -63556,8 +62869,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3576"
+      "car": 0
     },
     {
       "from": 1775446777166,
@@ -63568,8 +62880,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3577"
+      "car": 0
     },
     {
       "from": 1775446777167,
@@ -63580,8 +62891,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3578"
+      "car": 0
     },
     {
       "from": 1775446777165,
@@ -63592,8 +62902,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3579"
+      "car": 0
     },
     {
       "from": 1775446777166,
@@ -63604,8 +62913,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3580"
+      "car": 0
     },
     {
       "from": 1775446777164,
@@ -63616,8 +62924,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3581"
+      "car": 0
     },
     {
       "from": 1775446777165,
@@ -63628,8 +62935,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3582"
+      "car": 0
     },
     {
       "from": 1775446777163,
@@ -63640,8 +62946,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3583"
+      "car": 0
     },
     {
       "from": 1775446777164,
@@ -63652,8 +62957,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3584"
+      "car": 0
     },
     {
       "from": 1775446777162,
@@ -63664,8 +62968,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3585"
+      "car": 0
     },
     {
       "from": 1775446777163,
@@ -63676,8 +62979,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3586"
+      "car": 0
     },
     {
       "from": 1775446777161,
@@ -63688,8 +62990,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3587"
+      "car": 0
     },
     {
       "from": 1775446777162,
@@ -63700,8 +63001,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3588"
+      "car": 0
     },
     {
       "from": 1775446777160,
@@ -63712,8 +63012,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3589"
+      "car": 0
     },
     {
       "from": 1775446777161,
@@ -63724,8 +63023,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3590"
+      "car": 0
     },
     {
       "from": 1775446777159,
@@ -63736,8 +63034,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3591"
+      "car": 0
     },
     {
       "from": 1775446777160,
@@ -63748,8 +63045,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3592"
+      "car": 0
     },
     {
       "from": 1775446777158,
@@ -63760,8 +63056,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3593"
+      "car": 0
     },
     {
       "from": 1775446777159,
@@ -63772,8 +63067,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3594"
+      "car": 0
     },
     {
       "from": 1775446777157,
@@ -63784,8 +63078,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3595"
+      "car": 0
     },
     {
       "from": 1775446777158,
@@ -63796,8 +63089,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3596"
+      "car": 0
     },
     {
       "from": 1775446777156,
@@ -63808,8 +63100,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3597"
+      "car": 0
     },
     {
       "from": 1775446777157,
@@ -63820,8 +63111,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3598"
+      "car": 0
     },
     {
       "from": 1775446777156,
@@ -63832,8 +63122,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3599"
+      "car": 0
     },
     {
       "from": 1775446777155,
@@ -63844,8 +63133,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3600"
+      "car": 0
     },
     {
       "from": 1775446777154,
@@ -63856,8 +63144,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3601"
+      "car": 0
     },
     {
       "from": 1775446777155,
@@ -63868,8 +63155,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3602"
+      "car": 0
     },
     {
       "from": 1775446777121,
@@ -63880,8 +63166,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3603"
+      "car": 0
     },
     {
       "from": 1775446777154,
@@ -63892,8 +63177,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3604"
+      "car": 0
     },
     {
       "from": 1775446776710,
@@ -63904,8 +63188,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3605"
+      "car": 1
     },
     {
       "from": 1775446777154,
@@ -63916,8 +63199,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3606"
+      "car": 1
     },
     {
       "from": 1775446777154,
@@ -63928,8 +63210,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3607"
+      "car": 1
     },
     {
       "from": 2805251309,
@@ -63940,8 +63221,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3608"
+      "car": 1
     },
     {
       "from": 1775446776715,
@@ -63952,8 +63232,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3609"
+      "car": 1
     },
     {
       "from": 1775446777155,
@@ -63964,8 +63243,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3610"
+      "car": 1
     },
     {
       "from": 1775446777155,
@@ -63976,8 +63254,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3611"
+      "car": 1
     },
     {
       "from": 1775446776227,
@@ -63988,8 +63265,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3612"
+      "car": 1
     },
     {
       "from": 1775446776714,
@@ -64000,8 +63276,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3613"
+      "car": 1
     },
     {
       "from": 1775446777156,
@@ -64012,8 +63287,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3614"
+      "car": 1
     },
     {
       "from": 1775446777156,
@@ -64024,8 +63298,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3615"
+      "car": 1
     },
     {
       "from": 1775446776225,
@@ -64036,8 +63309,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3616"
+      "car": 1
     },
     {
       "from": 1775446776716,
@@ -64048,8 +63320,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3617"
+      "car": 1
     },
     {
       "from": 1775446777157,
@@ -64060,8 +63331,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3618"
+      "car": 1
     },
     {
       "from": 1775446777157,
@@ -64072,8 +63342,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3619"
+      "car": 1
     },
     {
       "from": 9789613223,
@@ -64084,8 +63353,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3620"
+      "car": 1
     },
     {
       "from": 1775446776717,
@@ -64096,8 +63364,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3621"
+      "car": 1
     },
     {
       "from": 1775446777158,
@@ -64108,8 +63375,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3622"
+      "car": 1
     },
     {
       "from": 1775446777158,
@@ -64120,8 +63386,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3623"
+      "car": 1
     },
     {
       "from": 9789613220,
@@ -64132,8 +63397,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3624"
+      "car": 1
     },
     {
       "from": 1775446776720,
@@ -64144,8 +63408,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3625"
+      "car": 1
     },
     {
       "from": 1775446777159,
@@ -64156,8 +63419,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3626"
+      "car": 1
     },
     {
       "from": 1775446777159,
@@ -64168,8 +63430,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3627"
+      "car": 1
     },
     {
       "from": 9789613222,
@@ -64180,8 +63441,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3628"
+      "car": 1
     },
     {
       "from": 1775446776721,
@@ -64192,8 +63452,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3629"
+      "car": 1
     },
     {
       "from": 1775446777160,
@@ -64204,8 +63463,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3630"
+      "car": 1
     },
     {
       "from": 1775446777160,
@@ -64216,8 +63474,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3631"
+      "car": 1
     },
     {
       "from": 1775446776655,
@@ -64228,8 +63485,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3632"
+      "car": 1
     },
     {
       "from": 5909461083,
@@ -64240,8 +63496,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3633"
+      "car": 1
     },
     {
       "from": 1775446777161,
@@ -64252,8 +63507,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3634"
+      "car": 1
     },
     {
       "from": 1775446777161,
@@ -64264,8 +63518,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3635"
+      "car": 0
     },
     {
       "from": 1775446776948,
@@ -64276,8 +63529,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3636"
+      "car": 0
     },
     {
       "from": 1775446776727,
@@ -64288,8 +63540,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3637"
+      "car": 1
     },
     {
       "from": 1775446777165,
@@ -64300,8 +63551,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3638"
+      "car": 1
     },
     {
       "from": 1775446776183,
@@ -64312,8 +63562,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3639"
+      "car": 1
     },
     {
       "from": 1775446777165,
@@ -64324,8 +63573,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3640"
+      "car": 1
     },
     {
       "from": 1775446776725,
@@ -64336,8 +63584,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3641"
+      "car": 1
     },
     {
       "from": 1775446777164,
@@ -64348,8 +63595,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3642"
+      "car": 1
     },
     {
       "from": 1775446777164,
@@ -64360,8 +63606,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3643"
+      "car": 1
     },
     {
       "from": 1775446776182,
@@ -64372,8 +63617,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3644"
+      "car": 1
     },
     {
       "from": 1775446776723,
@@ -64384,8 +63628,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3645"
+      "car": 1
     },
     {
       "from": 1775446777163,
@@ -64396,8 +63639,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3646"
+      "car": 1
     },
     {
       "from": 1775446777163,
@@ -64408,8 +63650,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3647"
+      "car": 1
     },
     {
       "from": 1775446776190,
@@ -64420,8 +63661,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3648"
+      "car": 1
     },
     {
       "from": 1775446776726,
@@ -64432,8 +63672,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3649"
+      "car": 1
     },
     {
       "from": 1775446777162,
@@ -64444,8 +63683,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3650"
+      "car": 1
     },
     {
       "from": 1775446777162,
@@ -64456,8 +63694,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3651"
+      "car": 1
     },
     {
       "from": 1775446776191,
@@ -64468,8 +63705,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3652"
+      "car": 1
     },
     {
       "from": 1775446776728,
@@ -64480,8 +63716,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3653"
+      "car": 1
     },
     {
       "from": 1775446777166,
@@ -64492,8 +63727,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3654"
+      "car": 1
     },
     {
       "from": 1775446777166,
@@ -64504,8 +63738,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3655"
+      "car": 1
     },
     {
       "from": 1775446776184,
@@ -64516,8 +63749,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3656"
+      "car": 1
     },
     {
       "from": 1775446776733,
@@ -64528,8 +63760,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3657"
+      "car": 1
     },
     {
       "from": 1775446777167,
@@ -64540,8 +63771,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3658"
+      "car": 1
     },
     {
       "from": 1775446777167,
@@ -64552,8 +63782,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3659"
+      "car": 1
     },
     {
       "from": 1775446776194,
@@ -64564,8 +63793,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3660"
+      "car": 1
     },
     {
       "from": 1775446776951,
@@ -64576,8 +63804,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3661"
+      "car": 1
     },
     {
       "from": 1775446777168,
@@ -64588,8 +63815,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3662"
+      "car": 1
     },
     {
       "from": 1775446777168,
@@ -64600,8 +63826,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3663"
+      "car": 1
     },
     {
       "from": 1775446776949,
@@ -64612,8 +63837,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3664"
+      "car": 1
     },
     {
       "from": 1775446776732,
@@ -64624,8 +63848,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3665"
+      "car": 1
     },
     {
       "from": 1775446777169,
@@ -64636,8 +63859,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3666"
+      "car": 1
     },
     {
       "from": 1775446777169,
@@ -64648,8 +63870,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3667"
+      "car": 1
     },
     {
       "from": 1775446776195,
@@ -64660,8 +63881,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3668"
+      "car": 1
     },
     {
       "from": 1775446776734,
@@ -64672,8 +63892,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3669"
+      "car": 1
     },
     {
       "from": 1775446777170,
@@ -64684,8 +63903,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3670"
+      "car": 1
     },
     {
       "from": 1775446777170,
@@ -64696,8 +63914,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3671"
+      "car": 1
     },
     {
       "from": 1775446776186,
@@ -64708,8 +63925,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3672"
+      "car": 1
     },
     {
       "from": 1775446776735,
@@ -64720,8 +63936,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3673"
+      "car": 1
     },
     {
       "from": 1775446777171,
@@ -64732,8 +63947,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3674"
+      "car": 1
     },
     {
       "from": 1775446777171,
@@ -64744,8 +63958,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3675"
+      "car": 1
     },
     {
       "from": 1775446776947,
@@ -64756,8 +63969,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3676"
+      "car": 1
     },
     {
       "from": 1775446776736,
@@ -64768,8 +63980,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3677"
+      "car": 1
     },
     {
       "from": 1775446777172,
@@ -64780,8 +63991,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3678"
+      "car": 1
     },
     {
       "from": 1775446777172,
@@ -64792,8 +64002,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3679"
+      "car": 1
     },
     {
       "from": 1775446776287,
@@ -64804,8 +64013,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3680"
+      "car": 1
     },
     {
       "from": 1775446776740,
@@ -64816,8 +64024,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3681"
+      "car": 1
     },
     {
       "from": 1775446777173,
@@ -64828,8 +64035,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3682"
+      "car": 1
     },
     {
       "from": 1775446777173,
@@ -64840,8 +64046,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3683"
+      "car": 1
     },
     {
       "from": 1775446776189,
@@ -64852,8 +64057,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3684"
+      "car": 1
     },
     {
       "from": 1775446776741,
@@ -64864,8 +64068,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3685"
+      "car": 1
     },
     {
       "from": 1775446777174,
@@ -64876,8 +64079,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3686"
+      "car": 1
     },
     {
       "from": 1775446777174,
@@ -64888,8 +64090,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3687"
+      "car": 1
     },
     {
       "from": 1775446776218,
@@ -64900,8 +64101,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3688"
+      "car": 1
     },
     {
       "from": 1775446776742,
@@ -64912,8 +64112,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3689"
+      "car": 1
     },
     {
       "from": 1775446777175,
@@ -64924,8 +64123,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3690"
+      "car": 1
     },
     {
       "from": 1775446777175,
@@ -64936,8 +64134,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3691"
+      "car": 1
     },
     {
       "from": 1775446776188,
@@ -64948,8 +64145,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3692"
+      "car": 1
     },
     {
       "from": 2735979145,
@@ -64960,8 +64156,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3693"
+      "car": 0
     },
     {
       "from": 1775446777067,
@@ -64972,8 +64167,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3694"
+      "car": 0
     },
     {
       "from": 1775446777177,
@@ -64984,8 +64178,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3695"
+      "car": 0
     },
     {
       "from": 1775446777068,
@@ -64996,8 +64189,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3696"
+      "car": 0
     },
     {
       "from": 1775446777177,
@@ -65008,8 +64200,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3697"
+      "car": 0
     },
     {
       "from": 1775446777176,
@@ -65020,8 +64211,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3698"
+      "car": 0
     },
     {
       "from": 664471011,
@@ -65032,8 +64222,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3699"
+      "car": 1
     },
     {
       "from": 1775446777176,
@@ -65044,8 +64233,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3700"
+      "car": 1
     },
     {
       "from": 1775446777176,
@@ -65056,8 +64244,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3701"
+      "car": 1
     },
     {
       "from": 667595311,
@@ -65068,8 +64255,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3702"
+      "car": 1
     },
     {
       "from": 10182274670,
@@ -65080,8 +64266,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3703"
+      "car": 1
     },
     {
       "from": 664411014,
@@ -65092,8 +64277,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3704"
+      "car": 1
     },
     {
       "from": 667595311,
@@ -65104,8 +64288,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3705"
+      "car": 0
     },
     {
       "from": 2735979145,
@@ -65116,8 +64299,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3706"
+      "car": 0
     },
     {
       "from": 1775446776743,
@@ -65128,8 +64310,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3707"
+      "car": 0
     },
     {
       "from": 1775446777178,
@@ -65140,8 +64321,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3708"
+      "car": 0
     },
     {
       "from": 1775446777178,
@@ -65152,8 +64332,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3709"
+      "car": 0
     },
     {
       "from": 1775446777175,
@@ -65164,8 +64343,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3710"
+      "car": 0
     },
     {
       "from": 1775446777079,
@@ -65176,8 +64354,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3711"
+      "car": 0
     },
     {
       "from": 1775446777178,
@@ -65188,8 +64365,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3712"
+      "car": 0
     },
     {
       "from": 1775446777020,
@@ -65200,8 +64376,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3713"
+      "car": 0
     },
     {
       "from": 6293656913,
@@ -65212,8 +64387,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3714"
+      "car": 0
     },
     {
       "from": 2805254118,
@@ -65224,8 +64398,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3715"
+      "car": 0
     },
     {
       "from": 1775446777009,
@@ -65236,8 +64409,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3716"
+      "car": 0
     },
     {
       "from": 1775446777009,
@@ -65248,8 +64420,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3717"
+      "car": 0
     },
     {
       "from": 1775446776052,
@@ -65260,8 +64431,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3718"
+      "car": 0
     },
     {
       "from": 1775446777007,
@@ -65272,8 +64442,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3719"
+      "car": 1
     },
     {
       "from": 9000118,
@@ -65284,8 +64453,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3720"
+      "car": 1
     },
     {
       "from": 1775446777007,
@@ -65296,8 +64464,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3721"
+      "car": 1
     },
     {
       "from": 1257174528,
@@ -65308,8 +64475,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3722"
+      "car": 1
     },
     {
       "from": 1775446777008,
@@ -65320,8 +64486,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3723"
+      "car": 1
     },
     {
       "from": 1257174527,
@@ -65332,8 +64497,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3724"
+      "car": 1
     },
     {
       "from": 9000117,
@@ -65344,8 +64508,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3725"
+      "car": 1
     },
     {
       "from": 1775446777008,
@@ -65356,8 +64519,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3726"
+      "car": 1
     },
     {
       "from": 9000082,
@@ -65368,8 +64530,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3727"
+      "car": 1
     },
     {
       "from": 1775446777021,
@@ -65380,8 +64541,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3728"
+      "car": 1
     },
     {
       "from": 1775446777021,
@@ -65392,8 +64552,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3729"
+      "car": 1
     },
     {
       "from": 369329442,
@@ -65404,8 +64563,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3730"
+      "car": 1
     },
     {
       "from": 1775446777024,
@@ -65416,8 +64574,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3731"
+      "car": 1
     },
     {
       "from": 625885153,
@@ -65428,8 +64585,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3732"
+      "car": 1
     },
     {
       "from": 1775446775957,
@@ -65440,8 +64596,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3733"
+      "car": 1
     },
     {
       "from": 1775446777024,
@@ -65452,8 +64607,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3734"
+      "car": 1
     },
     {
       "from": 5369293450,
@@ -65464,8 +64618,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3735"
+      "car": 0
     },
     {
       "from": 1775446777010,
@@ -65476,8 +64629,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3736"
+      "car": 0
     },
     {
       "from": 1775446777010,
@@ -65488,8 +64640,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3737"
+      "car": 0
     },
     {
       "from": 5369293449,
@@ -65500,8 +64651,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3738"
+      "car": 0
     },
     {
       "from": 2490499331,
@@ -65512,8 +64662,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3739"
+      "car": 1
     },
     {
       "from": 1775446777006,
@@ -65524,8 +64673,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3740"
+      "car": 1
     },
     {
       "from": 1775446777006,
@@ -65536,8 +64684,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3741"
+      "car": 1
     },
     {
       "from": 2805238630,
@@ -65548,8 +64695,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3742"
+      "car": 1
     },
     {
       "from": 1775446776059,
@@ -65560,8 +64706,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3743"
+      "car": 1
     },
     {
       "from": 1775446777025,
@@ -65572,8 +64717,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3744"
+      "car": 1
     },
     {
       "from": 1775446777025,
@@ -65584,8 +64728,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3745"
+      "car": 1
     },
     {
       "from": 10742733690,
@@ -65596,8 +64739,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3746"
+      "car": 1
     },
     {
       "from": 9000121,
@@ -65608,8 +64750,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3747"
+      "car": 1
     },
     {
       "from": 1775446777026,
@@ -65620,8 +64761,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3748"
+      "car": 1
     },
     {
       "from": 1775446777026,
@@ -65632,8 +64772,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3749"
+      "car": 1
     },
     {
       "from": 664470980,
@@ -65644,8 +64783,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3750"
+      "car": 1
     },
     {
       "from": 1775446777027,
@@ -65656,8 +64794,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3751"
+      "car": 1
     },
     {
       "from": 9000114,
@@ -65668,8 +64805,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3752"
+      "car": 1
     },
     {
       "from": 1775446777027,
@@ -65680,8 +64816,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3753"
+      "car": 1
     },
     {
       "from": 1257174522,
@@ -65692,8 +64827,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3754"
+      "car": 1
     },
     {
       "from": 1775446776096,
@@ -65704,8 +64838,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3755"
+      "car": 1
     },
     {
       "from": 1775446777042,
@@ -65716,8 +64849,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3756"
+      "car": 1
     },
     {
       "from": 1775446777042,
@@ -65728,8 +64860,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3757"
+      "car": 1
     },
     {
       "from": 1775446776098,
@@ -65740,8 +64871,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3758"
+      "car": 1
     },
     {
       "from": 1775446776104,
@@ -65752,8 +64882,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3759"
+      "car": 0
     },
     {
       "from": 1775446777041,
@@ -65764,8 +64893,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3760"
+      "car": 0
     },
     {
       "from": 1775446777041,
@@ -65776,8 +64904,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3761"
+      "car": 0
     },
     {
       "from": 1775446776105,
@@ -65788,8 +64915,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3762"
+      "car": 0
     },
     {
       "from": 1775446776118,
@@ -65800,8 +64926,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3763"
+      "car": 1
     },
     {
       "from": 1775446777039,
@@ -65812,8 +64937,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3764"
+      "car": 1
     },
     {
       "from": 1775446777039,
@@ -65824,8 +64948,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3765"
+      "car": 1
     },
     {
       "from": 2490499334,
@@ -65836,8 +64959,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3766"
+      "car": 1
     },
     {
       "from": 1775446777179,
@@ -65848,8 +64970,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3767"
+      "car": 0
     },
     {
       "from": 1775446776039,
@@ -65860,8 +64981,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3768"
+      "car": 0
     },
     {
       "from": 1775446777179,
@@ -65872,8 +64992,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3769"
+      "car": 0
     },
     {
       "from": 1775446777087,
@@ -65884,8 +65003,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3770"
+      "car": 0
     },
     {
       "from": 1775446777179,
@@ -65896,8 +65014,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3771"
+      "car": 0
     },
     {
       "from": 1775446777088,
@@ -65908,8 +65025,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3772"
+      "car": 0
     },
     {
       "from": 1775446775971,
@@ -65920,8 +65036,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3773"
+      "car": 0
     },
     {
       "from": 1775446777179,
@@ -65932,8 +65047,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 1,
-      "car": 0,
-      "id": "edge_3774"
+      "car": 0
     },
     {
       "from": 9000116,
@@ -65944,8 +65058,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3775"
+      "car": 1
     },
     {
       "from": 2805254124,
@@ -65956,8 +65069,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3776"
+      "car": 1
     },
     {
       "from": 9000116,
@@ -65968,8 +65080,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3777"
+      "car": 1
     },
     {
       "from": 2490499388,
@@ -65980,8 +65091,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 1,
-      "car": 1,
-      "id": "edge_3778"
+      "car": 1
     },
     {
       "from": 1775446776386,
@@ -65992,8 +65102,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3779"
+      "car": 1
     },
     {
       "from": 1775446776644,
@@ -66004,8 +65113,7 @@
       "bike": 1,
       "ebike": 1,
       "motorcycle": 0,
-      "car": 1,
-      "id": "edge_3780"
+      "car": 1
     },
     {
       "from": 1775446777180,
@@ -66016,8 +65124,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3781"
+      "car": 0
     },
     {
       "from": 1775446776380,
@@ -66028,8 +65135,7 @@
       "bike": 0,
       "ebike": 0,
       "motorcycle": 0,
-      "car": 0,
-      "id": "edge_3782"
+      "car": 0
     },
     {
       "from": 2734317235,
@@ -66041,8 +65147,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 0,
-      "tree_shade": 1,
-      "id": "edge_3783"
+      "tree_shade": 1
     },
     {
       "from": 1775446777180,
@@ -66054,8 +65159,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 0,
-      "tree_shade": 1,
-      "id": "edge_3784"
+      "tree_shade": 1
     },
     {
       "from": 1775446777180,
@@ -66067,8 +65171,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 0,
-      "tree_shade": 1,
-      "id": "edge_3785"
+      "tree_shade": 1
     },
     {
       "from": 2734322156,
@@ -66080,8 +65183,7 @@
       "ebike": 1,
       "motorcycle": 0,
       "car": 0,
-      "tree_shade": 1,
-      "id": "edge_3786"
+      "tree_shade": 1
     }
   ]
 }

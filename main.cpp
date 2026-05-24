@@ -189,7 +189,7 @@ int main(int argc, char* argv[]) {
             else if (vehicle == "car")   can_ride = edge.car == 1;
             else can_ride = true;
             if (vehicle == "walk" && edge.walk == 0) continue;
-            
+            if(can_ride == false) continue; // 如果車輛無法通行，直接跳過這條邊
             // --- 依照不同模式套用各自的權重與懲罰 ---
             double next_cost = can_ride ? edge.distance : edge.distance + 99999.0;
 
@@ -197,9 +197,8 @@ int main(int argc, char* argv[]) {
             if (mode == "shortest") {
                 // 不加任何東西，just distance（already set above）
             } else if (mode == "least_climbing") {
-                double abs_slope = abs(edge.slope);
-                if (abs_slope > 0.01) {
-                    next_cost += abs_slope * 10000.0;
+                if (edge.slope > 0.01) {
+                    next_cost += edge.slope * 10000.0;
                 }
             } else if (mode == "shade") {
                 double total_shade = min(1.0, edge.tree_shade + edge.building_shade);
@@ -212,9 +211,8 @@ int main(int argc, char* argv[]) {
                 if (p != -1) {
                     if (nodes.count(p) && nodes.count(u) && nodes.count(v)) {
                         double turn_rad = calculate_turn_angle(nodes[p], nodes[u], nodes[v]);
-                        if (turn_rad > M_PI / 16.0) {
-                            next_cost += 99999.0;
-                        }
+                        double turn_penalty = turn_rad * 40.0; 
+                        next_cost += turn_penalty;
                     }
                 }
             }

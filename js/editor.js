@@ -133,6 +133,36 @@ export function initEditorMode(map, data, graph) {
     map.getContainer().style.cursor = '';
   }
 
+  // 🔧 修正：取得反向邊 (確保無向邊兩個方向都被同步修改)
+  function findReverseEdge(edgeData) {
+    if (!edgeData) return null;
+    return data.edges.find(e => e.from === edgeData.to && e.to === edgeData.from) || null;
+  }
+
+  // 同步路權屬性到反向邊
+  function syncReverseEdgeTransport(edgeData, vals) {
+    const rev = findReverseEdge(edgeData);
+    if (!rev) return;
+    const def = (rev.accessible === false) ? 0 : 1;
+    ['walk', 'bike', 'ebike', 'motorcycle', 'car'].forEach(type => {
+      if (rev[type] === undefined) rev[type] = def;
+      if (vals[type] !== null && vals[type] !== undefined) rev[type] = vals[type];
+    });
+    delete rev.accessible;
+    delete rev.pedestrian_only;
+    delete rev.motor_vehicle_allowed;
+  }
+
+  // 同步單一屬性到反向邊
+  function syncReverseEdgeAttr(edgeData, key, val) {
+    const transportKeys = ['walk', 'bike', 'ebike', 'motorcycle', 'car'];
+    // 只同步路權類屬性，其他屬性 (如 slope、distance) 方向性不同不應同步
+    if (!transportKeys.includes(key)) return;
+    const rev = findReverseEdge(edgeData);
+    if (!rev) return;
+    rev[key] = val;
+  }
+
   function readPromptValue(key) {
     let valStr = prompt(`請輸入『${key}』的數值:`);
     if (valStr === null || valStr.trim() === "") return undefined;
@@ -187,6 +217,10 @@ export function initEditorMode(map, data, graph) {
         const val = readPromptValue(key);
         if (val === undefined) return;
         target[key] = val;
+        // 🔧 修正：若修改的是 Edge 的路權屬性，同步到反向邊
+        if (label === "Edge") {
+          syncReverseEdgeAttr(target, key, val);
+        }
         alert(`✅ 成功設定 ${key} = ${val}`);
         map.closePopup();
       };
@@ -317,6 +351,9 @@ export function initEditorMode(map, data, graph) {
           delete edge.accessible;
           delete edge.pedestrian_only;
           delete edge.motor_vehicle_allowed;
+
+          // 🔧 修正：同步路權設定到反向邊，確保無向邊兩個方向一致
+          syncReverseEdgeTransport(edge, vals);
         });
 
         alert(`✅ 成功更新了 ${selectedEdges.size} 條路段的路權設定！\n(請記得點擊畫面上的「儲存路網」按鈕寫入資料庫)`);

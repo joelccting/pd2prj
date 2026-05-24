@@ -21,16 +21,51 @@ import pandas as pd
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    global shadow_calc
+    
     print("🧹 伺服器啟動中：正在自動清洗高程圖資...")
     try:
         subprocess.run(["python", "clean_elevation.py"], check=True)
     except Exception as e:
         print(f"❌ 圖資清洗發生錯誤: {e}")
         
+    # === 合併原 startup_event 的邏輯 ===
+    # 自動修復 JSON，為沒有 id 的 edge 補上 id
+    if os.path.exists(DATA_FILE):
+        with open(DATA_FILE, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        
+        needs_save = False
+        for idx, edge in enumerate(data.get('edges', [])):
+            if 'id' not in edge:
+                edge['id'] = f"edge_{idx}"  # 自動命名為 edge_0, edge_1...
+                needs_save = True
+                
+        # 如果有修改，就覆寫存檔
+        if needs_save:
+            with open(DATA_FILE, 'w', encoding='utf-8') as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+            print("✅ 已自動為圖資中的所有 Edge 補上 'id' 欄位並存檔！")
+
+    # 🔧 啟動時先產生不含建築陰影的基礎圖資 (確保 graph.txt / nodes.txt 一定存在)
+    print("📄 正在生成基礎路網圖資 (graph.txt / nodes.txt)...")
+    generate_graph_txt()
+    print("✅ 基礎路網圖資生成完成！")
+
+    # 有 BUILDINGS_FILE 才初始化陰影計算機，並再次生成含陰影權重的圖資
+    if os.path.exists(DATA_FILE) and os.path.exists(BUILDINGS_FILE):
+        print("🔄 正在初始化路段陰影計算機...")
+        shadow_calc = ShadowCalculator(BUILDINGS_FILE, DATA_FILE)
+        print("✅ 陰影計算機初始化完成，重新生成含建築陰影權重的路網圖資...")
+        generate_graph_txt()  # 含 building_shade 的完整版本
+        print("✅ 含陰影路網圖資生成完成！")
+    else:
+        print("⚠️  找不到建築 GeoJSON 圖資，跳過陰影計算機初始化（路徑計算不含建築陰影）")
+    # ===================================
+        
     yield # 交還控制權，讓 FastAPI 正式啟動
     
 app = FastAPI(lifespan=lifespan)
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -149,34 +184,7 @@ def generate_graph_txt(current_time=None):
     print("✅ C++ 專用圖資 (graph.txt) 生成完成！")
 
 
-@app.on_event("startup")
-async def startup_event():
-    global shadow_calc
-    
-    # 自動修復 JSON，為沒有 id 的 edge 補上 id
-    if os.path.exists(DATA_FILE):
-        with open(DATA_FILE, 'r', encoding='utf-8') as f:
-            data = json.load(f)
-        
-        needs_save = False
-        for idx, edge in enumerate(data.get('edges', [])):
-            if 'id' not in edge:
-                edge['id'] = f"edge_{idx}"  # 自動命名為 edge_0, edge_1...
-                needs_save = True
-                
-        # 如果有修改，就覆寫存檔
-        if needs_save:
-            with open(DATA_FILE, 'w', encoding='utf-8') as f:
-                json.dump(data, f, ensure_ascii=False, indent=2)
-            print("✅ 已自動為圖資中的所有 Edge 補上 'id' 欄位並存檔！")
 
-    generate_graph_txt()
-
-     # 有 BUILDINGS_FILE 才初始化陰影計算機
-    if os.path.exists(DATA_FILE) and os.path.exists(BUILDINGS_FILE):
-        print("🔄 正在初始化路段陰影計算機...")
-        shadow_calc = ShadowCalculator(BUILDINGS_FILE, DATA_FILE)
-        generate_graph_txt()  # 有陰影資料就再生成一次（含 building_shade）
 
 
 @app.post("/api/route")

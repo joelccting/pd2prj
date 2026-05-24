@@ -359,7 +359,9 @@ document.getElementById("findRoute").addEventListener("click", async () => {
       if (globalData) {
         for (let i = 0; i < fullPath.length - 1; i++) {
           const u = fullPath[i], v = fullPath[i+1];
-          const edge = globalData.edges.find(e => (e.from===u&&e.to===v)||(e.from===v&&e.to===u));
+          const edgeFwdForTime = globalData.edges.find(e => e.from===u && e.to===v);
+          const edgeRevForTime = globalData.edges.find(e => e.from===v && e.to===u);
+          const edge = edgeFwdForTime || edgeRevForTime;
           
           let edgeDist = edge ? edge.distance : 0;
           if (!edge) {
@@ -372,7 +374,10 @@ document.getElementById("findRoute").addEventListener("click", async () => {
           edgeSlope = Math.abs(edgeSlope);
           if (edgeSlope > 0.15) edgeSlope = 0; 
 
-          const isWalkRequired = (edge && edge[selectedTransport] === 0) || selectedTransport === "walk";
+          // 🔧 修正：任一方向邊禁止該交通工具，即視為需牽車
+          const fwdBannedTime = edgeFwdForTime && edgeFwdForTime[selectedTransport] === 0;
+          const revBannedTime = edgeRevForTime && edgeRevForTime[selectedTransport] === 0;
+          const isWalkRequired = selectedTransport === "walk" || fwdBannedTime || revBannedTime;
           
           let speed = 1.2; 
           if (isWalkRequired) {
@@ -396,7 +401,7 @@ document.getElementById("findRoute").addEventListener("click", async () => {
       displayTravelTimes(totalMainSeconds, totalWalkSeconds, selectedTransport);
       
     } else {
-      alert("無法找到完整巡航路徑！請確認是否有獨立未連通的地點。");
+      alert("無法找到完整巡航路徑！請注意校園內機車禁止通行!請確認該交通工具可否通行或是否有獨立未連通的地點。");
     }
   } catch (error) {
     console.error("巡航導航失敗:", error);
@@ -491,25 +496,41 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
   let baseColor = (mode === "shade") ? "#2E7D32" : "#0066ff";
   let baseWeight = (mode === "shade") ? 8 : 6;
 
+  // 🔧 修正：牽車判斷需同時檢查雙向邊，任一方向為0即代表需牽車
+  function isWalkRequiredEdge(u, v) {
+    // C++ 路徑中的邊一定是 u→v 方向可騎（bike=1）
+    // 若 u→v 找不到（理論上不應發生），再 fallback 找反向
+    const edgeFwd = globalData.edges.find(e => e.from === u && e.to === v);
+    if (edgeFwd) return edgeFwd[selectedTransport] === 0;
+    // fallback（資料缺口保護）
+    const edgeRev = globalData.edges.find(e => e.from === v && e.to === u);
+    return edgeRev ? edgeRev[selectedTransport] === 0 : false;
+  }
+
+  // 收集牽車路段資訊供機車提示使用
+  const walkSegments = [];
+
   for (let i = 0; i < nodeIds.length - 1; i++) {
     const u = nodeIds[i], v = nodeIds[i+1];
     const nodeU = graph.nodes.get(u), nodeV = graph.nodes.get(v);
-    const edge = globalData.edges.find(e => e.from===u && e.to===v)
-          || globalData.edges.find(e => e.from===v && e.to===u);
     
-    const isWalkRequired = edge && edge[selectedTransport] === 0;
+    const isWalkRequired = selectedTransport !== "walk" && isWalkRequiredEdge(u, v);
 
     if (i === 0) {
         currentIsWalk = isWalkRequired;
         currentSegmentLatLngs.push([nodeU.lat, nodeU.lng]);
     } else if (currentIsWalk !== isWalkRequired) {
         currentSegmentLatLngs.push([nodeU.lat, nodeU.lng]);
-        L.polyline(currentSegmentLatLngs, {
-            color: currentIsWalk ? "#ff9900" : baseColor, // 牽車維持橘色警告
+        const poly = L.polyline(currentSegmentLatLngs, {
+            color: currentIsWalk ? "#ff9900" : baseColor,
             weight: baseWeight,
             opacity: 0.8,
             dashArray: currentIsWalk ? "10, 10" : null 
         }).addTo(currentPathLayerGroup);
+
+        if (currentIsWalk) {
+          walkSegments.push(currentSegmentLatLngs.slice());
+        }
         
         currentSegmentLatLngs = [[nodeU.lat, nodeU.lng]];
         currentIsWalk = isWalkRequired;
@@ -523,6 +544,38 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
           weight: baseWeight, opacity: 0.8,
           dashArray: currentIsWalk ? "10, 10" : null
       }).addTo(currentPathLayerGroup);
+      if (currentIsWalk) {
+        walkSegments.push(currentSegmentLatLngs.slice());
+      }
+  }
+
+  // 🔧 新增：機車牽車路段提示標籤
+  if (selectedTransport === "motorcycle" && walkSegments.length > 0) {
+    walkSegments.forEach((segLatLngs, idx) => {
+      // 取路段中點作為標籤位置
+      const midIdx = Math.floor(segLatLngs.length / 2);
+      const midPt = segLatLngs[midIdx];
+      L.marker(midPt, {
+        icon: L.divIcon({
+          className: '',
+          html: `<div style="
+            background: #d32f2f;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: bold;
+            white-space: nowrap;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+            border: 1px solid #b71c1c;
+          ">🛵 校園禁行機車，請牽車</div>`,
+          iconAnchor: [70, 12],
+          iconSize: [140, 24]
+        }),
+        interactive: false,
+        zIndexOffset: 500
+      }).addTo(currentPathLayerGroup);
+    });
   }
 
   const fullLatlngs = nodeIds.map(id => [graph.nodes.get(id).lat, graph.nodes.get(id).lng]);
