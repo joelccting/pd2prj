@@ -780,14 +780,16 @@ function renderLocationOptions(selectElement, locations) {
   if (locations.length === 0) {
     const option = document.createElement("option");
     option.value = "";
-    option.text = "沒有符合的建築";
+    const currentLang = document.getElementById("language-selector")?.value || "zh";
+    option.text = currentLang === "en" ? "No matching buildings" : "沒有符合的建築";
     option.disabled = true;
     option.selected = true;
     selectElement.appendChild(option);
   } else {
     const promptOption = document.createElement("option");
     promptOption.value = "";
-    promptOption.text = "請選擇建築";
+    const currentLang = document.getElementById("language-selector")?.value || "zh";
+    promptOption.text = currentLang === "en" ? "Select building" : "請選擇建築";
     promptOption.disabled = true;
     promptOption.selected = true;
     selectElement.appendChild(promptOption);
@@ -795,7 +797,16 @@ function renderLocationOptions(selectElement, locations) {
     locations.forEach(location => {
       const option = document.createElement("option");
       option.value = location.name;
-      option.text = location.name;
+      
+      // 🌟 應用建築翻譯
+      const currentLang = document.getElementById("language-selector")?.value || "zh";
+      const translation = buildingTranslations[location.name];
+      if (translation && translation[currentLang]) {
+        option.text = translation[currentLang];
+      } else {
+        option.text = location.name;
+      }
+      
       selectElement.appendChild(option);
     });
   }
@@ -853,7 +864,6 @@ async function loadAndRenderBuildings() {
   }
 }
 
-// 搜尋和選單功能
 function setupSearchAndDropdown(searchInputId, selectId) {
   const searchInput = document.getElementById(searchInputId) || document.querySelector(`input[id="${searchInputId}"]`);
   const selectElement = document.getElementById(selectId) || document.querySelector(`select[id="${selectId}"]`);
@@ -872,9 +882,15 @@ function setupSearchAndDropdown(searchInputId, selectId) {
       return;
     }
 
-    const filtered = locationMarkers.filter(location =>
-      location.name.toLowerCase().includes(searchTerm)
-    );
+    // 🌟 支持搜尋中文名稱和英文翻譯
+    const filtered = locationMarkers.filter(location => {
+      const chineseName = location.name.toLowerCase();
+      const translation = buildingTranslations[location.name];
+      const englishName = translation?.en?.toLowerCase() || '';
+      
+      return chineseName.includes(searchTerm) || englishName.includes(searchTerm);
+    });
+    
     renderLocationOptions(selectElement, filtered);
     selectElement.style.display = 'block';
   };
@@ -899,4 +915,49 @@ function setupSearchAndDropdown(searchInputId, selectId) {
       selectElement.style.display = 'none';
     }
   });
+}
+
+// ===== 國際化 (翻譯) 功能 =====
+function updateUITranslations(lang) {
+  // 更新 data-i18n 屬性的文本
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const text = translations[lang]?.translation[key];
+    if (text) {
+      el.textContent = text;
+    }
+  });
+
+  // 更新 option 元素的翻譯
+  document.querySelectorAll('option[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    const text = translations[lang]?.translation[key];
+    if (text) {
+      el.textContent = text;
+    }
+  });
+
+  // 更新 data-i18n-placeholder 屬性的 placeholder
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.dataset.i18nPlaceholder;
+    const text = translations[lang]?.translation[key];
+    if (text) {
+      el.placeholder = text;
+    }
+  });
+
+  // 更新下拉菜單的翻譯
+  window.updateDropdownLanguage(lang);
+}
+
+// 語言選擇器變化事件
+const langSelector = document.getElementById('language-selector');
+if (langSelector) {
+  langSelector.addEventListener('change', function(e) {
+    const newLang = e.target.value;
+    updateUITranslations(newLang);
+  });
+  
+  // 初始化翻譯
+  updateUITranslations(langSelector.value);
 }

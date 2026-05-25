@@ -40,7 +40,14 @@ const translations = {
             "btn_pedestrian": "Pedestrian Only",
             "btn_no_motor": "No Motorcycles",
             "btn_clear": "Clear Selection",
-            "btn_custom_attr": "➕ Add/Edit Custom Attribute"  // 👈 加這行
+            "btn_custom_attr": "➕ Add/Edit Custom Attribute",
+            "mode_shade": "🌳 Shade/Shaded Routes",
+            "transport_mode_title": "Transport Mode",
+            "search_start": "🔍 Search start point...",
+            "search_destination": "🔍 Search destination...",
+            "shadow_layer_title": "🕶️ Map Shadow Layer",
+            "show_shadow": "Show Real-time Shadow",
+            "no_matching": "No matching buildings"
         }
     },
     zh: {
@@ -84,7 +91,14 @@ const translations = {
             "btn_pedestrian": "設為行人專用",
             "btn_no_motor": "禁止機車通行",
             "btn_clear": "取消選取",
-            "btn_custom_attr": "➕ 自由新增/修改屬性"  // 👈 加這行
+            "btn_custom_attr": "➕ 自由新增/修改屬性",
+            "mode_shade": "🌳 遮蔭/林蔭路線",
+            "transport_mode_title": "交通工具",
+            "search_start": "🔍 搜尋起點...",
+            "search_destination": "🔍 搜尋目的地...",
+            "shadow_layer_title": "🕶️ 地圖遮陽圖層",
+            "show_shadow": "顯示即時陰影",
+            "no_matching": "沒有符合的建築"
         }
     }
 };

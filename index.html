@@ -53,7 +53,7 @@
         <div class="input-group">
           <div class="icon-dot start-dot"></div>
           <div class="location-picker">
-            <input type="text" id="start-search" class="modern-select" placeholder="🔍 搜尋起點..." style="flex: 1;">
+            <input type="text" id="start-search" class="modern-select" data-i18n-placeholder="search_start" placeholder="🔍 搜尋起點..." style="flex: 1;">
             <select id="start" class="modern-select" style="flex: 1; display: none;"></select>
           </div>
         </div>
@@ -64,7 +64,7 @@
           <div class="input-group waypoint-item">
             <div class="icon-dot end-dot"></div>
             <div class="location-picker">
-              <input type="text" id="waypoint-0-search" class="waypoint-search modern-select" placeholder="🔍 搜尋目的地..." style="flex: 1;">
+              <input type="text" id="waypoint-0-search" class="waypoint-search modern-select" data-i18n-placeholder="search_destination" placeholder="🔍 搜尋目的地..." style="flex: 1;">
               <select id="waypoint-0" class="modern-select waypoint-select" style="flex: 1; display: none;"></select>
             </div>
             <button class="btn-remove-waypoint" style="display:none;">×</button>
@@ -78,21 +78,21 @@
         <div class="option-group">
           <h4 data-i18n="transport_mode_title" style="margin: 0 0 8px 0; color: #333; font-size: 14px; white-space: nowrap;">交通工具</h4>
           <select id="transport-mode" class="modern-select" style="width: 100%; box-sizing: border-box;">
-            <option value="walk" selected>🚶 步行</option>
-            <option value="bike">🚲 腳踏車</option>
-            <option value="ebike">⚡ 電動車</option>
-            <option value="motorcycle">🛵 機車</option>
-            <option value="car">🚗 汽車</option>
+            <option value="walk" selected data-i18n="time_walk">🚶 步行</option>
+            <option value="bike" data-i18n="time_bike">🚲 腳踏車</option>
+            <option value="ebike" data-i18n="time_ebike">⚡ 電動車</option>
+            <option value="motorcycle" data-i18n="time_motorcycle">🛵 機車</option>
+            <option value="car" data-i18n="time_car">🚗 汽車</option>
           </select>
         </div>
       <div class="action-section">
         <button id="findRoute" class="btn-primary" data-i18n="start_cruise">開始巡航導航</button>
         <div class="layer-toggles" style="margin-top: 15px; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e0e0e0;">
-        <h4 style="margin: 0 0 10px 0; font-size: 14px; color: #333; display: flex; align-items: center; gap: 6px;">🕶️ 地圖遮陽圖層</h4>
+        <h4 data-i18n="shadow_layer_title" style="margin: 0 0 10px 0; font-size: 14px; color: #333; display: flex; align-items: center; gap: 6px;">🕶️ 地圖遮陽圖層</h4>
         
         <label style="display: flex; align-items: center; margin-bottom: 8px; cursor: pointer; font-size: 13px; user-select: none;">
           <input type="checkbox" id="toggle-realtime-shadow" style="margin-right: 8px; width: 16px; height: 16px; cursor: pointer;">
-          <span style="color: #2E7D32; font-weight: 600;">顯示即時陰影</span>
+          <span data-i18n="show_shadow" style="color: #2E7D32; font-weight: 600;">顯示即時陰影</span>
         </label>
       </div>
       </div>
