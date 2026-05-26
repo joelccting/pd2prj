@@ -456,7 +456,7 @@ function displayTravelTimes(mainSeconds, walkSeconds, selectedMode) {
   }
 
   if (walkSeconds > 0 || selectedMode === "walk") {
-    const walkLabel = (selectedMode !== "walk") ? "牽車路段" : "步行";
+    const walkLabel = (selectedMode !== "walk") ? "步行路段" : "步行";
     const style = selectedMode !== "walk" ? "background: #fff3e0; border: 1px solid #ff9800; color: #e65100;" : "";
     html += `
       <div class="time-card highlight-card" style="${style}">
@@ -522,10 +522,10 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
     } else if (currentIsWalk !== isWalkRequired) {
         currentSegmentLatLngs.push([nodeU.lat, nodeU.lng]);
         const poly = L.polyline(currentSegmentLatLngs, {
-            color: currentIsWalk ? "#ff9900" : baseColor,
+            color: currentIsWalk ? "#ffcc00" : baseColor,
             weight: baseWeight,
-            opacity: 0.8,
-            dashArray: currentIsWalk ? "10, 10" : null 
+            opacity: 0.9,
+            dashArray: currentIsWalk ? "8, 8" : null 
         }).addTo(currentPathLayerGroup);
 
         if (currentIsWalk) {
@@ -540,9 +540,9 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
 
   if (currentSegmentLatLngs.length > 1) {
       L.polyline(currentSegmentLatLngs, {
-          color: currentIsWalk ? "#ff9900" : baseColor, 
-          weight: baseWeight, opacity: 0.8,
-          dashArray: currentIsWalk ? "10, 10" : null
+          color: currentIsWalk ? "#ffcc00" : baseColor, 
+          weight: baseWeight, opacity: 0.9,
+          dashArray: currentIsWalk ? "8, 8" : null
       }).addTo(currentPathLayerGroup);
       if (currentIsWalk) {
         walkSegments.push(currentSegmentLatLngs.slice());
@@ -568,7 +568,7 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
             white-space: nowrap;
             box-shadow: 0 2px 6px rgba(0,0,0,0.4);
             border: 1px solid #b71c1c;
-          ">🛵 校園禁行機車，請牽車</div>`,
+          ">🛵 校園禁行機車，請步行</div>`,
           iconAnchor: [70, 12],
           iconSize: [140, 24]
         }),

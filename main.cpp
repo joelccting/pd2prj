@@ -188,10 +188,24 @@ int main(int argc, char* argv[]) {
             else if (vehicle == "motorcycle") can_ride = edge.motorcycle == 1;
             else if (vehicle == "car")   can_ride = edge.car == 1;
             else can_ride = true;
-            if (vehicle == "walk" && edge.walk == 0) continue;
-            if(can_ride == false) continue; // 如果車輛無法通行，直接跳過這條邊
+           // if (vehicle == "walk" && edge.walk == 0) continue;
+            
+            // 🔧 修正：如果車輛無法通行，嘗試改用走的（帶懲罰）
+            bool using_fallback_walk = false;
+            if(can_ride == false) {
+                // 檢查是否可以走路
+                if(edge.walk == 1) {
+                    // 允許走路通行，但加上 2.5x 的懲罰乘數
+                    can_ride = true;
+                    using_fallback_walk = true;
+                } else {
+                    // 既不能騎，也不能走 - 跳過此邊
+                    continue;
+                }
+            }
+            
             // --- 依照不同模式套用各自的權重與懲罰 ---
-            double next_cost = can_ride ? edge.distance : edge.distance + 99999.0;
+            double next_cost = using_fallback_walk ? (edge.distance * 2.5) : edge.distance;
 
             // 再套路線偏好（注意：不能覆蓋 next_cost，要在上面加）
             if (mode == "shortest") {
