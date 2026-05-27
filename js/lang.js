@@ -70,7 +70,7 @@ const translations = {
             "mode_distance": "🚶 距離最短 (預設)",
             "route_pref_title": "路線偏好",
             "mode_lazy": "最少轉彎",
-            "mode_elegant": "約會面試必備不流汗",
+            "mode_elegant": "最平坦路線",
             "mode_walk": "🚶 步行 (避開無行人路段)",
             "mode_bike": "🚲 腳踏車",
             "mode_motorcycle": "🛵 機車 (避開禁行路段)",

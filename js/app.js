@@ -13,6 +13,10 @@ const map = L.map('map', {
   maxZoom: 22
 });
 
+map.createPane('shadowPane');
+map.getPane('shadowPane').style.zIndex = 450; // 預設向量圖層是 400，設 450 確保永遠在路線上方
+map.getPane('shadowPane').style.pointerEvents = 'none'; // 讓滑鼠點擊可以穿透陰影，不影響地圖操作
+
 L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution: '&copy; OpenStreetMap',
   maxNativeZoom: 18,
@@ -86,12 +90,12 @@ fetch('http://localhost:8000/api/graph')
       // 只在有效座標時添加
       if (!isNaN(avgLat) && !isNaN(avgLng)) {
         const categoryCounts = nodes.reduce((counts, node) => {
-          const category = node.category || getCategory(name);
+          const category = node.category || "other";
           counts[category] = (counts[category] || 0) + 1;
           return counts;
         }, {});
         const category = Object.entries(categoryCounts)
-          .sort((a, b) => b[1] - a[1])[0]?.[0] || getCategory(name);
+          .sort((a, b) => b[1] - a[1])[0]?.[0] || "other";
 
         locationMarkers.push({ name: name, lat: avgLat, lng: avgLng, category });
       }
@@ -619,6 +623,15 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
   if (invisibleLine) {
       map.fitBounds(invisibleLine.getBounds(), { padding: [50, 50] });
   }
+  
+  // 🎨 確保陰影圖層始終在最上層
+  shadowLayers.forEach(layer => {
+    if (map.hasLayer(layer)) {
+      layer.eachLayer(childLayer => {
+        if (childLayer.bringToFront) childLayer.bringToFront();
+      });
+    }
+  });
 }
 //  新增：在地圖上繪製特定環境路段的輔助函數
 function drawEdgesOnLayer(edgesToDraw, layerGroup, color, weight, opacity, dashArray = null) {
@@ -635,11 +648,20 @@ function drawEdgesOnLayer(edgesToDraw, layerGroup, color, weight, opacity, dashA
         weight: weight,
         opacity: opacity,
         dashArray: dashArray,
-        lineCap: 'round'
+        lineCap: 'round',
+        pane: 'shadowPane'
       }).addTo(layerGroup);
     }
   });
+  
+  // 🎨 添加陰影後確保它在最上層
+  if (map.hasLayer(layerGroup)) {
+    layerGroup.eachLayer(childLayer => {
+      if (childLayer.bringToFront) childLayer.bringToFront();
+    });
+  }
 }
+
 
 // 建立一個專屬的圖層群組來放所有的真實陰影與樹蔭
 const realtimeShadowLayer = L.layerGroup().addTo(map);
@@ -692,14 +714,21 @@ const shadowToggle = document.getElementById("toggle-realtime-shadow");
 function updateShadowToggleState() {
   const isShadeMode = routeWeightSelect.value === "shade";
   
-  shadowToggle.parentElement.style.display = isShadeMode ? "flex" : "none";
+  // 使用 .closest() 抓取包含標題與核取方塊的整個灰色外框
+  const shadowPanel = shadowToggle.closest('.layer-toggles');
+  if (shadowPanel) {
+    shadowPanel.style.display = isShadeMode ? "block" : "none";
+  }
   
   // 如果切換回非 shade 模式，強制取消勾選並清除陰影圖層
   if (!isShadeMode) {
     shadowToggle.checked = false;
-    realtimeShadowLayer.clearLayers();
+    if (typeof realtimeShadowLayer !== 'undefined') {
+        realtimeShadowLayer.clearLayers();
+    }
   }
 }
+
 
 // 監聽下拉選單變化
 routeWeightSelect.addEventListener("change", updateShadowToggleState);
@@ -770,7 +799,7 @@ function renderCategoryOptions(selectElement) {
 
 function getLocationsByCategory(category) {
   return locationMarkers
-    .filter(location => (location.category || getCategory(location.name)) === category)
+    .filter(location => (location.category || "other") === category)
     .sort((a, b) => a.name.localeCompare(b.name, "zh-Hant"));
 }
 
@@ -828,7 +857,7 @@ async function loadAndRenderBuildings() {
     L.geoJSON(buildingsData, {
       style: function(feature) {
         const name = feature.properties.name || "";
-        const category = getCategory(name);
+        const category = feature.properties.category || "other";
         const color = buildingCategoryColors[category] || buildingCategoryColors.school;
         
         return {
@@ -841,7 +870,7 @@ async function loadAndRenderBuildings() {
       },
       onEachFeature: function(feature, layer) {
         const name = feature.properties.name || "未命名建築";
-        const category = getCategory(name);
+        const category = feature.properties.category || "other";
         const categoryInfo = window.buildingCategories[category];
         
         const popupContent = `

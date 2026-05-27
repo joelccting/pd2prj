@@ -42,7 +42,7 @@
             <select id="route-weight" class="modern-select" style="width: 100%; box-sizing: border-box;">
               <option value="shortest" data-i18n="mode_distance">🚶 距離最短 (預設)</option>
               <option value="least_turns" data-i18n="mode_lazy">最少轉彎</option>
-              <option value="least_climbing" data-i18n="mode_elegant">不流汗路線</option>
+              <option value="least_climbing" data-i18n="mode_elegant">最平坦路線</option>
               <option value="shade" data-i18n="mode_shade">🌳 避暑/林蔭模式</option>
             </select>
         </div>
@@ -88,9 +88,11 @@
       <div class="action-section">
         <button id="findRoute" class="btn-primary" data-i18n="start_cruise">開始巡航導航</button>
         <div class="layer-toggles" style="margin-top: 15px; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e0e0e0;">
+          
         <h4 data-i18n="shadow_layer_title" style="margin: 0 0 10px 0; font-size: 14px; color: #333; display: flex; align-items: center; gap: 6px;">🕶️ 地圖遮陽圖層</h4>
         
-        <label style="display: flex; align-items: center; margin-bottom: 8px; cursor: pointer; font-size: 13px; user-select: none;">
+
+        <label style="display: flex; align-items: center; margin-bottom: 0px; cursor: pointer; font-size: 13px; user-select: none;">
           <input type="checkbox" id="toggle-realtime-shadow" style="margin-right: 8px; width: 16px; height: 16px; cursor: pointer;">
           <span data-i18n="show_shadow" style="color: #2E7D32; font-weight: 600;">顯示即時陰影</span>
         </label>
