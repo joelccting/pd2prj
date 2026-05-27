@@ -27,9 +27,12 @@ L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
 
 let currentFullPath = [];
 let nodesByName = {};
-let locationMarkers = [];
+let locationMarkers = []; // 存儲 { name, lat, lng, category, markerObject }
 let globalData = null;
 const activePolylines = [];
+// 🎨 地標可見性管理
+let allMarkerObjects = []; // 保存所有地標對象
+let markersVisibleState = true; // 追蹤地標顯示狀態
 // 🔧 修復 M4：模組層級 edgeMap，drawPath 可直接查詢，避免 O(E) 線性掃描
 let edgeMap = new Map();
 const treeShadeLayer = L.layerGroup().addTo(map);
@@ -95,7 +98,7 @@ fetchWithRetry(`${API_BASE_URL}/api/graph`)
     
     globalData = data;
     window.globalData = data; // 全局可訪問
-    document.getElementById('stat-graph-size').innerText = `${data.nodes.length} 節點 / ${data.edges.length} 路段`;
+    document.getElementById('stat-graph-size').innerText = `${data.nodes.length} ${window.t('stat_nodes')} / ${data.edges.length} ${window.t('stat_edges')}`;
     data.nodes.forEach(node => graph.addNode(node));
     data.edges.forEach(edge => graph.addEdge(edge));
 
@@ -140,7 +143,7 @@ fetchWithRetry(`${API_BASE_URL}/api/graph`)
 
     locationMarkers.forEach((location) => {
       const categoryInfo = window.buildingCategories[location.category] || window.buildingCategories.school;
-      L.marker([location.lat, location.lng], {
+      const markerObj = L.marker([location.lat, location.lng], {
         icon: createLocationMarkerIcon(location.category)
       }).bindPopup(`
         <div style="font-size: 12px;">
@@ -148,6 +151,10 @@ fetchWithRetry(`${API_BASE_URL}/api/graph`)
           分類: ${categoryInfo.zh} ${categoryInfo.en}
         </div>
       `).addTo(map);
+      
+      // 🎨 保存地標對象引用
+      location.markerObject = markerObj;
+      allMarkerObjects.push({ name: location.name, marker: markerObj });
     });
 
     populateDropdown(document.getElementById("start"));
@@ -245,6 +252,9 @@ addBtn.addEventListener('click', () => {
   // 4. 更新語言
   const currentLang = document.getElementById("language-selector").value;
   window.updateDropdownLanguage(currentLang);
+  if (window.applyTranslations) {
+    window.applyTranslations(currentLang);
+  }
 });
 
 // 白名單需與 index.html 的 select value 完全一致
@@ -316,10 +326,37 @@ function getLinearDist(name1, name2) {
     return Math.sqrt(Math.pow(n1.lat - n2.lat, 2) + Math.pow(n1.lng - n2.lng, 2));
 }
 
+// 🎨 清除路線時恢復所有地標的可見性
+function markerback() {
+  clearActivePolylines();
+  showAllMarkers();
+  console.log('✅ 已恢復所有地標');
+}
+
 function resolveLocationValue(searchInput, selectElement) {
   const typedValue = searchInput?.value?.trim() || '';
+  
+  // 1. 如果輸入的是中文原名，直接回傳
   if (typedValue && nodesByName[typedValue]) return typedValue;
-  if (selectElement?.value && nodesByName[selectElement.value]) return selectElement.value;
+  
+  // 2. ✨ 新增反向查詢：如果顯示的是英文，把它轉回中文 key 給系統運算
+  if (typedValue && typeof buildingTranslations !== 'undefined') {
+    for (const [zhName, translations] of Object.entries(buildingTranslations)) {
+      if (translations.en === typedValue) {
+        return zhName; 
+      }
+    }
+  }
+
+  // 3. 如果是從下拉選單點擊的，優先使用 select 背後紀錄的中文 value
+  if (selectElement?.value && nodesByName[selectElement.value]) {
+    // 確保輸入框的字與選單的字匹配，避免使用者選完又亂改字
+    const selectedText = selectElement.options[selectElement.selectedIndex]?.text;
+    if (typedValue === selectedText || typedValue === "") {
+        return selectElement.value;
+    }
+  }
+
   return typedValue;
 }
 
@@ -405,6 +442,8 @@ document.getElementById("findRoute").addEventListener("click", async () => {
 
     if (fullPath.length > 0) {
       currentFullPath = fullPath;
+      // 🎨 隱藏除起點和目的地外的地標
+      hideMarkersExcept(visitOrder);
       drawPath(fullPath, visitOrder, routeWeight); 
       totalDist = calculatePathDistance(fullPath);
       
@@ -474,7 +513,7 @@ document.getElementById("findRoute").addEventListener("click", async () => {
       }
 
       // 更新 UI
-      document.getElementById('stat-route-dist').innerText = `${totalRouteDistance.toFixed(1)} 公尺`;
+      document.getElementById('stat-route-dist').innerText = `${totalRouteDistance.toFixed(1)} ${window.t('unit_meters')}`;
       const shadePercentage = totalRouteDistance > 0 ? ((totalShadedDistance / totalRouteDistance) * 100).toFixed(1) : 0;
       document.getElementById('stat-shade-rate').innerText = `${shadePercentage} %`;
       
@@ -483,8 +522,13 @@ document.getElementById("findRoute").addEventListener("click", async () => {
     }
   } catch (error) {
     console.error("巡航導航失敗:", error);
+    // 🎨 發生錯誤時恢復地標顯示
+    if (!markersVisibleState) showAllMarkers();
   }
 });
+
+// 🎨 清除路線按鈕事件監聽器
+document.getElementById("markerback").addEventListener("click", markerback);
 
 function calculatePathDistance(path) {
   let totalDistance = 0;
@@ -565,6 +609,30 @@ let currentPathLayerGroup = null;
 function clearActivePolylines() {
   activePolylines.forEach(p => { if (map.hasLayer(p)) map.removeLayer(p); });
   activePolylines.length = 0;
+}
+
+// 🎨 隱藏除起點和目的地外的所有地標
+function hideMarkersExcept(visibleLocationNames) {
+  allMarkerObjects.forEach(({ name, marker }) => {
+    if (visibleLocationNames.includes(name)) {
+      marker.addTo(map); // 確保起點和目的地的地標可見
+      marker.setOpacity(1);
+    } else {
+      if (map.hasLayer(marker)) {
+        map.removeLayer(marker);
+      }
+    }
+  });
+  markersVisibleState = false;
+}
+
+// 🎨 恢復所有地標的顯示
+function showAllMarkers() {
+  allMarkerObjects.forEach(({ marker }) => {
+    marker.addTo(map);
+    marker.setOpacity(1);
+  });
+  markersVisibleState = true;
 }
 
 // 👇 接收 mode 參數，並根據 mode 決定路線基礎顏色
@@ -760,7 +828,7 @@ document.getElementById('toggle-realtime-shadow').addEventListener('change', asy
   if (e.target.checked) {
     // 防呆：如果還沒有產生路徑
     if (!currentFullPath || currentFullPath.length === 0) {
-      alert("請先開始巡航導航，再開啟陰影顯示！");
+      alert(window.t('alert_need_route_for_shadow'));
       e.target.checked = false;
       return;
     }
@@ -1054,7 +1122,8 @@ function setupSearchAndDropdown(searchInputId, selectId) {
     }
 
     if (nodesByName[e.target.value]) {
-      searchInput.value = e.target.value;
+      const selectedText = selectElement.options[selectElement.selectedIndex].text;
+      searchInput.value = selectedText;
       selectElement.style.display = 'none';
     }
   }, { signal });

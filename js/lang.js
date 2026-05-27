@@ -47,7 +47,18 @@ const translations = {
             "search_destination": "🔍 Search destination...",
             "shadow_layer_title": "🕶️ Map Shadow Layer",
             "show_shadow": "Show Real-time Shadow",
-            "no_matching": "No matching buildings"
+            "no_matching": "No matching buildings",
+            "markerback": "🔄 Restore Markers",
+            "stats_title": "📊 Route & Map Data Analysis",
+            "stat_graph_size": "📍 Graph Size:",
+            "stat_loading": "Loading...",
+            "stat_route_length": "📏 Total Route Length:",
+            "stat_meters_placeholder": "-- meters",
+            "stat_shade_coverage": "🌳 Shade Coverage Rate:",
+            "stat_nodes": "Nodes",
+            "stat_edges": "Edges",
+            "unit_meters": "meters",
+            "alert_need_route_for_shadow": "Please start navigation before enabling shadow display!"
         }
     },
     zh: {
@@ -98,7 +109,19 @@ const translations = {
             "search_destination": "🔍 搜尋目的地...",
             "shadow_layer_title": "🕶️ 地圖遮陽圖層",
             "show_shadow": "顯示即時陰影",
-            "no_matching": "沒有符合的建築"
+            "no_matching": "沒有符合的建築",
+            "markerback": "🔄 恢復地標",
+            "stats_title": "📊 路線與圖資數據分析",
+            "stat_graph_size": "📍 圖資規模:",
+            "stat_loading": "載入中...",
+            "stat_route_length": "📏 路線總長:",
+            "stat_meters_placeholder": "-- 公尺",
+            "stat_shade_coverage": "🌳 遮蔭覆蓋率:",
+            "stat_nodes": "節點",
+            "stat_edges": "路段",
+            "unit_meters": "公尺",
+            "alert_need_route_for_shadow": "請先開始巡航導航，再開啟陰影顯示！"
+            
         }
     }
 };
@@ -399,6 +422,12 @@ window.applyTranslations = function(lang) {
         const key = el.getAttribute('data-i18n');
         if (dict[key]) {
             el.textContent = dict[key];
+        }
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key]) {
+            el.placeholder = dict[key];
         }
     });
 
