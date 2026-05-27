@@ -95,7 +95,7 @@ fetchWithRetry(`${API_BASE_URL}/api/graph`)
     
     globalData = data;
     window.globalData = data; // 全局可訪問
-    
+    document.getElementById('stat-graph-size').innerText = `${data.nodes.length} 節點 / ${data.edges.length} 路段`;
     data.nodes.forEach(node => graph.addNode(node));
     data.edges.forEach(edge => graph.addEdge(edge));
 
@@ -455,6 +455,28 @@ document.getElementById("findRoute").addEventListener("click", async () => {
       }
 
       displayTravelTimes(totalMainSeconds, totalWalkSeconds, selectedTransport);
+      let totalRouteDistance = 0;
+      let totalShadedDistance = 0;
+
+      for (let i = 0; i < fullPath.length - 1; i++) {
+        const u = fullPath[i], v = fullPath[i+1];
+        const edgeFwd = edgeMap.get(`${u}-${v}`);
+        const edgeRev = edgeMap.get(`${v}-${u}`);
+        const edge = edgeFwd || edgeRev;
+        
+        if (edge) {
+          totalRouteDistance += edge.distance;
+          // 若樹蔭或建築陰影超過閾值，就計入遮蔭長度
+          if (edge.tree_shade > 0.5 || edge.building_shade > 0.5) {
+            totalShadedDistance += edge.distance;
+          }
+        }
+      }
+
+      // 更新 UI
+      document.getElementById('stat-route-dist').innerText = `${totalRouteDistance.toFixed(1)} 公尺`;
+      const shadePercentage = totalRouteDistance > 0 ? ((totalShadedDistance / totalRouteDistance) * 100).toFixed(1) : 0;
+      document.getElementById('stat-shade-rate').innerText = `${shadePercentage} %`;
       
     } else {
       alert("無法找到完整巡航路徑！請注意校園內機車禁止通行!請確認該交通工具可否通行或是否有獨立未連通的地點。");
@@ -619,7 +641,7 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
   }
 
   // 🔧 新增：機車牽車路段提示標籤
-  if (selectedTransport === "motorcycle" && walkSegments.length > 0) {
+  /*if (selectedTransport === "motorcycle" && walkSegments.length > 0) {
     walkSegments.forEach((segLatLngs, idx) => {
       // 取路段中點作為標籤位置
       const midIdx = Math.floor(segLatLngs.length / 2);
@@ -646,6 +668,7 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
       }).addTo(currentPathLayerGroup);
     });
   }
+    */
 
   const fullLatlngs = nodeIds.map(id => [graph.nodes.get(id).lat, graph.nodes.get(id).lng]);
   const invisibleLine = L.polyline(fullLatlngs, { color: 'transparent' }).addTo(currentPathLayerGroup);
@@ -771,6 +794,17 @@ document.getElementById('toggle-realtime-shadow').addEventListener('change', asy
       alert("無法套用陰影圖層，請檢查資料或 API。");
       e.target.checked = false;
     }
+  }
+});
+document.getElementById('toggle-stats').addEventListener('click', function() {
+  const content = document.getElementById('stats-content');
+  const arrow = document.getElementById('stats-arrow');
+  if (content.style.display === 'none') {
+      content.style.display = 'block';
+      arrow.textContent = '▲';
+  } else {
+      content.style.display = 'none';
+      arrow.textContent = '▼';
   }
 });
 const routeWeightSelect = document.getElementById("route-weight");

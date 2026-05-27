@@ -324,3 +324,57 @@
 .animated-route {
   animation: march 0.8s linear infinite;
 }
+
+.stats-section { 
+  margin-top: 10px; 
+  border-top: 1px solid #eee; 
+  padding-top: 10px; 
+}
+
+.stats-header-btn { 
+  width: 100%; 
+  background: none; 
+  border: none; 
+  text-align: left; 
+  font-weight: bold; 
+  color: #4A90E2; 
+  cursor: pointer; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 5px 0; 
+  font-size: 13px;
+  transition: opacity 0.2s;
+}
+
+.stats-header-btn:hover { opacity: 0.8; }
+
+.stats-content { 
+  font-size: 12px; 
+  color: #555; 
+  margin-top: 8px; 
+  line-height: 1.8; 
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #e9ecef;
+}
+
+.stat-row { 
+  display: flex; 
+  justify-content: space-between; 
+  border-bottom: 1px dashed #ddd; 
+  padding-bottom: 4px; 
+  margin-bottom: 4px; 
+}
+
+.stat-row:last-child { 
+  border-bottom: none; 
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.stat-value { 
+  font-weight: 600; 
+  color: #2c3e50; 
+}

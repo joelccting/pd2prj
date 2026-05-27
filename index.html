@@ -88,7 +88,7 @@
       <div class="action-section">
         <button id="findRoute" class="btn-primary" data-i18n="start_cruise">開始巡航導航</button>
         <div class="layer-toggles" style="margin-top: 15px; padding: 12px; background: #f8f9fa; border-radius: 8px; border: 1px solid #e0e0e0;">
-          
+
         <h4 data-i18n="shadow_layer_title" style="margin: 0 0 10px 0; font-size: 14px; color: #333; display: flex; align-items: center; gap: 6px;">🕶️ 地圖遮陽圖層</h4>
         
 
@@ -96,6 +96,27 @@
           <input type="checkbox" id="toggle-realtime-shadow" style="margin-right: 8px; width: 16px; height: 16px; cursor: pointer;">
           <span data-i18n="show_shadow" style="color: #2E7D32; font-weight: 600;">顯示即時陰影</span>
         </label>
+      </div>
+
+      <div class="stats-section">
+        <button id="toggle-stats" class="stats-header-btn">
+          <span>📊 路線與圖資數據分析</span>
+          <span id="stats-arrow">▼</span>
+        </button>
+        <div id="stats-content" class="stats-content" style="display: none;">
+          <div class="stat-row">
+            <span>📍 圖資規模:</span>
+            <span id="stat-graph-size" class="stat-value">載入中...</span>
+          </div>
+          <div class="stat-row">
+            <span>📏 路線總長:</span>
+            <span id="stat-route-dist" class="stat-value">-- 公尺</span>
+          </div>
+          <div class="stat-row">
+            <span>🌳 遮蔭覆蓋率:</span>
+            <span id="stat-shade-rate" class="stat-value">-- %</span>
+          </div>
+        </div>
       </div>
       </div>
       
