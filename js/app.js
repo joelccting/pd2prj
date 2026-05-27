@@ -30,6 +30,8 @@ let nodesByName = {};
 let locationMarkers = [];
 let globalData = null;
 const activePolylines = [];
+// 🔧 修復 M4：模組層級 edgeMap，drawPath 可直接查詢，避免 O(E) 線性掃描
+let edgeMap = new Map();
 const treeShadeLayer = L.layerGroup().addTo(map);
 const buildingShadowLayer = L.layerGroup().addTo(map);
 
@@ -37,11 +39,40 @@ const buildingShadowLayer = L.layerGroup().addTo(map);
 window.nodesByName = nodesByName;
 window.locationMarkers = locationMarkers;
 
-fetch('http://localhost:8000/api/graph')
-  .then((response) => {
-    if (!response.ok) throw new Error(`API error: ${response.status}`);
-    return response.json();
-  })
+// 🔧 修复 C1: 添加超时和重试机制
+const API_BASE_URL = 'http://localhost:8000';
+const FETCH_TIMEOUT = 5000; // 5秒超时
+const MAX_RETRIES = 3;
+
+async function fetchWithTimeout(url, timeout = FETCH_TIMEOUT) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), timeout);
+  try {
+    const response = await fetch(url, { signal: controller.signal });
+    clearTimeout(id);
+    return response;
+  } catch (error) {
+    clearTimeout(id);
+    throw error;
+  }
+}
+
+async function fetchWithRetry(url, maxRetries = MAX_RETRIES) {
+  for (let i = 0; i < maxRetries; i++) {
+    try {
+      const response = await fetchWithTimeout(url);
+      if (!response.ok) throw new Error(`API error: ${response.status}`);
+      return response;
+    } catch (error) {
+      console.warn(`第 ${i + 1}/${maxRetries} 次尝试失败:`, error.message);
+      if (i === maxRetries - 1) throw error;
+      await new Promise(r => setTimeout(r, 1000 * (i + 1))); // 指数退避
+    }
+  }
+}
+
+fetchWithRetry(`${API_BASE_URL}/api/graph`)
+  .then((response) => response.json())
   .then((data) => {
     console.log('✅ Graph data loaded:', data);
     console.log('📊 Data structure:', {
@@ -216,19 +247,27 @@ addBtn.addEventListener('click', () => {
   window.updateDropdownLanguage(currentLang);
 });
 
-async function fetchSegment(startsNames, endsNames, mode, vehicle ) {
+// 白名單需與 index.html 的 select value 完全一致
+const VALID_MODES = new Set(['shortest', 'least_turns', 'least_climbing', 'shade']);
+const VALID_VEHICLES = new Set(['walk', 'bike', 'ebike', 'motorcycle', 'car']);
+
+async function fetchSegment(startsNames, endsNames, mode, vehicle) {
+  if (!VALID_MODES.has(mode)) {
+    console.warn(`⚠️ 無效的路由模式: ${mode}，改用 'shortest'`);
+    mode = 'shortest';
+  }
+  if (!VALID_VEHICLES.has(vehicle)) {
+    console.warn(`⚠️ 無效的交通工具: ${vehicle}，改用 'walk'`);
+    vehicle = 'walk';
+  }
+
   const startIds = [];
   startsNames.forEach(name => {
-    if (nodesByName[name]) {
-      startIds.push(...nodesByName[name].map(n => n.id));
-    }
+    if (nodesByName[name]) startIds.push(...nodesByName[name].map(n => n.id));
   });
-  
   const endIds = [];
   endsNames.forEach(name => {
-    if (nodesByName[name]) {
-      endIds.push(...nodesByName[name].map(n => n.id));
-    }
+    if (nodesByName[name]) endIds.push(...nodesByName[name].map(n => n.id));
   });
 
   if (startIds.length === 0 || endIds.length === 0) {
@@ -236,42 +275,44 @@ async function fetchSegment(startsNames, endsNames, mode, vehicle ) {
     return [];
   }
 
+  // 直接 POST，不走 GET-then-fallback（那樣每次都浪費 3 次重試）
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT);
   try {
-    const response = await fetch(`http://localhost:8000/api/route`, {
+    const response = await fetch(`${API_BASE_URL}/api/route`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        starts: startIds, 
-        ends: endIds, 
-        mode: mode, 
-        vehicle: vehicle 
-      }) 
+      body: JSON.stringify({ starts: startIds, ends: endIds, mode, vehicle }),
+      signal: controller.signal,
     });
-    
-    if (!response.ok) {
-      throw new Error(`API error: ${response.status}`);
-    }
-    
+    clearTimeout(timeoutId);
+
+    if (!response.ok) throw new Error(`API error: ${response.status}`);
+
     const result = await response.json();
     console.log('📍 Route response:', result);
 
-    // 加上這段來捕捉真實後端錯誤
-    if (result.status === "error") {
-      console.error("❌ 後端錯誤:", result.message, result.details);
+    if (result.status === 'error') {
+      console.error('❌ 後端錯誤:', result.message);
       alert(`路徑計算失敗：${result.message}`);
       return [];
     }
-
     return result.path || [];
   } catch (error) {
+    clearTimeout(timeoutId);
     console.error('❌ Failed to fetch route:', error);
     return [];
   }
 }
 
+// 🔧 修复 C3: 添加null检查
 function getLinearDist(name1, name2) {
     const n1 = locationMarkers.find(m => m.name === name1);
     const n2 = locationMarkers.find(m => m.name === name2);
+    if (!n1 || !n2) {
+      console.error(`❌ 位置未找到: n1=${n1?.name}, n2=${n2?.name}`);
+      return Infinity; // 返回无穷大，表示无法路由
+    }
     return Math.sqrt(Math.pow(n1.lat - n2.lat, 2) + Math.pow(n1.lng - n2.lng, 2));
 }
 
@@ -306,10 +347,20 @@ document.getElementById("findRoute").addEventListener("click", async () => {
   });
 
   if (!nodesByName[startName]) return alert("請選擇有效的起點");
-  if (destinations.length === 0) return alert("請選擇至少一個目的地");
+  // 🔧 修復 M3：過濾掉輸入文字不對應任何已知地點的目的地
+  destinations = destinations.filter(d => nodesByName[d]);
+  if (destinations.length === 0) return alert("請選擇至少一個有效的目的地");
 
   let fullPath = [];
   let totalDist = 0;
+
+  // 🔧 修復 M4 & M5：預建 edgeMap 索引，將後續每次 O(E) find() 降為 O(1)
+  edgeMap = new Map();
+  if (globalData) {
+    globalData.edges.forEach(e => {
+      edgeMap.set(`${e.from}-${e.to}`, e);
+    });
+  }
 
   try {
     let visitOrder = [startName];
@@ -363,8 +414,9 @@ document.getElementById("findRoute").addEventListener("click", async () => {
       if (globalData) {
         for (let i = 0; i < fullPath.length - 1; i++) {
           const u = fullPath[i], v = fullPath[i+1];
-          const edgeFwdForTime = globalData.edges.find(e => e.from===u && e.to===v);
-          const edgeRevForTime = globalData.edges.find(e => e.from===v && e.to===u);
+          // 🔧 修復 M5：edgeMap O(1) 查詢
+          const edgeFwdForTime = edgeMap.get(`${u}-${v}`);
+          const edgeRevForTime = edgeMap.get(`${v}-${u}`);
           const edge = edgeFwdForTime || edgeRevForTime;
           
           let edgeDist = edge ? edge.distance : 0;
@@ -487,8 +539,15 @@ function displayTravelTimes(mainSeconds, walkSeconds, selectedMode) {
 
 let currentPathLayerGroup = null;
 
+// 🔧 修復 C4：drawPath 前清除 activePolylines，防止無限增長
+function clearActivePolylines() {
+  activePolylines.forEach(p => { if (map.hasLayer(p)) map.removeLayer(p); });
+  activePolylines.length = 0;
+}
+
 // 👇 接收 mode 參數，並根據 mode 決定路線基礎顏色
 function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
+  clearActivePolylines(); // 🔧 C4：清除舊路線，防止記憶體洩漏
   if (currentPathLayerGroup) map.removeLayer(currentPathLayerGroup);
   currentPathLayerGroup = L.layerGroup().addTo(map);
 
@@ -502,12 +561,10 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
 
   // 🔧 修正：牽車判斷需同時檢查雙向邊，任一方向為0即代表需牽車
   function isWalkRequiredEdge(u, v) {
-    // C++ 路徑中的邊一定是 u→v 方向可騎（bike=1）
-    // 若 u→v 找不到（理論上不應發生），再 fallback 找反向
-    const edgeFwd = globalData.edges.find(e => e.from === u && e.to === v);
+    // 🔧 修復 M4：改用 edgeMap O(1) 查詢，不再 O(E) 線性掃描
+    const edgeFwd = edgeMap.get(`${u}-${v}`);
     if (edgeFwd) return edgeFwd[selectedTransport] === 0;
-    // fallback（資料缺口保護）
-    const edgeRev = globalData.edges.find(e => e.from === v && e.to === u);
+    const edgeRev = edgeMap.get(`${v}-${u}`);
     return edgeRev ? edgeRev[selectedTransport] === 0 : false;
   }
 
@@ -624,9 +681,9 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
       map.fitBounds(invisibleLine.getBounds(), { padding: [50, 50] });
   }
   
-  // 🎨 確保陰影圖層始終在最上層
-  shadowLayers.forEach(layer => {
-    if (map.hasLayer(layer)) {
+  // 🎨 確保陰影圖層始終在最上層（shadowLayers 未宣告，改用實際圖層變數）
+  [treeShadeLayer, buildingShadowLayer, realtimeShadowLayer].forEach(layer => {
+    if (layer && map.hasLayer(layer)) {
       layer.eachLayer(childLayer => {
         if (childLayer.bringToFront) childLayer.bringToFront();
       });
@@ -849,7 +906,11 @@ const buildingLayer = L.layerGroup();
 
 async function loadAndRenderBuildings() {
   try {
-    const response = await fetch('ccu_buildings_ready.geojson');
+    // 🔧 修復 H7：加上 AbortController timeout，避免頁面永久掛起
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    const response = await fetch('ccu_buildings_ready.geojson', { signal: controller.signal });
+    clearTimeout(timeoutId);
     if (!response.ok) throw new Error('Failed to load buildings GeoJSON');
     
     const buildingsData = await response.json();
@@ -893,11 +954,22 @@ async function loadAndRenderBuildings() {
   }
 }
 
+// 🔧 修復 O6：用 Map 追蹤每個搜尋框的 AbortController，避免重複綁定監聽器
+const searchListenerControllers = new Map();
+
 function setupSearchAndDropdown(searchInputId, selectId) {
   const searchInput = document.getElementById(searchInputId) || document.querySelector(`input[id="${searchInputId}"]`);
   const selectElement = document.getElementById(selectId) || document.querySelector(`select[id="${selectId}"]`);
   
   if (!searchInput || !selectElement) return;
+
+  // 若先前已綁定過，先中止舊的監聽器再重新綁定
+  if (searchListenerControllers.has(searchInputId)) {
+    searchListenerControllers.get(searchInputId).abort();
+  }
+  const controller = new AbortController();
+  const { signal } = controller;
+  searchListenerControllers.set(searchInputId, controller);
 
   const showCategories = () => {
     renderCategoryOptions(selectElement);
@@ -925,9 +997,9 @@ function setupSearchAndDropdown(searchInputId, selectId) {
   };
 
   searchInput.setAttribute('autocomplete', 'off');
-  searchInput.addEventListener('focus', showSearchResults);
-  searchInput.addEventListener('click', showSearchResults);
-  searchInput.addEventListener('input', showSearchResults);
+  searchInput.addEventListener('focus', showSearchResults, { signal });
+  searchInput.addEventListener('click', showSearchResults, { signal });
+  searchInput.addEventListener('input', showSearchResults, { signal });
 
   selectElement.addEventListener('change', function(e) {
     if (!e.target.value) return;
@@ -943,7 +1015,7 @@ function setupSearchAndDropdown(searchInputId, selectId) {
       searchInput.value = e.target.value;
       selectElement.style.display = 'none';
     }
-  });
+  }, { signal });
 }
 
 // ===== 國際化 (翻譯) 功能 =====

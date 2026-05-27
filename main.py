@@ -19,6 +19,18 @@ import geopandas as gpd
 from shapely.affinity import translate
 import pandas as pd
 
+# --- 檔案路徑設定 ---
+DATA_FILE = "campus_nodes_edges.json"
+BUILDINGS_FILE = "ccu_buildings.geojson"
+TXT_FILE = "graph.txt"
+NODES_FILE = "nodes.txt"
+READY_BUILDINGS_FILE = "ccu_buildings_ready.geojson"
+READY_TREES_FILE = "ccu_trees_ready.geojson"
+LAT, LNG = 23.560, 120.470  # 中正大學中心點
+
+print(f"📂 使用數據文件: {DATA_FILE}")
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     global shadow_calc
@@ -68,28 +80,16 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    # 🔧 修復 O1：`allow_origins=["*"]` + `allow_credentials=True` 違反 CORS 規範
+    # 改為明確列出允許的來源，僅限本機開發用途
+    allow_origins=["http://localhost:5500", "http://127.0.0.1:5500",
+                   "http://localhost:3000", "http://127.0.0.1:3000"],
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type", "X-Export-Token"],
 )
 
-# --- 檔案路徑設定 ---
-DATA_FILE = "campus_nodes_edges.json" # 🌟 唯一真相來源，永遠只認這個檔案
-BUILDINGS_FILE = "ccu_buildings.geojson"
-TXT_FILE = "graph.txt"
-NODES_FILE = "nodes.txt"
-
-BUILDINGS_FILE = "ccu_buildings.geojson"
-TXT_FILE = "graph.txt"
-NODES_FILE = "nodes.txt"
-
-# 🌟 新增：經過預處理、補上高度的幾何檔案 (給新版陰影 API 使用)
-READY_BUILDINGS_FILE = "ccu_buildings_ready.geojson" 
-READY_TREES_FILE = "ccu_trees_ready.geojson"
-LAT, LNG = 23.560, 120.470 # 中正大學中心點
-
-print(f"📂 使用數據文件: {DATA_FILE}")
+# --- 檔案路徑設定（已移至頂部，避免 lifespan 使用時 NameError）---
 
 # 全域變數存放陰影計算機與幾何圖資
 shadow_calc = None
@@ -97,15 +97,23 @@ all_objects_gdf = None
 
 # --- 🔐 密碼保護全局變數 ---
 EXPORT_PASSWORD = "A@S((CII#CoDeee))@2026"
-verified_tokens = set()  # 存儲已驗證的token
+import time as _time
+# 🔧 修復 M6a：改用有過期時間的 dict，避免 token 無限累積
+verified_tokens: dict = {}   # {token: expire_timestamp}
+TOKEN_TTL = 3600  # token 有效期 1 小時
 
 def generate_verification_token():
     """生成隨機驗證token"""
     return secrets.token_hex(32)
 
 def verify_export_token(token: str) -> bool:
-    """驗證export token是否有效"""
-    return token in verified_tokens
+    """驗證export token是否有效，並清理過期token"""
+    now = _time.time()
+    # 順便清理所有過期 token
+    expired = [t for t, exp in verified_tokens.items() if now > exp]
+    for t in expired:
+        verified_tokens.pop(t, None)
+    return token in verified_tokens and verified_tokens[token] > now
 
 # --- 🌟 新增：啟動時預先載入幾何圖資 ---
 print("⏳ 準備載入幾何圖資供即時陰影多邊形使用...")
@@ -123,6 +131,9 @@ if gdfs:
 else:
     print("⚠️ 找不到 _ready.geojson 圖資，請確保執行過資料清洗腳本。")
 
+
+VALID_MODES = {"shortest", "least_turns", "least_climbing", "shade"}
+VALID_VEHICLES = {"walk", "bike", "ebike", "motorcycle", "car"}
 
 class RouteRequest(BaseModel):
     starts: List[int]
@@ -189,7 +200,13 @@ def generate_graph_txt(current_time=None):
 
 @app.post("/api/route")
 async def get_route(req: RouteRequest):
-    print(f"🧭 收到路徑請求: starts={req.starts}, ends={req.ends}, mode={req.mode}, vehicle={req.vehicle}")
+    # 🔧 修復 C5：後端白名單驗證，防止非法參數傳入 C++ 子程序
+    safe_mode = req.mode if req.mode in VALID_MODES else "shortest"
+    safe_vehicle = req.vehicle if req.vehicle in VALID_VEHICLES else "walk"
+    if safe_mode != req.mode or safe_vehicle != req.vehicle:
+        print(f"⚠️ 參數已被修正：mode={req.mode}→{safe_mode}, vehicle={req.vehicle}→{safe_vehicle}")
+
+    print(f"🧭 收到路徑請求: starts={req.starts}, ends={req.ends}, mode={safe_mode}, vehicle={safe_vehicle}")
     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
     exe_name = os.path.join(BASE_DIR, "main.exe" if os.name == 'nt' else "main")
     
@@ -197,9 +214,11 @@ async def get_route(req: RouteRequest):
     ends_str = ",".join(map(str, req.ends))
 
     try:
+        # 🔧 修復 M2：加上 timeout，C++ 卡死時不會永久掛起後端
         result = subprocess.run(
-            [exe_name, starts_str, ends_str, req.mode, req.vehicle],
-            capture_output=True, text=True, check=True
+            [exe_name, starts_str, ends_str, safe_mode, safe_vehicle],
+            capture_output=True, text=True, check=True,
+            timeout=30  # 最多等 30 秒，超時拋 TimeoutExpired
         )
         
         output = result.stdout.strip()
@@ -209,10 +228,15 @@ async def get_route(req: RouteRequest):
         path_list = [int(node) for node in output.split()]
         return {"status": "success", "path": path_list}
         
+    except subprocess.TimeoutExpired:
+        print("❌ C++ 引擎超時（>30s）")
+        return {"status": "error", "message": "路徑計算超時，請嘗試較近的起終點"}
     except subprocess.CalledProcessError as e:
-        return {"status": "error", "message": "C++ 引擎執行失敗", "details": e.stderr.strip()}
+        print(f"❌ C++ 引擎執行失敗 (stderr): {e.stderr.strip()}")
+        return {"status": "error", "message": "路徑計算引擎發生錯誤，請稍後再試"}
     except Exception as e:
-        return {"status": "error", "message": str(e)}
+        print(f"❌ route API 例外: {e}")
+        return {"status": "error", "message": "伺服器內部錯誤，請稍後再試"}
 
 
 @app.get("/api/graph")
@@ -235,7 +259,9 @@ async def get_current_shadows():
         shaded_edge_ids = shadow_calc.calculate_shaded_edges(calc_time)
         return {"status": "success", "shaded_edges": shaded_edge_ids}
     except Exception as e:
-        return {"status": "error", "message": str(e), "shaded_edges": []}
+        print(f"❌ current-shadows 計算錯誤: {e}")
+        # 🔧 修復 M6b：不回傳 str(e) 避免洩漏內部資訊
+        return {"status": "error", "message": "陰影計算發生錯誤", "shaded_edges": []}
 
 
 # --- 🌟 全新 API：回傳真實的多邊形 GeoJSON，供前端渲染色塊 ---
@@ -333,7 +359,7 @@ async def verify_password(request: Request):
         
         if password == EXPORT_PASSWORD:
             token = generate_verification_token()
-            verified_tokens.add(token)
+            verified_tokens[token] = _time.time() + TOKEN_TTL  # 🔧 M6a: 記錄過期時間
             print(f"✅ 密碼驗證成功，已發放token: {token[:8]}...")
             return {
                 "status": "success",
