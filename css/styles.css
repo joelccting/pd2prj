@@ -317,3 +317,10 @@
 
 /* 隱藏多餘的元素 */
 .route-line { display: none; }
+@keyframes march {
+  to { stroke-dashoffset: -30; } /* 數值大小可配合 dashArray 微調流速 */
+}
+
+.animated-route {
+  animation: march 0.8s linear infinite;
+}

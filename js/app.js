@@ -583,11 +583,14 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
     } else if (currentIsWalk !== isWalkRequired) {
         currentSegmentLatLngs.push([nodeU.lat, nodeU.lng]);
         const poly = L.polyline(currentSegmentLatLngs, {
-            color: currentIsWalk ? "#ffcc00" : baseColor,
-            weight: baseWeight,
-            opacity: 0.9,
-            dashArray: currentIsWalk ? "8, 8" : null 
-        }).addTo(currentPathLayerGroup);
+          color: currentIsWalk ? "#ffcc00" : baseColor,
+          weight: baseWeight,
+          opacity: 0.9,
+          // 原本是 null，改為給一般路線較長的虛線間隔 (例如 15, 15)
+          dashArray: currentIsWalk ? "8, 8" : "15, 15", 
+          // 加入這行！賦予專屬 CSS 類別
+          className: 'animated-route' 
+      }).addTo(currentPathLayerGroup);
 
         if (currentIsWalk) {
           walkSegments.push(currentSegmentLatLngs.slice());
@@ -602,9 +605,14 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
   if (currentSegmentLatLngs.length > 1) {
       L.polyline(currentSegmentLatLngs, {
           color: currentIsWalk ? "#ffcc00" : baseColor, 
-          weight: baseWeight, opacity: 0.9,
-          dashArray: currentIsWalk ? "8, 8" : null
+          weight: baseWeight, 
+          opacity: 0.9,
+          // 這裡原本還是 null，請改成 "15, 15"
+          dashArray: currentIsWalk ? "8, 8" : "15, 15",
+          // 補上這行 CSS 類別！
+          className: 'animated-route'
       }).addTo(currentPathLayerGroup);
+      
       if (currentIsWalk) {
         walkSegments.push(currentSegmentLatLngs.slice());
       }
