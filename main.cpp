@@ -212,7 +212,7 @@ int main(int argc, char* argv[]) {
                 // 不加任何東西，just distance（already set above）
             } else if (mode == "least_climbing") {
                 if (edge.slope > 0.01) {
-                    next_cost += edge.slope * 10000.0;
+                    next_cost += edge.slope * 2500.0;
                 }
             } else if (mode == "shade") {
                 double total_shade = min(1.0, edge.tree_shade + edge.building_shade);
