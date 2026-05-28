@@ -168,12 +168,12 @@
 .top-nav-bar {
   position: fixed;
   top: 10px;
-  left: 50%;
-  transform: translateX(-50%); /* 居中 */
-  z-index: 1100; /* 高於地圖與側欄 */
+  right: 20px;        /* 靠右對齊 */
+  left: auto;         /* 取消左側定位 */
+  transform: none;    /* 取消置中 transform */
+  z-index: 1100;
   width: auto;
-  min-width: 60%;
-  max-width: 90%;
+  max-width: calc(100% - 380px); /* 避免蓋住左側 320px 面板 */
 }
 
 /* 橫向網格系統 */
