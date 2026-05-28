@@ -252,6 +252,35 @@
     background-color: #e0e0e0;
 }
 
+.btn-swap-route {
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin: -4px 0 10px -6px;
+    border: 1px solid #c9d8ef;
+    border-radius: 50%;
+    background: #ffffff;
+    color: #2f6fbd;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    position: relative;
+    z-index: 3;
+}
+
+.btn-swap-route:hover {
+    background: #edf5ff;
+    border-color: #4A90E2;
+}
+
+.btn-swap-route:focus-visible {
+    outline: 2px solid #4A90E2;
+    outline-offset: 2px;
+}
+
 .icon-dot.end-dot {
     background-color: #ff4444; /* 目的地用紅色 */
 }
@@ -377,4 +406,20 @@
 .stat-value { 
   font-weight: 600; 
   color: #2c3e50; 
+}
+
+.waypoint-draggable .waypoint-drag-handle {
+  cursor: grab;
+}
+
+.waypoint-draggable .waypoint-drag-handle:active {
+  cursor: grabbing;
+}
+
+.waypoint-item.dragging {
+  opacity: 0.55;
+}
+
+.waypoint-item.dragging .location-picker {
+  pointer-events: none;
 }

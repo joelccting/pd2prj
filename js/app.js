@@ -224,6 +224,132 @@ window.updateDropdownLanguage = function(currentLang) {
 
 const waypointContainer = document.getElementById('waypoint-container');
 const addBtn = document.getElementById('add-waypoint');
+const cruiseModeSelect = document.getElementById('cruise-mode');
+const swapRoutePointsBtn = document.getElementById('swap-route-points');
+
+function getFirstWaypointItem() {
+  return waypointContainer?.querySelector('.waypoint-item') || null;
+}
+
+function copyLocationFieldState(fromInput, fromSelect, toInput, toSelect) {
+  if (!toInput || !toSelect) return;
+  toInput.value = fromInput?.value || '';
+  if (fromSelect?.value) {
+    toSelect.value = fromSelect.value;
+  } else {
+    toSelect.selectedIndex = -1;
+  }
+  toSelect.style.display = 'none';
+}
+
+function swapStartAndFirstDestination() {
+  const firstWaypoint = getFirstWaypointItem();
+  if (!firstWaypoint) return;
+
+  const startInput = document.getElementById('start-search');
+  const startSelect = document.getElementById('start');
+  const destInput = firstWaypoint.querySelector('.waypoint-search');
+  const destSelect = firstWaypoint.querySelector('.waypoint-select');
+  const startState = {
+    inputValue: startInput?.value || '',
+    selectValue: startSelect?.value || ''
+  };
+
+  copyLocationFieldState(destInput, destSelect, startInput, startSelect);
+  if (destInput && destSelect) {
+    destInput.value = startState.inputValue;
+    if (startState.selectValue) {
+      destSelect.value = startState.selectValue;
+    } else {
+      destSelect.selectedIndex = -1;
+    }
+    destSelect.style.display = 'none';
+  }
+}
+
+function isOrderedCruiseMode() {
+  return cruiseModeSelect?.value === 'ordered';
+}
+
+function updateWaypointDragState() {
+  const canDrag = isOrderedCruiseMode();
+  waypointContainer?.querySelectorAll('.waypoint-item').forEach((item) => {
+    const handle = item.querySelector('.end-dot');
+    if (!handle) return;
+    handle.draggable = canDrag;
+    handle.tabIndex = canDrag ? 0 : -1;
+    handle.title = canDrag ? 'Drag to reorder destinations' : '';
+    handle.classList.toggle('waypoint-drag-handle', canDrag);
+    item.classList.toggle('waypoint-draggable', canDrag);
+  });
+}
+
+function updateRouteModeControls() {
+  const isSingleMode = cruiseModeSelect?.value === 'single';
+  if (swapRoutePointsBtn) {
+    swapRoutePointsBtn.style.display = isSingleMode ? 'flex' : 'none';
+  }
+  updateWaypointDragState();
+}
+
+function getDragAfterWaypoint(container, pointerY) {
+  const draggableItems = [...container.querySelectorAll('.waypoint-item:not(.dragging)')];
+  return draggableItems.reduce((closest, child) => {
+    const box = child.getBoundingClientRect();
+    const offset = pointerY - box.top - box.height / 2;
+    if (offset < 0 && offset > closest.offset) {
+      return { offset, element: child };
+    }
+    return closest;
+  }, { offset: Number.NEGATIVE_INFINITY, element: null }).element;
+}
+
+let draggedWaypointItem = null;
+
+if (swapRoutePointsBtn) {
+  swapRoutePointsBtn.addEventListener('click', swapStartAndFirstDestination);
+}
+
+if (cruiseModeSelect) {
+  cruiseModeSelect.addEventListener('change', updateRouteModeControls);
+  updateRouteModeControls();
+}
+
+if (waypointContainer) {
+  waypointContainer.addEventListener('dragstart', (event) => {
+    const handle = event.target instanceof Element ? event.target.closest('.waypoint-drag-handle') : null;
+    if (!handle || !isOrderedCruiseMode()) {
+      event.preventDefault();
+      return;
+    }
+
+    draggedWaypointItem = handle.closest('.waypoint-item');
+    if (!draggedWaypointItem) return;
+
+    draggedWaypointItem.classList.add('dragging');
+    event.dataTransfer.effectAllowed = 'move';
+    event.dataTransfer.setData('text/plain', '');
+  });
+
+  waypointContainer.addEventListener('dragover', (event) => {
+    if (!draggedWaypointItem || !isOrderedCruiseMode()) return;
+    event.preventDefault();
+    const afterElement = getDragAfterWaypoint(waypointContainer, event.clientY);
+    if (afterElement) {
+      waypointContainer.insertBefore(draggedWaypointItem, afterElement);
+    } else {
+      waypointContainer.appendChild(draggedWaypointItem);
+    }
+  });
+
+  waypointContainer.addEventListener('dragend', () => {
+    if (draggedWaypointItem) {
+      draggedWaypointItem.classList.remove('dragging');
+    }
+    draggedWaypointItem = null;
+    updateWaypointDragState();
+  });
+}
 
 addBtn.addEventListener('click', () => {
   const newItem = waypointContainer.firstElementChild.cloneNode(true);
@@ -240,7 +366,10 @@ addBtn.addEventListener('click', () => {
   
   // 2. 設定刪除按鈕功能
   newItem.querySelector('.btn-remove-waypoint').style.display = "block";
-  newItem.querySelector('.btn-remove-waypoint').onclick = function() { this.parentElement.remove(); };
+  newItem.querySelector('.btn-remove-waypoint').onclick = function() {
+    this.parentElement.remove();
+    updateWaypointDragState();
+  };
   
   // 🌟 關鍵修復：先將新元素加入到畫面 (DOM) 中！
   waypointContainer.appendChild(newItem);
@@ -255,6 +384,8 @@ addBtn.addEventListener('click', () => {
   if (window.applyTranslations) {
     window.applyTranslations(currentLang);
   }
+
+  updateWaypointDragState();
 });
 
 // 白名單需與 index.html 的 select value 完全一致
