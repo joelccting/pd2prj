@@ -96,7 +96,7 @@ export function initEditorMode(map, data, graph) {
           <label style="font-size:14px; font-weight:900; color:#2c3e50; margin:0;">🔍 屬性條件過濾</label>
           <span style="font-size:11px; background:#e8f4f8; color:#0077aa; padding:3px 8px; border-radius:12px; font-weight:bold;">God Mode</span>
       </div>
-      <input type="text" id="property-search-input" placeholder="例: tree_shade=1 或 lit" style="padding:10px; border:1px solid #ccd1d9; border-radius:8px; font-size:14px; box-sizing: border-box; transition: border-color 0.3s; outline:none;" onfocus="this.style.borderColor='#4A90E2'" onblur="this.style.borderColor='#ccd1d9'">
+      <input type="text" id="property-search-input" placeholder="例: tree_shade=1, slope>0.05, elevation!=0"padding:10px; border:1px solid #ccd1d9; border-radius:8px; font-size:14px; box-sizing: border-box; transition: border-color 0.3s; outline:none;" onfocus="this.style.borderColor='#4A90E2'" onblur="this.style.borderColor='#ccd1d9'">
       <div style="display:flex; gap:8px;">
         <button id="property-search-btn" type="button" style="flex:2; padding:10px; background:linear-gradient(135deg, #4A90E2, #357abd); color:white; border:none; border-radius:8px; cursor:pointer; font-weight:bold; font-size:13px; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">搜尋圖元</button>
         <button id="property-clear-btn" type="button" style="flex:1; padding:10px; background:#f1f3f6; color:#555; border:1px solid #d9dce1; border-radius:8px; cursor:pointer; font-weight:bold; font-size:13px; transition: background 0.2s;" onmouseover="this.style.background='#e4e7eb'" onmouseout="this.style.background='#f1f3f6'">清除</button>
@@ -155,7 +155,7 @@ export function initEditorMode(map, data, graph) {
 
   // 同步單一屬性到反向邊
   function syncReverseEdgeAttr(edgeData, key, val) {
-    const transportKeys = ['walk', 'bike', 'ebike', 'motorcycle', 'car'];
+    const transportKeys = ['walk', 'bike', 'ebike', 'motorcycle', 'car', 'tree_shade'];
     // 只同步路權類屬性，其他屬性 (如 slope、distance) 方向性不同不應同步
     if (!transportKeys.includes(key)) return;
     const rev = findReverseEdge(edgeData);
@@ -182,7 +182,11 @@ export function initEditorMode(map, data, graph) {
     const val = readPromptValue(key);
     if (val === undefined) return;
 
-    targets.forEach(target => { target[key] = val; });
+    targets.forEach(target => { target[key] = val;
+      if (label === "Edge") {
+            syncReverseEdgeAttr(target, key, val);
+        }
+     });
     alert(`✅ 已更新 ${targets.size} 個${label}的 ${key} = ${val}`);
     clearSelection();
   }
@@ -686,30 +690,62 @@ export function initEditorMode(map, data, graph) {
 
   function performPropertySearch(query) {
     if (!query || query.trim() === "") {
-      alert("請輸入搜尋條件，例如 tree_shade=1 或 tree_shade");
+      alert("請輸入搜尋條件\n例如: tree_shade=1 / slope>0.05 / slope>=0.1 / elevation!=0 / distance<50");
       return;
     }
 
     clearPropertyHighlight();
     query = query.trim();
 
-    let propName = query;
+    // --- 解析運算子，順序很重要：先比對雙字元 >=, <=, != 再比對單字元 >, < ---
+    const OPERATORS = ['>=', '<=', '!=', '>', '<', '='];
+    let propName = null;
+    let operator = null;
     let propValue = null;
 
-    if (query.includes('=')) {
-      const parts = query.split('=');
-      propName = parts[0].trim();
-      propValue = parts[1].trim();
+    for (const op of OPERATORS) {
+      const idx = query.indexOf(op);
+      if (idx > 0) {                      // idx > 0 確保屬性名不為空
+        propName = query.slice(0, idx).trim();
+        operator = op;
+        const rawVal = query.slice(idx + op.length).trim();
+        // 嘗試轉換為數字或布林值以利比對
+        if (rawVal.toLowerCase() === 'true')       propValue = true;
+        else if (rawVal.toLowerCase() === 'false') propValue = false;
+        else if (rawVal !== '' && !isNaN(rawVal))  propValue = Number(rawVal);
+        else                                        propValue = rawVal;
+        break;
+      }
+    }
 
-      // 嘗試轉換為數字或布林值以利比對
-      if (propValue.toLowerCase() === 'true') propValue = true;
-      else if (propValue.toLowerCase() === 'false') propValue = false;
-      else if (!isNaN(propValue) && propValue !== '') propValue = Number(propValue);
+    // 沒有任何運算子 → 只要屬性存在即符合（原有行為）
+    if (!propName) {
+      propName = query;
+      operator = 'exists';
     }
 
     if (!propName) return;
 
-    console.log(`🔍 搜尋條件: ${propName}${propValue !== null ? '=' + propValue : ''}`);
+    // --- 比對函數：根據運算子判斷是否符合 ---
+    function matches(objVal) {
+      if (operator === 'exists') return true;
+
+      // != / = 支援字串與數字
+      if (operator === '=')  return String(objVal) === String(propValue);
+      if (operator === '!=') return String(objVal) !== String(propValue);
+
+      // >, >=, <, <= 只對數字有意義
+      const numObj = Number(objVal);
+      const numProp = Number(propValue);
+      if (isNaN(numObj) || isNaN(numProp)) return false;
+      if (operator === '>')  return numObj >  numProp;
+      if (operator === '>=') return numObj >= numProp;
+      if (operator === '<')  return numObj <  numProp;
+      if (operator === '<=') return numObj <= numProp;
+      return false;
+    }
+
+    console.log(`🔍 搜尋條件: ${propName} ${operator} ${propValue ?? '(exists)'}`);
 
     let matchedNodeCount = 0;
     let matchedEdgeCount = 0;
@@ -718,27 +754,18 @@ export function initEditorMode(map, data, graph) {
     if (data && data.nodes) {
       data.nodes.forEach(node => {
         if (!node.hasOwnProperty(propName)) return;
+        if (!matches(node[propName])) return;
 
-        let isMatch = false;
-        if (propValue === null) {
-            isMatch = true; // 只要有這個屬性即算符合
-        } else {
-            isMatch = (String(node[propName]) === String(propValue));
-        }
-
-        if (isMatch) {
-          matchedNodeCount++;
-          // 新增無互動性的發光標記，放在最底層避免擋住原先 Marker 的點擊
-          L.circleMarker([node.lat, node.lng], {
-            radius: 18,
-            color: '#FF007F', // 螢光粉紅
-            weight: 4,
-            fillColor: '#FF007F',
-            fillOpacity: 0.4,
-            interactive: false, // 這是關鍵！不會擋住滑鼠點擊原始 Marker
-            className: 'god-pulse-animation'
-          }).addTo(searchHighlightLayer);
-        }
+        matchedNodeCount++;
+        L.circleMarker([node.lat, node.lng], {
+          radius: 18,
+          color: '#FF007F',
+          weight: 4,
+          fillColor: '#FF007F',
+          fillOpacity: 0.4,
+          interactive: false,
+          className: 'god-pulse-animation'
+        }).addTo(searchHighlightLayer);
       });
     }
 
@@ -746,30 +773,20 @@ export function initEditorMode(map, data, graph) {
     if (data && data.edges) {
       data.edges.forEach(edge => {
         if (!edge.hasOwnProperty(propName)) return;
+        if (!matches(edge[propName])) return;
 
-        let isMatch = false;
-        if (propValue === null) {
-            isMatch = true;
-        } else {
-            isMatch = (String(edge[propName]) === String(propValue));
-        }
-
-        if (isMatch) {
-          matchedEdgeCount++;
-          
-          const nodeA = data.nodes.find(n => n.id === edge.from);
-          const nodeB = data.nodes.find(n => n.id === edge.to);
-
-          if (nodeA && nodeB) {
-              L.polyline([[nodeA.lat, nodeA.lng], [nodeB.lat, nodeB.lng]], {
-                  color: '#00FFFF', // 螢光青
-                  weight: 14,
-                  opacity: 0.55,
-                  dashArray: '15, 10',
-                  lineCap: 'round',
-                  interactive: false // 這是關鍵！不會擋住滑鼠點擊原始 Polyline
-              }).addTo(searchHighlightLayer);
-          }
+        matchedEdgeCount++;
+        const nodeA = data.nodes.find(n => n.id === edge.from);
+        const nodeB = data.nodes.find(n => n.id === edge.to);
+        if (nodeA && nodeB) {
+          L.polyline([[nodeA.lat, nodeA.lng], [nodeB.lat, nodeB.lng]], {
+            color: '#00FFFF',
+            weight: 14,
+            opacity: 0.55,
+            dashArray: '15, 10',
+            lineCap: 'round',
+            interactive: false
+          }).addTo(searchHighlightLayer);
         }
       });
     }
@@ -779,11 +796,11 @@ export function initEditorMode(map, data, graph) {
     if (resultInfo) {
       resultInfo.style.display = 'block';
       if (matchedNodeCount === 0 && matchedEdgeCount === 0) {
-          resultInfo.style.borderLeftColor = '#f44336';
-          resultInfo.innerHTML = `❌ <b>未找到結果</b><br><span style="font-size:11px; color:#777;">條件: ${query}</span>`;
+        resultInfo.style.borderLeftColor = '#f44336';
+        resultInfo.innerHTML = `❌ <b>未找到結果</b><br><span style="font-size:11px; color:#777;">條件: ${query}</span>`;
       } else {
-          resultInfo.style.borderLeftColor = '#4CAF50';
-          resultInfo.innerHTML = `✅ <b>搜尋成功</b><br>找到 <b style="color:#FF007F;">${matchedNodeCount}</b> 個 Node<br>找到 <b style="color:#009999;">${matchedEdgeCount}</b> 條 Edge`;
+        resultInfo.style.borderLeftColor = '#4CAF50';
+        resultInfo.innerHTML = `✅ <b>搜尋成功</b><br>找到 <b style="color:#FF007F;">${matchedNodeCount}</b> 個 Node<br>找到 <b style="color:#009999;">${matchedEdgeCount}</b> 條 Edge`;
       }
     }
   }

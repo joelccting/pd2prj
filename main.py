@@ -172,7 +172,11 @@ def generate_graph_txt(current_time=None):
             dist = edge.get('distance', 1.0)
             slope = edge.get('slope', 0.0)
             tree_shade = edge.get('tree_shade', 0)
-            
+            reverse_edge = next((e for e in data['edges'] if e['from'] == v and e['to'] == u), None)
+            tree_shade = max(
+                edge.get('tree_shade', 0),
+                reverse_edge.get('tree_shade', 0) if reverse_edge else 0
+            )
             forward_id = f"{u}-{v}"
             backward_id = f"{v}-{u}"
             
