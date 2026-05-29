@@ -205,7 +205,7 @@ int main(int argc, char* argv[]) {
             }
             
             // --- 依照不同模式套用各自的權重與懲罰 ---
-            double next_cost = using_fallback_walk ? (edge.distance * 5) : edge.distance;
+            double next_cost = using_fallback_walk ? (edge.distance +10000) : edge.distance;
 
             // 再套路線偏好（注意：不能覆蓋 next_cost，要在上面加）
             if (mode == "shortest") {
