@@ -187,9 +187,8 @@ int main(int argc, char* argv[]) {
             else if (vehicle == "ebike") can_ride = edge.ebike == 1;
             else if (vehicle == "motorcycle") can_ride = edge.motorcycle == 1;
             else if (vehicle == "car")   can_ride = edge.car == 1;
+            else if (vehicle == "walk")  can_ride = edge.walk == 1;
             else can_ride = true;
-           // if (vehicle == "walk" && edge.walk == 0) continue;
-            
             // 🔧 修正：如果車輛無法通行，嘗試改用走的（帶懲罰）
             bool using_fallback_walk = false;
             if(can_ride == false) {
