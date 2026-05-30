@@ -101,9 +101,15 @@ def main():
     shaded_edges_count = 0
 
     for edge in data["edges"]:
+        # Skip edges that already have tree_shade attribute
+        if "tree_shade" in edge:
+            shaded_edges_count += edge["tree_shade"]
+            continue
+
         node_a = node_dict.get(edge.get("from"))
         node_b = node_dict.get(edge.get("to"))
         if not node_a or not node_b:
+            edge["tree_shade"] = 0
             continue
 
         x1, y1 = coord_to_pixel(node_a["lat"], node_a["lng"], img_width, img_height)
@@ -116,8 +122,7 @@ def main():
         line_pixels = get_bresenham_line(x1, y1, x2, y2)
         tree_pixel_count = sum(1 for px, py in line_pixels if tree_mask[py, px] == 255)
         coverage_ratio = tree_pixel_count / len(line_pixels)
-
-        edge["tree_shade"] = 1 if coverage_ratio > 0.5 else 0
+        edge["tree_shade"] = 1 if coverage_ratio >= 0.5 else 0
         shaded_edges_count += edge["tree_shade"]
 
     with open(JSON_OUTPUT_PATH, "w", encoding="utf-8") as f:
