@@ -461,6 +461,9 @@ function getLinearDist(name1, name2) {
 function markerback() {
   clearActivePolylines();
   showAllMarkers();
+  // 清除分段圖例
+  const legend = document.getElementById('route-leg-legend');
+  if (legend) legend.remove();
   console.log('✅ 已恢復所有地標');
 }
 
@@ -532,10 +535,14 @@ document.getElementById("findRoute").addEventListener("click", async () => {
 
   try {
     let visitOrder = [startName];
+    // 記錄每段終點在 fullPath 中的索引，供 drawPath 分色使用
+    // segmentBoundaries[i] = fullPath 裡第 i 段結尾的 index
+    let segmentBoundaries = [];
 
     if (cruiseMode === "single") {
       fullPath = await fetchSegment([startName], [destinations[0]], routeWeight, selectedTransport); 
       visitOrder.push(destinations[0]);
+      if (fullPath.length > 0) segmentBoundaries.push(fullPath.length - 1);
     } 
     else if (cruiseMode === "ordered") {
       let currentLoc = startName;
@@ -545,6 +552,7 @@ document.getElementById("findRoute").addEventListener("click", async () => {
           fullPath = fullPath.length === 0 ? segment : fullPath.concat(segment.slice(1));
           currentLoc = dest;
           visitOrder.push(dest);
+          segmentBoundaries.push(fullPath.length - 1);
         }
       }
     } 
@@ -565,6 +573,7 @@ document.getElementById("findRoute").addEventListener("click", async () => {
             fullPath = fullPath.length === 0 ? segment : fullPath.concat(segment.slice(1));
             currentLoc = nextDest;
             visitOrder.push(nextDest);
+            segmentBoundaries.push(fullPath.length - 1);
         } else {
             console.warn(`無法找到前往 ${nextDest} 的路徑，已跳過該節點。`);
         }
@@ -575,7 +584,7 @@ document.getElementById("findRoute").addEventListener("click", async () => {
       currentFullPath = fullPath;
       // 🎨 隱藏除起點和目的地外的地標
       hideMarkersExcept(visitOrder);
-      drawPath(fullPath, visitOrder, routeWeight); 
+      drawPath(fullPath, visitOrder, routeWeight, segmentBoundaries); 
       totalDist = calculatePathDistance(fullPath);
       
       let totalMainSeconds = 0;
@@ -766,109 +775,150 @@ function showAllMarkers() {
   markersVisibleState = true;
 }
 
-// 👇 接收 mode 參數，並根據 mode 決定路線基礎顏色
-function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
+// 多目的地時每條腿的配色盤（避暑模式不用此盤，單一目的地也不受影響）
+// 刻意選對比明顯、地圖上易辨認的色系
+const LEG_COLORS = [
+  "#0066ff", // 藍
+  "#e65c00", // 橙
+  "#7b00d4", // 紫
+  "#00897b", // 青綠
+  "#c62828", // 深紅
+  "#1565c0", // 深藍
+  "#f9a825", // 金黃
+  "#558b2f", // 草綠
+];
+
+// 👇 接收 mode / segmentBoundaries 參數
+//    segmentBoundaries: 每段終點在 nodeIds 裡的 index 陣列
+//    例如 A→B→C 共 10 個節點，B 在 index 4，C 在 index 9
+//    → segmentBoundaries = [4, 9]
+function drawPath(nodeIds, visitOrder = [], mode = "shortest", segmentBoundaries = []) {
   clearActivePolylines(); // 🔧 C4：清除舊路線，防止記憶體洩漏
   if (currentPathLayerGroup) map.removeLayer(currentPathLayerGroup);
   currentPathLayerGroup = L.layerGroup().addTo(map);
 
-  const selectedTransport = document.getElementById("transport-mode").value; 
-  let currentSegmentLatLngs = [];
-  let currentIsWalk = false;
-
-  // 判斷是否為避暑模式：是的話用深綠色，並且線條加粗
-  let baseColor = (mode === "shade") ? "#2E7D32" : "#0066ff";
-  let baseWeight = (mode === "shade") ? 8 : 6;
+  const selectedTransport = document.getElementById("transport-mode").value;
+  const isMultiLeg = segmentBoundaries.length > 1; // 超過 1 段才啟用分色
+  const isShadeMode = (mode === "shade");
+  const baseWeight = isShadeMode ? 8 : 6;
 
   // 🔧 修正：牽車判斷需同時檢查雙向邊，任一方向為0即代表需牽車
   function isWalkRequiredEdge(u, v) {
-    // 🔧 修復 M4：改用 edgeMap O(1) 查詢，不再 O(E) 線性掃描
     const edgeFwd = edgeMap.get(`${u}-${v}`);
     if (edgeFwd) return edgeFwd[selectedTransport] === 0;
     const edgeRev = edgeMap.get(`${v}-${u}`);
     return edgeRev ? edgeRev[selectedTransport] === 0 : false;
   }
 
-  // 收集牽車路段資訊供機車提示使用
-  const walkSegments = [];
+  // ── 建立「腿→邊界」查找表 ──────────────────────────────────────
+  // legIndexOf(i) 回傳 nodeIds[i] 屬於第幾段（0-based）
+  // 邊 (i, i+1) 的段落 = legIndexOf(i)
+  const boundaries = segmentBoundaries.length > 0
+    ? segmentBoundaries
+    : [nodeIds.length - 1]; // 單段：全部視為第 0 段
+
+  function getLegIndex(edgeStartIdx) {
+    for (let l = 0; l < boundaries.length; l++) {
+      if (edgeStartIdx < boundaries[l]) return l;
+    }
+    return boundaries.length - 1;
+  }
+
+  function getLegColor(legIdx) {
+    if (isShadeMode) return "#2E7D32";
+    if (!isMultiLeg) return "#0066ff";
+    return LEG_COLORS[legIdx % LEG_COLORS.length];
+  }
+
+  // ── 逐邊掃描，遇到「牽車↔騎車」切換或「換腿」就收線 ──────────
+  let currentLatLngs = [];
+  let currentIsWalk = false;
+  let currentLegIdx = 0;
+
+  function flushSegment(isWalk, legIdx) {
+    if (currentLatLngs.length < 2) return;
+    const baseColor = getLegColor(legIdx);
+    L.polyline(currentLatLngs, {
+      color: isWalk ? "#ffcc00" : baseColor,
+      weight: baseWeight,
+      opacity: 0.9,
+      dashArray: isWalk ? "8, 8" : "15, 15",
+      className: 'animated-route'
+    }).addTo(currentPathLayerGroup);
+  }
 
   for (let i = 0; i < nodeIds.length - 1; i++) {
-    const u = nodeIds[i], v = nodeIds[i+1];
+    const u = nodeIds[i], v = nodeIds[i + 1];
     const nodeU = graph.nodes.get(u), nodeV = graph.nodes.get(v);
-    
     const isWalkRequired = selectedTransport !== "walk" && isWalkRequiredEdge(u, v);
+    const legIdx = getLegIndex(i);
 
     if (i === 0) {
-        currentIsWalk = isWalkRequired;
-        currentSegmentLatLngs.push([nodeU.lat, nodeU.lng]);
-    } else if (currentIsWalk !== isWalkRequired) {
-        currentSegmentLatLngs.push([nodeU.lat, nodeU.lng]);
-        const poly = L.polyline(currentSegmentLatLngs, {
-          color: currentIsWalk ? "#ffcc00" : baseColor,
-          weight: baseWeight,
-          opacity: 0.9,
-          // 原本是 null，改為給一般路線較長的虛線間隔 (例如 15, 15)
-          dashArray: currentIsWalk ? "8, 8" : "15, 15", 
-          // 加入這行！賦予專屬 CSS 類別
-          className: 'animated-route' 
-      }).addTo(currentPathLayerGroup);
-
-        if (currentIsWalk) {
-          walkSegments.push(currentSegmentLatLngs.slice());
-        }
-        
-        currentSegmentLatLngs = [[nodeU.lat, nodeU.lng]];
-        currentIsWalk = isWalkRequired;
+      currentIsWalk = isWalkRequired;
+      currentLegIdx = legIdx;
+      currentLatLngs.push([nodeU.lat, nodeU.lng]);
+    } else if (currentIsWalk !== isWalkRequired || currentLegIdx !== legIdx) {
+      // 切換：先把上一段收尾（接上目前節點讓線段連續）
+      currentLatLngs.push([nodeU.lat, nodeU.lng]);
+      flushSegment(currentIsWalk, currentLegIdx);
+      currentLatLngs = [[nodeU.lat, nodeU.lng]];
+      currentIsWalk = isWalkRequired;
+      currentLegIdx = legIdx;
     }
-    currentSegmentLatLngs.push([nodeV.lat, nodeV.lng]);
+    currentLatLngs.push([nodeV.lat, nodeV.lng]);
+  }
+  flushSegment(currentIsWalk, currentLegIdx);
+
+  // ── 多目的地：繪製分色圖例 ────────────────────────────────────
+  if (isMultiLeg && visitOrder.length >= 2) {
+    const existingLegend = document.getElementById('route-leg-legend');
+    if (existingLegend) existingLegend.remove();
+
+    const legendItems = [];
+    for (let l = 0; l < boundaries.length; l++) {
+      const from = visitOrder[l]     || `點 ${l + 1}`;
+      const to   = visitOrder[l + 1] || `點 ${l + 2}`;
+      const color = getLegColor(l);
+      legendItems.push(`
+        <div style="display:flex; align-items:center; gap:7px; margin-bottom:5px; font-size:12px;">
+          <span style="display:inline-block; width:28px; height:5px; border-radius:3px;
+                       background:${color}; flex-shrink:0;"></span>
+          <span style="color:#222; font-weight:600;">${l + 1}.</span>
+          <span style="color:#444; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:180px;"
+                title="${from} → ${to}">${from} → ${to}</span>
+        </div>
+      `);
+    }
+
+    const legend = document.createElement('div');
+    legend.id = 'route-leg-legend';
+    legend.style.cssText = `
+      position: fixed;
+      top: 90px;
+      right: 20px;
+      z-index: 3000;
+      background: rgba(255,255,255,0.96);
+      border-radius: 10px;
+      padding: 11px 15px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.22);
+      font-family: 'Noto Sans TC', sans-serif;
+      max-width: 280px;
+      pointer-events: none;
+    `;
+    legend.innerHTML = `
+      <div style="font-size:12px; font-weight:700; color:#1a237e; margin-bottom:8px; letter-spacing:.3px;">
+        🗺️ 路線分段
+      </div>
+      ${legendItems.join('')}
+    `;
+    document.body.appendChild(legend);
+  } else {
+    // 非多段時清除舊圖例
+    const old = document.getElementById('route-leg-legend');
+    if (old) old.remove();
   }
 
-  if (currentSegmentLatLngs.length > 1) {
-      L.polyline(currentSegmentLatLngs, {
-          color: currentIsWalk ? "#ffcc00" : baseColor, 
-          weight: baseWeight, 
-          opacity: 0.9,
-          // 這裡原本還是 null，請改成 "15, 15"
-          dashArray: currentIsWalk ? "8, 8" : "15, 15",
-          // 補上這行 CSS 類別！
-          className: 'animated-route'
-      }).addTo(currentPathLayerGroup);
-      
-      if (currentIsWalk) {
-        walkSegments.push(currentSegmentLatLngs.slice());
-      }
-  }
-
-  // 🔧 新增：機車牽車路段提示標籤
-  /*if (selectedTransport === "motorcycle" && walkSegments.length > 0) {
-    walkSegments.forEach((segLatLngs, idx) => {
-      // 取路段中點作為標籤位置
-      const midIdx = Math.floor(segLatLngs.length / 2);
-      const midPt = segLatLngs[midIdx];
-      L.marker(midPt, {
-        icon: L.divIcon({
-          className: '',
-          html: `<div style="
-            background: #d32f2f;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: bold;
-            white-space: nowrap;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-            border: 1px solid #b71c1c;
-          ">🛵 校園禁行機車，請步行</div>`,
-          iconAnchor: [70, 12],
-          iconSize: [140, 24]
-        }),
-        interactive: false,
-        zIndexOffset: 500
-      }).addTo(currentPathLayerGroup);
-    });
-  }
-    */
-
+  // ── 箭頭裝飾（每段各自跑一條透明線以保持箭頭連貫）────────────
   const fullLatlngs = nodeIds.map(id => [graph.nodes.get(id).lat, graph.nodes.get(id).lng]);
   const invisibleLine = L.polyline(fullLatlngs, { color: 'transparent' }).addTo(currentPathLayerGroup);
 
@@ -878,7 +928,7 @@ function drawPath(nodeIds, visitOrder = [], mode = "shortest") {
         {
           offset: 20, repeat: 70,
           symbol: L.Symbol.arrowHead({
-            pixelSize: 14, polygon: true, 
+            pixelSize: 14, polygon: true,
             pathOptions: { stroke: true, color: '#ffffff', fillColor: '#ff0044', fillOpacity: 1, weight: 2 }
           })
         }
