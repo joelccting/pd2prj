@@ -110,12 +110,12 @@
     },
     {
       id: 9,
-      label: 'DEMO #9｜TSP / 步行｜工學院二館→理學院→社科院→管理學院→工學院→法學院',
+      label: 'DEMO #9｜TSP / 步行｜宿舍E棟→創新→海南雞飯→教室→體育館',
       cruiseMode: 'optimized',
       routeWeight: 'shortest',
       transport: 'walk',
-      start: '工學院二館',
-      waypoints: ['理學院-地震博物館', '社會科學院', '管理學院', '工學院', '法學院'],
+      start: '大學部宿舍E棟',
+      waypoints: ['創新大樓', '中正海南雞飯', '共同教室大樓', '中正大學體育館'],
     },
 
     // ── 四、ROUTE PREFERENCES ─────────────────────────────────────
