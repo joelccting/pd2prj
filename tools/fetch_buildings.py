@@ -51,7 +51,7 @@ def fetch_osm_buildings():
     
     # 【關鍵修改】加上 Headers 標示身份，避免被伺服器當成惡意爬蟲踢掉
     headers = {
-        'User-Agent': 'CCU-Campus-Map-Script/1.0 (dreamgggq@gmail.com)',
+        'User-Agent': 'CCU-Campus-Map-Script/1.0 (你的gmail)',
         'Accept': '*/*'
     }
     
